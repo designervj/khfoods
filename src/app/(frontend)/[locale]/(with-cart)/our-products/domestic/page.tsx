@@ -15,13 +15,13 @@ const SubcategoryPage = async ({
 }) => {
   try {
     const payload = await getPayload({ config });
-    console.log("payload---",payload)
+    // console.log("payload---",payload)
     const locale = (await getLocale()) as Locale;
-       console.log("locale---",locale)
+      //  console.log("locale---",locale)
     const { color, size, sortBy } = await searchParams;
     const { subslug } = await params;
 
-        console.log("subslug---",subslug)
+        // console.log("subslug---",subslug)
     const { docs: subcategories } = await payload.find({
       collection: "productCategories",
       depth: 1,
@@ -34,7 +34,7 @@ const SubcategoryPage = async ({
     });
 
     
-     console.log("subcategories---",subcategories)
+    //  console.log("subcategories---",subcategories)
     if (!subcategories[0]) {
       notFound();
     }
@@ -74,7 +74,7 @@ const SubcategoryPage = async ({
       // sort: sortQuery,
     });
 
-       console.log("products---",products)
+      //  console.log("products---",products)
 
     return (
       <ProductList

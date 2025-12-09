@@ -30,7 +30,7 @@ export const ImageMedia = (props: MediaProps) => {
   let height: number | undefined;
   let alt = altFromProps;
   let src: StaticImageData | string = srcFromProps ?? "";
-
+  console.log("srcvvvvvvv", src)
   if (!src && resource && typeof resource === "object") {
     const { alt: altFromResource, height: fullHeight, url, width: fullWidth } = resource;
 
@@ -38,9 +38,10 @@ export const ImageMedia = (props: MediaProps) => {
     height = fullHeight!;
     alt = altFromResource ?? "";
 
-    src = `${url}`;
+    // Use relative URL - Next.js will handle it properly
+    src = url ?? "";
   }
-
+  console.log("srcvvvvvvv", src)
   const loading = loadingFromProps ?? (!priority ? "lazy" : undefined);
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
@@ -63,8 +64,9 @@ export const ImageMedia = (props: MediaProps) => {
         quality={100}
         loading={loading}
         sizes={sizes}
-        src={src}
+        src={src || placeholderBlur}
         width={!fill ? width : undefined}
+        unoptimized
       />
     </picture>
   );
