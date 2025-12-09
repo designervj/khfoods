@@ -1,5 +1,31 @@
 @import "~@payloadcms/ui/scss";
 
+
+:root {
+  /* PRIMARY BRAND COLORS */
+  --primary: #fed24d;        /* Gold / Brown accent */
+  --primary-light: #fed24d;  /* Lighter Gold (hover, highlight) */
+
+  /* DARK THEME */
+  --dark: #7c1502;           /* Main dark header/menu */
+   --light-dark: #EEEEEE;  
+  --gray-dark: #413b3b;   /* Dark gray */
+  --gray-darker: #222222; /* Darker gray */
+  --dark-border: #2A2A2A;    /* Border dark gray */
+  --dark-light: #eeeeee;     /* Sidebar / subtle BG */
+
+  /* BASE COLORS */
+  --white: #ffffff;
+  --black: #000000;
+  --light-bg: #f5f5f5;
+  ---button-hover: #f0f0f0;
+  --button:#fed24d;
+
+  /* EXTRA OPTIONAL */
+  --gold-tint: #E5D5B4;
+  --old-topbar: #E7B285;
+}
+
 .dashboard .before-dashboard {
   margin-bottom: base(1.5);
 
@@ -21,4 +47,40 @@
   & a:hover {
     opacity: 0.85;
   }
+}
+
+
+
+
+
+.bg-primary        { background-color: var(--primary); }
+.bg-primary-light  { background-color: var(--primary-light); }
+.bg-dark           { background-color: var(--dark); }
+.bg-dark-light     { background-color: var(--dark-light); }
+.bg-light-bg       { background-color: var(--light-bg); }
+
+.text-primary       { color: var(--primary) !important; }
+.text-primary-light { color: var(--primary-light); }
+.text-dark          { color: var(--dark); }
+.text-white         { color: var(--white); }
+.text-black         { color: var(--black); }
+
+.border-dark       { border-color: var(--dark-border); }
+.border-primary    { border-color: var(--primary); }
+.bg-gray-dark      { background-color: var(--gray-dark); }
+.bg-darker     { background-color: var(--gray-darker); }
+.bg-light-dark   { background-color: var(--light-dark); }
+
+.border-primary{
+  border-color: var(--primary) !important;
+}
+.border-brown{
+  border-color: #7c1502 !important;
+}
+
+
+.btn{
+  background-color: var(--button);
+  color: var(--black) !important;
+  border: 1px solid var(--button);
 }
