@@ -11,7 +11,7 @@ import TestimonialsSection from "@/frontendComponents/TestimonialsSection";
 
 export const dynamic = "force-dynamic";
 
-const OrdersPage = () => {
+const HomePage = () => {
   return (
     <main>
       {/* <HeroSection/> */}
@@ -31,4 +31,4 @@ const OrdersPage = () => {
     </main>
   );
 };
-export default OrdersPage;
+export default HomePage;
