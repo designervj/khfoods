@@ -4,7 +4,7 @@ import config from "@payload-config";
 export async function getTenantByDomain(
   domain: string,
   slug: string,
- locale: "en" | "pl" | "hr" = "en"
+ locale: "en" | "zh"
 ) {
   try {
     // For static generation, try to use Payload directly first
@@ -23,7 +23,7 @@ export async function getTenantByDomain(
 async function getTenantByDomainPayload(
   domain: string,
   slug: string,
-  locale: "en" | "pl" | "hr" = "en"
+  locale: "en" | "zh"
 ) {
   try {
     const payload = await getPayload({ config });
@@ -104,7 +104,7 @@ async function getTenantByDomainPayload(
 async function getTenantByDomainREST(
   domain: string,
   slug: string,
-  locale: "en" | "pl" | "hr" = "en"
+  locale: "en" | "zh"
 ) {
   try {
     // First, try to find page directly by slug without website constraint
