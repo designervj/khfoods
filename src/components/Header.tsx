@@ -40,7 +40,7 @@ const HeaderMinor = () => {
     { name: t("wholesale"), link: "/wholesale" },
     {
       name: "",
-      icon: <MdOutlineShoppingBag size={15}/>,
+      icon: <MdOutlineShoppingBag size={20}/>,
       link: "/cart",
     },
   ];
@@ -68,7 +68,7 @@ const HeaderMinor = () => {
            <div className="relative">
               {/* Trigger */}
               <span
-                className="flex items-center gap-1 cursor-pointer select-none"
+                className="flex items-center gap-1 cursor-pointer select-none "
                 onClick={() => setOpen(!open)}
               >
                 <IoLanguageSharp size={16} />
@@ -81,7 +81,7 @@ const HeaderMinor = () => {
               {open && (
                 <div className="absolute left-0 mt-2 w-32 bg-white text-black rounded shadow-lg py-2 z-50">
                   <div 
-                    className={`px-4 py-2 hover:bg-[#7c1502] hover:text-white cursor-pointer transition ${
+                    className={`px-4 py-2 hover:bg-light-dark hover:text-white cursor-pointer transition ${
                       locale === "en" ? "bg-gray-100 font-semibold" : ""
                     }`}
                     onClick={() => {
@@ -94,7 +94,7 @@ const HeaderMinor = () => {
                     English
                   </div>
                   <div 
-                    className={`px-4 py-2 hover:bg-[#7c1502] hover:text-white cursor-pointer transition ${
+                    className={`px-4 py-2 hover:bg-light-dark hover:text-white cursor-pointer transition ${
                       locale === "zh" ? "bg-gray-100 font-semibold" : ""
                     }`}
                     onClick={() => {
@@ -119,7 +119,7 @@ const HeaderMinor = () => {
       </div>
 
       {/* MENU BAR */}
-      <div className="bg-[rgba(0,0,0,0.75)] border-b border-[#d4a762]/40 backdrop-blur-md">
+      <div className="bg-[#241e20] border-b border-[#d4a762]/40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
           {/* LOGO */}
