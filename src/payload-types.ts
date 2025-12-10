@@ -1891,7 +1891,7 @@ export interface Customer {
         region: string;
         postalCode: string;
         phone: string;
-        email: string;
+        email?: string | null;
         default?: boolean | null;
         id?: string | null;
       }[]

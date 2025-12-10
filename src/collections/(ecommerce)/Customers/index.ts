@@ -244,7 +244,7 @@ export const Customers: CollectionConfig = {
 
                 hr: "Email", // Croatian
               },
-              required: true
+              required: false
             },
           ]
         },

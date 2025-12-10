@@ -48,9 +48,11 @@ export const OrdersData = ({
 
       if (data?.doc.shippings) {
         setShippings(data.doc.shippings);
-        setSelectedShipping(
-          data.doc.shippings.find((s) => s.default) ?? data.doc.shippings[0]
-        );
+        const defaultShipping = data.doc.shippings.find((s) => s.default) ?? data.doc.shippings[0];
+        setSelectedShipping({
+          ...defaultShipping,
+          email: defaultShipping.email ?? ''
+        });
       }
     } catch (error) {
       console.error("Failed to update default address:", error);

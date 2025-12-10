@@ -56,9 +56,11 @@ export const AddNewAddressDialog = ({
         },
       );
       if (data.doc.shippings) {
+        const latestShipping = data.doc.shippings[data.doc.shippings.length - 1];
         setShipping({
-          ...data.doc.shippings[data.doc.shippings.length - 1],
-          id: data.doc.shippings[data.doc.shippings.length - 1].id ?? undefined
+          ...latestShipping,
+          id: latestShipping.id ?? undefined,
+          email: latestShipping.email ?? ''
         });
         setOpen(false);
       }

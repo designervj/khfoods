@@ -18,26 +18,72 @@ const createEmailTransporter = async () => {
 
   const { host, fromEmail, password, port, secure, user } = smtp ?? {};
 
+
   // Trim whitespace from all string values to prevent DNS errors
   const finalHost = (host ?? process.env.SMTP_HOST)?.trim();
   const finalUser = (user ?? process.env.SMTP_USER)?.trim();
   const finalPassword = (password ?? process.env.SMTP_PASS)?.trim();
   const finalFromEmail = (fromEmail ?? process.env.SMTP_USER)?.trim();
 
-  console.log(`[SMTP] Configuring email transporter with host: ${finalHost}, user: ${finalUser}`);
+  const finalPort = Number(port ?? 587);
+  const finalSecure = secure ?? false;
+
+  console.log(`[SMTP] Configuring email transporter with host: ${finalHost}, user: ${finalUser}, port: ${finalPort}, secure: ${finalSecure}`);
 
   if (!finalHost || !finalUser || !finalPassword) {
     console.error('[SMTP] ❌ Missing SMTP configuration. Please configure in Admin Panel or environment variables.');
     throw new Error('SMTP configuration is incomplete. Please set up email settings in the Admin Panel.');
   }
 
+  // For Hostinger and most SMTP providers:
+  // Port 465: use secure: true
+  // Port 587: use secure: false with requireTLS: true
+  const transportConfig: any = {
+    host: finalHost,
+    port: finalPort,
+    secure: finalSecure,
+    auth: { 
+      user: finalUser, 
+      pass: finalPassword 
+    },
+    // Add TLS configuration for both ports (Hostinger requirement)
+    tls: {
+      rejectUnauthorized: false, // For development - set to true in production
+      minVersion: 'TLSv1.2',
+    },
+  };
+
+  // Add specific settings for port 587 (STARTTLS)
+  if (finalPort === 587 && !finalSecure) {
+    transportConfig.requireTLS = true;
+  }
+  
+  // For port 465 (SSL), ensure we're using the right protocol
+  if (finalPort === 465 && finalSecure) {
+    transportConfig.secure = true;
+  }
+
+  console.log(`[SMTP] Transport config:`, { 
+    host: transportConfig.host, 
+    port: transportConfig.port, 
+    secure: transportConfig.secure,
+    requireTLS: transportConfig.requireTLS,
+    user: finalUser 
+  });
+
+  const transporter = nodemailer.createTransport(transportConfig);
+
+  // Verify connection
+  try {
+    await transporter.verify();
+    console.log(`[SMTP] ✅ Connection verified successfully`);
+  } catch (verifyError) {
+    console.error(`[SMTP] ❌ Connection verification failed:`, verifyError);
+    throw new Error(`SMTP connection failed: ${verifyError instanceof Error ? verifyError.message : 'Unknown error'}`);
+  }
+
   return {
-    transporter: nodemailer.createTransport({
-      host: finalHost,
-      port: Number(port ?? 587),
-      secure: secure ?? false,
-      auth: { user: finalUser, pass: finalPassword }
-    }),
+    transporter,
     fromEmail: finalFromEmail
   };
 };
