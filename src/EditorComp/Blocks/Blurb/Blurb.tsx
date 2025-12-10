@@ -1,6 +1,5 @@
 "use client"
 
-
 import { ComponentConfig } from "@measured/puck";
 
 export const BlurbBlock: ComponentConfig = {
@@ -22,7 +21,7 @@ export const BlurbBlock: ComponentConfig = {
         { label: "Left", value: "left" },
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
-      ],
+      ]
     },
     backgroundColor: { type: "text", label: "Background Color" },
     textColor: { type: "text", label: "Text Color" },
@@ -35,9 +34,9 @@ export const BlurbBlock: ComponentConfig = {
         top: { type: "number" },
         bottom: { type: "number" },
         left: { type: "number" },
-        right: { type: "number" },
-      },
-    },
+        right: { type: "number" }
+      }
+    }
   },
 
   defaultProps: {
@@ -48,7 +47,7 @@ export const BlurbBlock: ComponentConfig = {
     textColor: "#222222",
     borderRadius: 16,
     shadow: "0 4px 10px rgba(0,0,0,0.08)",
-    padding: { top: 32, bottom: 32, left: 24, right: 24 },
+    padding: { top: 32, bottom: 32, left: 24, right: 24 }
   },
 
   render: ({
@@ -64,7 +63,7 @@ export const BlurbBlock: ComponentConfig = {
     textColor,
     borderRadius,
     shadow,
-    padding,
+    padding
   }) => {
     const style: React.CSSProperties = {
       backgroundColor,
@@ -76,12 +75,12 @@ export const BlurbBlock: ComponentConfig = {
       paddingBottom: padding?.bottom,
       paddingLeft: padding?.left,
       paddingRight: padding?.right,
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+      transition: "transform 0.3s ease, box-shadow 0.3s ease"
     };
 
     const cardHover: React.CSSProperties = {
       transform: "translateY(-4px)",
-      boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+      boxShadow: "0 8px 20px rgba(0,0,0,0.1)"
     };
 
     return (
@@ -95,14 +94,14 @@ export const BlurbBlock: ComponentConfig = {
           borderRadius: "1rem",
           boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
           maxWidth: "900px",
-          margin: "2rem auto",
+          margin: "2rem auto"
         }}
       >
         <div
           style={{
             flex: "0 0 250px",
             overflow: "hidden",
-            borderRadius: "0.75rem",
+            borderRadius: "0.75rem"
           }}
         >
           <img
@@ -111,7 +110,7 @@ export const BlurbBlock: ComponentConfig = {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "cover"
             }}
           />
         </div>
@@ -123,7 +122,7 @@ export const BlurbBlock: ComponentConfig = {
                 fontSize: "1.75rem",
                 fontWeight: "700",
                 color: "#111827",
-                margin: 0,
+                margin: 0
               }}
             >
               <Heading />
@@ -136,7 +135,7 @@ export const BlurbBlock: ComponentConfig = {
                 fontSize: "1rem",
                 color: "#6b7280",
                 fontWeight: "500",
-                margin: 0,
+                margin: 0
               }}
             >
               <Subtext />
@@ -149,7 +148,7 @@ export const BlurbBlock: ComponentConfig = {
                 fontSize: "1rem",
                 color: "#374151",
                 lineHeight: "1.6",
-                margin: 0,
+                margin: 0
               }}
             >
               <Paragraph />
@@ -158,5 +157,5 @@ export const BlurbBlock: ComponentConfig = {
         </div>
       </div>
     );
-  },
+  }
 };

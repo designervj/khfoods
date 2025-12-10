@@ -6,7 +6,7 @@ export const restoreStocks: FieldHook<Order, Order["orderDetails"]["status"] | u
   operation,
   value,
   originalDoc,
-  req,
+  req
 }) => {
   if (operation !== "update" || !originalDoc || !value || value !== "cancelled" || !originalDoc.products)
     return value;
@@ -21,7 +21,7 @@ export const restoreStocks: FieldHook<Order, Order["orderDetails"]["status"] | u
       try {
         const originalProduct = await payload.findByID({
           collection: "products",
-          id: product.id,
+          id: product.id
         });
 
         if (!originalProduct) {
@@ -32,26 +32,26 @@ export const restoreStocks: FieldHook<Order, Order["orderDetails"]["status"] | u
         const productWithUpdatedStock = {
           ...originalProduct,
           ...(!originalProduct.enableVariants && {
-            stock: (originalProduct.stock ?? 0) + product.quantity,
+            stock: (originalProduct.stock ?? 0) + product.quantity
           }),
           ...(originalProduct.enableVariants && {
             variants: originalProduct.variants?.map((variant) => {
               if (variant.variantSlug === product.variantSlug) {
                 return {
                   ...variant,
-                  stock: (variant.stock ?? 0) + product.quantity,
+                  stock: (variant.stock ?? 0) + product.quantity
                 };
               }
               return variant;
-            }),
-          }),
+            })
+          })
         };
 
         updates.push(
           payload.update({
             collection: "products",
             id: product.id,
-            data: productWithUpdatedStock,
+            data: productWithUpdatedStock
           }),
         );
       } catch (error) {
@@ -64,8 +64,8 @@ export const restoreStocks: FieldHook<Order, Order["orderDetails"]["status"] | u
       collection: "orders",
       id: originalDoc.id,
       data: {
-        extractedFromStock: false,
-      },
+        extractedFromStock: false
+      }
     });
   } catch (error) {
     console.error("Failed to restore stocks:", error);

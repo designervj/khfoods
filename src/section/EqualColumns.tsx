@@ -16,7 +16,7 @@ export const TwoEqualColumns: React.FC<EqualColumnsProps> = ({ columns, gap = "m
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -37,7 +37,7 @@ export const ThreeEqualColumns: React.FC<EqualColumnsProps> = ({ columns, gap = 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -58,7 +58,7 @@ export const FourEqualColumns: React.FC<EqualColumnsProps> = ({ columns, gap = "
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -79,7 +79,7 @@ export const FiveEqualColumns: React.FC<EqualColumnsProps> = ({ columns, gap = "
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -100,7 +100,7 @@ export const SixEqualColumns: React.FC<EqualColumnsProps> = ({ columns, gap = "m
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -121,7 +121,7 @@ const EqualColumnsComponents = {
   ThreeEqualColumns,
   FourEqualColumns,
   FiveEqualColumns,
-  SixEqualColumns,
+  SixEqualColumns
 };
 
 export default EqualColumnsComponents;

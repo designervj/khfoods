@@ -21,7 +21,7 @@ export const AdminNavbar = async (props: ServerProps) => {
     searchParams,
     user,
     viewType,
-    visibleEntities,
+    visibleEntities
   } = props;
 
   if (!payload?.config || !permissions) {
@@ -30,10 +30,10 @@ export const AdminNavbar = async (props: ServerProps) => {
 
   const {
     admin: {
-      components: { afterNavLinks, beforeNavLinks, logout },
+      components: { afterNavLinks, beforeNavLinks, logout }
     },
     collections,
-    globals,
+    globals
   } = payload.config;
 
   const groups = groupNavItems(
@@ -44,7 +44,7 @@ export const AdminNavbar = async (props: ServerProps) => {
           (collection) =>
             ({
               type: EntityType.collection,
-              entity: collection,
+              entity: collection
             }) satisfies EntityToGroup,
         ),
       ...globals
@@ -53,7 +53,7 @@ export const AdminNavbar = async (props: ServerProps) => {
           (global) =>
             ({
               type: EntityType.global,
-              entity: global,
+              entity: global
             }) satisfies EntityToGroup,
         ),
     ],
@@ -66,7 +66,7 @@ export const AdminNavbar = async (props: ServerProps) => {
   const LogoutComponent = RenderServerComponent({
     clientProps: {
       documentSubViewType,
-      viewType,
+      viewType
     },
     Component: logout?.Button,
     Fallback: Logout,
@@ -78,8 +78,8 @@ export const AdminNavbar = async (props: ServerProps) => {
       payload,
       permissions,
       searchParams,
-      user,
-    },
+      user
+    }
   });
 
   return (
@@ -88,7 +88,7 @@ export const AdminNavbar = async (props: ServerProps) => {
         {RenderServerComponent({
           clientProps: {
             documentSubViewType,
-            viewType,
+            viewType
           },
           Component: beforeNavLinks,
           importMap: payload.importMap,
@@ -99,14 +99,14 @@ export const AdminNavbar = async (props: ServerProps) => {
             payload,
             permissions,
             searchParams,
-            user,
-          },
+            user
+          }
         })}
         <NavClient groups={groups} navPreferences={navPreferences} />
         {RenderServerComponent({
           clientProps: {
             documentSubViewType,
-            viewType,
+            viewType
           },
           Component: afterNavLinks,
           importMap: payload.importMap,
@@ -117,8 +117,8 @@ export const AdminNavbar = async (props: ServerProps) => {
             payload,
             permissions,
             searchParams,
-            user,
-          },
+            user
+          }
         })}
         <div className={`${baseClass}__controls`}>{LogoutComponent}</div>
       </nav>

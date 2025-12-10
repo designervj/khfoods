@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     defaultVariants: {
       size: "default",
-      variant: "default",
+      variant: "default"
     },
     variants: {
       size: {
@@ -17,7 +17,7 @@ const buttonVariants = cva(
         default: "h-10 px-4 py-2",
         icon: "h-10 w-10",
         lg: "h-11 rounded px-8",
-        sm: "h-9 rounded px-3",
+        sm: "h-9 rounded px-3"
       },
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -29,9 +29,9 @@ const buttonVariants = cva(
         tailwind:
           "flex w-full justify-center rounded-md bg-main-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-main-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-600",
         tailwindOutline:
-          "flex w-full justify-center rounded-md border-main-600 border px-3 bg-white py-1.5 text-sm/6 font-semibold text-main-600 shadow-xs hover:bg-gray-50 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-600",
-      },
-    },
+          "flex w-full justify-center rounded-md border-main-600 border px-3 bg-white py-1.5 text-sm/6 font-semibold text-main-600 shadow-xs hover:bg-gray-50 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-600"
+      }
+    }
   },
 );
 

@@ -84,7 +84,7 @@ export const HeroBlock: ComponentConfig = {
      marginLeft: { 
       type: "number", 
       label: "Margin Left (px)" 
-    },
+    }
   },
 
   defaultProps: {
@@ -102,7 +102,7 @@ export const HeroBlock: ComponentConfig = {
     ctaTextColor: "#ffffff",
     minHeight: 500,
     borderRadius: 16,
-    marginTop: 28,
+    marginTop: 28
   },
 
   render: ({
@@ -137,7 +137,7 @@ export const HeroBlock: ComponentConfig = {
             borderRadius: `${borderRadius}px`,
             overflow: "hidden",
             boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-            minHeight: `${minHeight}px`,
+            minHeight: `${minHeight}px`
           }}
         >
           {/* Background Image */}
@@ -149,7 +149,7 @@ export const HeroBlock: ComponentConfig = {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundColor: backgroundColor,
-              transition: "all 0.7s",
+              transition: "all 0.7s"
             }}
             aria-hidden="true"
           />
@@ -159,7 +159,7 @@ export const HeroBlock: ComponentConfig = {
             style={{
               position: "absolute",
               inset: 0,
-              backgroundColor: `rgba(0, 0, 0, ${overlayOpacity})`,
+              backgroundColor: `rgba(0, 0, 0, ${overlayOpacity})`
             }}
           />
 
@@ -174,7 +174,7 @@ export const HeroBlock: ComponentConfig = {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "center"
             }}
           >
             {/* Play Button */}
@@ -194,7 +194,7 @@ export const HeroBlock: ComponentConfig = {
                   boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                   marginBottom: "24px",
                   cursor: "pointer",
-                  transition: "transform 0.2s",
+                  transition: "transform 0.2s"
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "scale(1.1)";
@@ -208,7 +208,7 @@ export const HeroBlock: ComponentConfig = {
                     width: "16px",
                     height: "16px",
                     fill: textColor,
-                    marginLeft: "4px",
+                    marginLeft: "4px"
                   }}
                   viewBox="0 0 384 512"
                 >
@@ -225,7 +225,7 @@ export const HeroBlock: ComponentConfig = {
                 fontWeight: 500,
                 lineHeight: 1.2,
                 margin: 0,
-                animation: "fadeInUp 0.6s ease-out",
+                animation: "fadeInUp 0.6s ease-out"
               }}
             >
               {title}
@@ -241,7 +241,7 @@ export const HeroBlock: ComponentConfig = {
                   fontSize: "1rem",
                   fontStyle: "italic",
                   fontWeight: 500,
-                  animation: "fadeInUp 0.6s ease-out 0.2s both",
+                  animation: "fadeInUp 0.6s ease-out 0.2s both"
                 }}
               >
                 {subtitle}
@@ -253,7 +253,7 @@ export const HeroBlock: ComponentConfig = {
               <div
                 style={{
                   marginTop: "48px",
-                  animation: "fadeInUp 0.6s ease-out 0.4s both",
+                  animation: "fadeInUp 0.6s ease-out 0.4s both"
                 }}
               >
                 <a
@@ -267,7 +267,7 @@ export const HeroBlock: ComponentConfig = {
                     boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                     textDecoration: "none",
                     fontWeight: 500,
-                    transition: "background-color 0.2s",
+                    transition: "background-color 0.2s"
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = `${ctaBackgroundColor}e6`;
@@ -295,7 +295,7 @@ export const HeroBlock: ComponentConfig = {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              animation: "fadeIn 0.2s ease-out",
+              animation: "fadeIn 0.2s ease-out"
             }}
           >
             <div
@@ -305,13 +305,13 @@ export const HeroBlock: ComponentConfig = {
                 width: "90%",
                 backgroundColor: "#000",
                 borderRadius: "12px",
-                overflow: "hidden",
+                overflow: "hidden"
               }}
             >
               <video
                 style={{
                   width: "100%",
-                  height: "auto",
+                  height: "auto"
                 }}
                 controls
                 autoPlay
@@ -346,5 +346,5 @@ export const HeroBlock: ComponentConfig = {
         `}</style>
       </>
     );
-  },
+  }
 };

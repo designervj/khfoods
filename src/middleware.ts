@@ -23,7 +23,6 @@ export async function middleware(req: NextRequest) {
    const pathWithoutLocale = pathname.replace(/^\/(en|pl|hr)/, "");
   // --- Tenant extraction ---
 
-
   if (pathWithoutLocale.startsWith("/checkout")) {
     const token = req.cookies.get("payload-token")?.value; // adjust name for your auth cookie
 
@@ -60,5 +59,5 @@ export const config = {
     "/",
     "/(pl|en|hr)/:path*",
     "/((?!api|_next|next|admin|route|proxy|.*\\..*).*)",
-  ],
+  ]
 };

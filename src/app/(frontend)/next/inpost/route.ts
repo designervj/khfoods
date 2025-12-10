@@ -80,14 +80,14 @@ export async function POST(req: Request) {
             collection: "orders",
             where: {
               "printLabel.packageNumber": {
-                equals: data.payload.shipment_id,
-              },
+                equals: data.payload.shipment_id
+              }
             },
             data: {
               orderDetails: {
-                status: "processing",
-              },
-            },
+                status: "processing"
+              }
+            }
           });
           break;
         }
@@ -98,14 +98,14 @@ export async function POST(req: Request) {
             collection: "orders",
             where: {
               "printLabel.packageNumber": {
-                equals: data.payload.shipment_id,
-              },
+                equals: data.payload.shipment_id
+              }
             },
             data: {
               orderDetails: {
-                status: "shipped",
-              },
-            },
+                status: "shipped"
+              }
+            }
           });
           break;
         }
@@ -118,14 +118,14 @@ export async function POST(req: Request) {
             collection: "orders",
             where: {
               "printLabel.packageNumber": {
-                equals: data.payload.shipment_id,
-              },
+                equals: data.payload.shipment_id
+              }
             },
             data: {
               orderDetails: {
-                status: "completed",
-              },
-            },
+                status: "completed"
+              }
+            }
           });
         }
       }

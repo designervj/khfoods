@@ -18,13 +18,13 @@ export const BaseSection: React.FC<BaseSectionProps> = ({
   className,
   id,
   backgroundColor = "white",
-  padding = "md",
+  padding = "md"
 }) => {
   const bgClasses = {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -32,7 +32,7 @@ export const BaseSection: React.FC<BaseSectionProps> = ({
     sm: "py-8 px-4",
     md: "py-12 px-6",
     lg: "py-16 px-8",
-    xl: "py-20 px-10",
+    xl: "py-20 px-10"
   };
 
   return (

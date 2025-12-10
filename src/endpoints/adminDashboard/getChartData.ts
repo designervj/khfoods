@@ -46,8 +46,8 @@ export const getChartData = async (req: PayloadRequest) => {
     const whereQuery: Where = {
       createdAt: {
         greater_than_equal: startDate,
-        less_than_equal: endDate,
-      },
+        less_than_equal: endDate
+      }
     };
 
     const { docs } = await payload.find({
@@ -57,11 +57,11 @@ export const getChartData = async (req: PayloadRequest) => {
       select: {
         orderDetails: {
           total: true,
-          currency: true,
+          currency: true
         },
-        createdAt: true,
+        createdAt: true
       },
-      where: whereQuery,
+      where: whereQuery
     });
 
     const { availableCurrencies, currencyValues } = await getCachedGlobal("shopSettings", "en")();
@@ -70,7 +70,7 @@ export const getChartData = async (req: PayloadRequest) => {
     const monthlyData = Array.from({ length: 12 }, (_, index) => ({
       name: t(`adminDashboard:${format(new Date(currentYear, index), "MMM").toLowerCase() as MonthUnion}`),
       orders: 0,
-      revenue: 0,
+      revenue: 0
     }));
 
     docs.forEach((doc: Order) => {

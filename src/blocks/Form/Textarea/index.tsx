@@ -16,7 +16,7 @@ export const Textarea = ({
   register,
   required: requiredFromProps,
   rows = 3,
-  width,
+  width
 }: TextField & {
   errors: Partial<FieldErrorsImpl<Record<string, any>>>;
   register: UseFormRegister<FieldValues>;

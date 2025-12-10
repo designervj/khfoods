@@ -9,7 +9,7 @@ import { themeIsValid, type Theme, type ThemeContextType } from "./types";
 
 const initialContext: ThemeContextType = {
   setTheme: () => null,
-  theme: "light",
+  theme: "light"
 };
 
 const ThemeContext = createContext(initialContext);

@@ -5,7 +5,7 @@ export const Tabs: Block = {
   interfaceName: "TabsBlock",
   labels: {
     singular: "📑 Tabs",
-    plural: "📑 Tabs",
+    plural: "📑 Tabs"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -35,13 +35,13 @@ export const Tabs: Block = {
                   name: "label",
                   type: "text",
                   label: "Tab Label",
-                  required: true,
+                  required: true
                 },
                 {
                   name: "content",
                   type: "richText",
                   label: "Tab Content",
-                  required: true,
+                  required: true
                 },
                 {
                   name: "icon",
@@ -55,18 +55,18 @@ export const Tabs: Block = {
                     { label: "Star", value: "star" },
                     { label: "Heart", value: "heart" },
                   ],
-                  defaultValue: "none",
+                  defaultValue: "none"
                 },
-              ],
+              ]
             },
             {
               name: "defaultTab",
               type: "number",
               label: "Default Active Tab (0-based index)",
               defaultValue: 0,
-              min: 0,
+              min: 0
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -80,7 +80,7 @@ export const Tabs: Block = {
                 { label: "Underline", value: "underline" },
                 { label: "Pills", value: "pills" },
                 { label: "Boxed", value: "boxed" },
-              ],
+              ]
             },
             {
               name: "tabsPosition",
@@ -91,7 +91,7 @@ export const Tabs: Block = {
                 { label: "Top", value: "top" },
                 { label: "Left", value: "left" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "tabsAlignment",
@@ -104,48 +104,48 @@ export const Tabs: Block = {
                 { label: "Right", value: "right" },
               ],
               admin: {
-                condition: (data) => data.tabsPosition === "top",
-              },
+                condition: (data) => data.tabsPosition === "top"
+              }
             },
             {
               name: "activeTabColor",
               type: "text",
               label: "Active Tab Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "inactiveTabColor",
               type: "text",
               label: "Inactive Tab Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "tabBackgroundColor",
               type: "text",
               label: "Tab Background Color",
               admin: {
-                description: "Hex color code (for pills/boxed style)",
-              },
+                description: "Hex color code (for pills/boxed style)"
+              }
             },
             {
               name: "contentBackgroundColor",
               type: "text",
               label: "Content Background Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "contentBorderColor",
               type: "text",
               label: "Content Border Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "borderRadius",
@@ -157,7 +157,7 @@ export const Tabs: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -169,7 +169,7 @@ export const Tabs: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -181,7 +181,7 @@ export const Tabs: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -192,16 +192,16 @@ export const Tabs: Block = {
                 { label: "None", value: "none" },
                 { label: "Fade", value: "fade" },
                 { label: "Slide", value: "slide" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

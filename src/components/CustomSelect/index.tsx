@@ -14,67 +14,67 @@ export const PermissionAutoFill: React.FC = (props: any) => {
       dispatchFields({
         type: 'UPDATE',
         path: 'pages_create',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'pages_read',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'pages_update',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'pages_delete',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'products_create',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'products_read',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'products_update',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'products_delete',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'productPermission',
-        value: ['read', 'write', 'delete', 'update'],
+        value: ['read', 'write', 'delete', 'update']
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'media_create',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'media_read',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'media_update',
-        value: true,
+        value: true
       })
       dispatchFields({
         type: 'UPDATE',
         path: 'media_delete',
-        value: true,
+        value: true
       })
     }
   }, [assignedTo?.value, dispatchFields])

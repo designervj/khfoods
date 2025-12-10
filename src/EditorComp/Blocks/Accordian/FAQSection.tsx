@@ -32,9 +32,9 @@ export const FAQSection: ComponentConfig = {
       label: "FAQ Items",
       arrayFields: {
         question: { type: "text", label: "Question" },
-        answer: { type: "textarea", label: "Answer" },
-      },
-    },
+        answer: { type: "textarea", label: "Answer" }
+      }
+    }
   },
 
   defaultProps: {
@@ -59,25 +59,25 @@ export const FAQSection: ComponentConfig = {
     items: [
       {
         question: "Where is your company based, and who do you serve?",
-        answer: "We work globally with clients from many regions...",
+        answer: "We work globally with clients from many regions..."
       },
       {
         question: "How do you ensure smooth communication with UK/US clients?",
-        answer: "We maintain consistent communication channels...",
+        answer: "We maintain consistent communication channels..."
       },
       {
         question: "What services do you offer?",
-        answer: "We provide web development, design, branding...",
+        answer: "We provide web development, design, branding..."
       },
       {
         question: "Do you sign NDAs and ensure data security?",
-        answer: "Yes, we sign NDAs and follow strict security protocols.",
+        answer: "Yes, we sign NDAs and follow strict security protocols."
       },
       {
         question: "How can I start a project with you?",
-        answer: "You can contact us anytime and we will guide you.",
+        answer: "You can contact us anytime and we will guide you."
       },
-    ],
+    ]
   },
 
   render: ({
@@ -97,7 +97,7 @@ export const FAQSection: ComponentConfig = {
     answerSize,
     answerColor,
 
-    items,
+    items
   }) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -108,7 +108,7 @@ export const FAQSection: ComponentConfig = {
           justifyContent: "space-between",
           gap: `${gap}px`,
           width: "100%",
-          alignItems: "flex-start",
+          alignItems: "flex-start"
         }}
       >
         {/* LEFT SIDE */}
@@ -118,7 +118,7 @@ export const FAQSection: ComponentConfig = {
               fontSize: `${leftTitleSize}px`,
               fontWeight: "700",
               marginBottom: "20px",
-              color: "#111",
+              color: "#111"
             }}
           >
             {leftTitle}
@@ -129,7 +129,7 @@ export const FAQSection: ComponentConfig = {
               fontSize: `${leftDescSize}px`,
               color: "#333",
               lineHeight: "26px",
-              marginBottom: "25px",
+              marginBottom: "25px"
             }}
           >
             {leftDescription}
@@ -144,7 +144,7 @@ export const FAQSection: ComponentConfig = {
               border: "none",
               fontSize: "16px",
               fontWeight: "600",
-              cursor: "pointer",
+              cursor: "pointer"
             }}
           >
             {buttonText}
@@ -157,7 +157,7 @@ export const FAQSection: ComponentConfig = {
             width: "55%",
             display: "flex",
             flexDirection: "column",
-            gap: "12px",
+            gap: "12px"
           }}
         >
           {items.map((item, index) => {
@@ -171,14 +171,14 @@ export const FAQSection: ComponentConfig = {
                   background: itemBg,
                   padding: "18px 22px",
                   borderRadius: `${itemRadius}px`,
-                  cursor: "pointer",
+                  cursor: "pointer"
                 }}
               >
                 <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center",
+                    alignItems: "center"
                   }}
                 >
                   <p
@@ -186,7 +186,7 @@ export const FAQSection: ComponentConfig = {
                       fontSize: `${questionSize}px`,
                       color: questionColor,
                       fontWeight: 600,
-                      margin: 0,
+                      margin: 0
                     }}
                   >
                     {item.question}
@@ -195,7 +195,7 @@ export const FAQSection: ComponentConfig = {
                   <span
                     style={{
                       fontSize: "22px",
-                      fontWeight: "700",
+                      fontWeight: "700"
                     }}
                   >
                     {isOpen ? "−" : "+"}
@@ -208,7 +208,7 @@ export const FAQSection: ComponentConfig = {
                       marginTop: "12px",
                       fontSize: `${answerSize}px`,
                       lineHeight: "24px",
-                      color: answerColor,
+                      color: answerColor
                     }}
                   >
                     {item.answer}
@@ -220,5 +220,5 @@ export const FAQSection: ComponentConfig = {
         </div>
       </div>
     );
-  },
+  }
 };

@@ -5,7 +5,7 @@ export const TeamMember: Block = {
   interfaceName: "TeamMemberBlock",
   labels: {
     singular: "👤 Team Member",
-    plural: "👤 Team Members",
+    plural: "👤 Team Members"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -28,37 +28,37 @@ export const TeamMember: Block = {
               type: "upload",
               label: "Photo",
               relationTo: "media",
-              required: true,
+              required: true
             },
             {
               name: "name",
               type: "text",
               label: "Name",
-              required: true,
+              required: true
             },
             {
               name: "position",
               type: "text",
               label: "Position/Title",
-              required: true,
+              required: true
             },
             {
               name: "bio",
               type: "textarea",
               label: "Bio",
               admin: {
-                rows: 3,
-              },
+                rows: 3
+              }
             },
             {
               name: "email",
               type: "email",
-              label: "Email",
+              label: "Email"
             },
             {
               name: "phone",
               type: "text",
-              label: "Phone",
+              label: "Phone"
             },
             {
               name: "socialLinks",
@@ -75,17 +75,17 @@ export const TeamMember: Block = {
                     { label: "Facebook", value: "facebook" },
                     { label: "Instagram", value: "instagram" },
                     { label: "GitHub", value: "github" },
-                  ],
+                  ]
                 },
                 {
                   name: "url",
                   type: "text",
                   label: "URL",
-                  required: true,
+                  required: true
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -99,7 +99,7 @@ export const TeamMember: Block = {
                 { label: "Card", value: "card" },
                 { label: "Horizontal", value: "horizontal" },
                 { label: "Overlay", value: "overlay" },
-              ],
+              ]
             },
             {
               name: "imageShape",
@@ -110,7 +110,7 @@ export const TeamMember: Block = {
                 { label: "Square", value: "square" },
                 { label: "Circle", value: "circle" },
                 { label: "Rounded", value: "rounded" },
-              ],
+              ]
             },
             {
               name: "textAlign",
@@ -120,27 +120,27 @@ export const TeamMember: Block = {
               options: [
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
-              ],
+              ]
             },
             {
               name: "nameColor",
               type: "text",
-              label: "Name Color",
+              label: "Name Color"
             },
             {
               name: "positionColor",
               type: "text",
-              label: "Position Color",
+              label: "Position Color"
             },
             {
               name: "bioColor",
               type: "text",
-              label: "Bio Color",
+              label: "Bio Color"
             },
             {
               name: "backgroundColor",
               type: "text",
-              label: "Background Color",
+              label: "Background Color"
             },
             {
               name: "borderRadius",
@@ -152,7 +152,7 @@ export const TeamMember: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -163,7 +163,7 @@ export const TeamMember: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -175,7 +175,7 @@ export const TeamMember: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "hoverEffect",
@@ -186,7 +186,7 @@ export const TeamMember: Block = {
                 { label: "None", value: "none" },
                 { label: "Lift", value: "lift" },
                 { label: "Scale", value: "scale" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -197,16 +197,16 @@ export const TeamMember: Block = {
                 { label: "None", value: "none" },
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Slide Up", value: "slideUp" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

@@ -5,7 +5,7 @@ import {
   paddingBottomClasses,
   paddingTopClasses,
   spacingBottomClasses,
-  spacingTopClasses,
+  spacingTopClasses
 } from "@/blocks/globals";
 import RichText from "@/components/RichText";
 import { WithInlinePrice } from "@/globals/(ecommerce)/Layout/ProductList/variants/listings/WithInlinePrice";
@@ -51,7 +51,7 @@ export const HotspotBlock = async ({
   subcategory,
   title,
   sort,
-  products,
+  products
 }: HotspotBlockProps) => {
   const payload = await getPayload({ config });
 
@@ -64,11 +64,11 @@ export const HotspotBlock = async ({
         depth: 2,
         where: {
           "categoriesArr.category": {
-            equals: typeof category === "string" ? category : category?.id,
-          },
+            equals: typeof category === "string" ? category : category?.id
+          }
         },
         limit: limit ?? 4,
-        sort: sort?.split(",") ?? ["-bought"],
+        sort: sort?.split(",") ?? ["-bought"]
       });
       productsToShow = categoryProducts;
       break;
@@ -79,11 +79,11 @@ export const HotspotBlock = async ({
         depth: 2,
         where: {
           "categoriesArr.subcategories": {
-            in: typeof subcategory === "string" ? subcategory : subcategory?.id,
-          },
+            in: typeof subcategory === "string" ? subcategory : subcategory?.id
+          }
         },
         limit: limit ?? 4,
-        sort: sort?.split(",") ?? ["-bought"],
+        sort: sort?.split(",") ?? ["-bought"]
       });
       productsToShow = subcategoryProducts;
       break;

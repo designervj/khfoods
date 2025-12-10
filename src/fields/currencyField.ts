@@ -6,7 +6,7 @@ export const currencyField: Field = {
   required: true,
   admin: {
     components: {
-      Field: "@/components/(ecommerce)/CurrencySelect#CurrencySelect",
-    },
-  },
+      Field: "@/components/(ecommerce)/CurrencySelect#CurrencySelect"
+    }
+  }
 };

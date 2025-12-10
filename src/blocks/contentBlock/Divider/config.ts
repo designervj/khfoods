@@ -5,7 +5,7 @@ export const Divider: Block = {
   interfaceName: "DividerBlock",
   labels: {
     singular: "➖ Divider",
-    plural: "➖ Dividers",
+    plural: "➖ Dividers"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -35,13 +35,13 @@ export const Divider: Block = {
                 { label: "Dotted", value: "dotted" },
                 { label: "Double", value: "double" },
                 { label: "Gradient", value: "gradient" },
-              ],
+              ]
             },
             {
               name: "showIcon",
               type: "checkbox",
               label: "Show Icon/Text in Center",
-              defaultValue: false,
+              defaultValue: false
             },
             {
               name: "centerContent",
@@ -53,8 +53,8 @@ export const Divider: Block = {
                 { label: "Text", value: "text" },
               ],
               admin: {
-                condition: (data) => Boolean(data.showIcon),
-              },
+                condition: (data) => Boolean(data.showIcon)
+              }
             },
             {
               name: "icon",
@@ -69,18 +69,18 @@ export const Divider: Block = {
                 { label: "Square", value: "square" },
               ],
               admin: {
-                condition: (data) => data.showIcon && data.centerContent === "icon",
-              },
+                condition: (data) => data.showIcon && data.centerContent === "icon"
+              }
             },
             {
               name: "text",
               type: "text",
               label: "Text",
               admin: {
-                condition: (data) => data.showIcon && data.centerContent === "text",
-              },
+                condition: (data) => data.showIcon && data.centerContent === "text"
+              }
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -95,7 +95,7 @@ export const Divider: Block = {
                 { label: "75%", value: "3/4" },
                 { label: "50%", value: "1/2" },
                 { label: "25%", value: "1/4" },
-              ],
+              ]
             },
             {
               name: "alignment",
@@ -106,7 +106,7 @@ export const Divider: Block = {
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "color",
@@ -114,8 +114,8 @@ export const Divider: Block = {
               label: "Color",
               defaultValue: "#e5e7eb",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "thickness",
@@ -128,7 +128,7 @@ export const Divider: Block = {
                 { label: "3px", value: "3" },
                 { label: "4px", value: "4" },
                 { label: "5px", value: "5" },
-              ],
+              ]
             },
             {
               name: "marginTop",
@@ -141,7 +141,7 @@ export const Divider: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "marginBottom",
@@ -154,7 +154,7 @@ export const Divider: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "gradientStartColor",
@@ -162,8 +162,8 @@ export const Divider: Block = {
               label: "Gradient Start Color",
               admin: {
                 condition: (data) => data.style === "gradient",
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "gradientEndColor",
@@ -171,8 +171,8 @@ export const Divider: Block = {
               label: "Gradient End Color",
               admin: {
                 condition: (data) => data.style === "gradient",
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "animation",
@@ -183,16 +183,16 @@ export const Divider: Block = {
                 { label: "None", value: "none" },
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Expand", value: "expand" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

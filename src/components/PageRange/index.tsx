@@ -1,14 +1,14 @@
 /* eslint-disable */
 const defaultLabels = {
   plural: "Docs",
-  singular: "Doc",
+  singular: "Doc"
 };
 
 const defaultCollectionLabels = {
   posts: {
     plural: "Posts",
-    singular: "Post",
-  },
+    singular: "Post"
+  }
 };
 
 export const PageRange = (props: {
@@ -28,7 +28,7 @@ export const PageRange = (props: {
     collectionLabels: collectionLabelsFromProps,
     currentPage,
     limit,
-    totalDocs,
+    totalDocs
   } = props;
 
   let indexStart = (currentPage ? currentPage - 1 : 1) * (limit || 1) + 1;

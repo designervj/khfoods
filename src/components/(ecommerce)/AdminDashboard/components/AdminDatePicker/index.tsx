@@ -37,13 +37,13 @@ export function AdminDatePicker({ className }: React.HTMLAttributes<HTMLDivEleme
     if (fromParam) {
       return {
         from: new Date(fromParam),
-        to: toParam ? new Date(toParam) : undefined,
+        to: toParam ? new Date(toParam) : undefined
       };
     }
 
     return {
       from: subDays(new Date(), 30),
-      to: new Date(),
+      to: new Date()
     };
   });
 
@@ -114,7 +114,7 @@ export function AdminDatePicker({ className }: React.HTMLAttributes<HTMLDivEleme
               day_range_middle: "bg-payload-elevation-200 text-payload-elevation-900",
               day_today: "bg-payload-elevation-200 text-payload-elevation-0",
               day_outside: "bg-transparent text-muted-foreground",
-              cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-payload-elevation-200/50 [&:has([aria-selected])]:bg-payload-elevation-200 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+              cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-payload-elevation-200/50 [&:has([aria-selected])]:bg-payload-elevation-200 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20"
             }}
           />
         </PopoverContent>

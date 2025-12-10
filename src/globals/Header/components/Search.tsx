@@ -17,7 +17,7 @@ import {
   CommandItem,
   CommandList,
   CommandSearchInput,
-  CommandSeparator,
+  CommandSeparator
 } from "@/components/ui/command";
 import { type Locale } from "@/i18n/config";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
@@ -64,15 +64,15 @@ export const Search = () => {
         or: [
           {
             title: {
-              contains: value,
-            },
+              contains: value
+            }
           },
           {
             slug: {
-              contains: value,
-            },
+              contains: value
+            }
           },
-        ],
+        ]
       };
 
       const productsSelect = {
@@ -81,22 +81,22 @@ export const Search = () => {
         title: true,
         images: true,
         variants: {
-          pricing: true,
+          pricing: true
         },
         enableVariantPrices: true,
-        pricing: true,
+        pricing: true
       };
 
       const categorySelect = {
         id: true,
         slug: true,
-        title: true,
+        title: true
       };
 
       const productStringifiedQuery = stringify(
         {
           where,
-          select: productsSelect,
+          select: productsSelect
         },
         { addQueryPrefix: true }
       );
@@ -104,7 +104,7 @@ export const Search = () => {
       const categoryStringifiedQuery = stringify(
         {
           where,
-          select: categorySelect,
+          select: categorySelect
         },
         { addQueryPrefix: true }
       );
@@ -112,7 +112,7 @@ export const Search = () => {
       const { data: productData } = await axios.get<{ docs: Product[] }>(
         `/api/products${productStringifiedQuery}&locale=${locale}&limit=5`,
         {
-          withCredentials: true,
+          withCredentials: true
         }
       );
 
@@ -121,7 +121,7 @@ export const Search = () => {
       }>(
         `/api/productCategories${categoryStringifiedQuery}&locale=${locale}&limit=5`,
         {
-          withCredentials: true,
+          withCredentials: true
         }
       );
 

@@ -33,11 +33,11 @@ export const ArchiveBlock = async (
         ? {
             where: {
               categories: {
-                in: flattenedCategories,
-              },
-            },
+                in: flattenedCategories
+              }
+            }
           }
-        : {}),
+        : {})
     });
 
     posts = fetchedPosts.docs;

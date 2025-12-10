@@ -19,7 +19,7 @@ export const TwoEqualColumnsComponent: React.FC<TwoEqualColumnsBlockProps> = ({
   gap = "md",
   leftColumn = [],
   rightColumn = [],
-  className,
+  className
 }) => {
   // Render each column's blocks
   const renderedColumns = [

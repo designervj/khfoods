@@ -19,7 +19,7 @@ export const TwoThirdsOneThirdComponent: React.FC<TwoThirdsOneThirdBlockProps> =
   gap = "md",
   leftColumn = [],
   rightColumn = [],
-  className,
+  className
 }) => {
   return (
     <TwoThirdsOneThird

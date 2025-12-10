@@ -19,7 +19,7 @@ export const OneQuarterThreeQuartersComponent: React.FC<OneQuarterThreeQuartersB
   gap = "md",
   leftColumn = [],
   rightColumn = [],
-  className,
+  className
 }) => {
   return (
     <OneQuarterThreeQuarters

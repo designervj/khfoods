@@ -30,8 +30,8 @@ export async function generateStaticParams() {
   overrideAccess: true,
       pagination: false,
       select: {
-        slug: true,
-      },
+        slug: true
+      }
     });
     if (!posts?.docs) {
       console.error("No posts.docs returned from payload.find in generateStaticParams");
@@ -113,9 +113,9 @@ const queryPostBySlug = cache(async ({ slug, locale }: { slug: string; locale: L
       locale,
       where: {
         slug: {
-          equals: slug,
-        },
-      },
+          equals: slug
+        }
+      }
     });
     if (!result?.docs) {
       console.error(`No docs returned for slug="${slug}" locale="${locale}" in queryPostBySlug`);

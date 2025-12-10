@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     const {
       orderID,
       dimension,
-      dimensions,
+      dimensions
     }: {
       orderID: string;
       dimension: string;
@@ -55,13 +55,12 @@ export async function POST(req: Request) {
 
     const order = await payload.findByID({
       collection: "orders",
-      id: orderID,
+      id: orderID
     });
 
     if (!order) {
       return Response.json("Cannot find order", { status: 400 });
     }
-
 
     const courier = (await createCouriers(locale)).find(
       (c) => c.key === order.orderDetails?.shipping

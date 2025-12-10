@@ -12,7 +12,7 @@ export const SizeSelect: TextFieldClientComponent = ({ path }) => {
   const variantSlugPath = path.replace(/[^.]+$/, "variantSlug");
 
   const { setValue: setVariantSlugValue } = useField<string>({
-    path: variantSlugPath,
+    path: variantSlugPath
   });
 
   const { getDataByPath, getSiblingData } = useForm();
@@ -47,14 +47,14 @@ export const SizeSelect: TextFieldClientComponent = ({ path }) => {
       <Select
         value={{
           label: sizes?.find((size) => size.slug === value)?.label,
-          value,
+          value
         }}
         onChange={handleSizeChange}
         options={
           sizes
             ? sizes?.map((size) => ({
                 label: size.label,
-                value: size.slug,
+                value: size.slug
               }))
             : []
         }

@@ -6,34 +6,34 @@ import { Access, CollectionConfig } from "payload";
 export const Websites: CollectionConfig = {
   slug: "websites",
   labels: {
-    singular: "Website",
-    plural: "Websites",
+    singular: { en: "Website", zh: "网站" },
+    plural: { en: "Websites", zh: "网站" }
   },
   defaultPopulate: {
     name: true,
-    slug: true,
+    slug: true
   },
   admin: {
     useAsTitle: "name",
-    group: "Website Management",
+    group: { en: "Website Management", zh: "网站管理" },
     meta: {
       other: {
-        order: 0,
-      },
-    },
+        order: 0
+      }
+    }
   },
   access: {
     read: () => true,
     create: () => true,
     update: () => true,
     delete: () => true,
-    admin: () => true,
+    admin: () => true
   },
   fields: [
     {
       name: "name",
       type: "text",
-      required: true,
+      required: true
     },
     {
       name: "domains",
@@ -52,8 +52,8 @@ Sub Domain Guidelines:
 • Do NOT include: http://, https://, www, .com, .in, etc.
 • System will automatically convert: name → name.mandalalabs.xyz
 Example: Enter "mydomain" → Saved as "mydomain.mandalalabs.xyz"
-`,
-          },
+`
+          }
         },
         {
           name: "domain",
@@ -86,11 +86,11 @@ Example: Enter "mydomain" → Saved as "mydomain.mandalalabs.xyz"
                 siblingData.domain = finalDomain;
                 return finalDomain;
               },
-            ],
+            ]
            
-          },
+          }
         },
-      ],
+      ]
     },
 
     {
@@ -100,8 +100,8 @@ Example: Enter "mydomain" → Saved as "mydomain.mandalalabs.xyz"
       defaultValue: ({ req: { user } }) => user?.id ?? null,
       admin: {
         readOnly: true,
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
 
     {
@@ -109,10 +109,10 @@ Example: Enter "mydomain" → Saved as "mydomain.mandalalabs.xyz"
       type: "relationship",
       relationTo: "administrators",
       admin: {
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
 
     ...slugField("name"),
-  ],
+  ]
 };

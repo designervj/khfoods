@@ -29,7 +29,7 @@ export const CMSLink = (props: CMSLinkType) => {
     newTab,
     reference,
     size: sizeFromProps,
-    url,
+    url
   } = props;
   const href =
     type === "reference" && typeof reference?.value === "object" && reference.value.slug

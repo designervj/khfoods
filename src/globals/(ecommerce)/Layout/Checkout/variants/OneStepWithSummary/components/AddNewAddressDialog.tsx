@@ -16,7 +16,7 @@ export const AddNewAddressDialog = ({
   open,
   setOpen,
   user,
-  setShipping,
+  setShipping
 }: {
   open: boolean;
   user: Customer;
@@ -35,9 +35,9 @@ export const AddNewAddressDialog = ({
         region: "",
         postalCode: "",
         phone: "",
-        email: "",
-      },
-    },
+        email: ""
+      }
+    }
   });
 
   const t = useTranslations("CheckoutForm.add-address-dialog");
@@ -49,22 +49,22 @@ export const AddNewAddressDialog = ({
       }>(
         `/api/customers/${user?.id}`,
         {
-          shippings: [...(user.shippings ?? []), values.shipping],
+          shippings: [...(user.shippings ?? []), values.shipping]
         },
         {
-          withCredentials: true,
+          withCredentials: true
         },
       );
       if (data.doc.shippings) {
         setShipping({
           ...data.doc.shippings[data.doc.shippings.length - 1],
-          id: data.doc.shippings[data.doc.shippings.length - 1].id ?? undefined,
+          id: data.doc.shippings[data.doc.shippings.length - 1].id ?? undefined
         });
         setOpen(false);
       }
     } catch {
       form.setError("root", {
-        message: "Internal server error",
+        message: "Internal server error"
       });
     }
   };

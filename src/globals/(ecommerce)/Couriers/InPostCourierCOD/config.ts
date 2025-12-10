@@ -8,16 +8,16 @@ export const InPostCourierCOD: GlobalConfig = {
   slug: "inpost-courier-cod",
   label: {
     en: "InPost COD Courier",
-    pl: "InPost Kurier pobraniowy",
+    zh: "InPost货到付款快递"
   },
   access: {
-    read: () => true,
+    read: () => true
   },
   admin: {
     group: {
       en: "Courier integrations",
-      pl: "Integracje kurierskie",
-    },
+      zh: "快递集成"
+    }
   },
   fields: [
     {
@@ -25,95 +25,95 @@ export const InPostCourierCOD: GlobalConfig = {
       tabs: [
         {
           label: {
-            en: "InPost Courier",
-            pl: "Kurier InPost",
+            en: "InPost Courier"
+
           },
-          fields: courierFields,
+          fields: courierFields
         },
         {
           label: {
-            en: "API Keys",
-            pl: "Klucze API",
+            en: "API Keys"
+
           },
           fields: [
             {
               name: "clientId",
               type: "text",
               label: {
-                en: "Client ID",
-                pl: "ID Klienta",
+                en: "Client ID"
+
               },
               access: {
                 read: authenticated,
                 create: authenticated,
-                update: authenticated,
+                update: authenticated
               },
               required: true,
               admin: {
-                condition: (data) => Boolean(data.enabled),
-              },
+                condition: (data) => Boolean(data.enabled)
+              }
             },
             {
               name: "APIUrl",
               type: "select",
               label: {
-                en: "Environment",
-                pl: "Środowisko",
+                en: "Environment"
+
               },
               access: {
                 read: authenticated,
                 create: authenticated,
-                update: authenticated,
+                update: authenticated
               },
               required: true,
               defaultValue: "https://api-shipx-pl.easypack24.net",
               options: [
                 {
                   label: {
-                    en: "Production",
-                    pl: "Produkcja",
+                    en: "Production"
+
                   },
-                  value: "https://api-shipx-pl.easypack24.net",
+                  value: "https://api-shipx-pl.easypack24.net"
                 },
                 {
                   label: {
-                    en: "Sandbox",
-                    pl: "Sandbox",
+                    en: "Sandbox"
+
                   },
-                  value: "https://sandbox-api-shipx-pl.easypack24.net",
+                  value: "https://sandbox-api-shipx-pl.easypack24.net"
                 },
               ],
               admin: {
                 condition: (data) => Boolean(data.enabled),
                 description: {
-                  en: "Remember to pass matching keys for choosen environment",
-                  pl: "Pamiętaj o przekazaniu odpowiednich kluczy dla wybranego środowiska",
-                },
-              },
+                  en: "Remember to pass matching keys for choosen environment"
+
+                }
+              }
             },
             {
               name: "shipXAPIKey",
               type: "text",
               label: {
-                en: "API ShipX key",
-                pl: "Klucz API ShipX",
+                en: "API ShipX key"
+
               },
               access: {
                 read: authenticated,
                 create: authenticated,
-                update: authenticated,
+                update: authenticated
               },
               required: true,
               admin: {
-                condition: (data) => Boolean(data.enabled),
-              },
+                condition: (data) => Boolean(data.enabled)
+              }
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
   ],
   hooks: {
-    afterChange: [revalidateGlobal],
-  },
+    afterChange: [revalidateGlobal]
+  }
 };

@@ -17,7 +17,7 @@ export const getPriceRange = (variants: Product["variants"], enableVariantPrices
       acc[currency].push({
         ...currentPrice,
         currency: currentPrice.currency as Currency,
-        id: currentPrice.id ?? undefined,
+        id: currentPrice.id ?? undefined
       });
       return acc;
     },

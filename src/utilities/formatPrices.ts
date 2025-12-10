@@ -8,7 +8,7 @@
 export const formatPrice = (price: number, currency: string, locale: string) => {
   const formattedPrice = new Intl.NumberFormat(`${locale}-${locale.toUpperCase()}`, {
     style: "currency",
-    currency: currency,
+    currency: currency
   }).format(price);
   return formattedPrice;
 };

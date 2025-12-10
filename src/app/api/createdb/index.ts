@@ -16,7 +16,7 @@ export async function POST(req: Request): Promise<Response> {
     const SAMPLE_DOCUMENT = {
       name: "AutoUser",
       status: "active",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toISOString()
     };
 
     const client = new MongoClient(connectionString);
@@ -34,7 +34,7 @@ export async function POST(req: Request): Promise<Response> {
       message: "Database and collection created successfully.",
       insertedId: result.insertedId,
       db: dbName,
-      collection: collectionName,
+      collection: collectionName
     });
   } catch (error: any) {
     console.error("❌ Error:", error);

@@ -16,64 +16,64 @@ export const hero: Field = {
       options: [
         {
           label: "None",
-          value: "none",
+          value: "none"
         },
         {
           label: "High Impact",
-          value: "highImpact",
+          value: "highImpact"
         },
         {
           label: "Medium Impact",
-          value: "mediumImpact",
+          value: "mediumImpact"
         },
         {
           label: "Low Impact",
-          value: "lowImpact",
+          value: "lowImpact"
         },
         { 
           label: "Two Column (Heading + Image)", 
-          value: "twoColumn", 
+          value: "twoColumn" 
         }, 
         { 
           label: "Single Column with Background", 
-          value: "singleColumnBackground", 
+          value: "singleColumnBackground" 
         }, 
         { 
           label: "Video Modal Hero", 
-          value: "videoModal", 
+          value: "videoModal" 
         }, 
       ],
-      required: true,
+      required: true
     },
     {
       name: "richText",
       type: "richText",
       editor: defaultLexical,
       localized: true,
-      label: false,
+      label: false
     },
     linkGroup({
       overrides: {
-        maxRows: 2,
-      },
+        maxRows: 2
+      }
     }),
     {
       name: "media",
       type: "upload",
       admin: {
-        condition: (_, { type } = {}) => ["highImpact", "mediumImpact"].includes(type as string),
+        condition: (_, { type } = {}) => ["highImpact", "mediumImpact"].includes(type as string)
       },
       relationTo: "media",
-      required: true,
+      required: true
     },
     {
       name: "reversed",
       label: "Reverse photo and text",
       type: "checkbox",
       admin: {
-        condition: (_, { type } = {}) => ["mediumImpact"].includes(type as string),
+        condition: (_, { type } = {}) => ["mediumImpact"].includes(type as string)
       },
-      required: true,
+      required: true
     },
     {
       label: "Video Modal Hero",
@@ -86,8 +86,8 @@ export const hero: Field = {
         { name: "video_backgroundColor", type: "text", label: "Background Color" },
       ],
       admin: {
-        condition: (_, { type } = {}) => type === "videoModal",
-      },
+        condition: (_, { type } = {}) => type === "videoModal"
+      }
     },
     {
       label: "Two Column",
@@ -104,8 +104,8 @@ export const hero: Field = {
         { name: "twoCol_backgroundColor", type: "text", label: "Background Color" },
       ],
       admin: {
-        condition: (_, { type } = {}) => type === "twoColumn",
-      },
+        condition: (_, { type } = {}) => type === "twoColumn"
+      }
     },
     {
       label: "Single Column",
@@ -126,10 +126,10 @@ export const hero: Field = {
         },
       ],
       admin: {
-        condition: (_, { type } = {}) => type === "singleColumnBackground",
-      },
+        condition: (_, { type } = {}) => type === "singleColumnBackground"
+      }
     }
     
   ],
-  label: false,
+  label: false
 };

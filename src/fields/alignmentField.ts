@@ -8,16 +8,16 @@ export const AlignmentField: Field = {
   options: [
     {
       label: "Center",
-      value: "center",
+      value: "center"
     },
     {
       label: "Left",
-      value: "left",
+      value: "left"
     },
     {
       label: "Right",
-      value: "right",
+      value: "right"
     },
     { label: "Full width", value: "full" },
-  ],
+  ]
 };

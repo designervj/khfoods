@@ -17,10 +17,10 @@ export const readAccessPage: any = async ({ req }) => {
       collection: "permission",
       where: {
         "assignedTo.id": {
-          equals: user.id,
-        },
+          equals: user.id
+        }
       },
-      limit: 1,
+      limit: 1
     });
 
     // No permissions found - deny access
@@ -48,9 +48,9 @@ export const readAccessPage: any = async ({ req }) => {
         collection: "websites",
         where: {
           "tenantID.id": {
-            equals: user.id,
-          },
-        },
+            equals: user.id
+          }
+        }
       });
 
       if (!websites.docs.length) {
@@ -61,8 +61,8 @@ export const readAccessPage: any = async ({ req }) => {
 
       return {
         website: {
-          equals: id,
-        },
+          equals: id
+        }
       };
     }
 
@@ -77,9 +77,9 @@ export const readAccessPage: any = async ({ req }) => {
       collection: "websites",
       where: {
         "tenantID.id": {
-          equals: parentOrgId,
-        },
-      },
+          equals: parentOrgId
+        }
+      }
     });
 
     // Get all website IDs
@@ -89,16 +89,16 @@ export const readAccessPage: any = async ({ req }) => {
     if (!websiteIds.length) {
       return {
         createdBy: {
-          equals: user.id,
-        },
+          equals: user.id
+        }
       };
     }
 
     // Return query to show pages linked to parent organization's websites
     return {
       website: {
-        in: websiteIds as string[],
-      },
+        in: websiteIds as string[]
+      }
     };
   } catch (error) {
     console.error("Error in pages read access:", error);
@@ -118,10 +118,10 @@ export const createAccessPage: Access = async ({ req }) => {
     collection: "permission",
     where: {
       "assignedTo.id": {
-        equals: user.id,
-      },
+        equals: user.id
+      }
     },
-    limit: 1,
+    limit: 1
   });
 
   if (user.collection == "administrators" && user.role == "admin") {
@@ -150,10 +150,10 @@ export const deleteAccessPage: Access = async ({ req }) => {
     collection: "permission",
     where: {
       "assignedTo.id": {
-        equals: user.id,
-      },
+        equals: user.id
+      }
     },
-    limit: 1,
+    limit: 1
   });
 
   if (user.collection == "administrators" && user.role == "admin") {
@@ -182,10 +182,10 @@ export const updateAccessPage: Access = async ({ req }) => {
     collection: "permission",
     where: {
       "assignedTo.id": {
-        equals: user.id,
-      },
+        equals: user.id
+      }
     },
-    limit: 1,
+    limit: 1
   });
 
   if (user.collection == "administrators" && user.role == "admin") {
@@ -210,9 +210,9 @@ export const readAccessAdmin: any = async ({ req }) => {
     collection: "permission",
     where: {
       "assignedTo.id": {
-        equals: user?.id,
-      },
-    },
+        equals: user?.id
+      }
+    }
   });
 
   if (user?.collection == "administrators") {
@@ -223,8 +223,8 @@ export const readAccessAdmin: any = async ({ req }) => {
     if (user.role == "business" && permissions.docs[0].administration_read) {
       return {
         createdBy: {
-          equals: user?.id,
-        },
+          equals: user?.id
+        }
       };
     }
 
@@ -233,9 +233,9 @@ export const readAccessAdmin: any = async ({ req }) => {
         collection: "permission",
         where: {
           "parentOrganization.id": {
-            equals: user.id,
-          },
-        },
+            equals: user.id
+          }
+        }
       });
 
       const users_only = [
@@ -247,8 +247,8 @@ export const readAccessAdmin: any = async ({ req }) => {
 
       return {
         id: {
-          in: users_only,
-        },
+          in: users_only
+        }
       };
     }
 

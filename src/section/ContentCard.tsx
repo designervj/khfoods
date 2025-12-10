@@ -30,7 +30,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({
   button,
   variant = "default",
   className,
-  children,
+  children
 }) => {
   const variants = {
     default: "bg-white p-6",
@@ -38,13 +38,13 @@ export const ContentCard: React.FC<ContentCardProps> = ({
     minimal: "bg-transparent p-4",
     "image-top": "bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm",
     card: "bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow",
-    bordered: "bg-white border-2 border-gray-300 rounded-lg p-6",
+    bordered: "bg-white border-2 border-gray-300 rounded-lg p-6"
   };
 
   const buttonVariants = {
     primary: "bg-blue-600 text-white hover:bg-blue-700",
     secondary: "bg-gray-600 text-white hover:bg-gray-700",
-    outline: "border border-gray-300 text-gray-700 hover:bg-gray-50",
+    outline: "border border-gray-300 text-gray-700 hover:bg-gray-50"
   };
 
   return (

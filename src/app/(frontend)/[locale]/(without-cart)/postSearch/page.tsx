@@ -32,7 +32,7 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
       title: true,
       slug: true,
       categories: true,
-      meta: true,
+      meta: true
     },
     // pagination: false reduces overhead if you don't need totalDocs
     pagination: false,
@@ -42,28 +42,28 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
             or: [
               {
                 title: {
-                  like: query,
-                },
+                  like: query
+                }
               },
               {
                 "meta.description": {
-                  like: query,
-                },
+                  like: query
+                }
               },
               {
                 "meta.title": {
-                  like: query,
-                },
+                  like: query
+                }
               },
               {
                 slug: {
-                  like: query,
-                },
+                  like: query
+                }
               },
-            ],
-          },
+            ]
+          }
         }
-      : {}),
+      : {})
   });
 
   return (
@@ -90,6 +90,6 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Ecommerce Template Search`,
+    title: `Payload Ecommerce Template Search`
   };
 }

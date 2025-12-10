@@ -2,7 +2,7 @@ import {
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
-  lexicalEditor,
+  lexicalEditor
 } from "@payloadcms/richtext-lexical";
 
 import { link } from "@/fields/link";
@@ -15,18 +15,18 @@ const slideFields: Field[] = [
     name: "image",
     type: "upload",
     relationTo: "media",
-    required: true,
+    required: true
   },
   {
     name: "enableLink",
-    type: "checkbox",
+    type: "checkbox"
   },
   link({
     overrides: {
       admin: {
-        condition: (_, { enableLink }: { enableLink: boolean }) => Boolean(enableLink),
-      },
-    },
+        condition: (_, { enableLink }: { enableLink: boolean }) => Boolean(enableLink)
+      }
+    }
   }),
 ];
 
@@ -47,15 +47,15 @@ export const Carousel: Block = {
       options: [
         {
           label: "Default",
-          value: "default",
+          value: "default"
         },
         {
           label: "Logo",
-          value: "logo",
+          value: "logo"
         },
       ],
       required: true,
-      defaultValue: "default",
+      defaultValue: "default"
     },
     {
       name: "title",
@@ -68,26 +68,26 @@ export const Carousel: Block = {
             FixedToolbarFeature(),
             InlineToolbarFeature(),
           ];
-        },
+        }
       }),
-      localized: true,
+      localized: true
     },
     {
       name: "slides",
       type: "array",
       admin: {
-        initCollapsed: true,
+        initCollapsed: true
       },
-      fields: slideFields,
+      fields: slideFields
     },
     {
       name: "autoplay",
       type: "number",
       admin: {
-        condition: (_, { type }) => Boolean(type !== "logo"),
-      },
+        condition: (_, { type }) => Boolean(type !== "logo")
+      }
     },
     marginFields,
     paddingFields,
-  ],
+  ]
 };

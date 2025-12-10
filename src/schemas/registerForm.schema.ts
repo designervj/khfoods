@@ -11,10 +11,10 @@ export const RegisterFormSchemaServer = z
   .object({
     email: z.string().nonempty().email(),
     password: z.string().nonempty().min(8),
-    confirmPassword: z.string().nonempty(),
+    confirmPassword: z.string().nonempty()
   })
   .refine((data) => data.password === data.confirmPassword, {
-    path: ["confirmPassword"],
+    path: ["confirmPassword"]
   });
 
 export const useRegisterFormSchema = () => {
@@ -24,11 +24,11 @@ export const useRegisterFormSchema = () => {
     .object({
       email: z.string().nonempty(t("email-empty")).email(t("email")),
       password: z.string().nonempty(t("password")).min(8, t("password-length")),
-      confirmPassword: z.string().nonempty(t("password")),
+      confirmPassword: z.string().nonempty(t("password"))
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: t("passwords-mismatch"),
-      path: ["confirmPassword"],
+      path: ["confirmPassword"]
     });
 
   const RegisterFormSchemaResolver: ZodType<RegisterFormData> = RegisterFormSchema;

@@ -18,47 +18,47 @@ export const Orders: CollectionConfig = {
     useAsTitle: "id",
     group: {
       en: "Orders",
-      pl: "Zamówienia",
-      hr: "Narudžbe",
-    },
+      zh: "订单",
+      hr: "Narudžbe"
+    }
   },
   labels: {
     singular: {
       en: "Order",
-      pl: "Zamówienie",
-      hr: "Narudžba",
+      zh: "订单",
+      hr: "Narudžba"
     },
     plural: {
       en: "Orders",
-      pl: "Zamówjenja",
-      hr: "Narudžbe",
-    },
+      zh: "订单",
+      hr: "Narudžbe"
+    }
   },
   access: {
     admin: superAdminOnlyAdmin,
     create: superAdminOnly,
     delete: superAdminOnly,
     read: superAdminOnly,
-    update: superAdminOnly,
+    update: superAdminOnly
   },
   hooks: {
-    beforeValidate: [generateID],
+    beforeValidate: [generateID]
   },
   endpoints: [
     {
       path: "/revenue",
       method: "post",
-      handler: getRevenue,
+      handler: getRevenue
     },
     {
       path: "/count",
       method: "post",
-      handler: getOrderCount,
+      handler: getOrderCount
     },
     {
       path: "/chart",
       method: "get",
-      handler: getChartData,
+      handler: getChartData
     },
   ],
   fields: [
@@ -66,18 +66,18 @@ export const Orders: CollectionConfig = {
       name: "id",
       type: "text",
       admin: {
-        hidden: true,
+        hidden: true
       },
       required: true,
-      unique: true,
+      unique: true
     },
     {
       type: "tabs",
       tabs: [
         {
           label: {
-            en: "General",
-            pl: "Ogólne",
+            en: "General"
+
           },
           fields: [
             {
@@ -88,48 +88,48 @@ export const Orders: CollectionConfig = {
                   type: "relationship",
                   relationTo: "customers",
                   label: {
-                    en: "Customer",
-                    pl: "Klient",
-                  },
+                    en: "Customer"
+
+                  }
                 },
                 {
                   name: "date",
                   label: {
-                    en: "Order Date",
-                    pl: "Data zamówienia",
+                    en: "Order Date"
+
                   },
                   type: "date",
                   admin: {
                     date: {
-                      pickerAppearance: "dayAndTime",
+                      pickerAppearance: "dayAndTime"
                     },
-                    readOnly: true,
-                  },
+                    readOnly: true
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "extractedFromStock",
               type: "checkbox",
               admin: {
                 hidden: true,
-                readOnly: true,
-              },
+                readOnly: true
+              }
             },
             {
               name: "products",
               type: "array",
-              label: { en: "Products", pl: "Produkty" },
+              label: { en: "Products", zh: "产品" },
               admin: {
                 components: {
-                  RowLabel: "@/components/(ecommerce)/RowLabels/OrderProductsRowLabel#OrderProductsRowLabel",
-                },
+                  RowLabel: "@/components/(ecommerce)/RowLabels/OrderProductsRowLabel#OrderProductsRowLabel"
+                }
               },
               fields: [
                 {
                   name: "product",
                   type: "relationship",
-                  relationTo: "products",
+                  relationTo: "products"
                 },
                 {
                   name: "productName",
@@ -137,16 +137,16 @@ export const Orders: CollectionConfig = {
                   admin: {
                     hidden: true,
                     components: {
-                      Field: "@/collections/(ecommerce)/Orders/components/ProductNameField#ProductNameField",
-                    },
-                  },
+                      Field: "@/collections/(ecommerce)/Orders/components/ProductNameField#ProductNameField"
+                    }
+                  }
                 },
                 {
                   name: "isFromAPI",
                   type: "checkbox",
                   admin: { hidden: true },
                   required: true,
-                  defaultValue: false,
+                  defaultValue: false
                 },
                 {
                   type: "row",
@@ -155,43 +155,43 @@ export const Orders: CollectionConfig = {
                       name: "color",
                       type: "text",
                       admin: {
-                        hidden: true,
-                      },
+                        hidden: true
+                      }
                     },
                     {
                       name: "size",
                       type: "text",
                       admin: {
-                        hidden: true,
-                      },
+                        hidden: true
+                      }
                     },
                     {
                       name: "variantSlug",
                       type: "text",
                       label: {
-                        en: "Variant Slug",
-                        pl: "Wariant",
+                        en: "Variant Slug"
+
                       },
                       admin: {
                         components: {
-                          Field: "@/collections/(ecommerce)/Orders/components/VariantSelect#VariantSelect",
+                          Field: "@/collections/(ecommerce)/Orders/components/VariantSelect#VariantSelect"
                         },
-                        width: "50%",
-                      },
+                        width: "50%"
+                      }
                     },
                     {
                       name: "quantity",
                       type: "number",
                       label: {
-                        en: "Quantity",
-                        pl: "Ilość",
+                        en: "Quantity"
+
                       },
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
-                  ],
+                  ]
                 },
                 {
                   type: "row",
@@ -200,97 +200,97 @@ export const Orders: CollectionConfig = {
                       name: "price",
                       type: "number",
                       label: {
-                        en: "Price per unit",
-                        pl: "Cena za sztukę",
+                        en: "Price per unit"
+
                       },
                       admin: {
                         components: {
                           Field:
-                            "@/collections/(ecommerce)/Orders/components/ProductUnitPriceField#ProductUnitPriceField",
+                            "@/collections/(ecommerce)/Orders/components/ProductUnitPriceField#ProductUnitPriceField"
                         },
-                        width: "50%",
-                      },
+                        width: "50%"
+                      }
                     },
                     {
                       name: "autoprice",
                       type: "checkbox",
                       label: {
-                        en: "Auto Price",
-                        pl: "Automatyczna cena",
+                        en: "Auto Price"
+
                       },
                       defaultValue: false,
                       admin: {
                         readOnly: true,
-                        hidden: true,
-                      },
+                        hidden: true
+                      }
                     },
                     {
                       name: "priceTotal",
                       type: "number",
                       label: {
-                        en: "Price Total",
-                        pl: "Cena całkowita",
+                        en: "Price Total"
+
                       },
                       admin: {
                         width: "50%",
                         components: {
                           Field:
-                            "@/collections/(ecommerce)/Orders/components/ProductTotalPriceField#ProductTotalPriceField",
-                        },
+                            "@/collections/(ecommerce)/Orders/components/ProductTotalPriceField#ProductTotalPriceField"
+                        }
                       },
-                      required: true,
+                      required: true
                     },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
         {
           label: {
-            en: "Invoice",
-            pl: "Dokument sprzedaży",
+            en: "Invoice"
+
           },
           fields: [
             {
               name: "invoice",
-              label: { en: "Invoice data", pl: "Dane do faktury" },
+              label: { en: "Invoice data", zh: "发票数据" },
               type: "group",
               fields: [
                 {
                   name: "isCompany",
                   type: "checkbox",
                   label: {
-                    en: "Company",
-                    pl: "Firma",
-                  },
+                    en: "Company"
+
+                  }
                 },
                 {
                   name: "name",
                   type: "text",
                   label: {
-                    en: "Name",
-                    pl: "Nazwa",
-                  },
+                    en: "Name"
+
+                  }
                 },
                 {
                   name: "tin",
                   type: "text",
                   label: {
-                    en: "TIN",
-                    pl: "NIP",
+                    en: "TIN"
+
                   },
                   admin: {
-                    condition: (_, siblingData) => Boolean(siblingData.isCompany),
-                  },
+                    condition: (_, siblingData) => Boolean(siblingData.isCompany)
+                  }
                 },
                 {
                   name: "address",
                   type: "text",
                   label: {
-                    en: "Address",
-                    pl: "Adres",
-                  },
+                    en: "Address"
+
+                  }
                 },
                 {
                   type: "row",
@@ -299,26 +299,26 @@ export const Orders: CollectionConfig = {
                       name: "city",
                       type: "text",
                       label: {
-                        en: "City",
-                        pl: "Miasto",
+                        en: "City"
+
                       },
                       admin: {
-                        width: "50%",
-                      },
+                        width: "50%"
+                      }
                     },
                     {
                       name: "country",
                       type: "select",
                       label: {
-                        en: "Country",
-                        pl: "Kraj",
+                        en: "Country"
+
                       },
                       options: [...countryList],
                       admin: {
-                        width: "50%",
-                      },
+                        width: "50%"
+                      }
                     },
-                  ],
+                  ]
                 },
                 {
                   type: "row",
@@ -327,39 +327,39 @@ export const Orders: CollectionConfig = {
                       name: "region",
                       type: "text",
                       label: {
-                        en: "Region",
-                        pl: "Region",
+                        en: "Region"
+
                       },
                       admin: {
-                        width: "50%",
-                      },
+                        width: "50%"
+                      }
                     },
                     {
                       name: "postalCode",
                       type: "text",
                       label: {
-                        en: "Postal Code",
-                        pl: "Kod pocztowy",
+                        en: "Postal Code"
+
                       },
                       admin: {
-                        width: "50%",
-                      },
+                        width: "50%"
+                      }
                     },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
         {
           label: {
-            en: "Shipping",
-            pl: "Dostawa",
+            en: "Shipping"
+
           },
           fields: [
             {
               name: "printLabel",
-              label: { en: "Printing Labels", pl: "Drukowanie etykiet" },
+              label: { en: "Printing Labels", zh: "打印标签" },
               type: "group",
               fields: [
                 {
@@ -367,16 +367,16 @@ export const Orders: CollectionConfig = {
                   type: "text",
                   admin: {
                     readOnly: true,
-                    hidden: true,
-                  },
+                    hidden: true
+                  }
                 },
                  {
                   name: "labelurl",
                   type: "text",
                   admin: {
                     readOnly: true,
-                    hidden: true,
-                  },
+                    hidden: true
+                  }
                 },
                 {
                   name: "pickupShipmentMenu",
@@ -385,49 +385,49 @@ export const Orders: CollectionConfig = {
                     condition: (data) => Boolean(data.orderDetails?.shipping === "inpost-pickup"),
                     components: {
                       Field:
-                        "@/collections/(ecommerce)/Orders/components/inpost-pickup/PickupShipmentMenu#PickupShipmentMenu",
-                    },
-                  },
+                        "@/collections/(ecommerce)/Orders/components/inpost-pickup/PickupShipmentMenu#PickupShipmentMenu"
+                    }
+                  }
                 },
                 {
                   name: "width",
                   type: "number",
                   admin: {
-                    hidden: true,
+                    hidden: true
                   },
-                  defaultValue: 0,
+                  defaultValue: 0
                 },
                 {
                   name: "height",
                   type: "number",
                   admin: {
-                    hidden: true,
+                    hidden: true
                   },
-                  defaultValue: 0,
+                  defaultValue: 0
                 },
                 {
                   name: "length",
                   type: "number",
                   admin: {
-                    hidden: true,
+                    hidden: true
                   },
-                  defaultValue: 0,
+                  defaultValue: 0
                 },
                 {
                   name: "weight",
                   type: "number",
                   admin: {
-                    hidden: true,
+                    hidden: true
                   },
-                  defaultValue: 0,
+                  defaultValue: 0
                 },
                 {
                   name: "dimension",
                   type: "text",
                   admin: {
-                    hidden: true,
+                    hidden: true
                   },
-                  defaultValue: "small",
+                  defaultValue: "small"
                 },
                 {
                   name: "courierShipmentMenu",
@@ -436,39 +436,39 @@ export const Orders: CollectionConfig = {
                     condition: (data) => data.orderDetails.shipping !== "inpost-pickup",
                     components: {
                       Field:
-                        "@/collections/(ecommerce)/Orders/components/couriers/CourierShipmentMenu#CourierShipmentMenu",
-                    },
-                  },
+                        "@/collections/(ecommerce)/Orders/components/couriers/CourierShipmentMenu#CourierShipmentMenu"
+                    }
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "shippingAddress",
               type: "group",
               label: {
-                en: "Shipping Address",
-                pl: "Adres dostawy",
+                en: "Shipping Address"
+
               },
               fields: [
                 {
                   name: "name",
                   type: "text",
                   label: {
-                    en: "Name",
-                    pl: "Nazwa",
+                    en: "Name"
+
                   },
 
-                  required: true,
+                  required: true
                 },
                 {
                   name: "address",
                   type: "text",
                   label: {
-                    en: "Address",
-                    pl: "Adres",
+                    en: "Address"
+
                   },
 
-                  required: true,
+                  required: true
                 },
                 {
                   type: "row",
@@ -477,29 +477,29 @@ export const Orders: CollectionConfig = {
                       name: "pickupPointID",
                       type: "text",
                       label: {
-                        en: "Pickup point ID",
-                        pl: "ID punktu odbioru",
+                        en: "Pickup point ID"
+
                       },
                       admin: {
                         width: "50%",
 
-                        condition: (data) => data.orderDetails.shipping === "inpost-pickup",
-                      },
+                        condition: (data) => data.orderDetails.shipping === "inpost-pickup"
+                      }
                     },
                     {
                       name: "pickupPointAddress",
                       type: "text",
                       label: {
-                        en: "Pickup point address",
-                        pl: "Adres punktu odbioru",
+                        en: "Pickup point address"
+
                       },
                       admin: {
                         width: "50%",
 
-                        condition: (data) => data.orderDetails.shipping === "inpost-pickup",
-                      },
+                        condition: (data) => data.orderDetails.shipping === "inpost-pickup"
+                      }
                     },
-                  ],
+                  ]
                 },
                 {
                   type: "row",
@@ -508,28 +508,28 @@ export const Orders: CollectionConfig = {
                       name: "city",
                       type: "text",
                       label: {
-                        en: "City",
-                        pl: "Miasto",
+                        en: "City"
+
                       },
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
                     {
                       name: "country",
                       type: "select",
                       label: {
-                        en: "Country",
-                        pl: "Kraj",
+                        en: "Country"
+
                       },
                       options: [...countryList],
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
-                  ],
+                  ]
                 },
                 {
                   type: "row",
@@ -538,27 +538,27 @@ export const Orders: CollectionConfig = {
                       name: "region",
                       type: "text",
                       label: {
-                        en: "Region",
-                        pl: "Region",
+                        en: "Region"
+
                       },
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
                     {
                       name: "postalCode",
                       type: "text",
                       label: {
-                        en: "Postal Code",
-                        pl: "Kod pocztowy",
+                        en: "Postal Code"
+
                       },
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
-                  ],
+                  ]
                 },
                 {
                   type: "row",
@@ -567,49 +567,49 @@ export const Orders: CollectionConfig = {
                       name: "email",
                       type: "text",
                       label: {
-                        en: "Email",
-                        pl: "Email",
+                        en: "Email"
+
                       },
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
                     {
                       name: "phone",
                       type: "text",
                       label: {
-                        en: "Phone number",
-                        pl: "Numer telefonu",
+                        en: "Phone number"
+
                       },
                       admin: {
-                        width: "50%",
+                        width: "50%"
                       },
-                      required: true,
+                      required: true
                     },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "orderDetails",
       label: {
-        en: "Order Details",
-        pl: "Szczegóły zamówienia",
+        en: "Order Details"
+
       },
       type: "group",
       admin: {
-        position: "sidebar",
+        position: "sidebar"
       },
       fields: [
         {
           name: "website",
           type: "relationship",
-          relationTo: "websites",
+          relationTo: "websites"
         },
         {
           type: "row",
@@ -618,28 +618,28 @@ export const Orders: CollectionConfig = {
               name: "total",
               type: "number",
               label: {
-                en: "Total (without shipping)",
-                pl: "Suma (bez kosztów dostawy)",
+                en: "Total (without shipping)"
+
               },
               admin: {
                 components: {
                   Field:
-                    "@/collections/(ecommerce)/Orders/components/OrderTotalPriceField#OrderTotalPriceField",
-                },
+                    "@/collections/(ecommerce)/Orders/components/OrderTotalPriceField#OrderTotalPriceField"
+                }
               },
-              required: true,
+              required: true
             },
             {
               name: "shippingCost",
               type: "number",
               label: {
-                en: "Shipping Cost",
-                pl: "Koszt dostawy",
+                en: "Shipping Cost"
+
               },
 
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
         {
           type: "row",
@@ -648,146 +648,146 @@ export const Orders: CollectionConfig = {
               name: "totalWithShipping",
               type: "number",
               label: {
-                en: "Total (with shipping)",
-                pl: "Suma (z kosztami dostawy)",
+                en: "Total (with shipping)"
+
               },
               admin: {
                 components: {
                   Field:
-                    "@/collections/(ecommerce)/Orders/components/OrderTotalWithShippingField#OrderTotalWithShippingField",
+                    "@/collections/(ecommerce)/Orders/components/OrderTotalWithShippingField#OrderTotalWithShippingField"
                 },
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
             currencyField,
-          ],
+          ]
         },
         {
           name: "amountPaid",
           type: "number",
           defaultValue: 0,
-          label: { en: "Amount Paid", pl: "Zapłacona kwota" },
+          label: { en: "Amount Paid", zh: "已付金额" }
         },
         {
           name: "shipping",
           type: "select",
           label: {
-            en: "Choosen Shipping Method",
-            pl: "Wybrana metoda dostawy",
+            en: "Choosen Shipping Method"
+
           },
-          options: courierSelectOptions,
+          options: courierSelectOptions
         },
         {
           name: "transactionID",
           type: "text",
           label: {
-            en: "Transaction ID",
-            pl: "ID transakcji",
+            en: "Transaction ID"
+
           },
           admin: {
-            readOnly: true,
-          },
+            readOnly: true
+          }
         },
         {
           name: "status",
           type: "select",
           label: {
-            en: "Status",
-            pl: "Status",
+            en: "Status"
+
           },
           hooks: {
-            afterChange: [sendStatusEmail, restoreStocks],
+            afterChange: [sendStatusEmail, restoreStocks]
           },
           options: [
             {
               label: {
-                en: "Pending",
-                pl: "Oczekujące",
+                en: "Pending"
+
               },
-              value: "pending",
+              value: "pending"
             },
             {
               label: {
-                en: "Paid",
-                pl: "Opłacone",
+                en: "Paid"
+
               },
-              value: "paid",
+              value: "paid"
             },
             {
               label: {
-                en: "Unpaid",
-                pl: "Nieopłacone",
+                en: "Unpaid"
+
               },
-              value: "unpaid",
+              value: "unpaid"
             },
             {
               label: {
-                en: "Processing",
-                pl: "W trakcie realizacji",
+                en: "Processing"
+
               },
-              value: "processing",
+              value: "processing"
             },
             {
               label: {
-                en: "Shipped",
-                pl: "Wysłane",
+                en: "Shipped"
+
               },
-              value: "shipped",
+              value: "shipped"
             },
             {
               label: {
-                en: "Completed",
-                pl: "Zakończone",
+                en: "Completed"
+
               },
-              value: "completed",
+              value: "completed"
             },
             {
               label: {
-                en: "Cancelled",
-                pl: "Anulowane",
+                en: "Cancelled"
+
               },
-              value: "cancelled",
+              value: "cancelled"
             },
             {
               label: {
-                en: "Returned",
-                pl: "Zwrócone",
+                en: "Returned"
+
               },
-              value: "returned",
+              value: "returned"
             },
           ],
           required: true,
-          defaultValue: "pending",
+          defaultValue: "pending"
         },
         {
           name: "shippingDate",
           label: {
-            en: "Shipping Date",
-            pl: "Data wysyłki",
+            en: "Shipping Date"
+
           },
-          type: "date",
+          type: "date"
         },
         {
           name: "trackingNumber",
           label: {
-            en: "Tracking Number",
-            pl: "Numer przesyłki",
+            en: "Tracking Number"
+
           },
           admin: {
-            readOnly: true,
+            readOnly: true
           },
-          type: "text",
+          type: "text"
         },
         {
           name: "orderNote",
           label: {
-            en: "Order Note",
-            pl: "Notatka do zamówienia",
+            en: "Order Note"
+
           },
-          type: "textarea",
+          type: "textarea"
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

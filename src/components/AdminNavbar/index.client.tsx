@@ -5,7 +5,7 @@ import { NavGroup, useConfig, useTranslation } from "@payloadcms/ui";
 import {
   EntityType,
   formatAdminURL,
-  type NavGroupType,
+  type NavGroupType
 } from "@payloadcms/ui/shared";
 import LinkWithDefault from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -59,7 +59,7 @@ export const NavClient = ({ groups, navPreferences }: Props) => {
         clonedTenantsGroup.entities.push({
           slug: "websites/create",
           type: EntityType.collection,
-          label: "Create Websites",
+          label: "Create Websites"
         });
       }
       resultGroups = clonedGroups;
@@ -84,8 +84,8 @@ export const NavClient = ({ groups, navPreferences }: Props) => {
 
   const {
     config: {
-      routes: { admin: adminRoute },
-    },
+      routes: { admin: adminRoute }
+    }
   } = useConfig();
 
   const { i18n, switchLanguage } = useTranslation();
@@ -99,16 +99,15 @@ export const NavClient = ({ groups, navPreferences }: Props) => {
     changeLanguage(lang ? lang : "en")
   }, [lang])
 
-
   return (
     <>
       {updatedGroups.map(({ entities, label }, key) => {
         // Debug: log label and language for Customer Management
         if (label === "Customer Management") {
-          console.log("Customer Management entities:", entities);
-          console.log("Current language:", i18n?.language);
-          console.log("Entity label:", label);
-          console.log("Translated label:", getTranslation(label, i18n));
+          // console.log("Customer Management entities:", entities);
+          // console.log("Current language:", i18n?.language);
+          // console.log("Entity label:", label);
+          // console.log("Translated label:", getTranslation(label, i18n));
         }
         return (
           <NavGroup
@@ -123,7 +122,7 @@ export const NavClient = ({ groups, navPreferences }: Props) => {
               if (type === EntityType.collection) {
                 href = formatAdminURL({
                   adminRoute,
-                  path: `/collections/${slug}`,
+                  path: `/collections/${slug}`
                 });
                 id = `nav-${slug}`;
               } else {
@@ -152,7 +151,7 @@ export const NavClient = ({ groups, navPreferences }: Props) => {
                     borderRadius: activeCollection ? "4px" : undefined,
                     marginTop: "2px",
                     paddingLeft: "8px",
-                    color: activeCollection ? "white" : undefined,
+                    color: activeCollection ? "white" : undefined
                   }}
                   prefetch={false}
                 >

@@ -9,7 +9,7 @@ import notFound from "../../../not-found";
 
 const SubcategoryPage = async ({
   params,
-  searchParams,
+  searchParams
 }: {
   params: Promise<{ subslug: string }>;
   searchParams: Promise<Record<string, string | undefined>>;
@@ -30,9 +30,9 @@ const SubcategoryPage = async ({
       locale,
       where: {
         slug: {
-          equals: subslug,
-        },
-      },
+          equals: subslug
+        }
+      }
     });
 
     
@@ -66,14 +66,14 @@ const SubcategoryPage = async ({
       locale,
       where: {
         "categoriesArr.category": {
-          equals: subcategories[0].id,
-        },
+          equals: subcategories[0].id
+        }
       },
       // ...(color && !size && { "variants.color": { in: colorArr } }),
       // ...(size && !color && { "variants.size": { in: sizeArr } }),
       // ...(size &&
       //   color && { and: [{ "variants.size": { in: sizeArr } }, { "variants.color": { in: colorArr } }] }),
-      // sort: sortQuery,
+      // sort: sortQuery
     });
 
       // console.log("products---",products)
@@ -86,7 +86,7 @@ const SubcategoryPage = async ({
         searchParams={{
           color: colorArr,
           size: sizeArr,
-          sortBy: sortBy ?? "most-popular",
+          sortBy: sortBy ?? "most-popular"
         }}
       />
     );

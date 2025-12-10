@@ -21,13 +21,13 @@ const getPostsSitemap = unstable_cache(
       pagination: false,
       where: {
         _status: {
-          equals: "published",
-        },
+          equals: "published"
+        }
       },
       select: {
         slug: true,
-        updatedAt: true,
-      },
+        updatedAt: true
+      }
     });
 
     const dateFallback = new Date().toISOString();
@@ -37,7 +37,7 @@ const getPostsSitemap = unstable_cache(
           .filter((post) => Boolean(post?.slug))
           .map((post) => ({
             loc: `${SITE_URL}/posts/${post?.slug}`,
-            lastmod: post.updatedAt || dateFallback,
+            lastmod: post.updatedAt || dateFallback
           }))
       : [];
 
@@ -45,7 +45,7 @@ const getPostsSitemap = unstable_cache(
   },
   ["posts-sitemap"],
   {
-    tags: ["posts-sitemap"],
+    tags: ["posts-sitemap"]
   },
 );
 

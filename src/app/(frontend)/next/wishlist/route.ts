@@ -32,8 +32,8 @@ export async function POST(req: Request) {
       collection: "customers",
       id: user.id,
       data: {
-        wishlist: JSON.stringify(wishlist),
-      },
+        wishlist: JSON.stringify(wishlist)
+      }
     });
 
     return Response.json({ status: 200, message: "Wishlist saved successfully" });
@@ -53,7 +53,7 @@ export async function GET() {
 
     return Response.json({
       status: 200,
-      data: typeof user.wishlist === "string" ? (JSON.parse(user.wishlist) as WishList) : user.wishlist,
+      data: typeof user.wishlist === "string" ? (JSON.parse(user.wishlist) as WishList) : user.wishlist
     });
   } catch (error) {
     console.log(error);

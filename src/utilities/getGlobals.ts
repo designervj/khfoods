@@ -14,7 +14,7 @@ async function getGlobal(slug: Global, depth = 5, locale: Locale) {
   const global = await payload.findGlobal({
     slug,
     locale,
-    depth,
+    depth
   });
 
   return global;
@@ -34,6 +34,6 @@ export const getCachedGlobal = <T extends Global>(
     },
     [slug],
     {
-      tags: [`global_${slug}`],
+      tags: [`global_${slug}`]
     },
   );

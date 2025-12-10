@@ -14,15 +14,15 @@ export const useChangePasswordModalForm = () => {
     .object({
       oldPassword: z.string().nonempty(t("password-length")),
       newPassword: z.string().nonempty(t("password-length")).min(8, t("password-length")),
-      confirmPassword: z.string().nonempty(t("password-length")).min(8, t("password-length")),
+      confirmPassword: z.string().nonempty(t("password-length")).min(8, t("password-length"))
     })
     .refine((data) => data.newPassword === data.confirmPassword, {
       message: t("passwords-mismatch"),
-      path: ["confirmPassword"],
+      path: ["confirmPassword"]
     })
     .refine((data) => data.oldPassword !== data.newPassword, {
       message: t("password-same"),
-      path: ["newPassword"],
+      path: ["newPassword"]
     });
 
   const ChangePasswordModalFormResolver: ZodType<ChangePasswordModalFormData> = ChangePasswordModalForm;

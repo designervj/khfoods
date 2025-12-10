@@ -11,7 +11,7 @@ import {
   Preview,
   Row,
   Section,
-  Text,
+  Text
 } from "@react-email/components";
 import { getTranslations } from "next-intl/server";
 import { type CSSProperties } from "react";
@@ -246,7 +246,7 @@ export const Default = async ({ order, locale }: { order: Order; locale: Locale 
                 <Text
                   style={{
                     ...menu.text,
-                    marginBottom: "0",
+                    marginBottom: "0"
                   }}
                 >
                   4 am - 11 pm PT
@@ -313,17 +313,17 @@ export const Default = async ({ order, locale }: { order: Order; locale: Locale 
 
 const paddingX = {
   paddingLeft: "40px",
-  paddingRight: "40px",
+  paddingRight: "40px"
 };
 
 const paddingY = {
   paddingTop: "22px",
-  paddingBottom: "22px",
+  paddingBottom: "22px"
 };
 
 const paragraph = {
   margin: "0",
-  lineHeight: "2",
+  lineHeight: "2"
 };
 
 const global = {
@@ -331,7 +331,7 @@ const global = {
   paddingY,
   defaultPadding: {
     ...paddingX,
-    ...paddingY,
+    ...paddingY
   },
   paragraphWithBold: { ...paragraph, fontWeight: "bold" },
   heading: {
@@ -339,12 +339,12 @@ const global = {
     lineHeight: "1.3",
     fontWeight: "700",
     textAlign: "center",
-    letterSpacing: "-1px",
+    letterSpacing: "-1px"
   } as CSSProperties,
   text: {
     ...paragraph,
     color: "#747474",
-    fontWeight: "500",
+    fontWeight: "500"
   },
   button: {
     border: "1px solid #929292",
@@ -355,49 +355,49 @@ const global = {
     display: "block",
     textAlign: "center",
     fontWeight: 500,
-    color: "#000",
+    color: "#000"
   } as CSSProperties,
   hr: {
     borderColor: "#E5E5E5",
-    margin: "0",
-  },
+    margin: "0"
+  }
 };
 
 const main = {
   backgroundColor: "#ffffff",
   fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif'
 };
 
 const container = {
   margin: "10px auto",
   width: "600px",
   maxWidth: "100%",
-  border: "1px solid #E5E5E5",
+  border: "1px solid #E5E5E5"
 };
 
 const track = {
   container: {
     padding: "22px 40px",
-    backgroundColor: "#F7F7F7",
+    backgroundColor: "#F7F7F7"
   },
   number: {
     margin: "12px 0 0 0",
     fontWeight: 500,
     lineHeight: "1.4",
-    color: "#6F6F6F",
-  },
+    color: "#6F6F6F"
+  }
 };
 
 const message = {
   padding: "40px 74px",
-  textAlign: "center",
+  textAlign: "center"
 } as CSSProperties;
 
 const adressTitle = {
   ...paragraph,
   fontSize: "15px",
-  fontWeight: "bold",
+  fontWeight: "bold"
 };
 
 const menu = {
@@ -405,53 +405,53 @@ const menu = {
     paddingLeft: "20px",
     paddingRight: "20px",
     paddingTop: "20px",
-    backgroundColor: "#F7F7F7",
+    backgroundColor: "#F7F7F7"
   },
   content: {
     ...paddingY,
     paddingLeft: "20px",
-    paddingRight: "20px",
+    paddingRight: "20px"
   },
   title: {
     paddingLeft: "20px",
     paddingRight: "20px",
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   text: {
     fontSize: "13.5px",
     marginTop: 0,
     fontWeight: 500,
-    color: "#000",
+    color: "#000"
   },
   tel: {
     paddingLeft: "20px",
     paddingRight: "20px",
     paddingTop: "32px",
-    paddingBottom: "22px",
-  },
+    paddingBottom: "22px"
+  }
 };
 
 const categories = {
   container: {
     width: "370px",
     margin: "auto",
-    paddingTop: "12px",
+    paddingTop: "12px"
   },
   text: {
     fontWeight: "500",
-    color: "#000",
-  },
+    color: "#000"
+  }
 };
 
 const footer = {
   policy: {
     width: "166px",
-    margin: "auto",
+    margin: "auto"
   },
   text: {
     margin: "0",
     color: "#AFAFAF",
     fontSize: "13px",
-    textAlign: "center",
-  } as CSSProperties,
+    textAlign: "center"
+  } as CSSProperties
 };

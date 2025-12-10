@@ -5,7 +5,7 @@ export const Blurb: Block = {
   interfaceName: "BlurbBlock",
   labels: {
     singular: "💬 Blurb",
-    plural: "💬 Blurbs",
+    plural: "💬 Blurbs"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -43,7 +43,7 @@ export const Blurb: Block = {
                 { label: "Lock", value: "lock" },
                 { label: "Unlock", value: "unlock" },
               ],
-              defaultValue: "check",
+              defaultValue: "check"
             },
             {
               name: "customIcon",
@@ -51,28 +51,28 @@ export const Blurb: Block = {
               label: "Custom Icon (Optional)",
               relationTo: "media",
               admin: {
-                description: "Upload a custom icon to override the selected icon",
-              },
+                description: "Upload a custom icon to override the selected icon"
+              }
             },
             {
               name: "title",
               type: "text",
               label: "Title",
-              required: true,
+              required: true
             },
             {
               name: "description",
               type: "textarea",
               label: "Description",
-              required: true,
+              required: true
             },
             {
               name: "url",
               type: "text",
               label: "Link URL (Optional)",
               admin: {
-                description: "Make the entire blurb clickable",
-              },
+                description: "Make the entire blurb clickable"
+              }
             },
             {
               name: "urlNewTab",
@@ -80,10 +80,10 @@ export const Blurb: Block = {
               label: "Open in New Tab",
               defaultValue: false,
               admin: {
-                condition: (data) => Boolean(data.url),
-              },
+                condition: (data) => Boolean(data.url)
+              }
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -97,7 +97,7 @@ export const Blurb: Block = {
                 { label: "Top", value: "top" },
                 { label: "Left", value: "left" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "iconSize",
@@ -109,23 +109,23 @@ export const Blurb: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "iconColor",
               type: "text",
               label: "Icon Color",
               admin: {
-                description: "Hex color code (e.g., #3B82F6)",
-              },
+                description: "Hex color code (e.g., #3B82F6)"
+              }
             },
             {
               name: "iconBackgroundColor",
               type: "text",
               label: "Icon Background Color",
               admin: {
-                description: "Hex color code for icon background circle/square",
-              },
+                description: "Hex color code for icon background circle/square"
+              }
             },
             {
               name: "iconShape",
@@ -137,7 +137,7 @@ export const Blurb: Block = {
                 { label: "Circle", value: "circle" },
                 { label: "Square", value: "square" },
                 { label: "Rounded Square", value: "rounded" },
-              ],
+              ]
             },
             {
               name: "textAlign",
@@ -148,15 +148,15 @@ export const Blurb: Block = {
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "titleColor",
               type: "text",
               label: "Title Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "titleSize",
@@ -170,23 +170,23 @@ export const Blurb: Block = {
                 { label: "H4", value: "h4" },
                 { label: "H5", value: "h5" },
                 { label: "H6", value: "h6" },
-              ],
+              ]
             },
             {
               name: "descriptionColor",
               type: "text",
               label: "Description Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "backgroundColor",
               type: "text",
               label: "Background Color",
               admin: {
-                description: "Hex color code for blurb background",
-              },
+                description: "Hex color code for blurb background"
+              }
             },
             {
               name: "padding",
@@ -199,7 +199,7 @@ export const Blurb: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "borderRadius",
@@ -212,7 +212,7 @@ export const Blurb: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Full", value: "full" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -225,13 +225,13 @@ export const Blurb: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "border",
               type: "checkbox",
               label: "Show Border",
-              defaultValue: false,
+              defaultValue: false
             },
             {
               name: "borderColor",
@@ -239,8 +239,8 @@ export const Blurb: Block = {
               label: "Border Color",
               admin: {
                 condition: (data) => Boolean(data.border),
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "borderWidth",
@@ -254,8 +254,8 @@ export const Blurb: Block = {
                 { label: "4px", value: "4" },
               ],
               admin: {
-                condition: (data) => Boolean(data.border),
-              },
+                condition: (data) => Boolean(data.border)
+              }
             },
             {
               name: "hoverEffect",
@@ -267,7 +267,7 @@ export const Blurb: Block = {
                 { label: "Lift", value: "lift" },
                 { label: "Scale", value: "scale" },
                 { label: "Glow", value: "glow" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -281,16 +281,16 @@ export const Blurb: Block = {
                 { label: "Slide Left", value: "slideLeft" },
                 { label: "Slide Right", value: "slideRight" },
                 { label: "Zoom In", value: "zoomIn" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

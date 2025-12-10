@@ -14,7 +14,7 @@ import { type FilledCourier } from "./CheckoutForm";
 
 export const DeliveryMethod = ({
   deliveryMethod,
-  geowidgetToken,
+  geowidgetToken
 }: {
   deliveryMethod: FilledCourier;
   geowidgetToken?: string;

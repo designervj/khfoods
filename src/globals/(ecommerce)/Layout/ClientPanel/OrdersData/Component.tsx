@@ -12,7 +12,7 @@ import { AddNewAddressDialog } from "../../Checkout/variants/OneStepWithSummary/
 
 export const OrdersData = ({
   user,
-  updateCustomerData,
+  updateCustomerData
 }: {
   user: Customer;
   updateCustomerData: () => Promise<void>;
@@ -35,14 +35,14 @@ export const OrdersData = ({
 
     const updatedShippings = shippings.map((shipping) => ({
       ...shipping,
-      default: shipping.id === selectedShipping.id,
+      default: shipping.id === selectedShipping.id
     }));
 
     try {
       const { data } = await axios.patch<{ doc: Customer }>(
         `/api/customers/${user.id}`,
         {
-          shippings: updatedShippings,
+          shippings: updatedShippings
         }
       );
 
@@ -76,7 +76,7 @@ export const OrdersData = ({
             ...prevState,
             {
               ...shipping,
-              country: shipping.country as Country,
+              country: shipping.country as Country
             },
           ]);
           await updateCustomerData();
@@ -94,7 +94,7 @@ export const OrdersData = ({
               onClick={() => {
                 setSelectedShipping({
                   ...shipping,
-                  id: shipping.id ?? undefined,
+                  id: shipping.id ?? undefined
                 });
               }}
               key={shipping.id}

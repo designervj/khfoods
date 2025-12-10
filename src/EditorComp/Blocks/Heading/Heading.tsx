@@ -13,7 +13,7 @@ export const HeadingBlock: ComponentConfig = {
         { label: "H4", value: "h4" },
         { label: "H5", value: "h5" },
         { label: "H6", value: "h6" },
-      ],
+      ]
     },
     text: { type: "text" },
     align: {
@@ -22,7 +22,7 @@ export const HeadingBlock: ComponentConfig = {
         { label: "Left", value: "left" },
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
-      ],
+      ]
     },
     color: { type: "text" },
     fontSize: { type: "number" },
@@ -33,7 +33,7 @@ export const HeadingBlock: ComponentConfig = {
         { label: "Normal", value: "400" },
         { label: "Medium", value: "500" },
         { label: "Bold", value: "700" },
-      ],
+      ]
     },
 
     // ✅ Use object for nested numeric fields
@@ -44,8 +44,8 @@ export const HeadingBlock: ComponentConfig = {
         marginLeft: { type: "number" },
         marginRight: { type: "number" },
         marginTop: { type: "number" },
-        marginBottom: { type: "number" },
-      },
+        marginBottom: { type: "number" }
+      }
     },
     padding: {
       label: "Padding",
@@ -54,9 +54,9 @@ export const HeadingBlock: ComponentConfig = {
         paddingLeft: { type: "number" },
         paddingRight: { type: "number" },
         paddingTop: { type: "number" },
-        paddingBottom: { type: "number" },
-      },
-    },
+        paddingBottom: { type: "number" }
+      }
+    }
   },
 
   defaultProps: {
@@ -68,12 +68,12 @@ export const HeadingBlock: ComponentConfig = {
     fontWeight: "400",
     margin: {
       marginTop: 8,
-      marginBottom: 8,
+      marginBottom: 8
     },
     padding: {
       paddingTop: 0,
-      paddingBottom: 0,
-    },
+      paddingBottom: 0
+    }
   },
 
   render: ({
@@ -84,7 +84,7 @@ export const HeadingBlock: ComponentConfig = {
     fontWeight,
     fontSize,
     margin,
-    padding,
+    padding
   }) => {
     const style: React.CSSProperties = {
       textAlign: align,
@@ -98,9 +98,9 @@ export const HeadingBlock: ComponentConfig = {
       paddingLeft: padding?.paddingLeft,
       paddingRight: padding?.paddingRight,
       paddingTop: padding?.paddingTop,
-      paddingBottom: padding?.paddingBottom,
+      paddingBottom: padding?.paddingBottom
     };
 
     return <Tag style={style}>{text}</Tag>;
-  },
+  }
 };

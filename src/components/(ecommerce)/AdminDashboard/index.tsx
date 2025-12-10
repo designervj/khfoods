@@ -41,16 +41,16 @@ export const AdminDashboard = async (props: DashboardViewServerProps) => {
     payload: {
       config: {
         admin: {
-          components: { beforeDashboard },
+          components: { beforeDashboard }
         },
         collections,
-        globals,
-      },
+        globals
+      }
     },
     payload,
     permissions,
     searchParams,
-    user,
+    user
   } = props;
 
   const t: TFunction<CustomTranslationsKeys | DefaultTranslationKeys> = i18n.t;
@@ -63,7 +63,7 @@ export const AdminDashboard = async (props: DashboardViewServerProps) => {
           (collection) =>
             ({
               type: EntityType.collection,
-              entity: collection,
+              entity: collection
             }) satisfies EntityToGroup,
         ),
       ...globals
@@ -72,7 +72,7 @@ export const AdminDashboard = async (props: DashboardViewServerProps) => {
           (global) =>
             ({
               type: EntityType.global,
-              entity: global,
+              entity: global
             }) satisfies EntityToGroup,
         ),
     ],
@@ -94,8 +94,8 @@ export const AdminDashboard = async (props: DashboardViewServerProps) => {
               payload,
               permissions,
               searchParams,
-              user,
-            } satisfies ServerProps,
+              user
+            } satisfies ServerProps
           })}
         <section className="flex flex-wrap items-center gap-4">
           <h1 className="mr-auto">{t("adminDashboard:linkTitle")}</h1>

@@ -37,7 +37,7 @@ export const OrderSummary = ({
   totalPrice,
   shippingCost,
   errorMessage,
-  isSubmitting,
+  isSubmitting
 }: {
   products?: ProductWithFilledVariants[];
   totalPrice?: {
@@ -64,7 +64,7 @@ export const OrderSummary = ({
       {
         id: productID,
         quantity,
-        choosenVariantSlug: productVariantSlug,
+        choosenVariantSlug: productVariantSlug
       },
     ]);
   };
@@ -78,7 +78,7 @@ export const OrderSummary = ({
       {
         id: productID,
         quantity: delta,
-        choosenVariantSlug: productVariantSlug,
+        choosenVariantSlug: productVariantSlug
       },
     ]);
   };
@@ -155,12 +155,12 @@ export const OrderSummary = ({
                         product.enableVariantPrices
                           ? (product.variant?.pricing?.map((p) => ({
                               ...p,
-                              value: p.value * product.quantity,
+                              value: p.value * product.quantity
                             })) ?? [])
                           : product.pricing
                             ? product.pricing.map((p) => ({
                                 ...p,
-                                value: p.value * product.quantity,
+                                value: p.value * product.quantity
                               }))
                             : []
                       }

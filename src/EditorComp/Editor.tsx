@@ -43,7 +43,7 @@ function PuckWrapper({ data, mode }) {
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
-                      fontWeight: 500,
+                      fontWeight: 500
                     }}
                   >
                     <span>{name}</span>
@@ -57,7 +57,7 @@ function PuckWrapper({ data, mode }) {
                         border: "1px solid #e0e0e0",
                         borderTop: "none",
                         borderRadius: "0 0 4px 4px",
-                        background: "white",
+                        background: "white"
                       }}
                     >
                       {children}
@@ -65,9 +65,9 @@ function PuckWrapper({ data, mode }) {
                   )}
                 </div>
               );
-            },
+            }
           },
-          componentItem: ({ name, children }) => <ComponentItem name={name} />,
+          componentItem: ({ name, children }) => <ComponentItem name={name} />
         }}
         config={config}
         data={data && data["Page Data"] ? data["Page Data"] : {}}

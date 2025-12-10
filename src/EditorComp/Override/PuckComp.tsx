@@ -13,7 +13,7 @@ import {
   Smartphone,
   Tablet,
   Wand2,
-  X,
+  X
 } from "lucide-react";
 import { createUsePuck, Puck, usePuck } from "@measured/puck";
 import { useContentPanel } from "@/utilities/useTabChange";
@@ -33,13 +33,12 @@ export const PuckComponent = ({data,mode}) => {
   return date.toISOString().slice(0,16); // "YYYY-MM-DDTHH:MM"
 };
 
-
    const [pageData, setPageData] = useState({
     title: data ? data.title : "",
     slug: data ? data.slug: "",
     website: data ? data.website.id : "",
     createdBy: "",
-    publishedAt: data ? formatForInput(data.publishedAt) : "",
+    publishedAt: data ? formatForInput(data.publishedAt) : ""
   });
 
   const handleSaveOrUpdate = async () => {
@@ -56,7 +55,7 @@ export const PuckComponent = ({data,mode}) => {
       }, {
         withCredentials: true,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         }
       })
     }
@@ -80,14 +79,14 @@ export const PuckComponent = ({data,mode}) => {
     setPageData({
       ...pageData,
       title: newTitle,
-      slug: generateSlug(newTitle),
+      slug: generateSlug(newTitle)
     });
   };
 
   const handleFieldChange = (field: string, value: string) => {
     setPageData({
       ...pageData,
-      [field]: value,
+      [field]: value
     });
   };
 
@@ -103,17 +102,17 @@ export const PuckComponent = ({data,mode}) => {
     {
       id: 1,
       icon: Smartphone,
-      value: 360,
+      value: 360
     },
     {
       id: 2,
       icon: Tablet,
-      value: 768,
+      value: 768
     },
     {
       id: 3,
       icon: Laptop,
-      value: 1280,
+      value: 1280
     },
   ];
 
@@ -127,10 +126,10 @@ export const PuckComponent = ({data,mode}) => {
           ...ui.viewports,
           current: {
             ...ui.viewports.current,
-            width: value,
-          },
-        },
-      },
+            width: value
+          }
+        }
+      }
     });
   };
 
@@ -332,7 +331,7 @@ export const PuckComponent = ({data,mode}) => {
               style={{
                 width: `${ui.viewports.current.width}px`,
                 minHeight: "100vh",
-                pointerEvents: "unset",
+                pointerEvents: "unset"
               }}
             >
               <Puck.Preview />

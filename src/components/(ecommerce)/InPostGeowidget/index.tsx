@@ -66,5 +66,5 @@ const InPostWrapper = ({ token, onPointSelect }: { token: string; onPointSelect:
 };
 
 export const InPostGeowidget = dynamic(() => Promise.resolve(InPostWrapper), {
-  ssr: false,
+  ssr: false
 });

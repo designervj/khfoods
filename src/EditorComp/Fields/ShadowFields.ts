@@ -11,38 +11,38 @@ export const BoxShadowFields = {
         { label: "Extra Large", value: "xl" },
         { label: "Inner", value: "inner" },
         { label: "Custom", value: "custom" },
-      ],
+      ]
     },
     "Horizontal Position": {
       type: "text",
-      label: "Horizontal Position",
+      label: "Horizontal Position"
     },
     "Vertical Position": {
       type: "text",
-      label: "Vertical Position",
+      label: "Vertical Position"
     },
     "Blur Strength": {
       type: "text",
-      label: "Blur Strength",
+      label: "Blur Strength"
     },
     "Spread Strength": {
       type: "text",
-      label: "Spread Strength",
+      label: "Spread Strength"
     },
     "Shadow Color": {
       type: "text",
-      label: "Shadow Color",
+      label: "Shadow Color"
     },
     "Shadow Opacity": {
       type: "number",
-      label: "Shadow Opacity",
+      label: "Shadow Opacity"
     },
     "Shadow Position": {
       type: "select",
       options: [
         { label: "Outer Shadow", value: "outer" },
         { label: "Inner Shadow", value: "inner" },
-      ],
-    },
-  },
+      ]
+    }
+  }
 };

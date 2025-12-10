@@ -76,7 +76,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
         backgroundColor: block.customColors.backgroundColor || "#0066cc",
         color: block.customColors.textColor || "#ffffff",
         borderColor: block.customColors.borderColor || "transparent",
-        border: "1px solid",
+        border: "1px solid"
       };
     }
 
@@ -84,39 +84,39 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       primary: {
         backgroundColor: "var(--btn-primary-bg, #0066cc)",
         color: "var(--btn-primary-text, #ffffff)",
-        border: "none",
+        border: "none"
       },
       secondary: {
         backgroundColor: "var(--btn-secondary-bg, #6366f1)",
         color: "var(--btn-secondary-text, #ffffff)",
-        border: "none",
+        border: "none"
       },
       outline: {
         backgroundColor: "transparent",
         color: "var(--btn-outline-text, #0066cc)",
-        border: "2px solid currentColor",
+        border: "2px solid currentColor"
       },
       ghost: {
         backgroundColor: "transparent",
         color: "var(--btn-ghost-text, #374151)",
-        border: "none",
+        border: "none"
       },
       link: {
         backgroundColor: "transparent",
         color: "var(--btn-link-text, #0066cc)",
         border: "none",
-        textDecoration: "underline",
+        textDecoration: "underline"
       },
       destructive: {
         backgroundColor: "var(--btn-destructive-bg, #ef4444)",
         color: "var(--btn-destructive-text, #ffffff)",
-        border: "none",
+        border: "none"
       },
       success: {
         backgroundColor: "var(--btn-success-bg, #10b981)",
         color: "var(--btn-success-text, #ffffff)",
-        border: "none",
-      },
+        border: "none"
+      }
     };
 
     return variantMap[block.variant] || variantMap.primary;
@@ -129,7 +129,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       sm: { fontSize: "0.875rem", padding: "0.5rem 1rem" },
       md: { fontSize: "1rem", padding: "0.625rem 1.25rem" },
       lg: { fontSize: "1.125rem", padding: "0.75rem 1.5rem" },
-      xl: { fontSize: "1.25rem", padding: "1rem 2rem" },
+      xl: { fontSize: "1.25rem", padding: "1rem 2rem" }
     };
     return sizeMap[block.size] || sizeMap.md;
   };
@@ -143,7 +143,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       sm: "0.75rem",
       md: "1rem",
       lg: "1.5rem",
-      xl: "2rem",
+      xl: "2rem"
     };
 
     const verticalMap: Record<string, string> = {
@@ -151,7 +151,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       sm: "0.375rem",
       md: "0.625rem",
       lg: "0.875rem",
-      xl: "1.25rem",
+      xl: "1.25rem"
     };
 
     const horizontal = horizontalMap[block.padding.horizontal];
@@ -171,7 +171,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       md: "0.375rem",
       lg: "0.5rem",
       xl: "0.75rem",
-      full: "9999px",
+      full: "9999px"
     };
     return radiusMap[block.borderRadius] || "0.375rem";
   };
@@ -183,7 +183,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
       md: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
       lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
     };
     return shadowMap[block.shadow] || "none";
   };
@@ -194,7 +194,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       normal: "400",
       medium: "500",
       semibold: "600",
-      bold: "700",
+      bold: "700"
     };
     return weightMap[block.fontWeight] || "500";
   };
@@ -208,12 +208,12 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       sm: "0.5rem",
       md: "1rem",
       lg: "1.5rem",
-      xl: "2rem",
+      xl: "2rem"
     };
 
     return {
       marginTop: marginMap[block.margin.top] || "0",
-      marginBottom: marginMap[block.margin.bottom] || "0",
+      marginBottom: marginMap[block.margin.bottom] || "0"
     };
   };
 
@@ -222,7 +222,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
     const iconSizeMap: Record<string, string> = {
       sm: "1rem",
       md: "1.25rem",
-      lg: "1.5rem",
+      lg: "1.5rem"
     };
     return iconSizeMap[block.icon?.iconSize || "md"] || "1.25rem";
   };
@@ -235,7 +235,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
       lift: "btn-hover-lift",
       "slide-right": "btn-hover-slide-right",
       pulse: "btn-hover-pulse",
-      bounce: "btn-hover-bounce",
+      bounce: "btn-hover-bounce"
     };
     return block.animation && block.animation !== "none" ? animationMap[block.animation] || "" : "";
   };
@@ -258,7 +258,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
     cursor: block.disabled ? "not-allowed" : "pointer",
     opacity: block.disabled ? 0.6 : 1,
     textDecoration: "none",
-    transition: "all 0.2s ease",
+    transition: "all 0.2s ease"
   };
 
   // Wrapper styles for alignment
@@ -266,7 +266,7 @@ export const ButtonBlockRenderer: React.FC<ButtonBlockProps> = ({ block }) => {
     display: "flex",
     justifyContent:
       block.alignment === "center" ? "center" : block.alignment === "right" ? "flex-end" : "flex-start",
-    width: "100%",
+    width: "100%"
   };
 
   // Render icon if enabled

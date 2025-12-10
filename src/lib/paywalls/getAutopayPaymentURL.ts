@@ -10,7 +10,7 @@ export const getAutopayPaymentURL = async ({
   autopay,
   orderID,
   currency,
-  customerEmail,
+  customerEmail
 }: {
   total: number;
   autopay: Payment["autopay"];
@@ -31,7 +31,7 @@ export const getAutopayPaymentURL = async ({
       CustomerEmail: customerEmail,
       Hash: createHash("sha256")
         .update(`${serviceID}|${orderID}|${total.toString()}|0|${currency}|${customerEmail}|${hashKey}`)
-        .digest("hex"),
+        .digest("hex")
     };
 
     const formData = new URLSearchParams(data);
@@ -39,8 +39,8 @@ export const getAutopayPaymentURL = async ({
     const { data: response } = await axios.post<string>(endpoint, formData, {
       headers: {
         BmHeader: "pay-bm-continue-transaction-url",
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
     });
 
     console.log(response);

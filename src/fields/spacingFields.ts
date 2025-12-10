@@ -11,21 +11,21 @@ export const marginFields: Field = {
       options: [
         {
           label: "None",
-          value: "none",
+          value: "none"
         },
         {
           label: "Small",
-          value: "small",
+          value: "small"
         },
         {
           label: "Medium",
-          value: "medium",
+          value: "medium"
         },
         {
           label: "Large",
-          value: "large",
+          value: "large"
         },
-      ],
+      ]
     },
     {
       name: "spacingTop",
@@ -35,23 +35,23 @@ export const marginFields: Field = {
       options: [
         {
           label: "None",
-          value: "none",
+          value: "none"
         },
         {
           label: "Small",
-          value: "small",
+          value: "small"
         },
         {
           label: "Medium",
-          value: "medium",
+          value: "medium"
         },
         {
           label: "Large",
-          value: "large",
+          value: "large"
         },
-      ],
+      ]
     },
-  ],
+  ]
 };
 
 export const paddingFields: Field = {
@@ -65,21 +65,21 @@ export const paddingFields: Field = {
       options: [
         {
           label: "None",
-          value: "none",
+          value: "none"
         },
         {
           label: "Small",
-          value: "small",
+          value: "small"
         },
         {
           label: "Medium",
-          value: "medium",
+          value: "medium"
         },
         {
           label: "Large",
-          value: "large",
+          value: "large"
         },
-      ],
+      ]
     },
     {
       name: "paddingTop",
@@ -89,21 +89,21 @@ export const paddingFields: Field = {
       options: [
         {
           label: "None",
-          value: "none",
+          value: "none"
         },
         {
           label: "Small",
-          value: "small",
+          value: "small"
         },
         {
           label: "Medium",
-          value: "medium",
+          value: "medium"
         },
         {
           label: "Large",
-          value: "large",
+          value: "large"
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

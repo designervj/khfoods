@@ -9,7 +9,7 @@ type CartState = {
 const useCartStateStore = create<CartState>((set) => ({
   isOpen: false,
   toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
-  setCartState: (isOpen) => set({ isOpen }),
+  setCartState: (isOpen) => set({ isOpen })
 }));
 
 export const useCartState = () => {

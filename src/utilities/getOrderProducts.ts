@@ -18,11 +18,11 @@ export const getOrderProducts = async (orderProducts: Order["products"] | null, 
               typeof product.product === "string"
                 ? product.product
                 : (product.product?.id ?? product.id ?? ""),
-            locale,
+            locale
           });
           return {
             ...product,
-            ...filledProduct,
+            ...filledProduct
           };
         }),
       ))

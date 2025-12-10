@@ -16,14 +16,14 @@ Kvaliteta izrade, oštrica i samog materijala je nevjerojatna — izdržali su t
 
 Ako tražite kovača koji spaja vrhunsko majstorstvo, izdržljivost i estetski užitak, Karl Ban je prava adresa.`,
     image: "/assets/Image/testimonials-img.png",
-    thumbnails: ["/assets/Image/testimonials-img-1.png", "/assets/Image/testimonials-img-2.png"],
+    thumbnails: ["/assets/Image/testimonials-img-1.png", "/assets/Image/testimonials-img-2.png"]
   },
   {
     id: 2,
     name: "Petar Novak",
     text: `Karlovi noževi su čudo! Svaki put kad ih koristim, osjećam razliku u preciznosti i balansu. Nevjerojatno iskustvo.`,
     image: "/assets/Image/testimonials-img.png",
-    thumbnails: ["/assets/Image/testimonials-img-1.png", "/assets/Image/testimonials-img-2.png"],
+    thumbnails: ["/assets/Image/testimonials-img-1.png", "/assets/Image/testimonials-img-2.png"]
   },
 ];
 
@@ -40,7 +40,7 @@ const Testimonials = () => {
           modules={[Navigation]}
           navigation={{
             nextEl: ".next-btn",
-            prevEl: ".prev-btn",
+            prevEl: ".prev-btn"
           }}
           spaceBetween={50}
           slidesPerView={1}

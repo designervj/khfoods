@@ -154,5 +154,5 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-  CommandSearchInput,
+  CommandSearchInput
 };

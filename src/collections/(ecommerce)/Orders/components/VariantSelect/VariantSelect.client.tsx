@@ -32,9 +32,9 @@ export const VariantSelectClient = ({ path }: { path: string }) => {
       {
         select: {
           variants: {
-            variantSlug: true,
-          },
-        },
+            variantSlug: true
+          }
+        }
       },
       { addQueryPrefix: true }
     );
@@ -43,7 +43,7 @@ export const VariantSelectClient = ({ path }: { path: string }) => {
       const { data } = await axios.get<Product>(
         `/api/products/${productID}${query}&locale=${locale.code}`,
         {
-          withCredentials: true,
+          withCredentials: true
         }
       );
       if (!data?.variants) {
@@ -52,7 +52,7 @@ export const VariantSelectClient = ({ path }: { path: string }) => {
       setOptions(
         data.variants.map((variant) => ({
           label: variant.variantSlug ?? "",
-          value: variant.variantSlug ?? "",
+          value: variant.variantSlug ?? ""
         }))
       );
     } catch (error) {
@@ -68,7 +68,7 @@ export const VariantSelectClient = ({ path }: { path: string }) => {
     <Select
       value={{
         label: value,
-        value,
+        value
       }}
       onChange={handleVariantChange}
       options={options}

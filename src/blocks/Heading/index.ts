@@ -4,7 +4,7 @@ export const TextBlock: Block = {
   slug: "textBlock",
   labels: {
     singular: "Text Block",
-    plural: "Text Blocks",
+    plural: "Text Blocks"
   },
   fields: [
     {
@@ -23,13 +23,13 @@ export const TextBlock: Block = {
         { label: "Paragraph", value: "paragraph" },
         { label: "Blockquote", value: "blockquote" },
         { label: "Code Block", value: "code" },
-      ],
+      ]
     },
     {
       name: "content",
       type: "text",
       label: "Content",
-      required: true,
+      required: true
     },
     {
       name: "textAlign",
@@ -41,7 +41,7 @@ export const TextBlock: Block = {
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
         { label: "Justify", value: "justify" },
-      ],
+      ]
     },
     {
       name: "textColor",
@@ -55,7 +55,7 @@ export const TextBlock: Block = {
         { label: "Accent", value: "accent" },
         { label: "Muted", value: "muted" },
         { label: "Custom", value: "custom" },
-      ],
+      ]
     },
     {
       name: "customTextColor",
@@ -63,8 +63,8 @@ export const TextBlock: Block = {
       label: "Custom Text Color (Hex)",
       admin: {
         condition: (data, siblingData) => siblingData?.textColor === "custom",
-        placeholder: "#000000",
-      },
+        placeholder: "#000000"
+      }
     },
     {
       name: "fontSize",
@@ -80,7 +80,7 @@ export const TextBlock: Block = {
         { label: "2XL", value: "2xl" },
         { label: "3XL", value: "3xl" },
         { label: "Custom", value: "custom" },
-      ],
+      ]
     },
     {
       name: "customFontSize",
@@ -88,8 +88,8 @@ export const TextBlock: Block = {
       label: "Custom Font Size (e.g., 18px or 1.5rem)",
       admin: {
         condition: (data, siblingData) => siblingData?.fontSize === "custom",
-        placeholder: "18px",
-      },
+        placeholder: "18px"
+      }
     },
     {
       name: "fontWeight",
@@ -103,7 +103,7 @@ export const TextBlock: Block = {
         { label: "Semi Bold (600)", value: "semibold" },
         { label: "Bold (700)", value: "bold" },
         { label: "Extra Bold (800)", value: "extrabold" },
-      ],
+      ]
     },
     {
       name: "lineHeight",
@@ -115,7 +115,7 @@ export const TextBlock: Block = {
         { label: "Normal", value: "normal" },
         { label: "Relaxed", value: "relaxed" },
         { label: "Loose", value: "loose" },
-      ],
+      ]
     },
     {
       name: "letterSpacing",
@@ -129,7 +129,7 @@ export const TextBlock: Block = {
         { label: "Wide", value: "wide" },
         { label: "Wider", value: "wider" },
         { label: "Widest", value: "widest" },
-      ],
+      ]
     },
     {
       name: "textTransform",
@@ -141,7 +141,7 @@ export const TextBlock: Block = {
         { label: "Uppercase", value: "uppercase" },
         { label: "Lowercase", value: "lowercase" },
         { label: "Capitalize", value: "capitalize" },
-      ],
+      ]
     },
     {
       name: "fontFamily",
@@ -153,7 +153,7 @@ export const TextBlock: Block = {
         { label: "Sans Serif", value: "sans" },
         { label: "Serif", value: "serif" },
         { label: "Monospace", value: "mono" },
-      ],
+      ]
     },
     {
       name: "backgroundColor",
@@ -167,7 +167,7 @@ export const TextBlock: Block = {
         { label: "Primary", value: "primary" },
         { label: "Secondary", value: "secondary" },
         { label: "Custom", value: "custom" },
-      ],
+      ]
     },
     {
       name: "customBackgroundColor",
@@ -175,8 +175,8 @@ export const TextBlock: Block = {
       label: "Custom Background Color (Hex)",
       admin: {
         condition: (data, siblingData) => siblingData?.backgroundColor === "custom",
-        placeholder: "#ffffff",
-      },
+        placeholder: "#ffffff"
+      }
     },
     {
       name: "padding",
@@ -194,7 +194,7 @@ export const TextBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
         {
           name: "bottom",
@@ -207,7 +207,7 @@ export const TextBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
         {
           name: "left",
@@ -220,7 +220,7 @@ export const TextBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
         {
           name: "right",
@@ -233,9 +233,9 @@ export const TextBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "margin",
@@ -253,7 +253,7 @@ export const TextBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
         {
           name: "bottom",
@@ -266,9 +266,9 @@ export const TextBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "maxWidth",
@@ -282,21 +282,21 @@ export const TextBlock: Block = {
         { label: "Large (1024px)", value: "lg" },
         { label: "Extra Large (1280px)", value: "xl" },
         { label: "2XL (1536px)", value: "2xl" },
-      ],
+      ]
     },
     {
       name: "link",
       type: "group",
       label: "Link Settings (Optional)",
       admin: {
-        description: "Make the entire text block clickable",
+        description: "Make the entire text block clickable"
       },
       fields: [
         {
           name: "enable",
           type: "checkbox",
           label: "Enable Link",
-          defaultValue: false,
+          defaultValue: false
         },
         {
           name: "url",
@@ -304,8 +304,8 @@ export const TextBlock: Block = {
           label: "URL",
           required: true,
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
         {
           name: "newTab",
@@ -313,8 +313,8 @@ export const TextBlock: Block = {
           label: "Open in New Tab",
           defaultValue: false,
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
         {
           name: "rel",
@@ -329,8 +329,8 @@ export const TextBlock: Block = {
             { label: "No Opener No Referrer", value: "noopener noreferrer" },
           ],
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
         {
           name: "linkStyle",
@@ -344,8 +344,8 @@ export const TextBlock: Block = {
             { label: "Underline on Hover", value: "hover-underline" },
           ],
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
         {
           name: "linkColor",
@@ -360,8 +360,8 @@ export const TextBlock: Block = {
             { label: "Custom", value: "custom" },
           ],
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
         {
           name: "customLinkColor",
@@ -370,18 +370,18 @@ export const TextBlock: Block = {
           admin: {
             condition: (data, siblingData) =>
               siblingData?.enable === true && siblingData?.linkColor === "custom",
-            placeholder: "#0066cc",
-          },
+            placeholder: "#0066cc"
+          }
         },
-      ],
+      ]
     },
     {
       name: "className",
       type: "text",
       label: "Custom CSS Class",
       admin: {
-        description: "Add custom CSS classes for additional styling",
-      },
+        description: "Add custom CSS classes for additional styling"
+      }
     },
-  ],
+  ]
 };

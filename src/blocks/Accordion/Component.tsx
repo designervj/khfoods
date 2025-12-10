@@ -4,7 +4,7 @@ import {
   spacingTopClasses,
   spacingBottomClasses,
   paddingBottomClasses,
-  paddingTopClasses,
+  paddingTopClasses
 } from "@/blocks/globals";
 import RichText from "@/components/RichText";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -18,7 +18,7 @@ export const AccordionBlock = ({
   title,
   items,
   paddingBottom,
-  paddingTop,
+  paddingTop
 }: AccordionBlockProps) => {
   return (
     <section

@@ -51,9 +51,9 @@ export const createInpostCourierPackage = async (
   const tokenResp = await fetch(url, {
     method: "POST",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: params.toString(),
+    body: params.toString()
   });
 
   const tokenData = await tokenResp.json();
@@ -137,37 +137,37 @@ export const createInpostCourierPackage = async (
   const t = {
     labelResponseOptions: "URL_ONLY",
     accountNumber: {
-      value: "740561073",
+      value: "740561073"
     },
     requestedShipment: {
       shipper: {
         contact: {
           personName: "John Sender",
           phoneNumber: "1234567890",
-          companyName: "Sender Company",
+          companyName: "Sender Company"
         },
         address: {
           streetLines: ["123 Main Street"],
           city: "Memphis",
           stateOrProvinceCode: "TN",
           postalCode: "38116",
-          countryCode: "US",
-        },
+          countryCode: "US"
+        }
       },
       recipients: [
         {
           contact: {
             personName: "Jane Receiver",
             phoneNumber: "9876543210",
-            companyName: "Receiver Company",
+            companyName: "Receiver Company"
           },
           address: {
             streetLines: ["456 Oak Avenue"],
             city: "Memphis",
             stateOrProvinceCode: "TN",
             postalCode: "38117",
-            countryCode: "US",
-          },
+            countryCode: "US"
+          }
         },
       ],
       serviceType: "STANDARD_OVERNIGHT",
@@ -175,30 +175,30 @@ export const createInpostCourierPackage = async (
       pickupType: "DROPOFF_AT_FEDEX_LOCATION",
 
       shippingChargesPayment: {
-        paymentType: "SENDER",
+        paymentType: "SENDER"
       },
 
       labelSpecification: {
         imageType: "PDF",
-        labelStockType: "PAPER_4X6",
+        labelStockType: "PAPER_4X6"
       },
 
       requestedPackageLineItems: [
         {
           weight: {
             units: "LB",
-            value: 10,
+            value: 10
           },
           dimensions: {
             length: 12,
             width: 10,
             height: 8,
-            units: "IN",
-          },
+            units: "IN"
+          }
         },
-      ],
+      ]
     },
-    processingOptionType: "ALLOW_ASYNCHRONOUS",
+    processingOptionType: "ALLOW_ASYNCHRONOUS"
   };
 
   const response = await fetch(
@@ -208,9 +208,9 @@ export const createInpostCourierPackage = async (
       headers: {
         Authorization: `Bearer ${accessToken}`, // from step 1
         "Content-Type": "application/json",
-        "X-locale": "en_US",
+        "X-locale": "en_US"
       },
-      body: JSON.stringify(t),
+      body: JSON.stringify(t)
     }
   );
 
@@ -221,7 +221,6 @@ export const createInpostCourierPackage = async (
   }
 
   const shipmentResult = await response.json();
-
 
   const transactionShipment = shipmentResult.output.transactionShipments[0];
   const trackingNumber = transactionShipment.masterTrackingNumber;
@@ -234,13 +233,13 @@ export const createInpostCourierPackage = async (
     collection: "orders",
     data: {
       orderDetails: {
-        trackingNumber: trackingNumber,
+        trackingNumber: trackingNumber
       },
       printLabel: {
         packageNumber: packageID, 
         labelurl: pieceResponse.packageDocuments[0].url
-      },
-    },
+      }
+    }
   });
 
   // const checkShipmentStatus = async (maxAttempts = 10): Promise<string> => {

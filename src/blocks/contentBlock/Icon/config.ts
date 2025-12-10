@@ -5,7 +5,7 @@ export const Icon: Block = {
   interfaceName: "IconBlock",
   labels: {
     singular: "🎯 Icon",
-    plural: "🎯 Icons",
+    plural: "🎯 Icons"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -30,7 +30,7 @@ export const Icon: Block = {
               options: [
                 { label: "Preset Icon", value: "preset" },
                 { label: "Custom Upload", value: "custom" },
-              ],
+              ]
             },
             {
               name: "icon",
@@ -50,8 +50,8 @@ export const Icon: Block = {
                 { label: "Settings", value: "settings" },
               ],
               admin: {
-                condition: (data) => data.iconType === "preset",
-              },
+                condition: (data) => data.iconType === "preset"
+              }
             },
             {
               name: "customIcon",
@@ -59,21 +59,21 @@ export const Icon: Block = {
               label: "Custom Icon",
               relationTo: "media",
               admin: {
-                condition: (data) => data.iconType === "custom",
-              },
+                condition: (data) => data.iconType === "custom"
+              }
             },
             {
               name: "url",
               type: "text",
-              label: "Link URL (Optional)",
+              label: "Link URL (Optional)"
             },
             {
               name: "urlNewTab",
               type: "checkbox",
               label: "Open in New Tab",
-              defaultValue: false,
+              defaultValue: false
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -89,17 +89,17 @@ export const Icon: Block = {
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
                 { label: "2XL", value: "2xl" },
-              ],
+              ]
             },
             {
               name: "color",
               type: "text",
-              label: "Icon Color",
+              label: "Icon Color"
             },
             {
               name: "backgroundColor",
               type: "text",
-              label: "Background Color",
+              label: "Background Color"
             },
             {
               name: "backgroundShape",
@@ -111,12 +111,12 @@ export const Icon: Block = {
                 { label: "Circle", value: "circle" },
                 { label: "Square", value: "square" },
                 { label: "Rounded Square", value: "rounded" },
-              ],
+              ]
             },
             {
               name: "borderColor",
               type: "text",
-              label: "Border Color",
+              label: "Border Color"
             },
             {
               name: "borderWidth",
@@ -128,7 +128,7 @@ export const Icon: Block = {
                 { label: "1px", value: "1" },
                 { label: "2px", value: "2" },
                 { label: "3px", value: "3" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -140,7 +140,7 @@ export const Icon: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -152,7 +152,7 @@ export const Icon: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "hoverEffect",
@@ -164,7 +164,7 @@ export const Icon: Block = {
                 { label: "Scale", value: "scale" },
                 { label: "Rotate", value: "rotate" },
                 { label: "Bounce", value: "bounce" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -176,7 +176,7 @@ export const Icon: Block = {
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Zoom In", value: "zoomIn" },
                 { label: "Bounce", value: "bounce" },
-              ],
+              ]
             },
             {
               name: "alignment",
@@ -187,16 +187,16 @@ export const Icon: Block = {
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

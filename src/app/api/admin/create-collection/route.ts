@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
             password: "hashed_password",
             role: "user",
             createdAt: new Date(),
-            isActive: true,
+            isActive: true
           };
           break;
         case "products":
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
             price: 99.99,
             category: "electronics",
             inStock: true,
-            createdAt: new Date(),
+            createdAt: new Date()
           };
           break;
         case "category":
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
             description: "Category description",
             slug: "sample-category",
             createdAt: new Date(),
-            isActive: true,
+            isActive: true
           };
           break;
         default:
@@ -76,8 +76,8 @@ export async function POST(req: NextRequest) {
         message: `Collection "${collectionName}" created successfully in database "${dbName}"`,
         collection: {
           name: collectionName,
-          database: dbName,
-        },
+          database: dbName
+        }
       });
     } finally {
       await client.close();
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error: error instanceof Error ? error.message : "Failed to create collection",
-        details: "Check your MongoDB credentials and ensure the database exists",
+        details: "Check your MongoDB credentials and ensure the database exists"
       },
       { status: 500 },
     );

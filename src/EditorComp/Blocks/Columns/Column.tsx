@@ -1,6 +1,5 @@
 "use client"
 
-
 import { ComponentConfig } from "@measured/puck";
 
 export const ColumnBlock: ComponentConfig = {
@@ -13,7 +12,7 @@ export const ColumnBlock: ComponentConfig = {
       options: [
         { label: "Flex", value: "flex" },
         { label: "Grid", value: "grid" },
-      ],
+      ]
     },
     gap: { type: "number", label: "Gap (px)" },
     alignItems: {
@@ -24,7 +23,7 @@ export const ColumnBlock: ComponentConfig = {
         { label: "Center", value: "center" },
         { label: "End", value: "flex-end" },
         { label: "Stretch", value: "stretch" },
-      ],
+      ]
     },
     justifyContent: {
       type: "select",
@@ -36,7 +35,7 @@ export const ColumnBlock: ComponentConfig = {
         { label: "Space Between", value: "space-between" },
         { label: "Space Around", value: "space-around" },
         { label: "Space Evenly", value: "space-evenly" },
-      ],
+      ]
     },
     width: { type: "text", label: "Width (e.g., 100%, 400px)" },
     maxWidth: { type: "text", label: "Max Width (optional)" },
@@ -50,14 +49,14 @@ export const ColumnBlock: ComponentConfig = {
         paddingTop: { type: "number" },
         paddingBottom: { type: "number" },
         paddingLeft: { type: "number" },
-        paddingRight: { type: "number" },
-      },
+        paddingRight: { type: "number" }
+      }
     },
     boxShadow: { type: "text", label: "Box Shadow (optional)" },
     modules: {
       type: "slot",
       allow: ["BlurbBlock", "CarouselBlock", "AccordionBlock", "HeroBlock"]
-    },
+    }
   },
 
   defaultProps: {
@@ -75,8 +74,8 @@ export const ColumnBlock: ComponentConfig = {
       paddingTop: 0,
       paddingBottom: 0,
       paddingLeft: 0,
-      paddingRight: 0,
-    },
+      paddingRight: 0
+    }
   },
   render: ({
     layout,
@@ -110,7 +109,7 @@ export const ColumnBlock: ComponentConfig = {
             paddingTop: padding?.paddingTop,
             paddingBottom: padding?.paddingBottom,
             paddingLeft: padding?.paddingLeft,
-            paddingRight: padding?.paddingRight,
+            paddingRight: padding?.paddingRight
           }
         : {
             display: "flex",
@@ -127,7 +126,7 @@ export const ColumnBlock: ComponentConfig = {
             paddingTop: padding?.paddingTop,
             paddingBottom: padding?.paddingBottom,
             paddingLeft: padding?.paddingLeft,
-            paddingRight: padding?.paddingRight,
+            paddingRight: padding?.paddingRight
           };
 
     return (
@@ -135,5 +134,5 @@ export const ColumnBlock: ComponentConfig = {
         <Modules />
       </div>
     );
-  },
+  }
 };

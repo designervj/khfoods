@@ -3,47 +3,46 @@
 import { ComponentConfig } from "@measured/puck";
 import { LuHouse } from "react-icons/lu";
 
-
 export const PortfolioSimpleType: ComponentConfig = {
   label: "Portfolio Simple Type",
 
   fields: {
     AboutTitleContent: {
-      type: "text",
+      type: "text"
     },
     AboutTitleSize: {
-      type: "number",
+      type: "number"
     },
     AboutDescription: {
         type: "text"
     },
 
     AboutImage: {
-      type: "text",
+      type: "text"
     },
     backgroundColor: {
-       type: "text",
+       type: "text"
     },
     margin: {
       type: "object",
       objectFields: {
         marginleft: {
-          type: "text",
+          type: "text"
         },
         marginright: {
-          type: "text",
+          type: "text"
         },
         margintop: {
-          type: "text",
+          type: "text"
         },
         marginbottom: {
-          type: "text",
-        },
-      },
+          type: "text"
+        }
+      }
     },
     width: {
-      type: "number",
-    },
+      type: "number"
+    }
   },
 
   defaultProps: {
@@ -54,7 +53,7 @@ export const PortfolioSimpleType: ComponentConfig = {
       marginright: "auto",
       margintop: "0",
       marginbottom: "0",
-      marginleft: "auto",
+      marginleft: "auto"
     },
     width: 85,
     backgroundColor: "#fff",
@@ -74,12 +73,12 @@ export const PortfolioSimpleType: ComponentConfig = {
     return (
       <div
         style={{
-          backgroundColor: backgroundColor,
+          backgroundColor: backgroundColor
         }}>
         <div
           style={{
             width: `${width}%`,
-            margin: `${margin.margintop} ${margin.marginright} ${margin.marginbottom} ${margin.marginleft}`,
+            margin: `${margin.margintop} ${margin.marginright} ${margin.marginbottom} ${margin.marginleft}`
           }}>
           <div
             style={{
@@ -88,20 +87,20 @@ export const PortfolioSimpleType: ComponentConfig = {
               gap: "20px",
               alignItems: "center",
               paddingTop: "40px",
-              paddingBottom: "40px",
+              paddingBottom: "40px"
             }}>
             <div>
               <h2
                 style={{
                   fontSize: `${AboutTitleSize}px`,
-                  fontWeight: "700",
+                  fontWeight: "700"
                 }}>
                {AboutTitleContent}
               </h2>
               <p
                 style={{
                   fontSize: `${AboutTitleContent}px`,
-                  fontWeight: "500",
+                  fontWeight: "500"
                 }}>
                 {AboutDescription}
               </p>
@@ -112,12 +111,12 @@ export const PortfolioSimpleType: ComponentConfig = {
                 src={AboutImage}
                 alt="About Image"
                 style={{
-                  borderRadius: "6px",
+                  borderRadius: "6px"
                 }}></img>
             </div>
           </div>
         </div>
       </div>
     );
-  },
+  }
 };

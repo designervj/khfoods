@@ -25,9 +25,9 @@ export const TwoColumeCardBlock: ComponentConfig = {
         buttonText: { type: "text", label: "Button Text" },
         buttonColor: { type: "text", label: "Button Color" },
         videoUrl: { type: "text", label: "Video URL" },
-        overlayOpacity: { type: "number", label: "Overlay (0–1)" },
-      },
-    },
+        overlayOpacity: { type: "number", label: "Overlay (0–1)" }
+      }
+    }
   },
 
   // ---------------------------------------------------
@@ -45,7 +45,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
         buttonText: "Više o Noževima",
         buttonColor: "#AD1100",
         videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY",
-        overlayOpacity: 0.7,
+        overlayOpacity: 0.7
       },
       {
         title: "O Majstoru",
@@ -57,9 +57,9 @@ export const TwoColumeCardBlock: ComponentConfig = {
         buttonText: "Više o Karlu",
         buttonColor: "#5E6979",
         videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY",
-        overlayOpacity: 0.7,
+        overlayOpacity: 0.7
       },
-    ],
+    ]
   },
 
   // ---------------------------------------------------
@@ -74,14 +74,14 @@ export const TwoColumeCardBlock: ComponentConfig = {
           width: "100%",
           padding: "60px 20px",
           margin: "0 auto",
-          maxWidth: "1300px",
+          maxWidth: "1300px"
         }}
       >
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
+            gap: "20px"
           }}
         >
           {cards.map((card: any, index: number) => (
@@ -92,7 +92,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                 height: "420px",
                 borderRadius: "20px",
                 overflow: "hidden",
-                cursor: "pointer",
+                cursor: "pointer"
               }}
             >
               {/* Background Image */}
@@ -102,7 +102,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  objectFit: "cover"
                 }}
               />
 
@@ -111,7 +111,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: `rgba(0,0,0,${card.overlayOpacity})`,
+                  background: `rgba(0,0,0,${card.overlayOpacity})`
                 }}
               />
 
@@ -126,7 +126,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                   alignItems: "center",
                   border: "none",
                   background: "transparent",
-                  cursor: "pointer",
+                  cursor: "pointer"
                 }}
               >
                 <div
@@ -134,14 +134,14 @@ export const TwoColumeCardBlock: ComponentConfig = {
                     padding: "18px",
                     borderRadius: "50%",
                     background: "rgba(255,255,255,0.25)",
-                    backdropFilter: "blur(4px)",
+                    backdropFilter: "blur(4px)"
                   }}
                 >
                   <span
                     style={{
                       fontSize: "26px",
                       color: "#fff",
-                      display: "block",
+                      display: "block"
                     }}
                   >
                     ▶
@@ -157,7 +157,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                   left: "20px",
                   color: "white",
                   fontSize: "28px",
-                  fontWeight: "700",
+                  fontWeight: "700"
                 }}
               >
                 {card.title}
@@ -170,7 +170,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                   bottom: "20px",
                   left: "20px",
                   right: "20px",
-                  color: "white",
+                  color: "white"
                 }}
               >
                 <div style={{ marginBottom: "20px" }}>
@@ -180,7 +180,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                       style={{
                         fontSize: "12px",
                         opacity: 0.8,
-                        marginTop: "4px",
+                        marginTop: "4px"
                       }}
                     >
                       {card.feature1Sub}
@@ -193,7 +193,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                       style={{
                         fontSize: "12px",
                         opacity: 0.8,
-                        marginTop: "4px",
+                        marginTop: "4px"
                       }}
                     >
                       {card.feature2Sub}
@@ -210,7 +210,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
                     borderRadius: "30px",
                     color: "white",
                     cursor: "pointer",
-                    fontWeight: "600",
+                    fontWeight: "600"
                   }}
                 >
                   {card.buttonText}
@@ -231,7 +231,7 @@ export const TwoColumeCardBlock: ComponentConfig = {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              zIndex: 9999,
+              zIndex: 9999
             }}
           >
             <div style={{ width: "80%", maxWidth: "800px" }}>
@@ -247,5 +247,5 @@ export const TwoColumeCardBlock: ComponentConfig = {
         )}
       </section>
     );
-  },
+  }
 };

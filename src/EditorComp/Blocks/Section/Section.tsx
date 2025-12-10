@@ -14,8 +14,8 @@ export const SectionBlock: ComponentConfig = {
   label: "Section",
   fields: {
     row: {
-      type: "slot",
-    },
+      type: "slot"
+    }
   },
   resolveFields: (data, params) => {
     const layoutStyle = data.props?.Design?.Layout?.["Layout Style"] || "block";
@@ -44,11 +44,11 @@ export const SectionBlock: ComponentConfig = {
                   { label: "Grid", value: "grid" },
                   { label: "Flex", value: "flex" },
                   { label: "Block", value: "block" },
-                ],
-              },
-            },
-          },
-        },
+                ]
+              }
+            }
+          }
+        }
       },
       Content: {
         type: "object",
@@ -65,26 +65,26 @@ export const SectionBlock: ComponentConfig = {
                   { label: "Image", value: "image" },
                   { label: "Gradient", value: "gradient" },
                   { label: "Video", value: "video" },
-                ],
-              },
-            },
-          },
-        },
-      },
+                ]
+              }
+            }
+          }
+        }
+      }
     };
 
     // Add flex-specific fields
     if (layoutStyle === "flex") {
       baseFields.Design.objectFields.Layout.objectFields = {
         ...baseFields.Design.objectFields.Layout.objectFields,
-        ...FlexLayoutFields,
+        ...FlexLayoutFields
       };
     }
     // Add grid-specific fields
     if (layoutStyle === "grid") {
       baseFields.Design.objectFields.Layout.objectFields = {
         ...baseFields.Design.objectFields.Layout.objectFields,
-        ...GridLayoutFields,
+        ...GridLayoutFields
       };
     }
 
@@ -93,7 +93,7 @@ export const SectionBlock: ComponentConfig = {
         "Background Color"
       ] = {
         type: "text",
-        label: "Background Color",
+        label: "Background Color"
       };
     }
 
@@ -181,7 +181,7 @@ export const SectionBlock: ComponentConfig = {
         "Section Alignment": "center",
         "Min Height": "auto",
         Height: "auto",
-        "Max Height": "none",
+        "Max Height": "none"
       },
       Spacing: {
         "Margin Top": "0px",
@@ -191,14 +191,14 @@ export const SectionBlock: ComponentConfig = {
         "Padding Top": "40px",
         "Padding Bottom": "40px",
         "Padding Left": "20px",
-        "Padding Right": "20px",
+        "Padding Right": "20px"
       },
       "Border Styles": {
         "Border Style": "all",
         "Border Width": "0px",
         "Border Color": "#e0e0e0",
         "Border Line Style": "solid",
-        "Border Radius": "0px",
+        "Border Radius": "0px"
       },
       "Box Shadow": {
         "Shadow Preset": "none",
@@ -208,16 +208,16 @@ export const SectionBlock: ComponentConfig = {
         "Spread Strength": "0px",
         "Shadow Color": "#000000",
         "Shadow Opacity": 30,
-        "Shadow Position": "outer",
+        "Shadow Position": "outer"
       },
       Layout: {
-        "Layout Style": "block",
-      },
+        "Layout Style": "block"
+      }
     },
     Content: {
       Link: {
         "Section Link URL": "",
-        "Section Link Target": "_self",
+        "Section Link Target": "_self"
       },
       Background: {
         "Background Type": "none",
@@ -239,9 +239,9 @@ export const SectionBlock: ComponentConfig = {
         "Video Loop": "yes",
         "Video Muted": "yes",
         "Video Autoplay": "yes",
-        "Video Object Fit": "cover",
-      },
-    },
+        "Video Object Fit": "cover"
+      }
+    }
   },
 
   // render: ({ Design, row: Row }) => {
@@ -425,7 +425,7 @@ export const SectionBlock: ComponentConfig = {
       medium: "768px",
       large: "1024px",
       full: "100%",
-      custom: sizing["Custom Max Width"] || "1200px",
+      custom: sizing["Custom Max Width"] || "1200px"
     };
 
     // Shadow preset mapping
@@ -435,7 +435,7 @@ export const SectionBlock: ComponentConfig = {
       medium: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
       large: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
       xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
-      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)"
     };
 
     // Build border styles
@@ -485,7 +485,7 @@ export const SectionBlock: ComponentConfig = {
 
       boxSizing: "border-box",
       overflow: "hidden",
-      position: "relative",
+      position: "relative"
     };
 
     // Apply background based on type
@@ -621,7 +621,7 @@ export const SectionBlock: ComponentConfig = {
               width: "100%",
               height: "100%",
               objectFit: background["Video Object Fit"] || "cover",
-              zIndex: 0,
+              zIndex: 0
             }}
           >
             <source src={background["Video URL"]} type="video/mp4" />
@@ -632,7 +632,7 @@ export const SectionBlock: ComponentConfig = {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: background["Video Object Fit"] || "cover",
+                  objectFit: background["Video Object Fit"] || "cover"
                 }}
               />
             )}
@@ -652,5 +652,5 @@ export const SectionBlock: ComponentConfig = {
         )}
       </section>
     );
-  },
+  }
 };

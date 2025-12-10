@@ -7,7 +7,7 @@ type MobileFiltersState = {
 
 const useMobileFiltersStore = create<MobileFiltersState>((set) => ({
   mobileFiltersOpen: false, // domyślna wartość
-  setMobileFiltersOpen: (open: boolean) => set({ mobileFiltersOpen: open }),
+  setMobileFiltersOpen: (open: boolean) => set({ mobileFiltersOpen: open })
 }));
 
 export const useMobileFilters = () => {

@@ -13,7 +13,7 @@ export const generateID: CollectionBeforeValidateHook<Order> = async ({ data }) 
       const lastOrder = await payload.find({
         collection: "orders",
         sort: "-id",
-        limit: 1,
+        limit: 1
       });
 
       const lastID = lastOrder.docs[0]?.id ?? "000000000";
@@ -22,8 +22,8 @@ export const generateID: CollectionBeforeValidateHook<Order> = async ({ data }) 
       const existing = await payload.find({
         collection: "orders",
         where: {
-          id: { equals: newID },
-        },
+          id: { equals: newID }
+        }
       });
 
       if (existing.docs.length === 0) {

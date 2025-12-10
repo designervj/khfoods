@@ -4,7 +4,6 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 // import { s3Storage } from "@payloadcms/storage-s3";
 import { buildConfig } from "payload";
 import { en } from "payload/i18n/en";
-import { pl } from "payload/i18n/pl";
 import { zh } from "payload/i18n/zh";
 import sharp from "sharp"; // sharp-import
 
@@ -51,7 +50,7 @@ export default buildConfig({
   hooks: {},
   admin: {
     avatar: {
-      Component: "@/components/AdminAvatar#AdminAvatar",
+      Component: "@/components/AdminAvatar#AdminAvatar"
     },
     components: {
       afterLogin: ["@/components/AdminResetPassword#AdminResetPassword"],
@@ -59,16 +58,16 @@ export default buildConfig({
         // Identifiable Logo
         Logo: "@/components/AdminLogoBig/AdminLogoBig#AdminLogoBig",
         // Identifiable Icon (used in the top left of the admin nav)
-        Icon: "@/components/AdminLogoIcon/AdminLogoIcon#AdminLogoIcon",
+        Icon: "@/components/AdminLogoIcon/AdminLogoIcon#AdminLogoIcon"
       },
       Nav: {
-        path: "@/components/AdminNavbar#AdminNavbar",
+        path: "@/components/AdminNavbar#AdminNavbar"
       },
       // beforeDashboard: ["@/components/BeforeDashboard#BeforeDashboard"],
       views: {
         dashboard: {
-          Component: "@/components/(ecommerce)/AdminDashboard#AdminDashboard",
-        },
+          Component: "@/components/(ecommerce)/AdminDashboard#AdminDashboard"
+        }
       },
       beforeNavLinks: [
         "@/components/(ecommerce)/AdminDashboardNavLink#AdminDashboardNavLink",
@@ -84,14 +83,14 @@ export default buildConfig({
         {
           type: "image/svg+xml",
           url: "/favicon.svg",
-          rel: "icon",
+          rel: "icon"
         },
       ],
       title: "Admin Panel",
-      titleSuffix: "| Mandala labs",
+      titleSuffix: "| Mandala labs"
     },
     importMap: {
-      baseDir: path.resolve(dirname),
+      baseDir: path.resolve(dirname)
     },
     user: Administrators.slug,
     livePreview: {
@@ -100,39 +99,39 @@ export default buildConfig({
           label: "Mobile",
           name: "mobile",
           width: 375,
-          height: 667,
+          height: 667
         },
         {
           label: "Tablet",
           name: "tablet",
           width: 768,
-          height: 1024,
+          height: 1024
         },
         {
           label: "Desktop",
           name: "desktop",
           width: 1440,
-          height: 900,
+          height: 900
         },
-      ],
-    },
+      ]
+    }
   },
   i18n: {
     supportedLanguages: { en, zh },
     // fallbackLanguage: "en",
-    translations: customTranslationsObject,
+    translations: customTranslationsObject
   },
   localization: {
     locales: [
       { code: "en", label: "English" },
       { code: "zh", label: "Chinese" },
     ],
-    defaultLocale: "en",
+    defaultLocale: "en"
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI ?? "",
+    url: process.env.DATABASE_URI ?? ""
   }),
   collections: [
     Pages,
@@ -187,15 +186,15 @@ export default buildConfig({
     vercelBlobStorage({
       enabled: true,
       collections: {
-        [Media.slug]: true,
+        [Media.slug]: true
       },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
+      token: process.env.BLOB_READ_WRITE_TOKEN
     }),
   ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
   typescript: {
-    outputFile: path.resolve(dirname, "payload-types.ts"),
-  },
+    outputFile: path.resolve(dirname, "payload-types.ts")
+  }
 });

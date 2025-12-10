@@ -72,7 +72,6 @@
 //   // Add more content modules here as needed
 // ];
 
-
 // const columnBlocks = [
 //        TwoEqualColumnsSection,
 //                 ThreeEqualColumnsSection,

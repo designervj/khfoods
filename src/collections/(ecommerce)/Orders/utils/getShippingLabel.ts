@@ -4,7 +4,7 @@ import { type SetStateAction } from "react";
 export const getShippingLabel = async ({
   setIsDownloading,
   setError,
-  orderID,
+  orderID
 }: {
   setIsDownloading: (value: SetStateAction<boolean>) => void;
   setError: (value: SetStateAction<string>) => void;
@@ -13,7 +13,7 @@ export const getShippingLabel = async ({
   setIsDownloading(true);
   try {
     const response = await axios.get(`/next/printLabel?orderID=${orderID}`, {
-      responseType: "blob",
+      responseType: "blob"
     });
 
     const blob = new Blob([response.data], { type: "application/pdf" });

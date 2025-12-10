@@ -8,7 +8,7 @@ import config from "@payload-config";
 
 const CategoryPage = async ({
   params,
-  searchParams,
+  searchParams
 }: {
   params: Promise<{ slug: string }>;
   searchParams: Promise<Record<string, string | undefined>>;
@@ -24,9 +24,9 @@ const CategoryPage = async ({
       locale,
       where: {
         slug: {
-          equals: slug,
-        },
-      },
+          equals: slug
+        }
+      }
     });
 
     if (!categories[0]) {
@@ -57,14 +57,14 @@ const CategoryPage = async ({
       locale,
       where: {
         "categoriesArr.category": {
-          equals: categories[0].id,
+          equals: categories[0].id
         },
         ...(color && !size && { "variants.color": { in: colorArr } }),
         ...(size && !color && { "variants.size": { in: sizeArr } }),
         ...(size &&
-          color && { and: [{ "variants.size": { in: sizeArr } }, { "variants.color": { in: colorArr } }] }),
+          color && { and: [{ "variants.size": { in: sizeArr } }, { "variants.color": { in: colorArr } }] })
       },
-      sort: sortQuery,
+      sort: sortQuery
     });
 
     return (
@@ -75,7 +75,7 @@ const CategoryPage = async ({
         searchParams={{
           color: colorArr,
           size: sizeArr,
-          sortBy: sortBy ?? "most-popular",
+          sortBy: sortBy ?? "most-popular"
         }}
       />
     );

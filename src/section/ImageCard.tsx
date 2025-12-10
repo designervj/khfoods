@@ -33,14 +33,14 @@ export const ImageCard: React.FC<ImageCardProps> = ({
   rounded = "md",
   shadow = "sm",
   className,
-  onClick,
+  onClick
 }) => {
   const aspectRatioClasses = {
     square: "aspect-square",
     video: "aspect-video",
     portrait: "aspect-[3/4]",
     landscape: "aspect-[4/3]",
-    auto: "",
+    auto: ""
   };
 
   const sizeClasses = {
@@ -48,7 +48,7 @@ export const ImageCard: React.FC<ImageCardProps> = ({
     md: "w-48 h-48",
     lg: "w-64 h-64",
     xl: "w-80 h-80",
-    full: "w-full h-full",
+    full: "w-full h-full"
   };
 
   const roundedClasses = {
@@ -56,14 +56,14 @@ export const ImageCard: React.FC<ImageCardProps> = ({
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
-    full: "rounded-full",
+    full: "rounded-full"
   };
 
   const shadowClasses = {
     none: "",
     sm: "shadow-sm",
     md: "shadow-md",
-    lg: "shadow-lg",
+    lg: "shadow-lg"
   };
 
   return (

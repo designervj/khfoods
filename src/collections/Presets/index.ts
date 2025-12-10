@@ -1,29 +1,28 @@
 import { CollectionConfig } from "payload";
 import { slugField } from "@/fields/slug";
 
-
 export const Library: CollectionConfig = {
   slug: "presets",
   labels: {
-    singular: "Preset",
-    plural: "Presets",
+    singular: { en: "Preset", zh: "预设" },
+    plural: { en: "Presets", zh: "预设" }
   },
   admin: {
     useAsTitle: "name",
       group: {
         en: "Website Management",
-        pl: "Zarządzanie stroną",
-        hr: "Upravljanje web stranicom",
-      },
+        zh: "网站管理",
+        hr: "Upravljanje web stranicom"
+      }
   },
   access: {
-    read: () => true,
+    read: () => true
   },
   fields: [
     {
       name: "name",
       type: "text",
-      required: true,
+      required: true
     },
     {
       name: "type",
@@ -35,8 +34,8 @@ export const Library: CollectionConfig = {
         { label: "Module", value: "module" },
       ],
       admin: {
-        width: "33%",
-      },
+        width: "33%"
+      }
     },
     {
       name: "value",
@@ -52,5 +51,5 @@ export const Library: CollectionConfig = {
     //   blocks: layoutBlocks, // your existing blocks (Hero, Gallery, CTA, etc.)
     //   required: true,
     // },
-  ],
+  ]
 };

@@ -21,12 +21,12 @@ export const getMeUser = async (args?: {
 
   const meUserReq = await fetch(`${getClientSideURL()}/api/administrators/me`, {
     headers: {
-      Authorization: `JWT ${token}`,
-    },
+      Authorization: `JWT ${token}`
+    }
   });
 
   const {
-    user,
+    user
   }: {
     user: Administrator;
   } = (await meUserReq.json()) as { user: Administrator };
@@ -42,6 +42,6 @@ export const getMeUser = async (args?: {
   // Token will exist here because if it doesn't the user will be redirected
   return {
     token: token!,
-    user,
+    user
   };
 };

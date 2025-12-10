@@ -22,7 +22,7 @@ export const TwoThirdsOneThird: React.FC<OffsetColumnsProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -45,7 +45,7 @@ export const OneThirdTwoThirds: React.FC<OffsetColumnsProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -68,7 +68,7 @@ export const OneQuarterThreeQuarters: React.FC<OffsetColumnsProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -91,7 +91,7 @@ export const ThreeQuartersOneQuarter: React.FC<OffsetColumnsProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -114,7 +114,7 @@ export const OffsetSmallLeft: React.FC<OffsetColumnsProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -137,7 +137,7 @@ export const OffsetSmallRight: React.FC<OffsetColumnsProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -156,7 +156,7 @@ const OffsetColumnsComponents = {
   OneQuarterThreeQuarters,
   ThreeQuartersOneQuarter,
   OffsetSmallLeft,
-  OffsetSmallRight,
+  OffsetSmallRight
 };
 
 export default OffsetColumnsComponents;

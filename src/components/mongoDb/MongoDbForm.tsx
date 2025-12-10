@@ -69,7 +69,7 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
     mongodbCluster: "",
     protocol: "mongodb+srv",
     databaseName: "",
-    selectedCollections: [],
+    selectedCollections: []
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -84,7 +84,7 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
       mongodbCluster: "",
       protocol: "mongodb+srv",
       databaseName: "",
-      selectedCollections: [],
+      selectedCollections: []
     });
     setStatus("idle");
     setMessage("");
@@ -106,7 +106,7 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
 
     setFormData((prev) => ({
       ...prev,
-      [name]: cleanedValue,
+      [name]: cleanedValue
     }));
   };
 
@@ -115,7 +115,7 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
       ...prev,
       selectedCollections: prev.selectedCollections.includes(collection)
         ? prev.selectedCollections.filter((c) => c !== collection)
-        : [...prev.selectedCollections, collection],
+        : [...prev.selectedCollections, collection]
     }));
   };
 
@@ -125,7 +125,7 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
 
     try {
       const res = await fetch("/api/admin/test-atlas-credentials", {
-        method: "GET",
+        method: "GET"
       });
 
       const data = await res.json();
@@ -181,7 +181,7 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
       const res = await fetch("/api/admin/test-connection", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
 
       const data: TestConnectionResponse = await res.json();
@@ -223,8 +223,8 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          clusterName: `${formData.databaseName}-cluster`,
-        }),
+          clusterName: `${formData.databaseName}-cluster`
+        })
       });
 
       const clusterData: ClusterResponse = await clusterRes.json();
@@ -248,8 +248,8 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
           mongodbUser: formData.mongodbUser,
           mongodbPass: formData.mongodbPass,
           mongodbCluster: clusterUrl.replace("mongodb+srv://", "").replace("/", ""),
-          protocol: "mongodb+srv",
-        }),
+          protocol: "mongodb+srv"
+        })
       });
 
       const dbData: DatabaseResponse = await dbRes.json();
@@ -270,8 +270,8 @@ const MongoDBForm = ({ isOpen, onClose, adminUser }: MongoDBModalProps) => {
               collectionName: collection,
               mongodbUser: formData.mongodbUser,
               mongodbPass: formData.mongodbPass,
-              mongodbCluster: clusterUrl.replace("mongodb+srv://", "").replace("/", ""),
-            }),
+              mongodbCluster: clusterUrl.replace("mongodb+srv://", "").replace("/", "")
+            })
           });
           const colData: CollectionResponse = await colRes.json();
           successMsg += colData.success

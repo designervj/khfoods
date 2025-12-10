@@ -5,7 +5,7 @@ export const PricingTable: Block = {
   interfaceName: "PricingTableBlock",
   labels: {
     singular: "💰 Pricing Table",
-    plural: "💰 Pricing Tables",
+    plural: "💰 Pricing Tables"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -30,30 +30,30 @@ export const PricingTable: Block = {
               name: "planName",
               type: "text",
               label: "Plan Name",
-              required: true,
+              required: true
             },
             {
               name: "price",
               type: "text",
               label: "Price",
-              required: true,
+              required: true
             },
             {
               name: "currency",
               type: "text",
               label: "Currency Symbol",
-              defaultValue: "$",
+              defaultValue: "$"
             },
             {
               name: "billingPeriod",
               type: "text",
               label: "Billing Period",
-              defaultValue: "/month",
+              defaultValue: "/month"
             },
             {
               name: "description",
               type: "textarea",
-              label: "Description",
+              label: "Description"
             },
             {
               name: "features",
@@ -63,39 +63,39 @@ export const PricingTable: Block = {
                 {
                   name: "feature",
                   type: "text",
-                  required: true,
+                  required: true
                 },
                 {
                   name: "included",
                   type: "checkbox",
                   label: "Included",
-                  defaultValue: true,
+                  defaultValue: true
                 },
-              ],
+              ]
             },
             {
               name: "buttonText",
               type: "text",
               label: "Button Text",
-              defaultValue: "Get Started",
+              defaultValue: "Get Started"
             },
             {
               name: "buttonLink",
               type: "text",
-              label: "Button Link",
+              label: "Button Link"
             },
             {
               name: "highlighted",
               type: "checkbox",
               label: "Highlight this Plan",
-              defaultValue: false,
+              defaultValue: false
             },
             {
               name: "badge",
               type: "text",
-              label: "Badge Text (e.g., 'Most Popular')",
+              label: "Badge Text (e.g., 'Most Popular')"
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -103,40 +103,40 @@ export const PricingTable: Block = {
             {
               name: "headerColor",
               type: "text",
-              label: "Header Background Color",
+              label: "Header Background Color"
             },
             {
               name: "priceColor",
               type: "text",
-              label: "Price Color",
+              label: "Price Color"
             },
             {
               name: "backgroundColor",
               type: "text",
-              label: "Background Color",
+              label: "Background Color"
             },
             {
               name: "borderColor",
               type: "text",
-              label: "Border Color",
+              label: "Border Color"
             },
             {
               name: "buttonColor",
               type: "text",
-              label: "Button Background Color",
+              label: "Button Background Color"
             },
             {
               name: "buttonTextColor",
               type: "text",
-              label: "Button Text Color",
+              label: "Button Text Color"
             },
             {
               name: "highlightColor",
               type: "text",
               label: "Highlight Border Color",
               admin: {
-                condition: (data) => Boolean(data.highlighted),
-              },
+                condition: (data) => Boolean(data.highlighted)
+              }
             },
             {
               name: "borderRadius",
@@ -148,7 +148,7 @@ export const PricingTable: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -161,7 +161,7 @@ export const PricingTable: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "hoverEffect",
@@ -172,7 +172,7 @@ export const PricingTable: Block = {
                 { label: "None", value: "none" },
                 { label: "Lift", value: "lift" },
                 { label: "Scale", value: "scale" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -183,16 +183,16 @@ export const PricingTable: Block = {
                 { label: "None", value: "none" },
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Slide Up", value: "slideUp" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

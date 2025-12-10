@@ -44,8 +44,8 @@ export const checkUserPermission = async (
       collection: "permission",
       where: {
         "roleTitle": {
-          equals: user.collection=="administrators" && user.role,
-        },
+          equals: user.collection=="administrators" && user.role
+        }
       },
       limit: 1, // We only need the first match
     });
@@ -127,8 +127,8 @@ export const adminOrSuperAdmin: Access = ({ req }) => {
     if (user?.role === "business") {
       return {
         createdBy: {
-          equals: user.id,
-        },
+          equals: user.id
+        }
       };
     }
   }

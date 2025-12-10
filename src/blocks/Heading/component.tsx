@@ -51,7 +51,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       primary: "var(--color-primary, #0066cc)",
       secondary: "var(--color-secondary, #6366f1)",
       accent: "var(--color-accent, #ec4899)",
-      muted: "var(--color-muted, #6b7280)",
+      muted: "var(--color-muted, #6b7280)"
     };
     return colorMap[block.textColor] || "inherit";
   };
@@ -67,7 +67,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       lg: "1.125rem",
       xl: "1.25rem",
       "2xl": "1.5rem",
-      "3xl": "1.875rem",
+      "3xl": "1.875rem"
     };
     return sizeMap[block.fontSize] || "1rem";
   };
@@ -79,7 +79,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       medium: "500",
       semibold: "600",
       bold: "700",
-      extrabold: "800",
+      extrabold: "800"
     };
     return weightMap[block.fontWeight] || "400";
   };
@@ -89,7 +89,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       tight: "1.25",
       normal: "1.5",
       relaxed: "1.75",
-      loose: "2",
+      loose: "2"
     };
     return lineHeightMap[block.lineHeight] || "1.5";
   };
@@ -101,7 +101,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       normal: "0",
       wide: "0.025em",
       wider: "0.05em",
-      widest: "0.1em",
+      widest: "0.1em"
     };
     return spacingMap[block.letterSpacing] || "0";
   };
@@ -111,7 +111,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       default: "inherit",
       sans: 'var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
       serif: 'var(--font-serif, Georgia, Cambria, "Times New Roman", serif)',
-      mono: 'var(--font-mono, ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace)',
+      mono: 'var(--font-mono, ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace)'
     };
     return fontMap[block.fontFamily] || "inherit";
   };
@@ -125,7 +125,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       light: "var(--bg-light, #f9fafb)",
       dark: "var(--bg-dark, #1f2937)",
       primary: "var(--bg-primary, #eff6ff)",
-      secondary: "var(--bg-secondary, #f5f3ff)",
+      secondary: "var(--bg-secondary, #f5f3ff)"
     };
     return bgColorMap[block.backgroundColor] || "transparent";
   };
@@ -136,7 +136,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       sm: "0.5rem",
       md: "1rem",
       lg: "1.5rem",
-      xl: "2rem",
+      xl: "2rem"
     };
     return paddingMap[block.padding[side]] || "0";
   };
@@ -147,7 +147,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       sm: "0.5rem",
       md: "1rem",
       lg: "1.5rem",
-      xl: "2rem",
+      xl: "2rem"
     };
     return marginMap[block.margin[side]] || "0";
   };
@@ -159,7 +159,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1536px",
+      "2xl": "1536px"
     };
     return maxWidthMap[block.maxWidth] || "100%";
   };
@@ -175,7 +175,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       inherit: "inherit",
       primary: "var(--color-primary, #0066cc)",
       secondary: "var(--color-secondary, #6366f1)",
-      accent: "var(--color-accent, #ec4899)",
+      accent: "var(--color-accent, #ec4899)"
     };
     return linkColorMap[block.link.linkColor || "inherit"] || "inherit";
   };
@@ -187,7 +187,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
       default: "none",
       underline: "underline",
       "no-underline": "none",
-      "hover-underline": "none",
+      "hover-underline": "none"
     };
 
     return linkStyleMap[block.link.linkStyle] || "none";
@@ -212,14 +212,14 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
     marginBottom: getMargin("bottom"),
     maxWidth: getMaxWidth(),
     marginLeft: block.textAlign === "center" ? "auto" : undefined,
-    marginRight: block.textAlign === "center" ? "auto" : undefined,
+    marginRight: block.textAlign === "center" ? "auto" : undefined
   };
 
   // Link wrapper styles
   const linkStyles: React.CSSProperties = {
     color: getLinkColor(),
     textDecoration: getLinkTextDecoration(),
-    transition: "all 0.2s ease",
+    transition: "all 0.2s ease"
   };
 
   // Add hover class for hover-underline style
@@ -232,7 +232,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
 
     const elementProps = {
       style: textStyles,
-      className,
+      className
     };
 
     switch (block.textType) {
@@ -256,7 +256,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
               ...textStyles,
               borderLeft: "4px solid currentColor",
               paddingLeft: "1rem",
-              fontStyle: "italic",
+              fontStyle: "italic"
             }}
           >
             {content}
@@ -272,7 +272,7 @@ export const TextBlockRenderer: React.FC<TextBlockProps> = ({ block }) => {
                 textStyles.backgroundColor === "transparent" ? "#f5f5f5" : textStyles.backgroundColor,
               padding: "1rem",
               borderRadius: "0.375rem",
-              overflow: "auto",
+              overflow: "auto"
             }}
           >
             <code>{content}</code>

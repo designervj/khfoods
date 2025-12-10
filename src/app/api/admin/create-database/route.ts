@@ -39,8 +39,8 @@ export async function POST(req: NextRequest) {
         message: `Database "${dbName}" created successfully`,
         database: {
           name: dbName,
-          connectionString: connectionString.replace(String(mongodbPass), "***"),
-        },
+          connectionString: connectionString.replace(String(mongodbPass), "***")
+        }
       });
     } finally {
       await client.close();
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error: error instanceof Error ? error.message : "Failed to create database",
-        details: "Check your MongoDB credentials and cluster URL",
+        details: "Check your MongoDB credentials and cluster URL"
       },
       { status: 500 },
     );

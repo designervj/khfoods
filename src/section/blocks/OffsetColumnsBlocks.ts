@@ -12,7 +12,7 @@ export const TwoThirdsOneThirdSection: Block = {
   interfaceName: "OffsetColumns",
   labels: {
     singular: "Two Thirds - One Third Layout",
-    plural: "Two Thirds - One Third Layouts",
+    plural: "Two Thirds - One Third Layouts"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="45" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="55" y="6" width="29" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Two Thirds One Third Layout",
@@ -26,7 +26,7 @@ export const TwoThirdsOneThirdSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -38,7 +38,7 @@ export const TwoThirdsOneThirdSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -48,7 +48,7 @@ export const TwoThirdsOneThirdSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "leftColumn",
@@ -59,8 +59,8 @@ export const TwoThirdsOneThirdSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the main content",
-      },
+        description: "Add one or more blocks for the main content"
+      }
     },
     {
       name: "rightColumn",
@@ -71,15 +71,15 @@ export const TwoThirdsOneThirdSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the sidebar content",
-      },
+        description: "Add one or more blocks for the sidebar content"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const OneThirdTwoThirdsSection: Block = {
@@ -87,7 +87,7 @@ export const OneThirdTwoThirdsSection: Block = {
   interfaceName: "OffsetColumns",
   labels: {
     singular: "One Third - Two Thirds Layout",
-    plural: "One Third - Two Thirds Layouts",
+    plural: "One Third - Two Thirds Layouts"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="39" y="6" width="45" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="6" y="6" width="29" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "One Third Two Thirds Layout",
@@ -101,7 +101,7 @@ export const OneThirdTwoThirdsSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -113,7 +113,7 @@ export const OneThirdTwoThirdsSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -123,7 +123,7 @@ export const OneThirdTwoThirdsSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "leftColumn",
@@ -134,8 +134,8 @@ export const OneThirdTwoThirdsSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the sidebar content",
-      },
+        description: "Add one or more blocks for the sidebar content"
+      }
     },
     {
       name: "rightColumn",
@@ -146,15 +146,15 @@ export const OneThirdTwoThirdsSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the main content",
-      },
+        description: "Add one or more blocks for the main content"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const OneQuarterThreeQuartersSection: Block = {
@@ -162,7 +162,7 @@ export const OneQuarterThreeQuartersSection: Block = {
   interfaceName: "OffsetColumns",
   labels: {
     singular: "One Quarter - Three Quarters Layout",
-    plural: "One Quarter - Three Quarters Layouts",
+    plural: "One Quarter - Three Quarters Layouts"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="27" y="6" width="57" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="6" y="6" width="17" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "One Quarter Three Quarters Layout",
@@ -176,7 +176,7 @@ export const OneQuarterThreeQuartersSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -188,7 +188,7 @@ export const OneQuarterThreeQuartersSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -198,7 +198,7 @@ export const OneQuarterThreeQuartersSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "leftColumn",
@@ -209,8 +209,8 @@ export const OneQuarterThreeQuartersSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the sidebar content",
-      },
+        description: "Add one or more blocks for the sidebar content"
+      }
     },
     {
       name: "rightColumn",
@@ -221,15 +221,15 @@ export const OneQuarterThreeQuartersSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the main content",
-      },
+        description: "Add one or more blocks for the main content"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const ThreeQuartersOneQuarterSection: Block = {
@@ -237,7 +237,7 @@ export const ThreeQuartersOneQuarterSection: Block = {
   interfaceName: "OffsetColumns",
   labels: {
     singular: "Three Quarters - One Quarter Layout",
-    plural: "Three Quarters - One Quarter Layouts",
+    plural: "Three Quarters - One Quarter Layouts"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="57" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="68" y="6" width="16" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Three Quarters One Quarter Layout",
@@ -251,7 +251,7 @@ export const ThreeQuartersOneQuarterSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -263,7 +263,7 @@ export const ThreeQuartersOneQuarterSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -273,7 +273,7 @@ export const ThreeQuartersOneQuarterSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "leftColumn",
@@ -284,8 +284,8 @@ export const ThreeQuartersOneQuarterSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the main content",
-      },
+        description: "Add one or more blocks for the main content"
+      }
     },
     {
       name: "rightColumn",
@@ -296,13 +296,13 @@ export const ThreeQuartersOneQuarterSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the sidebar content",
-      },
+        description: "Add one or more blocks for the sidebar content"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };

@@ -10,7 +10,7 @@ const heroes = {
   highImpact: HighImpactHero,
   lowImpact: LowImpactHero,
   mediumImpact: MediumImpactHero,
-  videoModal: Hero,
+  videoModal: Hero
 };
 
 export const RenderHero = (props: Page["hero"]) => {

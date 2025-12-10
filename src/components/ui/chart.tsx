@@ -122,7 +122,7 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
             }
             `,
           )
-          .join("\n"),
+          .join("\n")
       }}
     />
   );
@@ -143,7 +143,7 @@ function ChartTooltipContent({
   labelClassName,
   color,
   nameKey,
-  labelKey,
+  labelKey
 }: CustomTooltipProps) {
   const { config } = useChart();
 
@@ -213,12 +213,12 @@ function ChartTooltipContent({
                           "h-2.5 w-2.5": indicator === "dot",
                           "w-1": indicator === "line",
                           "w-0 border-[1.5px] border-dashed bg-transparent": indicator === "dashed",
-                          "my-0.5": nestLabel && indicator === "dashed",
+                          "my-0.5": nestLabel && indicator === "dashed"
                         })}
                         style={
                           {
                             "--color-bg": indicatorColor,
-                            "--color-border": indicatorColor,
+                            "--color-border": indicatorColor
                           } as React.CSSProperties
                         }
                       />
@@ -257,7 +257,7 @@ function ChartLegendContent({
   hideIcon = false,
   payload,
   verticalAlign = "bottom",
-  nameKey,
+  nameKey
 }: ChartLegendContentProps) {
   const { config } = useChart();
 
@@ -288,7 +288,7 @@ function ChartLegendContent({
               <div
                 className="h-2 w-2 shrink-0 rounded-[2px]"
                 style={{
-                  backgroundColor: item.color,
+                  backgroundColor: item.color
                 }}
               />
             )}

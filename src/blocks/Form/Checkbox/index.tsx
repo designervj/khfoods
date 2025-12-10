@@ -3,7 +3,7 @@ import {
   useFormContext,
   type FieldErrorsImpl,
   type FieldValues,
-  type UseFormRegister,
+  type UseFormRegister
 } from "react-hook-form";
 
 import { Checkbox as CheckboxUi } from "@/components/ui/checkbox";
@@ -21,7 +21,7 @@ export const Checkbox = ({
   label,
   register,
   required: requiredFromProps,
-  width,
+  width
 }: CheckboxField & {
   errors: Partial<FieldErrorsImpl<Record<string, any>>>;
   getValues: any;

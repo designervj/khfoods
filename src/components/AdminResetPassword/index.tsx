@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 
 export const AdminResetPassword = () => {

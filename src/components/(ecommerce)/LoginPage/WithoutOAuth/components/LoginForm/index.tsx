@@ -19,8 +19,8 @@ export const LoginForm = () => {
     resolver: zodResolver(LoginFormSchemaResolver),
     defaultValues: {
       email: "",
-      password: "",
-    },
+      password: ""
+    }
   });
 
   const t = useTranslations("LoginForm");

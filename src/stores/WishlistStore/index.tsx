@@ -132,7 +132,7 @@ const useWishListStore = create<WishListState>((set) => ({
 
     window.localStorage.setItem("wishlist", JSON.stringify(wishlistFromUserAccount));
     set({ wishlist: wishlistFromUserAccount });
-  },
+  }
 }));
 
 export const useWishList = () => useWishListStore((state) => state);

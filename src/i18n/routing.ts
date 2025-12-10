@@ -11,7 +11,7 @@ export const routing = defineRouting({
   localeDetection: true,
   
   // Remove locale prefix from URLs for default locale
-  localePrefix: "as-needed",
+  localePrefix: "as-needed"
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

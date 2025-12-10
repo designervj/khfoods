@@ -11,7 +11,7 @@ const services = [
     description:
       "With ANY order of our 6 oz. products, you will receive FREE complimentary gift boxes! 100% natural, no preservatives.",
     number: "01",
-    button: "SHOP NOW",
+    button: "SHOP NOW"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const services = [
     description:
       "Click the link below to checkout our amazing deals for wholesale! Premium roasted peanuts since 1991.",
     number: "02",
-    button: "SIGN UP",
+    button: "SIGN UP"
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const services = [
     description:
       "Available now! Shipping to Taiwan. With ANY 6 oz. order, you will receive FREE complimentary gift boxes!",
     number: "03",
-    button: "SHOP NOW",
+    button: "SHOP NOW"
   },
 ];
 

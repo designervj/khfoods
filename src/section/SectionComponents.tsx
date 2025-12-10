@@ -41,7 +41,7 @@ export const TwoEqualColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -49,13 +49,13 @@ export const TwoEqualColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -84,7 +84,7 @@ export const ThreeEqualColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -92,13 +92,13 @@ export const ThreeEqualColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -127,7 +127,7 @@ export const FourEqualColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -135,13 +135,13 @@ export const FourEqualColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -170,7 +170,7 @@ export const TwoThirdsOneThird: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -178,13 +178,13 @@ export const TwoThirdsOneThird: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -218,7 +218,7 @@ export const OneThirdTwoThirds: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -226,13 +226,13 @@ export const OneThirdTwoThirds: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -266,7 +266,7 @@ export const OneQuarterThreeQuarters: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -274,13 +274,13 @@ export const OneQuarterThreeQuarters: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -314,7 +314,7 @@ export const ThreeQuartersOneQuarter: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -322,13 +322,13 @@ export const ThreeQuartersOneQuarter: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -363,7 +363,7 @@ export const TwoRowsTwoColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -371,7 +371,7 @@ export const TwoRowsTwoColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -400,7 +400,7 @@ export const TwoRowsThreeColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -408,7 +408,7 @@ export const TwoRowsThreeColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -437,7 +437,7 @@ export const ThreeRowsTwoColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -445,7 +445,7 @@ export const ThreeRowsTwoColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -474,7 +474,7 @@ export const ThreeRowsThreeColumns: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -482,7 +482,7 @@ export const ThreeRowsThreeColumns: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -512,7 +512,7 @@ export const SidebarMainLayout: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -520,7 +520,7 @@ export const SidebarMainLayout: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -550,7 +550,7 @@ export const MainSidebarLayout: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -558,7 +558,7 @@ export const MainSidebarLayout: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -588,7 +588,7 @@ export const HeaderTwoColumnsLayout: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -596,7 +596,7 @@ export const HeaderTwoColumnsLayout: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -636,7 +636,7 @@ export const HeaderThreeColumnsLayout: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -644,7 +644,7 @@ export const HeaderThreeColumnsLayout: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (
@@ -679,7 +679,7 @@ export const MasonryLayout: React.FC<any> = (props) => {
     white: "bg-white",
     gray: "bg-gray-50",
     blue: "bg-blue-50",
-    transparent: "bg-transparent",
+    transparent: "bg-transparent"
   };
 
   const paddingClasses = {
@@ -687,7 +687,7 @@ export const MasonryLayout: React.FC<any> = (props) => {
     sm: "py-8",
     md: "py-16",
     lg: "py-24",
-    xl: "py-32",
+    xl: "py-32"
   };
 
   return (

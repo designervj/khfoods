@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     console.error("Missing Atlas API credentials:", {
       hasProjectId: !!PROJECT_ID,
       hasPublicKey: !!PUBLIC_KEY,
-      hasPrivateKey: !!PRIVATE_KEY,
+      hasPrivateKey: !!PRIVATE_KEY
     });
     return NextResponse.json(
       { error: "MongoDB Atlas API credentials not configured properly" },
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   console.log("Atlas API Request:", {
     projectId: PROJECT_ID,
     publicKey: PUBLIC_KEY.substring(0, 4) + "****", // Log partial key for debugging
-    clusterName,
+    clusterName
   });
 
   try {
@@ -43,9 +43,9 @@ export async function POST(req: Request) {
             AP_SOUTH_1: {
               electableNodes: 3,
               priority: 7,
-              readOnlyNodes: 0,
-            },
-          },
+              readOnlyNodes: 0
+            }
+          }
         },
       ],
       providerSettings: {
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
         instanceSizeName: "M0", // Free tier
       },
       diskSizeGB: 0.5, // Minimum for M0
-      mongoDBMajorVersion: "7.0",
+      mongoDBMajorVersion: "7.0"
     };
 
     console.log("Sending cluster creation request to Atlas API...");
@@ -64,9 +64,9 @@ export async function POST(req: Request) {
       headers: {
         Authorization: `Basic ${auth}`,
         "Content-Type": "application/json",
-        Accept: "application/json",
+        Accept: "application/json"
       },
-      body: JSON.stringify(clusterConfig),
+      body: JSON.stringify(clusterConfig)
     });
 
     const data = await res.json();
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
       status: res.status,
       statusText: res.statusText,
       success: res.ok,
-      data,
+      data
     });
 
     if (!res.ok) {
@@ -85,7 +85,7 @@ export async function POST(req: Request) {
           {
             error: "Authentication failed - check your Atlas API keys",
             details: "Verify that your MONGO_ATLAS_PUBLIC_KEY and MONGO_ATLAS_PRIVATE_KEY are correct",
-            atlasError: data,
+            atlasError: data
           },
           { status: 401 },
         );
@@ -94,7 +94,7 @@ export async function POST(req: Request) {
           {
             error: "Access forbidden - insufficient permissions",
             details: "Your API key may not have cluster creation permissions",
-            atlasError: data,
+            atlasError: data
           },
           { status: 403 },
         );
@@ -103,7 +103,7 @@ export async function POST(req: Request) {
           {
             error: "Cluster already exists",
             details: `A cluster named "${clusterName}" already exists in this project`,
-            atlasError: data,
+            atlasError: data
           },
           { status: 409 },
         );
@@ -112,7 +112,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           error: `Atlas API error (${res.status})`,
-          details: data,
+          details: data
         },
         { status: res.status },
       );
@@ -121,7 +121,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       success: true,
       cluster: data,
-      message: `Cluster "${clusterName}" is being created. This may take several minutes.`,
+      message: `Cluster "${clusterName}" is being created. This may take several minutes.`
     });
   } catch (err) {
     console.error("Cluster creation error:", err);
@@ -129,7 +129,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error: "Network or server error",
-        details: errorMessage,
+        details: errorMessage
       },
       { status: 500 },
     );

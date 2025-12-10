@@ -27,7 +27,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   params,
-  children,
+  children
 }: {
   params: Promise<{ locale: string }>;
   children: ReactNode;
@@ -66,7 +66,7 @@ export default async function RootLayout({
             <NextIntlClientProvider locale={locale} messages={messages}>
               <AdminBar
                 adminBarProps={{
-                  preview: isEnabled,
+                  preview: isEnabled
                 }}
               />
               {isEnabled && <LivePreviewListener />}
@@ -86,10 +86,10 @@ export const metadata: Metadata = {
   openGraph: mergeOpenGraph(),
   twitter: {
     card: "summary_large_image",
-    creator: "@payloadcms",
+    creator: "@payloadcms"
   },
   robots: {
     index: !(process.env.NEXT_PUBLIC_ROBOTS_INDEX === "false"),
-    follow: !(process.env.NEXT_PUBLIC_ROBOTS_INDEX === "false"),
-  },
+    follow: !(process.env.NEXT_PUBLIC_ROBOTS_INDEX === "false")
+  }
 };

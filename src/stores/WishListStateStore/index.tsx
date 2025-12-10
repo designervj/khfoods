@@ -9,7 +9,7 @@ type WishListState = {
 const useWishListStateStore = create<WishListState>((set) => ({
   isOpen: false,
   toggleWishList: () => set((state) => ({ isOpen: !state.isOpen })),
-  setWishListState: (isOpen) => set({ isOpen }),
+  setWishListState: (isOpen) => set({ isOpen })
 }));
 
 export const useWishListState = () => {

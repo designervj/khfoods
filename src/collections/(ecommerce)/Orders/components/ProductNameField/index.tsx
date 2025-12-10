@@ -20,8 +20,8 @@ export const ProductNameField: TextFieldClientComponent = ({ path }) => {
     const query = stringify(
       {
         select: {
-          title: true,
-        },
+          title: true
+        }
       },
       { addQueryPrefix: true }
     );
@@ -30,7 +30,7 @@ export const ProductNameField: TextFieldClientComponent = ({ path }) => {
       const { data } = await axios.get<Product>(
         `/api/products/${productID}${query}&locale=${locale.code}`,
         {
-          withCredentials: true,
+          withCredentials: true
         }
       );
       setValue(data.title);

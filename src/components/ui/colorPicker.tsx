@@ -49,7 +49,7 @@ export const ColorPicker = ({
   ],
   className,
   showColorPicker = true,
-  gridView = true,
+  gridView = true
 }: ColorPickerProps) => {
   const [showPicker, setShowPicker] = useState(false);
 
@@ -162,7 +162,7 @@ export const ColorPicker = ({
                 onChange={handleColorChange}
                 style={{
                   width: "100%",
-                  height: "150px",
+                  height: "150px"
                 }}
               />
 

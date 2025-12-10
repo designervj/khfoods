@@ -5,14 +5,14 @@ import {
   ThreeEqualColumnsComponent,
   FourEqualColumnsComponent,
   FiveEqualColumnsComponent,
-  SixEqualColumnsComponent,
+  SixEqualColumnsComponent
 } from "./components/EqualColumns";
 // Offset Columns
 import {
   TwoThirdsOneThirdComponent,
   OneThirdTwoThirdsComponent,
   OneQuarterThreeQuartersComponent,
-  ThreeQuartersOneQuarterComponent,
+  ThreeQuartersOneQuarterComponent
 } from "./components/OffsetColumns";
 // Multi-Column Layouts
 import {
@@ -20,14 +20,14 @@ import {
   MainSidebarLayoutComponent,
   HeaderTwoColumnsLayoutComponent,
   HeaderThreeColumnsLayoutComponent,
-  MasonryLayoutComponent,
+  MasonryLayoutComponent
 } from "./components/MultiColumnLayouts";
 // Multi-Row Columns
 import {
   TwoRowsTwoColumnsComponent,
   TwoRowsThreeColumnsComponent,
   ThreeRowsTwoColumnsComponent,
-  ThreeRowsThreeColumnsComponent,
+  ThreeRowsThreeColumnsComponent
 } from "./components/MultiRowColumns";
 
 type SectionProps = Record<string, any>;
@@ -54,7 +54,7 @@ const componentMap = {
   // twoRowsTwoColumns: TwoRowsTwoColumnsComponent,
   // twoRowsThreeColumns: TwoRowsThreeColumnsComponent,
   // threeRowsTwoColumns: ThreeRowsTwoColumnsComponent,
-  // threeRowsThreeColumns: ThreeRowsThreeColumnsComponent,
+  // threeRowsThreeColumns: ThreeRowsThreeColumnsComponent
 };
 
 export const RenderSections: React.FC<{ sections: SectionProps[] }> = ({ sections }) => {

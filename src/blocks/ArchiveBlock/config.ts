@@ -2,7 +2,7 @@ import {
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
-  lexicalEditor,
+  lexicalEditor
 } from "@payloadcms/richtext-lexical";
 
 import type { Block } from "payload";
@@ -22,10 +22,10 @@ export const Archive: Block = {
             FixedToolbarFeature(),
             InlineToolbarFeature(),
           ];
-        },
+        }
       }),
       localized: true,
-      label: "Intro Content",
+      label: "Intro Content"
     },
     {
       name: "populateBy",
@@ -34,62 +34,62 @@ export const Archive: Block = {
       options: [
         {
           label: "Collection",
-          value: "collection",
+          value: "collection"
         },
         {
           label: "Individual Selection",
-          value: "selection",
+          value: "selection"
         },
-      ],
+      ]
     },
     {
       name: "relationTo",
       type: "select",
       admin: {
-        condition: (_, siblingData) => siblingData.populateBy === "collection",
+        condition: (_, siblingData) => siblingData.populateBy === "collection"
       },
       defaultValue: "posts",
       label: "Collections To Show",
       options: [
         {
           label: "Posts",
-          value: "posts",
+          value: "posts"
         },
-      ],
+      ]
     },
     {
       name: "categories",
       type: "relationship",
       admin: {
-        condition: (_, siblingData) => siblingData.populateBy === "collection",
+        condition: (_, siblingData) => siblingData.populateBy === "collection"
       },
       hasMany: true,
       label: "Categories To Show",
-      relationTo: "categories",
+      relationTo: "categories"
     },
     {
       name: "limit",
       type: "number",
       admin: {
         condition: (_, siblingData) => siblingData.populateBy === "collection",
-        step: 1,
+        step: 1
       },
       defaultValue: 10,
-      label: "Limit",
+      label: "Limit"
     },
     {
       name: "selectedDocs",
       type: "relationship",
       admin: {
-        condition: (_, siblingData) => siblingData.populateBy === "selection",
+        condition: (_, siblingData) => siblingData.populateBy === "selection"
       },
       hasMany: true,
       label: "Selection",
-      relationTo: ["posts"],
+      relationTo: ["posts"]
     },
   ],
   labels: {
     plural: "Archives",
-    singular: "Archive",
-  },
+    singular: "Archive"
+  }
 };

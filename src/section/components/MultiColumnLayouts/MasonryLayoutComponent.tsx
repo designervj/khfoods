@@ -17,7 +17,7 @@ export const MasonryLayoutComponent: React.FC<MasonryLayoutBlockProps> = ({
   padding = "md",
   gap = "md",
   items = [],
-  className,
+  className
 }) => {
   // Render each item's blocks
   const renderedContent = items.map((item, index) => (

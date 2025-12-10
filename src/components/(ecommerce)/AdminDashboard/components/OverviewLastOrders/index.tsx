@@ -14,7 +14,7 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  useReactTable,
+  useReactTable
 } from "@tanstack/react-table";
 import axios from "axios";
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
@@ -34,7 +34,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { type Order } from "@/payload-types";
@@ -48,11 +48,11 @@ const select = {
     status: true,
     totalWithShipping: true,
     currency: true,
-    transactionID: true,
+    transactionID: true
   },
   shippingAddress: {
-    email: true,
-  },
+    email: true
+  }
 };
 
 export const OverviewLastOrders = () => {
@@ -84,7 +84,7 @@ export const OverviewLastOrders = () => {
       cell: ({ row }) => {
         const date = new Date(row.original.createdAt);
         return date.toLocaleDateString();
-      },
+      }
     },
     {
       id: "status",
@@ -102,7 +102,7 @@ export const OverviewLastOrders = () => {
       },
       cell: ({ row }) => {
         return <p>{t(`adminDashboard:${row.original.orderDetails.status}`)}</p>;
-      },
+      }
     },
     {
       id: "email",
@@ -118,7 +118,7 @@ export const OverviewLastOrders = () => {
           </Button>
         );
       },
-      cell: ({ row }) => <div className="lowercase">{row.original.shippingAddress.email}</div>,
+      cell: ({ row }) => <div className="lowercase">{row.original.shippingAddress.email}</div>
     },
     {
       id: "amount",
@@ -132,7 +132,7 @@ export const OverviewLastOrders = () => {
         const formatted = formatPrice(amount, currency, i18n.language);
 
         return <div className="text-right font-medium">{formatted}</div>;
-      },
+      }
     },
     {
       id: "actions",
@@ -174,7 +174,7 @@ export const OverviewLastOrders = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         );
-      },
+      }
     },
   ];
 
@@ -193,8 +193,8 @@ export const OverviewLastOrders = () => {
   useEffect(() => {
     const filteringQuery: Where = {
       "shippingAddress.email": {
-        contains: columnFilters.find((filter) => filter.id === "email")?.value,
-      },
+        contains: columnFilters.find((filter) => filter.id === "email")?.value
+      }
     };
 
     const sortingQuery = sorting.map((sort) => {
@@ -217,7 +217,7 @@ export const OverviewLastOrders = () => {
         limit: 6,
         page: currentPage,
         sort: sortingQuery.length === 1 ? sortingQuery[0] : sortingQuery,
-        where: filteringQuery,
+        where: filteringQuery
       },
       { addQueryPrefix: true },
     );
@@ -225,7 +225,7 @@ export const OverviewLastOrders = () => {
     const fetchOrders = async () => {
       try {
         const { data } = await axios.get<{ docs: Order[] }>(`/api/orders${stringifiedQuery}`, {
-          withCredentials: true,
+          withCredentials: true
         });
         setData(data.docs);
       } catch (error) {
@@ -254,8 +254,8 @@ export const OverviewLastOrders = () => {
       sorting,
       columnFilters,
       columnVisibility,
-      rowSelection,
-    },
+      rowSelection
+    }
   });
   return (
     <Card className="twp rounded-xl border border-payload-elevation-150 bg-transparent lg:col-span-3">

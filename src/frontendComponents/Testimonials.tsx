@@ -10,7 +10,7 @@ const testimonials = [
     image: "/assets/users/user1.jpg",
     message:
       "The guidance and technical training provided helped us adopt better agricultural practices and improve productivity.",
-    rating: 5,
+    rating: 5
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
     image: "/assets/users/user2.jpg",
     message:
       "Their support has empowered women and helped us build confidence in leadership and community development.",
-    rating: 4,
+    rating: 4
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const testimonials = [
     image: "/assets/users/user3.jpg",
     message:
       "The youth training sessions were eye-opening and helped us gain practical skills for future opportunities.",
-    rating: 5,
+    rating: 5
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const testimonials = [
     image: "/assets/users/user4.jpg",
     message:
       "Their field activities and dedication towards rural development has transformed several communities.",
-    rating: 5,
+    rating: 5
   },
 ];
 const fadeUp = {
@@ -51,13 +51,11 @@ const TestimonialsPage = () => {
 
       {/* ================= HERO SECTION ================= */}
 
-
-
          <section className="relative h-[85vh] w-full overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/assets/Image/project-image2.png')",
+            backgroundImage: "url('/assets/Image/project-image2.png')"
           }}
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -80,7 +78,6 @@ const TestimonialsPage = () => {
           </p>
         </motion.div>
       </section>
-
 
       {/* ================= TESTIMONIAL GRID ================= */}
       <section className="py-20 px-6 max-w-7xl mx-auto ">

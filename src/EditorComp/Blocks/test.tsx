@@ -42,7 +42,7 @@ const PortfolioFull = ({
 
   // blog props
   BlogTitleSize = "24",
-  BlogTitleColor = "#000",
+  BlogTitleColor = "#000"
 }) => {
   const [active, setActive] = useState("All Projects");
 
@@ -52,42 +52,42 @@ const PortfolioFull = ({
       title: "Terra Office",
       image:
         "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1170&auto=format&fit=crop",
-      type: "Commercial",
+      type: "Commercial"
     },
     {
       category: "Interior",
       title: "Vishakha Office Interior",
       image:
         "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1170&auto=format&fit=crop",
-      type: "Interior",
+      type: "Interior"
     },
     {
       category: "Residential",
       title: "Urban Forest For Alembic Group, Bangalore",
       image:
         "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1170&auto=format&fit=crop",
-      type: "Residential",
+      type: "Residential"
     },
     {
       category: "Interior",
       title: "Scandinavian Interior of Apartment, Mumbai",
       image:
         "https://images.unsplash.com/photo-1708413604990-a1d7fceea954?q=80&w=1171&auto=format&fit=crop",
-      type: "Interior",
+      type: "Interior"
     },
     {
       category: "Religious",
       title: "The Emerald Gulistan Mosque At Kanpur",
       image:
         "https://images.unsplash.com/photo-1708413604990-a1d7fceea954?q=80&w=1171&auto=format&fit=crop",
-      type: "Religious",
+      type: "Religious"
     },
     {
       category: "Religious",
       title: "Chapel Of Unity, Rwanda",
       image:
         "https://images.unsplash.com/photo-1708413604990-a1d7fceea954?q=80&w=1171&auto=format&fit=crop",
-      type: "Religious",
+      type: "Religious"
     },
   ];
 
@@ -223,7 +223,7 @@ const PortfolioFull = ({
                   fontSize: 16,
                   color: active === filter ? ProjectFilterActiveColor : ProjectFilterColor,
                   borderBottom: active === filter ? `2px solid ${ProjectFilterActiveColor}` : "2px solid transparent",
-                  transition: "all .25s",
+                  transition: "all .25s"
                 }}
               >
                 {filter}

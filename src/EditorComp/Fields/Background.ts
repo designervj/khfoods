@@ -1,7 +1,7 @@
 export const BackgroundImageFields = {
   "Background Image URL": {
     type: "text",
-    label: "Image URL",
+    label: "Image URL"
   },
   "Background Size": {
     type: "select",
@@ -11,7 +11,7 @@ export const BackgroundImageFields = {
       { label: "Contain", value: "contain" },
       { label: "Auto", value: "auto" },
       { label: "Custom", value: "custom" },
-    ],
+    ]
   },
   "Background Position": {
     type: "select",
@@ -26,7 +26,7 @@ export const BackgroundImageFields = {
       { label: "Top Right", value: "top right" },
       { label: "Bottom Left", value: "bottom left" },
       { label: "Bottom Right", value: "bottom right" },
-    ],
+    ]
   },
   "Background Repeat": {
     type: "select",
@@ -36,7 +36,7 @@ export const BackgroundImageFields = {
       { label: "Repeat", value: "repeat" },
       { label: "Repeat X", value: "repeat-x" },
       { label: "Repeat Y", value: "repeat-y" },
-    ],
+    ]
   },
   "Background Attachment": {
     type: "select",
@@ -45,8 +45,8 @@ export const BackgroundImageFields = {
       { label: "Scroll", value: "scroll" },
       { label: "Fixed", value: "fixed" },
       { label: "Local", value: "local" },
-    ],
-  },
+    ]
+  }
 };
 
 export const BackgroundGradientFields = {
@@ -55,23 +55,23 @@ export const BackgroundGradientFields = {
     options: [
       { label: "Linear", value: "linear" },
       { label: "Radial", value: "radial" },
-    ],
+    ]
   },
   "Gradient Angle": {
     type: "text",
-    label: "Gradient Angle (e.g., 45deg, to right)",
+    label: "Gradient Angle (e.g., 45deg, to right)"
   },
   "Gradient Color 1": {
     type: "text",
-    label: "Color 1",
+    label: "Color 1"
   },
   "Gradient Stop 1": {
     type: "text",
-    label: "Stop 1 (e.g., 0%, 20px)",
+    label: "Stop 1 (e.g., 0%, 20px)"
   },
   "Gradient Color 2": {
     type: "text",
-    label: "Color 2",
+    label: "Color 2"
   },
   "Gradient Stop 2": {
     type: "text",
@@ -79,39 +79,39 @@ export const BackgroundGradientFields = {
   },
   "Add More Colors": {
     type: "text",
-    label: "Additional Colors (comma-separated: color stop, color stop)",
-  },
+    label: "Additional Colors (comma-separated: color stop, color stop)"
+  }
 };
 
 export const BackgroundVideoFields = {
   "Video URL": {
     type: "text",
-    label: "Video URL",
+    label: "Video URL"
   },
   "Video Fallback Image": {
     type: "text",
-    label: "Fallback Image URL",
+    label: "Fallback Image URL"
   },
   "Video Loop": {
     type: "radio",
     options: [
       { label: "Yes", value: "yes" },
       { label: "No", value: "no" },
-    ],
+    ]
   },
   "Video Muted": {
     type: "radio",
     options: [
       { label: "Yes", value: "yes" },
       { label: "No", value: "no" },
-    ],
+    ]
   },
   "Video Autoplay": {
     type: "radio",
     options: [
       { label: "Yes", value: "yes" },
       { label: "No", value: "no" },
-    ],
+    ]
   },
   "Video Object Fit": {
     type: "select",
@@ -121,6 +121,6 @@ export const BackgroundVideoFields = {
       { label: "Contain", value: "contain" },
       { label: "Fill", value: "fill" },
       { label: "None", value: "none" },
-    ],
-  },
+    ]
+  }
 };

@@ -8,7 +8,7 @@ import {
   spacingTopClasses,
   spacingBottomClasses,
   paddingTopClasses,
-  paddingBottomClasses,
+  paddingBottomClasses
 } from "@/blocks/globals";
 import { Media } from "@/components/Media";
 import RichText from "@/components/RichText";
@@ -18,7 +18,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselProps,
+  type CarouselProps
 } from "@/components/ui/carousel";
 import { cn } from "@/utilities/cn";
 
@@ -32,33 +32,33 @@ export const CarouselBlock = ({
   spacingTop,
   paddingBottom,
   paddingTop,
-  title,
+  title
 }: CarouselBlockProps) => {
   const plugins = {
     logo: [
       AutoScrollPlugin({
-        speed: 3,
+        speed: 3
       }),
     ],
     default: [
       ...(autoplay && autoplay !== 0
         ? [
             AutoplayPlugin({
-              delay: autoplay,
+              delay: autoplay
             }),
           ]
         : []),
-    ],
+    ]
   };
 
   const options: Record<string, Partial<CarouselProps["opts"]>> = {
     logo: {
       loop: true,
-      watchDrag: false,
+      watchDrag: false
     },
     default: {
-      loop: true,
-    },
+      loop: true
+    }
   };
 
   return (

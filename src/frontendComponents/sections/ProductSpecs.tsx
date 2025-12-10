@@ -9,7 +9,7 @@ export default function ProductSpecs({
   description,
   specs,
   shipping,
-  returns,
+  returns
 }: {
   description: string;
   specs: SpecRow[];

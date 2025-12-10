@@ -6,7 +6,7 @@ export const backgroundPicker: Field = {
   type: "text",
   admin: {
     components: {
-      Field: "@/components/AdminColorPicker#AdminColorPicker",
-    },
-  },
+      Field: "@/components/AdminColorPicker#AdminColorPicker"
+    }
+  }
 };

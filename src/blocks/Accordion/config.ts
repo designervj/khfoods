@@ -8,14 +8,14 @@ const faqFields: Field[] = [
     name: "title",
     type: "text",
     localized: true,
-    required: true,
+    required: true
   },
   {
     name: "content",
     type: "richText",
     localized: true,
     editor: noBlocksLexical,
-    required: true,
+    required: true
   },
 ];
 
@@ -29,18 +29,18 @@ export const Accordion: Block = {
       name: "title",
       type: "richText",
       localized: true,
-      editor: noBlocksLexical,
+      editor: noBlocksLexical
     },
     {
       name: "items",
       type: "array",
       admin: {
-        initCollapsed: true,
+        initCollapsed: true
       },
       required: true,
-      fields: faqFields,
+      fields: faqFields
     },
     marginFields,
     paddingFields,
-  ],
+  ]
 };

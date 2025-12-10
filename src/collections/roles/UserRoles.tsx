@@ -43,7 +43,7 @@ const isReadAccess = async (args: AccessArgs<Administrator>) => {
   const base = await checkUserPermission(args, "read", "adminPermission");
   if ( base === true &&args.req?.user?.id) {
     return {
-      and: [base, { selectedAdministrators: { equals: args.req.user.id } }],
+      and: [base, { selectedAdministrators: { equals: args.req.user.id } }]
     };
   }
   return base;
@@ -62,21 +62,21 @@ export const Roles: CollectionConfig = {
   labels: {
     singular: {
       en: "User Role",
-      pl: "Rola Użytkownika",
+      zh: "用户角色"
     },
     plural: {
       en: "User Roles",
-      pl: "Role Użytkowników",
-    },
+      zh: "用户角色"
+    }
   },
   admin: {
     useAsTitle: "roleTitle",
     defaultColumns: ["roleTitle", "selectedAdministrators", "createdAt"],
     group: {
       en: "Administration",
-      pl: "Administracja",
+      zh: "管理"
     },
-    description: "Manage user roles and permissions across the system",
+    description: "Manage user roles and permissions across the system"
   },
   access: {
     // admin: () => true,
@@ -97,7 +97,7 @@ export const Roles: CollectionConfig = {
     create: isCreateAccess,
     update: isUpdateAccess,
     delete: isDeleteAccess,
-    admin: () => true,
+    admin: () => true
   },
   hooks: {
     beforeValidate: [
@@ -112,9 +112,9 @@ export const Roles: CollectionConfig = {
                   { roleTitle: { equals: data.roleTitle } },
                   { createdFor: { equals: data.createdFor } },
                   ...(data.id ? [{ id: { not_equals: data.id } }] : []),
-                ],
+                ]
               },
-              limit: 1,
+              limit: 1
             });
             // console.log("Existing Roles Check:", existing);
             if (existing.docs.length > 0) {
@@ -159,7 +159,7 @@ export const Roles: CollectionConfig = {
             "courier_read",
             "courier_update",
             "courier_delete",
-          ],
+          ]
         };
 
         // Loop through each group to create its corresponding permission array
@@ -249,7 +249,7 @@ export const Roles: CollectionConfig = {
           websitePermission: data.websitePermission,
           orderPermission: data.orderPermission,
           shopPermission: data.shopPermission,
-          courierPermission: data.courierPermission,
+          courierPermission: data.courierPermission
         });
 
         // Debug: Check what fields remain in data
@@ -296,7 +296,7 @@ export const Roles: CollectionConfig = {
           website: "websitePermission",
           order: "orderPermission",
           shop: "shopPermission",
-          courier: "courierPermission",
+          courier: "courierPermission"
         };
 
         // Loop through each group and restore checkbox states
@@ -320,7 +320,7 @@ export const Roles: CollectionConfig = {
         console.log("🔄 Restored checkbox states from saved permissions", doc);
         return doc;
       },
-    ],
+    ]
   },
 
   fields: [
@@ -332,15 +332,15 @@ export const Roles: CollectionConfig = {
           name: "roleTitle",
           label: {
             en: "Role Title",
-            hr: "Naziv uloge",
-            pl: "Nazwa roli",
+            hr: "Naziv uloge"
+
           },
           type: "text",
           required: true,
           admin: {
             width: "50%",
             description:
-              "A descriptive title for this role (e.g., 'Content Manager', 'Product Admin')",
+              "A descriptive title for this role (e.g., 'Content Manager', 'Product Admin')"
           },
           hooks: {
             beforeChange: [
@@ -350,23 +350,23 @@ export const Roles: CollectionConfig = {
                 }
                 return value;
               },
-            ],
-          },
+            ]
+          }
         },
-      ],
+      ]
     },
 
     {
       name: "roleDescription",
       label: {
         en: "Role Description",
-        hr: "Opis uloge",
-        pl: "Opis roli",
+        hr: "Opis uloge"
+
       },
       type: "textarea",
       admin: {
-        description: "Describe what this role is intended for and its scope",
-      },
+        description: "Describe what this role is intended for and its scope"
+      }
     },
     /// administration collection
     {
@@ -382,8 +382,8 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
               virtual: true,
@@ -396,16 +396,16 @@ export const Roles: CollectionConfig = {
                       originalDoc?.admin_create
                     );
                   },
-                ],
-              },
+                ]
+              }
             },
             {
               name: "admin_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
               virtual: true,
@@ -418,16 +418,16 @@ export const Roles: CollectionConfig = {
                       originalDoc?.admin_read
                     );
                   },
-                ],
-              },
+                ]
+              }
             },
             {
               name: "admin_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
               virtual: true,
@@ -440,16 +440,16 @@ export const Roles: CollectionConfig = {
                       originalDoc?.admin_update
                     );
                   },
-                ],
-              },
+                ]
+              }
             },
             {
               name: "admin_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
               virtual: true,
@@ -462,12 +462,12 @@ export const Roles: CollectionConfig = {
                       originalDoc?.admin_delete
                     );
                   },
-                ],
-              },
+                ]
+              }
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
     // Pages Collection Permissions
     {
@@ -482,48 +482,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "pages_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "pages_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "pages_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Products Collection Permissions
@@ -539,48 +539,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "products_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "products_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "products_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Media Collection Permissions
@@ -596,48 +596,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "media_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "media_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "media_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // PostCollection Permissions
@@ -653,48 +653,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "post_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "post_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "post_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // website Collection Permissions
@@ -710,48 +710,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "website_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "website_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "website_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // order Collection Permissions
@@ -767,48 +767,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "order_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "order_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "order_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Shop Collection Permissions
@@ -824,48 +824,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "shop_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "shop_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "shop_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Courier Collection Permissions
@@ -881,48 +881,48 @@ export const Roles: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "courier_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "courier_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "courier_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // User Assignment Section
@@ -935,8 +935,8 @@ export const Roles: CollectionConfig = {
       defaultValue: ({ req }) => (req.user?.id ? req.user.id : undefined),
       admin: {
         description: "Select administrators to assign this role",
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
 
     // Hidden permission array fields for database storage
@@ -946,73 +946,73 @@ export const Roles: CollectionConfig = {
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "pagesPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "productsPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "mediaPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "postPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "websitePermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "orderPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "shopPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "courierPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
   ],
-  timestamps: true,
+  timestamps: true
 };

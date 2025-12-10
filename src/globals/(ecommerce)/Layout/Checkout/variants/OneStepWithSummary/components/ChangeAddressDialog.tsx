@@ -9,7 +9,7 @@ import {
   DialogContent,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from "@/components/ui/dialog";
 import { type Customer } from "@/payload-types";
 import { type CheckoutFormData } from "@/schemas/checkoutForm.schema";
@@ -21,7 +21,7 @@ export const ChangeAddressDialog = ({
   shippingAddresses,
   setAddShippingDialogOpen,
   selectedID,
-  setShipping,
+  setShipping
 }: {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
@@ -53,7 +53,7 @@ export const ChangeAddressDialog = ({
               onClick={() => {
                 setShipping({
                   ...shipping,
-                  id: shipping.id ?? undefined,
+                  id: shipping.id ?? undefined
                 });
               }}
               key={shipping.id}

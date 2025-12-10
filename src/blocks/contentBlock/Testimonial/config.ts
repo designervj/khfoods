@@ -5,7 +5,7 @@ export const Testimonial: Block = {
   interfaceName: "TestimonialBlock",
   labels: {
     singular: "💬 Testimonial",
-    plural: "💬 Testimonials",
+    plural: "💬 Testimonials"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -29,30 +29,30 @@ export const Testimonial: Block = {
               label: "Testimonial Quote",
               required: true,
               admin: {
-                rows: 4,
-              },
+                rows: 4
+              }
             },
             {
               name: "authorName",
               type: "text",
               label: "Author Name",
-              required: true,
+              required: true
             },
             {
               name: "authorTitle",
               type: "text",
-              label: "Author Title/Position",
+              label: "Author Title/Position"
             },
             {
               name: "authorCompany",
               type: "text",
-              label: "Author Company",
+              label: "Author Company"
             },
             {
               name: "authorImage",
               type: "upload",
               label: "Author Photo",
-              relationTo: "media",
+              relationTo: "media"
             },
             {
               name: "rating",
@@ -61,16 +61,16 @@ export const Testimonial: Block = {
               min: 1,
               max: 5,
               admin: {
-                description: "Star rating out of 5",
-              },
+                description: "Star rating out of 5"
+              }
             },
             {
               name: "showQuoteIcon",
               type: "checkbox",
               label: "Show Quote Icon",
-              defaultValue: true,
+              defaultValue: true
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -84,7 +84,7 @@ export const Testimonial: Block = {
                 { label: "Card", value: "card" },
                 { label: "Inline", value: "inline" },
                 { label: "Centered", value: "centered" },
-              ],
+              ]
             },
             {
               name: "quoteSize",
@@ -95,47 +95,47 @@ export const Testimonial: Block = {
                 { label: "Base", value: "base" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "quoteColor",
               type: "text",
               label: "Quote Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "authorNameColor",
               type: "text",
               label: "Author Name Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "authorTitleColor",
               type: "text",
               label: "Author Title Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "backgroundColor",
               type: "text",
               label: "Background Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "borderColor",
               type: "text",
               label: "Border Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "imageSize",
@@ -146,7 +146,7 @@ export const Testimonial: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "imageShape",
@@ -157,7 +157,7 @@ export const Testimonial: Block = {
                 { label: "Circle", value: "circle" },
                 { label: "Square", value: "square" },
                 { label: "Rounded Square", value: "rounded" },
-              ],
+              ]
             },
             {
               name: "textAlign",
@@ -167,7 +167,7 @@ export const Testimonial: Block = {
               options: [
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
-              ],
+              ]
             },
             {
               name: "borderRadius",
@@ -179,7 +179,7 @@ export const Testimonial: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -191,7 +191,7 @@ export const Testimonial: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -203,7 +203,7 @@ export const Testimonial: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "quoteIconColor",
@@ -211,16 +211,16 @@ export const Testimonial: Block = {
               label: "Quote Icon Color",
               admin: {
                 description: "Hex color code",
-                condition: (data) => Boolean(data.showQuoteIcon),
-              },
+                condition: (data) => Boolean(data.showQuoteIcon)
+              }
             },
             {
               name: "starColor",
               type: "text",
               label: "Star Rating Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "animation",
@@ -232,16 +232,16 @@ export const Testimonial: Block = {
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Slide Up", value: "slideUp" },
                 { label: "Scale", value: "scale" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

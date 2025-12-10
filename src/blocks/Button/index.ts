@@ -4,14 +4,14 @@ export const ButtonBlock: Block = {
   slug: "buttonBlock",
   labels: {
     singular: "Button Block",
-    plural: "Button Blocks",
+    plural: "Button Blocks"
   },
   fields: [
     {
       name: "label",
       type: "text",
       label: "Button Label",
-      required: true,
+      required: true
     },
     {
       name: "link",
@@ -30,7 +30,7 @@ export const ButtonBlock: Block = {
             { label: "Email", value: "email" },
             { label: "Phone", value: "phone" },
             { label: "Anchor/Section", value: "anchor" },
-          ],
+          ]
         },
         {
           name: "url",
@@ -39,8 +39,8 @@ export const ButtonBlock: Block = {
           required: true,
           admin: {
             condition: (data, siblingData) => siblingData?.type === "external",
-            placeholder: "https://example.com",
-          },
+            placeholder: "https://example.com"
+          }
         },
         {
           name: "page",
@@ -48,8 +48,8 @@ export const ButtonBlock: Block = {
           label: "Internal Page",
           relationTo: "pages", // Adjust to your pages collection slug
           admin: {
-            condition: (data, siblingData) => siblingData?.type === "internal",
-          },
+            condition: (data, siblingData) => siblingData?.type === "internal"
+          }
         },
         {
           name: "email",
@@ -57,8 +57,8 @@ export const ButtonBlock: Block = {
           label: "Email Address",
           admin: {
             condition: (data, siblingData) => siblingData?.type === "email",
-            placeholder: "contact@example.com",
-          },
+            placeholder: "contact@example.com"
+          }
         },
         {
           name: "phone",
@@ -66,8 +66,8 @@ export const ButtonBlock: Block = {
           label: "Phone Number",
           admin: {
             condition: (data, siblingData) => siblingData?.type === "phone",
-            placeholder: "+1234567890",
-          },
+            placeholder: "+1234567890"
+          }
         },
         {
           name: "anchor",
@@ -75,8 +75,8 @@ export const ButtonBlock: Block = {
           label: "Anchor/Section ID",
           admin: {
             condition: (data, siblingData) => siblingData?.type === "anchor",
-            placeholder: "#section-id",
-          },
+            placeholder: "#section-id"
+          }
         },
         {
           name: "newTab",
@@ -85,8 +85,8 @@ export const ButtonBlock: Block = {
           defaultValue: false,
           admin: {
             condition: (data, siblingData) =>
-              siblingData?.type === "external" || siblingData?.type === "internal",
-          },
+              siblingData?.type === "external" || siblingData?.type === "internal"
+          }
         },
         {
           name: "rel",
@@ -103,10 +103,10 @@ export const ButtonBlock: Block = {
           ],
           admin: {
             condition: (data, siblingData) =>
-              siblingData?.type === "external" || siblingData?.type === "internal",
-          },
+              siblingData?.type === "external" || siblingData?.type === "internal"
+          }
         },
-      ],
+      ]
     },
     {
       name: "icon",
@@ -117,7 +117,7 @@ export const ButtonBlock: Block = {
           name: "enable",
           type: "checkbox",
           label: "Add Icon",
-          defaultValue: false,
+          defaultValue: false
         },
         {
           name: "iconName",
@@ -125,8 +125,8 @@ export const ButtonBlock: Block = {
           label: "Icon Name/Class",
           admin: {
             condition: (data, siblingData) => siblingData?.enable === true,
-            description: 'e.g., "arrow-right" or icon class from your icon library',
-          },
+            description: 'e.g., "arrow-right" or icon class from your icon library'
+          }
         },
         {
           name: "position",
@@ -138,8 +138,8 @@ export const ButtonBlock: Block = {
             { label: "Right", value: "right" },
           ],
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
         {
           name: "iconSize",
@@ -152,10 +152,10 @@ export const ButtonBlock: Block = {
             { label: "Large", value: "lg" },
           ],
           admin: {
-            condition: (data, siblingData) => siblingData?.enable === true,
-          },
+            condition: (data, siblingData) => siblingData?.enable === true
+          }
         },
-      ],
+      ]
     },
     {
       name: "variant",
@@ -172,14 +172,14 @@ export const ButtonBlock: Block = {
         { label: "Destructive", value: "destructive" },
         { label: "Success", value: "success" },
         { label: "Custom", value: "custom" },
-      ],
+      ]
     },
     {
       name: "customColors",
       type: "group",
       label: "Custom Colors",
       admin: {
-        condition: (data, siblingData) => siblingData?.variant === "custom",
+        condition: (data, siblingData) => siblingData?.variant === "custom"
       },
       fields: [
         {
@@ -187,42 +187,42 @@ export const ButtonBlock: Block = {
           type: "text",
           label: "Background Color (Hex)",
           admin: {
-            placeholder: "#0066cc",
-          },
+            placeholder: "#0066cc"
+          }
         },
         {
           name: "textColor",
           type: "text",
           label: "Text Color (Hex)",
           admin: {
-            placeholder: "#ffffff",
-          },
+            placeholder: "#ffffff"
+          }
         },
         {
           name: "hoverBackgroundColor",
           type: "text",
           label: "Hover Background Color (Hex)",
           admin: {
-            placeholder: "#0052a3",
-          },
+            placeholder: "#0052a3"
+          }
         },
         {
           name: "hoverTextColor",
           type: "text",
           label: "Hover Text Color (Hex)",
           admin: {
-            placeholder: "#ffffff",
-          },
+            placeholder: "#ffffff"
+          }
         },
         {
           name: "borderColor",
           type: "text",
           label: "Border Color (Hex)",
           admin: {
-            placeholder: "#0066cc",
-          },
+            placeholder: "#0066cc"
+          }
         },
-      ],
+      ]
     },
     {
       name: "size",
@@ -235,13 +235,13 @@ export const ButtonBlock: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "fullWidth",
       type: "checkbox",
       label: "Full Width Button",
-      defaultValue: false,
+      defaultValue: false
     },
     {
       name: "alignment",
@@ -254,8 +254,8 @@ export const ButtonBlock: Block = {
         { label: "Right", value: "right" },
       ],
       admin: {
-        condition: (data, siblingData) => !siblingData?.fullWidth,
-      },
+        condition: (data, siblingData) => !siblingData?.fullWidth
+      }
     },
     {
       name: "borderRadius",
@@ -269,7 +269,7 @@ export const ButtonBlock: Block = {
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
         { label: "Full (Pill)", value: "full" },
-      ],
+      ]
     },
     {
       name: "shadow",
@@ -282,7 +282,7 @@ export const ButtonBlock: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "fontWeight",
@@ -294,7 +294,7 @@ export const ButtonBlock: Block = {
         { label: "Medium (500)", value: "medium" },
         { label: "Semi Bold (600)", value: "semibold" },
         { label: "Bold (700)", value: "bold" },
-      ],
+      ]
     },
     {
       name: "textTransform",
@@ -306,7 +306,7 @@ export const ButtonBlock: Block = {
         { label: "Uppercase", value: "uppercase" },
         { label: "Lowercase", value: "lowercase" },
         { label: "Capitalize", value: "capitalize" },
-      ],
+      ]
     },
     {
       name: "animation",
@@ -321,13 +321,13 @@ export const ButtonBlock: Block = {
         { label: "Slide Right", value: "slide-right" },
         { label: "Pulse", value: "pulse" },
         { label: "Bounce", value: "bounce" },
-      ],
+      ]
     },
     {
       name: "disabled",
       type: "checkbox",
       label: "Disabled State",
-      defaultValue: false,
+      defaultValue: false
     },
     {
       name: "ariaLabel",
@@ -335,8 +335,8 @@ export const ButtonBlock: Block = {
       label: "ARIA Label",
       admin: {
         description: "Accessibility label for screen readers (optional)",
-        placeholder: "Descriptive button action",
-      },
+        placeholder: "Descriptive button action"
+      }
     },
     {
       name: "padding",
@@ -354,7 +354,7 @@ export const ButtonBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
         {
           name: "vertical",
@@ -367,9 +367,9 @@ export const ButtonBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "margin",
@@ -387,7 +387,7 @@ export const ButtonBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
         {
           name: "bottom",
@@ -400,17 +400,17 @@ export const ButtonBlock: Block = {
             { label: "Medium", value: "md" },
             { label: "Large", value: "lg" },
             { label: "Extra Large", value: "xl" },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "className",
       type: "text",
       label: "Custom CSS Class",
       admin: {
-        description: "Add custom CSS classes for additional styling",
-      },
+        description: "Add custom CSS classes for additional styling"
+      }
     },
-  ],
+  ]
 };

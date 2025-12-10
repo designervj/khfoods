@@ -30,8 +30,8 @@ export async function POST(req: Request) {
       collection: "customers",
       id: user.id,
       data: {
-        cart: JSON.stringify(cart),
-      },
+        cart: JSON.stringify(cart)
+      }
     });
 
     return Response.json({ status: 200, message: "Cart saved successfully" });
@@ -51,7 +51,7 @@ export async function GET() {
 
     return Response.json({
       status: 200,
-      data: typeof user.cart === "string" ? (JSON.parse(user.cart) as Cart) : user.cart,
+      data: typeof user.cart === "string" ? (JSON.parse(user.cart) as Cart) : user.cart
     });
   } catch (error) {
     console.log(error);

@@ -8,7 +8,7 @@ import { cn } from "@/utilities/cn";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } }
 };
 
 type LinkItem = { label: string; href: string };
@@ -30,7 +30,7 @@ export default function Footer({
   brand = {
     name: "Elextra",
     tagline:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   quickLinks = [
     { label: "About us", href: "#" },
@@ -51,8 +51,8 @@ export default function Footer({
     blurb:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
     phone: "+ 123 456 789",
-    chatHref: "#",
-  },
+    chatHref: "#"
+  }
 }: FooterProps) {
   return (
     <footer className={cn("bg-white text-[#4F4640]", className)}>
@@ -215,7 +215,7 @@ export default function Footer({
 
 function IconBubble({
   children,
-  ariaLabel,
+  ariaLabel
 }: {
   children: React.ReactNode;
   ariaLabel: string;

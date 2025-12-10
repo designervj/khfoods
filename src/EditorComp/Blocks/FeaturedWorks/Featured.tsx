@@ -17,8 +17,8 @@ export const FeaturedWorksBlock: ComponentConfig = {
         marginLeft: { type: "text" },
         marginRight: { type: "text" },
         marginTop: { type: "text" },
-        marginBottom: { type: "text" },
-      },
+        marginBottom: { type: "text" }
+      }
     },
 
     width: { type: "number", label: "Width (%)" },
@@ -36,7 +36,7 @@ export const FeaturedWorksBlock: ComponentConfig = {
     project2Title: { type: "text", label: "Project 2 Title" },
     project2Sub: { type: "text", label: "Project 2 Subtitle" },
     project2Image: { type: "text", label: "Project 2 Image URL" },
-    project2Button: { type: "text", label: "Project 2 Button Text" },
+    project2Button: { type: "text", label: "Project 2 Button Text" }
   },
 
   // -------------------------------------------
@@ -47,7 +47,7 @@ export const FeaturedWorksBlock: ComponentConfig = {
       marginLeft: "auto",
       marginRight: "auto",
       marginTop: "0",
-      marginBottom: "0",
+      marginBottom: "0"
     },
     width: 85,
     backgroundColor: "#1e1e1e",
@@ -66,7 +66,7 @@ export const FeaturedWorksBlock: ComponentConfig = {
     project2Sub: "LOWER PAREL, MUMBAI",
     project2Image:
       "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg",
-    project2Button: "View Project →",
+    project2Button: "View Project →"
   },
 
   // -------------------------------------------
@@ -88,19 +88,19 @@ export const FeaturedWorksBlock: ComponentConfig = {
     project2Title,
     project2Sub,
     project2Image,
-    project2Button,
+    project2Button
   }) => {
     const section: CSSProperties = {
       width: "100%",
       padding: "80px 0",
       backgroundColor,
       color: "#fff",
-      fontFamily: "sans-serif",
+      fontFamily: "sans-serif"
     };
 
     const container: CSSProperties = {
       width: `${width}%`,
-      margin: `${margin.marginTop} ${margin.marginRight} ${margin.marginBottom} ${margin.marginLeft}`,
+      margin: `${margin.marginTop} ${margin.marginRight} ${margin.marginBottom} ${margin.marginLeft}`
     };
 
     const title: CSSProperties = {
@@ -108,7 +108,7 @@ export const FeaturedWorksBlock: ComponentConfig = {
       fontSize: "35px",
       letterSpacing: "2px",
       marginBottom: "60px",
-      fontWeight: 700,
+      fontWeight: 700
     };
 
     const row: CSSProperties = {
@@ -116,11 +116,11 @@ export const FeaturedWorksBlock: ComponentConfig = {
       justifyContent: "space-between",
       alignItems: "center",
       marginBottom: "80px",
-      flexWrap: "wrap",
+      flexWrap: "wrap"
     };
 
     const textBox: CSSProperties = {
-      width: "45%",
+      width: "45%"
     };
 
     const tag: CSSProperties = {
@@ -128,19 +128,19 @@ export const FeaturedWorksBlock: ComponentConfig = {
       letterSpacing: "2px",
       fontSize: "12px",
       marginBottom: "15px",
-      textTransform: "uppercase",
+      textTransform: "uppercase"
     };
 
     const pTitle: CSSProperties = {
       fontSize: "40px",
-      fontWeight: 700,
+      fontWeight: 700
     };
 
     const pSub: CSSProperties = {
       fontSize: "20px",
       color: "#9b9b9b",
       marginTop: "5px",
-      fontWeight: 300,
+      fontWeight: 300
     };
 
     const btn: CSSProperties = {
@@ -153,17 +153,17 @@ export const FeaturedWorksBlock: ComponentConfig = {
       cursor: "pointer",
       display: "inline-flex",
       alignItems: "center",
-      gap: "10px",
+      gap: "10px"
     };
 
     const imgBox: CSSProperties = {
-      width: "50%",
+      width: "50%"
     };
 
     const imgStyle: CSSProperties = {
       width: "100%",
       height: "auto",
-      border: "1px solid #555",
+      border: "1px solid #555"
     };
 
     return (
@@ -201,5 +201,5 @@ export const FeaturedWorksBlock: ComponentConfig = {
         </div>
       </section>
     );
-  },
+  }
 };

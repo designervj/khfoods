@@ -9,16 +9,16 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.log("err--->",err)
     return new NextResponse(JSON.stringify({ error: 'Invalid JSON' }), {
-      status: 400,
+      status: 400
     });
   }
   try {
     const created = await payload.create({
       collection: 'websites',
-      data,
+      data
     });
     const res = new NextResponse(JSON.stringify(created), {
-      status: 201,
+      status: 201
     });
     res.headers.set('Access-Control-Allow-Origin', corsOrigin);
     res.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.log(" post error---", err)
     return new NextResponse(JSON.stringify({ error: err.message }), {
-      status: 500,
+      status: 500
     });
   }
 }
@@ -44,7 +44,7 @@ async function getAllowedOrigins() {
     collection: 'websites',
     limit: 0,
     pagination: false,
-    select: { domains: true },
+    select: { domains: true }
   });
   // Flatten all domains from all websites
   const allowed = websites.flatMap(site =>
@@ -79,9 +79,9 @@ export async function GET(req: NextRequest) {
   const corsOrigin = await getCorsOrigin(req);
    const res = new NextResponse(JSON.stringify({
     message: 'Websites API works!',
-    corsOrigin,
+    corsOrigin
   }), {
-    status: 200,
+    status: 200
   });
   console.log("res",res)
   res.headers.set('Access-Control-Allow-Origin', corsOrigin);
@@ -94,7 +94,7 @@ export async function GET(req: NextRequest) {
 export async function OPTIONS(req: NextRequest) {
   const corsOrigin = await getCorsOrigin(req);
   const res = new NextResponse(null, {
-    status: 204,
+    status: 204
   });
   res.headers.set('Access-Control-Allow-Origin', corsOrigin);
   res.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');

@@ -9,7 +9,7 @@ interface VisualEditingClientProps {
 
 export function VisualEditingClient({
   pageId,
-  collection = "pages",
+  collection = "pages"
 }: VisualEditingClientProps) {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -118,7 +118,7 @@ export function VisualEditingClient({
             collection: blockData.collection,
             docId: blockData.docId,
             field: actualField,
-            value: newText,
+            value: newText
           };
 
           // Add block-specific parameters if available
@@ -136,9 +136,9 @@ export function VisualEditingClient({
             {
               method: "GET",
               headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
               },
-              credentials: "include",
+              credentials: "include"
             }
           );
 
@@ -223,10 +223,10 @@ export function VisualEditingClient({
             {
               method: "PATCH",
               headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
               },
               credentials: "include",
-              body: JSON.stringify(updatedData),
+              body: JSON.stringify(updatedData)
             }
           );
 
@@ -352,14 +352,14 @@ export function VisualEditingClient({
                 collection,
                 docId,
                 field: fieldPath,
-                text,
+                text
               });
 
               openInlineEditor(editableElement, {
                 collection,
                 docId,
                 field: fieldPath,
-                currentText: text,
+                currentText: text
               });
             });
           });
@@ -394,14 +394,14 @@ export function VisualEditingClient({
                 collection,
                 docId,
                 field: blockFieldPath,
-                text,
+                text
               });
 
               openInlineEditor(textElement, {
                 collection,
                 docId,
                 field: `${blockFieldPath}.${textElement.tagName.toLowerCase()}`,
-                currentText: text,
+                currentText: text
               });
             });
           });

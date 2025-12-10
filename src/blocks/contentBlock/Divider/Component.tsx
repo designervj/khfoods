@@ -5,7 +5,7 @@ const iconMap: Record<string, string> = {
   heart: "♥",
   diamond: "◆",
   circle: "●",
-  square: "■",
+  square: "■"
 };
 
 export const DividerBlock: React.FC<any> = (props) => {
@@ -24,20 +24,20 @@ export const DividerBlock: React.FC<any> = (props) => {
     gradientStartColor,
     gradientEndColor,
     animation = "none",
-    className,
+    className
   } = props;
 
   const widthClasses = {
     full: "w-full",
     "3/4": "w-3/4",
     "1/2": "w-1/2",
-    "1/4": "w-1/4",
+    "1/4": "w-1/4"
   };
 
   const alignmentClasses = {
     left: "mr-auto",
     center: "mx-auto",
-    right: "ml-auto",
+    right: "ml-auto"
   };
 
   const marginTopClasses = {
@@ -45,7 +45,7 @@ export const DividerBlock: React.FC<any> = (props) => {
     sm: "mt-4",
     md: "mt-8",
     lg: "mt-12",
-    xl: "mt-16",
+    xl: "mt-16"
   };
 
   const marginBottomClasses = {
@@ -53,13 +53,13 @@ export const DividerBlock: React.FC<any> = (props) => {
     sm: "mb-4",
     md: "mb-8",
     lg: "mb-12",
-    xl: "mb-16",
+    xl: "mb-16"
   };
 
   const animationClasses = {
     none: "",
     fadeIn: "animate-fadeIn",
-    expand: "animate-expand",
+    expand: "animate-expand"
   };
 
   const borderStyles = {
@@ -67,7 +67,7 @@ export const DividerBlock: React.FC<any> = (props) => {
     dashed: "dashed",
     dotted: "dotted",
     double: "double",
-    gradient: "solid",
+    gradient: "solid"
   };
 
   const dividerStyle: React.CSSProperties = {
@@ -79,7 +79,7 @@ export const DividerBlock: React.FC<any> = (props) => {
         ? `linear-gradient(to right, ${gradientStartColor}, ${gradientEndColor})`
         : undefined,
     height: style === "gradient" ? `${thickness}px` : undefined,
-    border: style === "gradient" ? "none" : undefined,
+    border: style === "gradient" ? "none" : undefined
   };
 
   if (showIcon && (text || icon)) {

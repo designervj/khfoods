@@ -6,7 +6,7 @@ import {
   useFormFields,
   useDocumentInfo,
   useSelection,
-  useAllFormFields,
+  useAllFormFields
 } from "@payloadcms/ui";
 import { Button } from "@payloadcms/ui";
 import axios from "axios";
@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import {
   reduceFieldsToValues,
   getSiblingData,
-  getFieldPaths,
+  getFieldPaths
 } from "payload/shared";
 
 export interface Preset {
@@ -49,7 +49,6 @@ export const SaveToLibrary = ({ path }) => {
     void fetchTypesofSection();
   }, []);
 
-
   const handleSave = async () => {
     if (!presetName.trim()) {
       toast.error("Please enter a preset name");
@@ -71,7 +70,7 @@ export const SaveToLibrary = ({ path }) => {
       const presetData = {
         name: presetName,
         type: presetType,
-        value: obj,
+        value: obj
       };
 
       const response = await axios.post(

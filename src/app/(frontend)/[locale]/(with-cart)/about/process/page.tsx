@@ -9,28 +9,28 @@ const steps = [
     label: "Step 01",
     title: "Peanuts are grown in East-Southern states",
     short: "Grown on farms",
-    icon: "🌱",
+    icon: "🌱"
   },
   {
     id: 2,
     label: "Step 02",
     title: "Delivered to Los Angeles",
     short: "Shipped to LA",
-    icon: "🚚",
+    icon: "🚚"
   },
   {
     id: 3,
     label: "Step 03",
     title: "Freshly roasted in our factory",
     short: "Freshly roasted",
-    icon: "🔥",
+    icon: "🔥"
   },
   {
     id: 4,
     label: "Step 04",
     title: "Delivered to your home",
     short: "Delivered to you",
-    icon: "🏠",
+    icon: "🏠"
   },
 ];
 
@@ -38,22 +38,22 @@ const benefits = [
   {
     title: "Free Shipping",
     text: "All domestic orders",
-    icon: "📦",
+    icon: "📦"
   },
   {
     title: "Secure Payments",
     text: "Safe and encrypted checkout",
-    icon: "🔒",
+    icon: "🔒"
   },
   {
     title: "Customer Priority",
     text: "Quick responses and support",
-    icon: "💬",
+    icon: "💬"
   },
   {
     title: "Made With Love",
     text: "Carefully roasted since 1991",
-    icon: "❤️",
+    icon: "❤️"
   },
 ];
 
@@ -122,7 +122,7 @@ const page: React.FC = () => {
                       layout
                       initial={false}
                       style={{
-                        width: `${(activeStep.id / steps.length) * 100}%`,
+                        width: `${(activeStep.id / steps.length) * 100}%`
                       }}
                     />
                   </div>

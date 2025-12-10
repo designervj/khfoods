@@ -15,21 +15,21 @@ export const getNavPrefs = cache(
               and: [
                 {
                   key: {
-                    equals: "nav",
-                  },
+                    equals: "nav"
+                  }
                 },
                 {
                   "user.relationTo": {
-                    equals: user.collection,
-                  },
+                    equals: user.collection
+                  }
                 },
                 {
                   "user.value": {
-                    equals: user.id,
-                  },
+                    equals: user.id
+                  }
                 },
-              ],
-            },
+              ]
+            }
           })
           ?.then((res) => res?.docs?.[0]?.value as NavPreferences)
       : null,

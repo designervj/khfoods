@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 
 // export { generateMetadata };
 
-
 const Home=()=>{
 return(
      <HomePage/>

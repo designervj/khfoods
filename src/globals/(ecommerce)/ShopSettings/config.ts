@@ -7,24 +7,24 @@ export const ShopSettings: GlobalConfig = {
   slug: "shopSettings",
   label: {
     en: "General",
-    pl: "Ogólne",
+    zh: "通用"
   },
   access: {
-    read: () => true,
+    read: () => true
   },
   admin: {
     group: {
       en: "Shop settings",
-      pl: "Ustawienia sklepu",
-    },
+      zh: "商店设置"
+    }
   },
   fields: [
     {
       name: "availableCurrencies",
       type: "select",
       label: {
-        en: "Available currencies",
-        pl: "Dostępne waluty",
+        en: "Available currencies"
+
       },
       options: [
         { value: "USD", label: "USD" },
@@ -34,12 +34,12 @@ export const ShopSettings: GlobalConfig = {
       ],
       admin: {
         description: {
-          en: "First currency is the default one",
-          pl: "Pierwsza waluta jest walutą domyślną",
-        },
+          en: "First currency is the default one"
+
+        }
       },
       hasMany: true,
-      required: true,
+      required: true
     },
     {
       name: "currencyValues",
@@ -52,21 +52,21 @@ export const ShopSettings: GlobalConfig = {
             {
               name: "value",
               type: "number",
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "enableOAuth",
       type: "checkbox",
-      label: { en: "Enable OAuth", pl: "Włącz OAuth" },
+      label: { en: "Enable OAuth", zh: "启用OAuth" },
       defaultValue: false,
-      required: true,
+      required: true
     },
   ],
   hooks: {
-    afterChange: [revalidateGlobal],
-  },
+    afterChange: [revalidateGlobal]
+  }
 };

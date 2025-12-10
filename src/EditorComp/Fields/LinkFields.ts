@@ -3,7 +3,7 @@ export const LinkFields = {
   objectFields: {
     "Section Link URL": {
       type: "text",
-      label: "Section Link URL",
+      label: "Section Link URL"
     },
     "Section Link Target": {
       type: "select",
@@ -13,7 +13,7 @@ export const LinkFields = {
         { label: "In A New Tab", value: "_blank" },
         { label: "In The Parent Frame", value: "_parent" },
         { label: "In The Full Body", value: "_top" },
-      ],
-    },
-  },
+      ]
+    }
+  }
 };

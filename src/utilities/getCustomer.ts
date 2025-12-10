@@ -17,7 +17,7 @@ export const getCustomer = async () => {
         const payload = await getPayload({ config });
 
         const { user } = await payload.auth({
-          headers,
+          headers
         });
 
         // console.log("User on login:", user);
@@ -36,7 +36,7 @@ export const getCustomer = async () => {
     ["user-auth", cookieString],
     {
       revalidate: 1,
-      tags: ["user-auth"],
+      tags: ["user-auth"]
     },
   )();
 

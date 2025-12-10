@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const {
       cart,
       selectedCountry,
-      locale,
+      locale
     }: { cart: Cart | undefined; selectedCountry: Country; locale: Locale } = (await req.json()) as {
       cart: Cart | undefined;
       selectedCountry: Country;
@@ -29,8 +29,8 @@ export async function POST(req: Request) {
       collection: "products",
       where: {
         id: {
-          in: cart.map((product) => product.id),
-        },
+          in: cart.map((product) => product.id)
+        }
       },
       locale,
       select: {
@@ -45,8 +45,8 @@ export async function POST(req: Request) {
         stock: true,
         sizes: true,
         weight: true,
-        pricing: true,
-      },
+        pricing: true
+      }
     });
 
     const filledProducts = getFilledProducts(products, cart);
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
           ...deliveryZone,
           range: deliveryZone?.range?.find(
             (range) => range.weightFrom <= totalWeight && range.weightTo >= totalWeight,
-          ),
+          )
         };
 
         const calculatedPrice = deliveryZoneWithRange?.range?.pricing.map((prices) => {
@@ -77,7 +77,7 @@ export async function POST(req: Request) {
           } else {
             return {
               ...prices,
-              value: totalPriceInCurrency >= freeShippingValue ? 0 : prices.value,
+              value: totalPriceInCurrency >= freeShippingValue ? 0 : prices.value
             };
           }
         });
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
             title: courier.title,
             turnaround: courier.turnaround,
             icon: courier.icon,
-            pricing: calculatedPrice,
+            pricing: calculatedPrice
           };
         }
       });
@@ -97,7 +97,7 @@ export async function POST(req: Request) {
       filledProducts,
       total,
       couriers: filledCouriers,
-      totalQuantity: filledProducts.reduce((acc, product) => acc + (product?.quantity ?? 0), 0),
+      totalQuantity: filledProducts.reduce((acc, product) => acc + (product?.quantity ?? 0), 0)
     };
 
     return Response.json({ status: 200, productsWithTotalAndCouriers });

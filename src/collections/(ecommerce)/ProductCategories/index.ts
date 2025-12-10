@@ -9,53 +9,53 @@ export const ProductCategories: CollectionConfig = {
     useAsTitle: "title",
     group: {
       en: "Products",
-      pl: "Produkty",
-    },
+      zh: "产品"
+    }
   },
   labels: {
     singular: {
       en: "Product Category",
-      pl: "Kateogria produktu",
+      zh: "产品分类"
     },
     plural: {
       en: "Product Categories",
-      pl: "Kategorie produktów",
-    },
+      zh: "产品分类"
+    }
   },
   access: {
-    read: anyone,
+    read: anyone
   },
   fields: [
     {
       name: "title",
       label: {
-        en: "Category name",
-        pl: "Nazwa kategorii",
+        en: "Category name"
+
       },
       type: "text",
       required: true,
-      localized: true,
+      localized: true
     },
     ...slugField(),
     {
       name: "subcategories",
       label: {
-        en: "Related subcategories",
-        pl: "Powiązane podkategorie",
+        en: "Related subcategories"
+
       },
       type: "join",
       collection: "productSubCategories",
-      on: "category",
+      on: "category"
     },
     {
       name: "products",
       label: {
-        en: "Products in this category",
-        pl: "Produkty w tej kategorii",
+        en: "Products in this category"
+
       },
       type: "join",
       collection: "products",
-      on: "categoriesArr.category",
+      on: "categoriesArr.category"
     },
-  ],
+  ]
 };

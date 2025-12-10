@@ -5,7 +5,7 @@ import {
   DialogPanel,
   Disclosure,
   DisclosureButton,
-  DisclosurePanel,
+  DisclosurePanel
 } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { useTranslations } from "next-intl";
@@ -31,7 +31,7 @@ export const WithSidebar = ({
   category,
   products,
   searchParams,
-  children,
+  children
 }: {
   title: string;
   category?: ProductCategory | ProductSubCategory;
@@ -54,7 +54,7 @@ export const WithSidebar = ({
             product.sizes?.map((size) => ({
               value: size.slug,
               label: size.label,
-              checked: searchParams.size.includes(size.slug) ?? false,
+              checked: searchParams.size.includes(size.slug) ?? false
             })) ?? []
           );
         })
@@ -71,7 +71,7 @@ export const WithSidebar = ({
             product.colors?.map((color) => ({
               value: color.slug,
               label: color.label,
-              checked: searchParams.color.includes(color.slug),
+              checked: searchParams.color.includes(color.slug)
             })) ?? []
           );
         })
@@ -83,12 +83,12 @@ export const WithSidebar = ({
     {
       id: "color",
       name: t("color"),
-      options: colors,
+      options: colors
     },
     {
       id: "size",
       name: t("size"),
-      options: sizes,
+      options: sizes
     },
   ];
 

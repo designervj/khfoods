@@ -35,7 +35,7 @@ export const VideoModalHero = (props: Page["hero"]) => {
         className="relative -mt-[10.4rem] flex items-center justify-center overflow-hidden text-white"
         data-theme="dark"
         style={{
-          backgroundColor: video_backgroundColor || "#000000",
+          backgroundColor: video_backgroundColor || "#000000"
         }}
       >
         {/* Background Overlay */}

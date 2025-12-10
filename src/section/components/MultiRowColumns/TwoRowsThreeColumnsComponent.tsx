@@ -17,7 +17,7 @@ export const TwoRowsThreeColumnsComponent: React.FC<TwoRowsThreeColumnsBlockProp
   padding = "md",
   gap = "md",
   rows = [],
-  className,
+  className
 }) => {
   // Render each row's columns
   const renderedRows = rows

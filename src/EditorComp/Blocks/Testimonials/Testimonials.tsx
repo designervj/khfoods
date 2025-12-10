@@ -21,7 +21,7 @@ Ako tražite kovača koji spaja vrhunsko majstorstvo, izdržljivost i estetski u
     thumbnails: [
       "/assets/Image/testimonials-img-1.png",
       "/assets/Image/testimonials-img-2.png",
-    ],
+    ]
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ Ako tražite kovača koji spaja vrhunsko majstorstvo, izdržljivost i estetski u
     thumbnails: [
       "/assets/Image/user-testimonials-img.png",
       "/assets/Image/testimonials-img-1.png",
-    ],
+    ]
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ Tko god odluči naručiti ili kupiti Karlov nož, ne kupuje samo alat – kupuje
     thumbnails: [
       "/assets/Image/user-testimonials-img.png",
       "/assets/Image/testomonials-img.png",
-    ],
+    ]
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ Tko god odluči naručiti ili kupiti Karlov nož, ne kupuje samo alat – kupuje
     thumbnails: [
       "/assets/Image/testomonials-img.png",
       "/assets/Image/Marin-Medak-1.png",
-    ],
+    ]
   },
   {
     id: 5,
@@ -73,7 +73,7 @@ Tko god odluči naručiti ili kupiti Karlov nož, ne kupuje samo alat – kupuje
     thumbnails: [
       "/assets/Image/Marin-Medak-1.png",
       "/assets/Image/Marin-Medak-2.png",
-    ],
+    ]
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ Tko god odluči naručiti ili kupiti Karlov nož, ne kupuje samo alat – kupuje
     thumbnails: [
       "/assets/Image/Marin-Medak-2.png",
       "/assets/Image/Marin-Medak-3.png",
-    ],
+    ]
   },
 ];
 
@@ -155,7 +155,7 @@ export const TestimonialBlock: ComponentConfig = {
               }}
               navigation={{
                 nextEl: ".next-btn",
-                prevEl: ".prev-btn",
+                prevEl: ".prev-btn"
               }}
               className="mt-8 md:mt-10 testimonial-swiper"
             >
@@ -227,5 +227,5 @@ export const TestimonialBlock: ComponentConfig = {
       </section>
     </>
     );
-  },
+  }
 };

@@ -4,7 +4,7 @@ import { type ProductCategory, type ProductSubCategory } from "@/payload-types";
 
 export const ListingBreadcrumbs = async ({
   category,
-  subcategory,
+  subcategory
 }: {
   category: ProductCategory;
   subcategory?: ProductSubCategory;

@@ -20,25 +20,25 @@ const featuredProjects = [
     id: 1,
     title: "SHANTIGRAM MEADOWS, AHMEDABAD",
     image: "/assets/Image/project-image.jpg", // ⚠️ Yahaan apni image ka path daalein
-    slug: "/projects/shantigram-meadows",
+    slug: "/projects/shantigram-meadows"
   },
   {
     id: 2,
     title: "EMERALD GULISTAN MANDIR, KANPUR",
     image: "/assets/Image/project-image1.png", // ⚠️ Yahaan apni image ka path daalein
-    slug: "/projects/emerald-mandir",
+    slug: "/projects/emerald-mandir"
   },
   {
     id: 3,
     title: "EMERALD GULISTAN MANDIR, KANPUR",
     image: "/assets/Image/project-image2.png", // ⚠️ Yahaan apni image ka path daalein
-    slug: "/projects/emerald-mandir",
+    slug: "/projects/emerald-mandir"
   },
   {
     id: 4,
     title: "EMERALD GULISTAN MANDIR, KANPUR",
     image: "/assets/Image/project-image1.png", // ⚠️ Yahaan apni image ka path daalein
-    slug: "/projects/emerald-mandir",
+    slug: "/projects/emerald-mandir"
   },
   // Aap yahaan aur projects add kar sakte hain...
 ];
@@ -49,14 +49,14 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
-    },
-  },
+      duration: 0.5
+    }
+  }
 };
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 // ----------------------------
 
@@ -91,20 +91,20 @@ export default function OurProjects() {
               640: {
                 // Tablet par
                 slidesPerView: 2,
-                spaceBetween: 20,
+                spaceBetween: 20
               },
               1024: {
                 // Desktop par (aapki requirement)
                 slidesPerView: 3,
-                spaceBetween: 30,
-              },
+                spaceBetween: 30
+              }
             }}
             // 🆕 Neeche dots ke liye
             pagination={{ clickable: true }}
             // 🆕 Auto-play ke liye
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
+              disableOnInteraction: false
             }}
             loop={true} // 🆕 Taaki end ke baad firse start ho
             className="pb-16" // Pagination dots ke liye neeche space

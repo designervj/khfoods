@@ -108,5 +108,5 @@ export const svgs = {
       <rect x="34" y="36" width="24" height="20" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
       <path d="M10 12 L20 22 L22 18 L30 28" fill="none" stroke="currentColor" strokeWidth="2" />
     </svg>
-  ),
+  )
 };

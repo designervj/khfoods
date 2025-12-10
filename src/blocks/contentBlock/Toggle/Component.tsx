@@ -21,7 +21,7 @@ export const ToggleBlock: React.FC<any> = (props) => {
     shadow = "sm",
     hoverEffect = true,
     animation = "none",
-    className,
+    className
   } = props;
 
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -30,41 +30,41 @@ export const ToggleBlock: React.FC<any> = (props) => {
     sm: "text-sm",
     base: "text-base",
     lg: "text-lg",
-    xl: "text-xl",
+    xl: "text-xl"
   };
 
   const borderRadiusClasses = {
     none: "rounded-none",
     sm: "rounded-sm",
     md: "rounded-md",
-    lg: "rounded-lg",
+    lg: "rounded-lg"
   };
 
   const paddingClasses = {
     sm: "p-3",
     md: "p-4",
     lg: "p-6",
-    xl: "p-8",
+    xl: "p-8"
   };
 
   const marginClasses = {
     none: "m-0",
     sm: "mb-2",
     md: "mb-4",
-    lg: "mb-6",
+    lg: "mb-6"
   };
 
   const shadowClasses = {
     none: "shadow-none",
     sm: "shadow-sm",
     md: "shadow-md",
-    lg: "shadow-lg",
+    lg: "shadow-lg"
   };
 
   const animationClasses = {
     none: "",
     fadeIn: "animate-fadeIn",
-    slideUp: "animate-slideUp",
+    slideUp: "animate-slideUp"
   };
 
   const getIcon = () => {
@@ -81,15 +81,15 @@ export const ToggleBlock: React.FC<any> = (props) => {
     backgroundColor: backgroundColor || undefined,
     borderColor: borderColor || "#e5e7eb",
     borderWidth: "1px",
-    borderStyle: "solid",
+    borderStyle: "solid"
   };
 
   const titleStyle: React.CSSProperties = {
-    color: titleColor || undefined,
+    color: titleColor || undefined
   };
 
   const contentStyle: React.CSSProperties = {
-    color: contentColor || undefined,
+    color: contentColor || undefined
   };
 
   return (

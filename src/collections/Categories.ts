@@ -22,29 +22,29 @@ export const Categories: CollectionConfig = {
   labels: {
     plural: {
       en: "Posts Categories",
-      pl: "Kategorie postów",
+      zh: "文章分类",
       hr: "Kategorije objava", // Croatian
     },
     singular: {
       en: "Post Category",
-      pl: "Kategoria postów",
+      zh: "文章分类",
       hr: "Kategorija objave", // Croatian
-    },
+    }
   },
   admin: {
     useAsTitle: "title",
     group: {
       en: "Page Settings",
-      pl: "Ustawienia strony",
+      zh: "页面设置",
       hr: "Postavke stranice", // Croatian
-    },
+    }
   },
   fields: [
     {
       name: "title",
       type: "text",
       required: true,
-      localized: true,
+      localized: true
     },
-  ],
+  ]
 };

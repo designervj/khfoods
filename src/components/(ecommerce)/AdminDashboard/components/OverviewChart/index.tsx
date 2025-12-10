@@ -7,7 +7,7 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -15,7 +15,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  type CustomTooltipProps,
+  type CustomTooltipProps
 } from "@/components/ui/chart";
 
 type ChartData = {
@@ -33,7 +33,7 @@ export const OverviewChart = () => {
     const fetchChartData = async () => {
       try {
         const { data } = await axios.get<ChartData[]>("/api/orders/chart", {
-          withCredentials: true,
+          withCredentials: true
         });
         setChartData(data);
       } catch (error) {
@@ -45,11 +45,11 @@ export const OverviewChart = () => {
 
   const chartConfig = {
     revenue: {
-      label: t("adminDashboard:revenue"),
+      label: t("adminDashboard:revenue")
     },
     orders: {
-      label: t("adminDashboard:orders"),
-    },
+      label: t("adminDashboard:orders")
+    }
   } satisfies ChartConfig;
   return (
     <Card className="twp border-payload-elevation-150 rounded-xl border bg-transparent lg:col-span-4">

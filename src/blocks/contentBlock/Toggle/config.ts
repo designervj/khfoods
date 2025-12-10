@@ -5,7 +5,7 @@ export const Toggle: Block = {
   interfaceName: "ToggleBlock",
   labels: {
     singular: "🔽 Toggle",
-    plural: "🔽 Toggles",
+    plural: "🔽 Toggles"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -30,21 +30,21 @@ export const Toggle: Block = {
               name: "title",
               type: "text",
               label: "Title",
-              required: true,
+              required: true
             },
             {
               name: "content",
               type: "richText",
               label: "Content",
-              required: true,
+              required: true
             },
             {
               name: "defaultOpen",
               type: "checkbox",
               label: "Open by Default",
-              defaultValue: false,
+              defaultValue: false
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -59,39 +59,39 @@ export const Toggle: Block = {
                 { label: "Base", value: "base" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "titleColor",
               type: "text",
               label: "Title Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "contentColor",
               type: "text",
               label: "Content Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "backgroundColor",
               type: "text",
               label: "Background Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "borderColor",
               type: "text",
               label: "Border Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "iconStyle",
@@ -102,7 +102,7 @@ export const Toggle: Block = {
                 { label: "Plus/Minus", value: "plus" },
                 { label: "Chevron", value: "chevron" },
                 { label: "Arrow", value: "arrow" },
-              ],
+              ]
             },
             {
               name: "iconPosition",
@@ -112,7 +112,7 @@ export const Toggle: Block = {
               options: [
                 { label: "Left", value: "left" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "borderRadius",
@@ -124,7 +124,7 @@ export const Toggle: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -136,7 +136,7 @@ export const Toggle: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "margin",
@@ -148,7 +148,7 @@ export const Toggle: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -160,13 +160,13 @@ export const Toggle: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "hoverEffect",
               type: "checkbox",
               label: "Highlight on Hover",
-              defaultValue: true,
+              defaultValue: true
             },
             {
               name: "animation",
@@ -177,16 +177,16 @@ export const Toggle: Block = {
                 { label: "None", value: "none" },
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Slide Up", value: "slideUp" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

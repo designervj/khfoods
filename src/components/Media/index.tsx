@@ -16,7 +16,7 @@ export const Media = (props: Props) => {
     <Tag
       {...(htmlElement !== null
         ? {
-            className,
+            className
           }
         : {})}
     >

@@ -7,17 +7,17 @@ import type { GlobalConfig } from "payload";
 export const Header: GlobalConfig = {
   slug: "header",
   access: {
-    read: () => true,
+    read: () => true
   },
   admin: {
     group: {
       en: "Page Settings",
-      pl: "Ustawienia strony",
-    },
+      zh: "页面设置"
+    }
   },
   label: {
     en: "Header",
-    pl: "Nagłówek",
+    zh: "页眉"
   },
   fields: [
     {
@@ -25,16 +25,16 @@ export const Header: GlobalConfig = {
       type: "array",
       fields: [
         link({
-          appearances: false,
+          appearances: false
         }),
       ],
       maxRows: 6,
       admin: {
         initCollapsed: true,
         components: {
-          RowLabel: "@/globals/Header/RowLabel#RowLabel",
-        },
-      },
+          RowLabel: "@/globals/Header/RowLabel#RowLabel"
+        }
+      }
     },
     {
       name: "type",
@@ -42,31 +42,31 @@ export const Header: GlobalConfig = {
       options: [
         {
           label: "Default",
-          value: "default",
+          value: "default"
         },
         {
           label: "Floating",
-          value: "floating",
+          value: "floating"
         },
       ],
       required: true,
-      defaultValue: "default",
+      defaultValue: "default"
     },
     {
       name: "logo",
       type: "upload",
       relationTo: "media",
-      localized: true,
+      localized: true
     },
     {
       name: "hideOnScroll",
       label: "Hide on Scroll",
       type: "checkbox",
-      defaultValue: false,
+      defaultValue: false
     },
     backgroundPicker,
   ],
   hooks: {
-    afterChange: [revalidateGlobal],
-  },
+    afterChange: [revalidateGlobal]
+  }
 };

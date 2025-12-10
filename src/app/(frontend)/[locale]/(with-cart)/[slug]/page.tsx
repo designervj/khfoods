@@ -39,56 +39,56 @@ const pettyProducts: any = [
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p2",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p3",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p4",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p5",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p6",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p7",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
   {
     id: "p8",
     name: "Petty 173mm",
     priceEUR: 220,
     image: "/assets/products/product-img.png",
-    size: "173mm",
+    size: "173mm"
   },
 ];
 
@@ -132,8 +132,8 @@ export async function generateStaticParams() {
     overrideAccess: true,
     pagination: false,
     select: {
-      slug: true,
-    },
+      slug: true
+    }
   });
 
   // ✅ Ensure only valid slugs are included
@@ -147,7 +147,7 @@ export async function generateStaticParams() {
       )
       .map(({ slug }) => ({
         locale,
-        slug,
+        slug
       }));
   });
   return params;
@@ -289,7 +289,7 @@ const getImageURL = (image?: Media | Config["db"]["defaultIDType"] | null) => {
 };
 
 export async function generateMetadata({
-  params: paramsPromise,
+  params: paramsPromise
 }: Args): Promise<Metadata> {
   const { slug = "home", locale } = await paramsPromise;
 
@@ -331,14 +331,14 @@ export async function generateMetadata({
       images: ogImage
         ? [
             {
-              url: ogImage,
+              url: ogImage
             },
           ]
         : undefined,
       title,
-      url: pageUrl,
+      url: pageUrl
     }),
-    title,
+    title
   };
 }
 
@@ -358,9 +358,9 @@ const queryPageBySlug = cache(
         overrideAccess: draft,
         where: {
           slug: {
-            equals: slug,
-          },
-        },
+            equals: slug
+          }
+        }
       });
       return result.docs?.[0] || null;
     } catch (error) {

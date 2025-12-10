@@ -31,13 +31,13 @@ type HeaderProps = {
 const fade = {
   hidden: { opacity: 0, y: -6 },
   show: { opacity: 1, y: 0, transition: { duration: 0.18 } },
-  exit: { opacity: 0, y: -6, transition: { duration: 0.12 } },
+  exit: { opacity: 0, y: -6, transition: { duration: 0.12 } }
 };
 
 const drawer = {
   hidden: { x: "-100%" },
   show: { x: 0, transition: { duration: 0.22 } },
-  exit: { x: "-100%", transition: { duration: 0.15 } },
+  exit: { x: "-100%", transition: { duration: 0.15 } }
 };
 
 /* ===========================
@@ -53,7 +53,7 @@ export default function Header({
         { label: "Gyuto", href: "/gyuto" },
         { label: "Santoku", href: "/santoku" },
         { label: "Nakiri", href: "/nakiri" },
-      ],
+      ]
     },
     { label: "O Noževima", href: "/o-nozevima" },
     { label: "O Karlo Banu", href: "/o-karlo-banu" },
@@ -67,7 +67,7 @@ export default function Header({
     { code: "hr", label: "Hr" },
     { code: "en", label: "En" },
   ],
-  currentLang = "hr",
+  currentLang = "hr"
 }: HeaderProps) {
   const [openDropdown, setOpenDropdown] = React.useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);

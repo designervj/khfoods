@@ -38,17 +38,17 @@ export const FormBlock = (
     enableIntro,
     form: formFromProps,
     form: { id: formID, confirmationMessage, confirmationType, redirect, submitButtonLabel } = {},
-    introContent,
+    introContent
   } = props;
 
   const formMethods = useForm({
-    defaultValues: buildInitialFormState(formFromProps.fields),
+    defaultValues: buildInitialFormState(formFromProps.fields)
   });
   const {
     control,
     formState: { errors },
     handleSubmit,
-    register,
+    register
   } = formMethods;
 
   const [isLoading, setIsLoading] = useState(false);
@@ -64,7 +64,7 @@ export const FormBlock = (
 
         const dataToSend = Object.entries(data).map(([name, value]) => ({
           field: name,
-          value,
+          value
         }));
 
         // delay loading indicator by 1s
@@ -76,12 +76,12 @@ export const FormBlock = (
           const req = await fetch(`${getClientSideURL()}/api/form-submissions`, {
             body: JSON.stringify({
               form: formID,
-              submissionData: dataToSend,
+              submissionData: dataToSend
             }),
             headers: {
-              "Content-Type": "application/json",
+              "Content-Type": "application/json"
             },
-            method: "POST",
+            method: "POST"
           });
 
           const res = await req.json();
@@ -93,7 +93,7 @@ export const FormBlock = (
 
             setError({
               message: res.errors?.[0]?.message || "Internal Server Error",
-              status: res.status,
+              status: res.status
             });
 
             return;
@@ -113,7 +113,7 @@ export const FormBlock = (
           console.warn(err);
           setIsLoading(false);
           setError({
-            message: "Something went wrong.",
+            message: "Something went wrong."
           });
         }
       };

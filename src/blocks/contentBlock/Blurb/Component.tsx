@@ -40,7 +40,7 @@ const iconMap: Record<string, string> = {
   chart: "📊",
   settings: "⚙",
   lock: "🔒",
-  unlock: "🔓",
+  unlock: "🔓"
 };
 
 export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
@@ -69,7 +69,7 @@ export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
     borderWidth = "1",
     hoverEffect = "none",
     animation = "none",
-    className,
+    className
   } = props;
 
   const paddingClasses = {
@@ -77,7 +77,7 @@ export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
     sm: "p-4",
     md: "p-6",
     lg: "p-8",
-    xl: "p-12",
+    xl: "p-12"
   };
 
   const borderRadiusClasses = {
@@ -85,7 +85,7 @@ export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
-    full: "rounded-full",
+    full: "rounded-full"
   };
 
   const shadowClasses = {
@@ -93,27 +93,27 @@ export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
     sm: "shadow-sm",
     md: "shadow-md",
     lg: "shadow-lg",
-    xl: "shadow-xl",
+    xl: "shadow-xl"
   };
 
   const iconSizeClasses = {
     sm: "w-8 h-8 text-2xl",
     md: "w-12 h-12 text-4xl",
     lg: "w-16 h-16 text-5xl",
-    xl: "w-20 h-20 text-6xl",
+    xl: "w-20 h-20 text-6xl"
   };
 
   const iconShapeClasses = {
     none: "",
     circle: "rounded-full p-3",
     square: "p-3",
-    rounded: "rounded-lg p-3",
+    rounded: "rounded-lg p-3"
   };
 
   const textAlignClasses = {
     left: "text-left items-start",
     center: "text-center items-center",
-    right: "text-right items-end",
+    right: "text-right items-end"
   };
 
   const titleSizeClasses = {
@@ -122,14 +122,14 @@ export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
     h3: "text-2xl font-semibold",
     h4: "text-xl font-semibold",
     h5: "text-lg font-medium",
-    h6: "text-base font-medium",
+    h6: "text-base font-medium"
   };
 
   const hoverEffectClasses = {
     none: "",
     lift: "hover:-translate-y-2 transition-transform duration-300",
     scale: "hover:scale-105 transition-transform duration-300",
-    glow: "hover:shadow-2xl transition-shadow duration-300",
+    glow: "hover:shadow-2xl transition-shadow duration-300"
   };
 
   const animationClasses = {
@@ -138,33 +138,33 @@ export const BlurbBlock: React.FC<BlurbBlockProps> = (props) => {
     slideUp: "animate-slideUp",
     slideLeft: "animate-slideLeft",
     slideRight: "animate-slideRight",
-    zoomIn: "animate-zoomIn",
+    zoomIn: "animate-zoomIn"
   };
 
   const layoutClasses = {
     top: "flex-col",
     left: "flex-row",
-    right: "flex-row-reverse",
+    right: "flex-row-reverse"
   };
 
   const containerStyle: React.CSSProperties = {
     backgroundColor: backgroundColor || undefined,
     borderColor: border && borderColor ? borderColor : undefined,
     borderWidth: border ? `${borderWidth}px` : undefined,
-    borderStyle: border ? "solid" : undefined,
+    borderStyle: border ? "solid" : undefined
   };
 
   const iconContainerStyle: React.CSSProperties = {
     backgroundColor: iconBackgroundColor || undefined,
-    color: iconColor || undefined,
+    color: iconColor || undefined
   };
 
   const titleStyle: React.CSSProperties = {
-    color: titleColor || undefined,
+    color: titleColor || undefined
   };
 
   const descriptionStyle: React.CSSProperties = {
-    color: descriptionColor || undefined,
+    color: descriptionColor || undefined
   };
 
   const content = (

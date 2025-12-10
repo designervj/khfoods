@@ -15,7 +15,7 @@ export const createCouriers = (locale: Locale) =>
       prepaid: true,
       createPackage: (order: Order, dimension: string, _dimensions?: Dimensions) =>
         createInpostPickupPackage(order, dimension),
-      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-pickup"),
+      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-pickup")
     },
     {
       key: "inpost-courier",
@@ -23,7 +23,7 @@ export const createCouriers = (locale: Locale) =>
       prepaid: true,
       createPackage: (order: Order, _dimension: string, dimensions: Dimensions) =>
         createInpostCourierPackage(order, dimensions),
-      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-courier"),
+      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-courier")
     },
     {
       key: "inpost-courier-cod",
@@ -31,7 +31,7 @@ export const createCouriers = (locale: Locale) =>
       prepaid: false,
       createPackage: (order: Order, _dimension: string, dimensions: Dimensions) =>
         createInpostCODCourierPackage(order, dimensions),
-      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-courier-cod"),
+      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-courier-cod")
     },
   ] as const;
 
@@ -39,23 +39,23 @@ export const courierSelectOptions = [
   {
     value: "inpost-pickup",
     label: {
-      en: "InPost Pickup",
-      pl: "InPost Paczkomat",
-    },
+      en: "InPost Pickup"
+
+    }
   },
   {
     value: "inpost-courier",
     label: {
-      en: "InPost Courier",
-      pl: "InPost Kurier",
-    },
+      en: "InPost Courier"
+
+    }
   },
   {
     value: "inpost-courier-cod",
     label: {
-      en: "InPost Courier COD",
-      pl: "InPost Kurier pobranie",
-    },
+      en: "InPost Courier COD"
+
+    }
   },
 ];
 
@@ -70,7 +70,7 @@ export const getCouriersArray = async (locale: Locale, withZones?: boolean) => {
             title: settings.label,
             turnaround: settings.description ?? "",
             icon: icon,
-            deliveryZones: withZones ? deliveryZones : undefined,
+            deliveryZones: withZones ? deliveryZones : undefined
           }
         : null;
     }),

@@ -21,7 +21,7 @@ export const ThreeEqualColumnsComponent: React.FC<ThreeEqualColumnsBlockProps> =
   leftColumn = [],
   centerColumn = [],
   rightColumn = [],
-  className,
+  className
 }) => {
   // Render each column's blocks
   const renderedColumns = [

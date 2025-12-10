@@ -9,7 +9,7 @@ async function getAllowedOrigins() {
     collection: 'websites',
     limit: 0,
     pagination: false,
-    select: { domains: true },
+    select: { domains: true }
   });
   const allowed = websites.flatMap(site =>
     Array.isArray(site.domains)
@@ -38,10 +38,10 @@ export async function GET(req: NextRequest) {
   const { docs: roles } = await payload.find({
     collection: 'roles',
     limit: 0,
-    pagination: false,
+    pagination: false
   });
   const res = new NextResponse(JSON.stringify({ docs: roles }), {
-    status: 200,
+    status: 200
   });
   res.headers.set('Access-Control-Allow-Origin', corsOrigin);
   res.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
 export async function OPTIONS(req: NextRequest) {
   const corsOrigin = await getCorsOrigin(req);
   const res = new NextResponse(null, {
-    status: 204,
+    status: 204
   });
   res.headers.set('Access-Control-Allow-Origin', corsOrigin);
   res.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');

@@ -1,13 +1,13 @@
 import {
   type DefaultNodeTypes,
   type SerializedBlockNode,
-  type SerializedLinkNode,
+  type SerializedLinkNode
 } from "@payloadcms/richtext-lexical";
 import { type SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import {
   type JSXConvertersFunction,
   LinkJSXConverter,
-  RichText as RichTextWithoutBlocks,
+  RichText as RichTextWithoutBlocks
 } from "@payloadcms/richtext-lexical/react";
 
 import { BannerBlock } from "@/blocks/Banner/Component";
@@ -21,7 +21,7 @@ import { cn } from "@/utilities/cn";
 import type {
   BannerBlock as BannerBlockProps,
   CallToActionBlock as CTABlockProps,
-  MediaBlock as MediaBlockProps,
+  MediaBlock as MediaBlockProps
 } from "@/payload-types";
 import { AccordionBlock } from "@/blocks/Accordion/Component";
 import { FormBlock } from "@/blocks/Form/Component";
@@ -59,8 +59,8 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     formBlock: ({ node }) => <FormBlock {...node.fields} />,
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
     cta: ({ node }) => <CallToActionBlock {...node.fields} />,
-    carousel: ({ node }) => <CarouselBlock {...node.fields} />,
-  },
+    carousel: ({ node }) => <CarouselBlock {...node.fields} />
+  }
 });
 
 type Props = {
@@ -85,7 +85,7 @@ export default function RichText(props: Props) {
           {
             container: enableGutter,
             "max-w-none": !enableGutter,
-            "prose md:prose-md dark:prose-invert mx-auto": enableProse,
+            "prose md:prose-md dark:prose-invert mx-auto": enableProse
           },
           className,
         )}

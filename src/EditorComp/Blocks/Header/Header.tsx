@@ -23,8 +23,8 @@ export const HeaderBlock: ComponentConfig = {
       label: "Languages",
       arrayFields: {
         code: { type: "text", label: "Code" },
-        label: { type: "text", label: "Label" },
-      },
+        label: { type: "text", label: "Label" }
+      }
     },
 
     leftNav: {
@@ -38,11 +38,11 @@ export const HeaderBlock: ComponentConfig = {
           label: "Dropdown Items",
           arrayFields: {
             label: { type: "text", label: "Label" },
-            href: { type: "text", label: "Link" },
-          },
-        },
-      },
-    },
+            href: { type: "text", label: "Link" }
+          }
+        }
+      }
+    }
   },
 
   /* =======================
@@ -70,12 +70,12 @@ export const HeaderBlock: ComponentConfig = {
           { label: "Gyuto", href: "/gyuto" },
           { label: "Santoku", href: "/santoku" },
           { label: "Nakiri", href: "/nakiri" },
-        ],
+        ]
       },
       { label: "O Noževima", href: "/category" },
       { label: "O Karlo Banu", href: "/o-karlo-banu" },
       { label: "Što drugi kažu", href: "/recenzije" },
-    ],
+    ]
   },
 
   /* =======================
@@ -88,7 +88,7 @@ export const HeaderBlock: ComponentConfig = {
     phoneHref,
     phoneText,
     cartCount,
-    languages,
+    languages
   }) => {
     const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
@@ -100,7 +100,7 @@ export const HeaderBlock: ComponentConfig = {
       top: 0,
       zIndex: 50,
       borderBottom: "1px solid #ddd",
-      fontFamily: "sans-serif",
+      fontFamily: "sans-serif"
     };
 
     const container: React.CSSProperties = {
@@ -108,7 +108,7 @@ export const HeaderBlock: ComponentConfig = {
       margin: "0 auto",
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center",
+      alignItems: "center"
     };
 
     const navItem: React.CSSProperties = {
@@ -117,7 +117,7 @@ export const HeaderBlock: ComponentConfig = {
       fontWeight: 600,
       color: "#4F4640",
       cursor: "pointer",
-      position: "relative",
+      position: "relative"
     };
 
     const dropdown: React.CSSProperties = {
@@ -129,7 +129,7 @@ export const HeaderBlock: ComponentConfig = {
       borderRadius: "6px",
       minWidth: "160px",
       padding: "8px 0",
-      boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+      boxShadow: "0 4px 10px rgba(0,0,0,0.08)"
     };
 
     return (
@@ -169,7 +169,7 @@ export const HeaderBlock: ComponentConfig = {
                             display: "block",
                             padding: "8px 14px",
                             fontSize: "14px",
-                            color: "#4F4640",
+                            color: "#4F4640"
                           }}
                         >
                           {child.label}
@@ -198,7 +198,7 @@ export const HeaderBlock: ComponentConfig = {
                 fontWeight: 600,
                 display: "flex",
                 alignItems: "center",
-                gap: "6px",
+                gap: "6px"
               }}
             >
               📞 {phoneText}
@@ -217,7 +217,7 @@ export const HeaderBlock: ComponentConfig = {
                     color: "#fff",
                     fontSize: "10px",
                     padding: "2px 5px",
-                    borderRadius: "50%",
+                    borderRadius: "50%"
                   }}
                 >
                   {cartCount}
@@ -231,7 +231,7 @@ export const HeaderBlock: ComponentConfig = {
                 padding: "6px",
                 border: "1px solid #ccc",
                 borderRadius: "4px",
-                fontSize: "14px",
+                fontSize: "14px"
               }}
             >
               {languages?.map((lang: any) => (
@@ -244,5 +244,5 @@ export const HeaderBlock: ComponentConfig = {
         </div>
       </header>
     );
-  },
+  }
 };

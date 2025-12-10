@@ -2,7 +2,7 @@ import {
   paddingBottomClasses,
   paddingTopClasses,
   spacingBottomClasses,
-  spacingTopClasses,
+  spacingTopClasses
 } from "@/blocks/globals";
 import { CMSLink } from "@/components/Link";
 import RichText from "@/components/RichText";
@@ -17,7 +17,7 @@ export const CallToActionBlock = ({
   spacingTop,
   spacingBottom,
   paddingBottom,
-  paddingTop,
+  paddingTop
 }: CTABlockProps) => {
   return (
     <div

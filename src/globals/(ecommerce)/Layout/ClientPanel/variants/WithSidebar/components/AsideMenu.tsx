@@ -3,7 +3,7 @@ import {
   AdjustmentsHorizontalIcon,
   ClipboardDocumentCheckIcon,
   CubeIcon,
-  QuestionMarkCircleIcon,
+  QuestionMarkCircleIcon
 } from "@heroicons/react/24/outline";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useTranslations } from "next-intl";

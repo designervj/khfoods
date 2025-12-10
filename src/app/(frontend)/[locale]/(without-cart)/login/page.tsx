@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 const LoginPage = async ({
   params,
-  searchParams,
+  searchParams
 }: {
   params: Promise<{ locale: Locale }>;
   searchParams: Promise<{ verified?: string }>;

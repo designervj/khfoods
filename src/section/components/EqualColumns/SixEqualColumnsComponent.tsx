@@ -17,7 +17,7 @@ export const SixEqualColumnsComponent: React.FC<SixEqualColumnsBlockProps> = ({
   padding = "md",
   gap = "md",
   columns = [],
-  className,
+  className
 }) => {
   // Render each column's blocks
   const renderedColumns = columns

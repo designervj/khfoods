@@ -12,7 +12,7 @@ export const ColorSelect: TextFieldClientComponent = ({ path }) => {
   const variantSlugPath = path.replace(/[^.]+$/, "variantSlug");
 
   const { setValue: setVariantSlugValue } = useField<string>({
-    path: variantSlugPath,
+    path: variantSlugPath
   });
 
   const { getDataByPath, getSiblingData } = useForm();
@@ -46,7 +46,7 @@ export const ColorSelect: TextFieldClientComponent = ({ path }) => {
       <Select
         value={{
           label: colors?.find((color) => color.slug === value)?.label,
-          value,
+          value
         }}
         onChange={handleColorChange}
         options={
@@ -54,7 +54,7 @@ export const ColorSelect: TextFieldClientComponent = ({ path }) => {
             ? colors?.map((color) => ({
                 label: color.label,
 
-                value: color.slug,
+                value: color.slug
               }))
             : []
         }

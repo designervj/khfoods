@@ -15,7 +15,7 @@ export const noBlocksLexical: Config["editor"] = lexicalEditor({
     return [
       ...defaultFeatures,
       BlocksFeature({
-        blocks: [Carousel],
+        blocks: [Carousel]
       }),
       LinkFeature({
         enabledCollections: ["pages", "posts"],
@@ -31,13 +31,13 @@ export const noBlocksLexical: Config["editor"] = lexicalEditor({
               name: "url",
               type: "text",
               admin: {
-                condition: ({ linkType }) => linkType !== "internal",
+                condition: ({ linkType }) => linkType !== "internal"
               },
               label: ({ t }) => t("fields:enterURL"),
-              required: true,
+              required: true
             },
           ];
-        },
+        }
       }),
       // TextColorFeature(),
       // HighlightColorFeature(),
@@ -46,5 +46,5 @@ export const noBlocksLexical: Config["editor"] = lexicalEditor({
       //   YoutubeFeature(),
       //   VimeoFeature(),
     ];
-  },
+  }
 });

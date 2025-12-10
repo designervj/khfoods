@@ -12,7 +12,7 @@ export const ProductUnitPriceField: NumberFieldServerComponent = async ({
   path,
   schemaPath,
   permissions,
-  clientField,
+  clientField
 }) => {
   const productID = siblingData.product as string;
 
@@ -21,7 +21,7 @@ export const ProductUnitPriceField: NumberFieldServerComponent = async ({
   try {
     product = await payload.findByID({
       collection: "products",
-      id: productID,
+      id: productID
     });
   } catch {
     console.log("No product found");

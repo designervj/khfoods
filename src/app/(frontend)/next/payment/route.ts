@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       selectedCountry,
       checkoutData,
       locale,
-      currency,
+      currency
     }: {
       cart: Cart | undefined;
       selectedCountry: Country;
@@ -52,8 +52,8 @@ export async function POST(req: Request) {
       collection: "products",
       where: {
         id: {
-          in: cart.map((product) => product.id),
-        },
+          in: cart.map((product) => product.id)
+        }
       },
       locale,
       select: {
@@ -68,8 +68,8 @@ export async function POST(req: Request) {
         stock: true,
         sizes: true,
         weight: true,
-        pricing: true,
-      },
+        pricing: true
+      }
     });
 
     const filledProducts = getFilledProducts(products, cart);
@@ -92,7 +92,6 @@ export async function POST(req: Request) {
           range.weightFrom <= totalWeight && range.weightTo >= totalWeight
       )
       ?.pricing.find((pricing) => pricing.currency === currency)?.value;
-
 
     if (!shippingCost) {
       return Response.json({ status: 400, message: "Shipping cost not found" });
@@ -117,7 +116,7 @@ export async function POST(req: Request) {
       //   website: {
       //     equals: websiteId,
       //   },
-      // },
+      // }
     });
 
     const paywalls = paymentDetails.docs[0];
@@ -156,7 +155,7 @@ export async function POST(req: Request) {
                   (price) => price.currency === currency
                 )?.value ?? 0)
               : (product.pricing?.find((price) => price.currency === currency)
-                  ?.value ?? 0)) * (product?.quantity ?? 0),
+                  ?.value ?? 0)) * (product?.quantity ?? 0)
         })),
         date: new Date().toISOString(),
         invoice: {
@@ -188,7 +187,7 @@ export async function POST(req: Request) {
           tin:
             checkoutData.buyerType === "company"
               ? checkoutData.invoice?.tin
-              : undefined,
+              : undefined
         },
         orderDetails: {
           shipping: courier.key,
@@ -198,7 +197,7 @@ export async function POST(req: Request) {
           totalWithShipping:
             (total.find((price) => price.currency === currency)?.value ?? 0) +
             shippingCost,
-          currency: currency,
+          currency: currency
         },
         shippingAddress: {
           name: checkoutData.shipping.name,
@@ -210,12 +209,12 @@ export async function POST(req: Request) {
           email: checkoutData.shipping.email,
           phone: checkoutData.shipping.phone,
           pickupPointAddress: checkoutData.shipping.pickupPointAddress,
-          pickupPointID: checkoutData.shipping.pickupPointID,
+          pickupPointID: checkoutData.shipping.pickupPointID
         },
         printLabel: {
-          weight: totalWeight / 1000,
-        },
-      },
+          weight: totalWeight / 1000
+        }
+      }
     });
 
     filledProducts.forEach((product) => {
@@ -237,8 +236,8 @@ export async function POST(req: Request) {
               //   }
               //   return v;
               // }),
-              bought: newBoughtCount,
-            },
+              bought: newBoughtCount
+            }
           });
         }
       } else {
@@ -249,8 +248,8 @@ export async function POST(req: Request) {
             id: product.id,
             data: {
               stock: newStock,
-              bought: newBoughtCount,
-            },
+              bought: newBoughtCount
+            }
           });
         }
       }
@@ -261,15 +260,15 @@ export async function POST(req: Request) {
         collection: "customers",
         id: user.id,
         data: {
-          lastBuyerType: checkoutData.buyerType as "individual" | "company",
-        },
+          lastBuyerType: checkoutData.buyerType as "individual" | "company"
+        }
       });
     }
 
     if (courier.prepaid === false) {
       return Response.json({
         status: 200,
-        url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/order/${order.id}`,
+        url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/order/${order.id}`
       });
     }
 
@@ -298,7 +297,7 @@ export async function POST(req: Request) {
             autopay: paywalls?.autopay,
             orderID: order.id,
             currency,
-            customerEmail: checkoutData.shipping.email,
+            customerEmail: checkoutData.shipping.email
           });
           break;
         case "p24":
@@ -313,7 +312,7 @@ export async function POST(req: Request) {
             description: `${locale} - ${order.id}`,
             email: order.shippingAddress.email,
             locale,
-            client: user,
+            client: user
           });
           break;
 
@@ -324,7 +323,7 @@ export async function POST(req: Request) {
       console.log(error);
       return Response.json({
         status: 500,
-        message: "Error while creating payment",
+        message: "Error while creating payment"
       });
     }
 

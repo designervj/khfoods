@@ -15,7 +15,7 @@ const CustomHeader = () => {
         height: '60px',
         padding: '0 20px',
         borderBottom: '1px solid #e5e5e5',
-        background: '#fff',
+        background: '#fff'
       }}
     >
       {/* Left Side Logo / Name */}
@@ -39,7 +39,7 @@ const CustomHeader = () => {
             padding: '6px 10px',
             background: '#f5f5f5',
             borderRadius: '6px',
-            cursor: 'pointer',
+            cursor: 'pointer'
           }}
         >
           <LogOut size={16} />

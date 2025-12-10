@@ -13,19 +13,19 @@ export const CallToAction: Block = {
       type: "richText",
       editor: defaultLexical,
       localized: true,
-      label: false,
+      label: false
     },
     linkGroup({
       appearances: ["default", "outline"],
       overrides: {
-        maxRows: 2,
-      },
+        maxRows: 2
+      }
     }),
     marginFields,
     paddingFields,
   ],
   labels: {
     plural: "Calls to Action",
-    singular: "Call to Action",
-  },
+    singular: "Call to Action"
+  }
 };

@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const sig = req.headers.get("stripe-signature") ?? "";
     const payload = await getPayload({ config });
     const paymentsapp = await payload.find({
-      collection: "payment",
+      collection: "payment"
     });
 
     const stripeOptions = paymentsapp.docs[0].stripe
@@ -54,9 +54,9 @@ export async function POST(req: Request) {
               orderDetails: {
                 status: "paid",
                 transactionID: paymentIntent.id,
-                amountPaid: paymentIntent.amount_received / 100,
-              },
-            },
+                amountPaid: paymentIntent.amount_received / 100
+              }
+            }
           });
         }
 
@@ -73,9 +73,9 @@ export async function POST(req: Request) {
             data: {
               orderDetails: {
                 status: "unpaid",
-                transactionID: paymentIntent.id,
-              },
-            },
+                transactionID: paymentIntent.id
+              }
+            }
           });
         }
         break;

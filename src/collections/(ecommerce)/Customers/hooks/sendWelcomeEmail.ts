@@ -16,7 +16,7 @@ export const sendWelcomeEmail: CollectionAfterChangeHook<Customer> = async ({ pr
       const html = await render(
         await WelcomeEmail({
           customer: doc,
-          locale,
+          locale
         }),
       );
 

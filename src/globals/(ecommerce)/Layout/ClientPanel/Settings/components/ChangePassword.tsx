@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { type Customer } from "@/payload-types";
 import {
   type ChangePasswordModalFormData,
-  useChangePasswordModalForm,
+  useChangePasswordModalForm
 } from "@/schemas/changePasswordModalForm.schema";
 
 type ErrorWithStatus = { status: number };
@@ -37,8 +37,8 @@ export const ChangePassword = ({ user }: { user: Customer }) => {
     defaultValues: {
       oldPassword: "",
       newPassword: "",
-      confirmPassword: "",
-    },
+      confirmPassword: ""
+    }
   });
 
   const onSubmit = async (values: ChangePasswordModalFormData) => {
@@ -46,17 +46,17 @@ export const ChangePassword = ({ user }: { user: Customer }) => {
       setMessage("");
       const { status } = await axios.post("/api/customers/login", {
         email: user.email,
-        password: values.oldPassword,
+        password: values.oldPassword
       });
 
       if (status === 200) {
         await axios.patch(
           `/api/customers/${user.id}`,
           {
-            password: values.newPassword,
+            password: values.newPassword
           },
           {
-            withCredentials: true,
+            withCredentials: true
           },
         );
         setMessage(t("password-form.success"));

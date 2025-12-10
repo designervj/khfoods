@@ -14,7 +14,7 @@ export async function GET(req: Request) {
 
     await payload.verifyEmail({
       collection: "customers",
-      token: token,
+      token: token
     });
 
     const locale = await getLocale();

@@ -17,7 +17,7 @@ export const TwoRowsTwoColumnsComponent: React.FC<TwoRowsTwoColumnsBlockProps> =
   padding = "md",
   gap = "md",
   rows = [],
-  className,
+  className
 }) => {
   // Render each row's columns
   const renderedRows = rows

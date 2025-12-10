@@ -7,7 +7,7 @@ import { type Locale } from "@/i18n/config";
 export const ResetPasswordEmail = async ({
   url,
   locale,
-  name,
+  name
 }: {
   url: string;
   locale: Locale;
@@ -15,7 +15,7 @@ export const ResetPasswordEmail = async ({
 }) => {
   const t = await getTranslations({
     locale,
-    namespace: "Emails.reset-password",
+    namespace: "Emails.reset-password"
   });
   // console.log(name);
   return (
@@ -26,7 +26,7 @@ export const ResetPasswordEmail = async ({
           color: "#000",
           display: "block",
           textAlign: "center",
-          fontSize: "16px",
+          fontSize: "16px"
         }}
       >
         {t("greeting", { name })},
@@ -37,7 +37,7 @@ export const ResetPasswordEmail = async ({
           color: "#000",
           display: "block",
           textAlign: "center",
-          fontSize: "16px",
+          fontSize: "16px"
         }}
       >
         {t("message")}
@@ -49,7 +49,7 @@ export const ResetPasswordEmail = async ({
           color: "#fff",
           padding: "12px 20px",
           backgroundColor: "#6366f1",
-          margin: "0 auto",
+          margin: "0 auto"
         }}
       >
         {t("button")}

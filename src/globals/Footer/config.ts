@@ -10,7 +10,7 @@ const isReadAccess = async (args: AccessArgs<Administrator>) => {
   const base = checkUserPermission(args, "read", "pagesPermission");
   if (args.req?.user?.id) {
     return {
-      and: [base, { selectedAdministrators: { equals: args.req.user.id } }],
+      and: [base, { selectedAdministrators: { equals: args.req.user.id } }]
     };
   }
   return base;
@@ -30,17 +30,17 @@ export const Footer: GlobalConfig = {
     read: ()=>true,
     // create: isCreateAccess,
     // update: isUpdateAccess,
-    // delete: isDeleteAccess,
+    // delete: isDeleteAccess
   },
   label: {
     en: "Footer",
-    pl: "Stopka",
+    zh: "页脚"
   },
   admin: {
     group: {
       en: "Page Settings",
-      pl: "Ustawienia strony",
-    },
+      zh: "页面设置"
+    }
   },
 
   fields: [
@@ -48,23 +48,23 @@ export const Footer: GlobalConfig = {
       name: "attribution",
       type: "richText",
       label: "Attribution",
-      localized: true,
+      localized: true
     },
     {
       name: "navItems",
       type: "array",
       fields: [
         link({
-          appearances: false,
+          appearances: false
         }),
       ],
       maxRows: 6,
       admin: {
         initCollapsed: true,
         components: {
-          RowLabel: "@/globals/Footer/RowLabel#RowLabel",
-        },
-      },
+          RowLabel: "@/globals/Footer/RowLabel#RowLabel"
+        }
+      }
     },
      {
       name: "createdBy",
@@ -74,11 +74,11 @@ export const Footer: GlobalConfig = {
       defaultValue: ({ req: { user } }) => user?.id,
       admin: {
         readOnly: true,
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
   ],
   hooks: {
-    afterChange: [revalidateGlobal],
-  },
+    afterChange: [revalidateGlobal]
+  }
 };

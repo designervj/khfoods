@@ -7,7 +7,7 @@ import { type Locale } from "@/i18n/config";
 import {
   type Product,
   type ProductCategory,
-  type ProductSubCategory,
+  type ProductSubCategory
 } from "@/payload-types";
 import { getCachedGlobal } from "@/utilities/getGlobals";
 import config from "@payload-config";
@@ -21,7 +21,7 @@ export const  ProductList = async ({
   title,
   category,
   subcategory,
-  searchParams,
+  searchParams
 }: {
   filteredProducts: Product[];
   title: string;
@@ -36,7 +36,7 @@ export const  ProductList = async ({
   try {
     const locale = (await getLocale()) as Locale;
     const { productList } = await getCachedGlobal("shopLayout", locale, 1)();
-
+    console.log("productList--",productList)
     let ProductDetailsComponent: typeof WithSidebar | typeof None = None;
     switch (productList.filters) {
       case "withSidebar":
@@ -56,16 +56,16 @@ export const  ProductList = async ({
         or: [
           {
             "categoriesArr.category": {
-              equals: category?.id,
-            },
+              equals: category?.id
+            }
           },
           // {
           //   "categoriesArr.subcategories": {
           //     equals: subcategory?.id,
           //   },
           // },
-        ],
-      },
+        ]
+      }
     });
 
     return (

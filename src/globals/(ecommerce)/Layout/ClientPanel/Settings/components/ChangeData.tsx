@@ -14,7 +14,7 @@ export const ChangeData = ({
   altText,
   name,
   userID,
-  type = "text",
+  type = "text"
 }: {
   value: string;
   text: string;
@@ -32,7 +32,7 @@ export const ChangeData = ({
         // eslint-disable-next-line
         { [name]: type === "date" ? new Date(values[name]).toISOString() : values[name] },
         {
-          withCredentials: true,
+          withCredentials: true
         },
       );
     } catch (error) {
@@ -42,8 +42,8 @@ export const ChangeData = ({
   };
   const form = useForm({
     defaultValues: {
-      [name]: type === "date" ? value.split("T")[0] : value,
-    },
+      [name]: type === "date" ? value.split("T")[0] : value
+    }
   });
   return (
     <Form {...form}>

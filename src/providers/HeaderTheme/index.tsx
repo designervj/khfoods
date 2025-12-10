@@ -13,7 +13,7 @@ export type ContextType = {
 
 const initialContext: ContextType = {
   headerTheme: undefined,
-  setHeaderTheme: () => null,
+  setHeaderTheme: () => null
 };
 
 const HeaderThemeContext = createContext(initialContext);

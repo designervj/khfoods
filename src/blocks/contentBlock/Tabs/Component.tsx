@@ -9,7 +9,7 @@ const iconMap: Record<string, string> = {
   user: "👤",
   settings: "⚙️",
   star: "⭐",
-  heart: "❤️",
+  heart: "❤️"
 };
 
 export const TabsBlock: React.FC<any> = (props) => {
@@ -28,7 +28,7 @@ export const TabsBlock: React.FC<any> = (props) => {
     padding = "md",
     shadow = "sm",
     animation = "fade",
-    className,
+    className
   } = props;
 
   const [activeTab, setActiveTab] = useState(defaultTab);
@@ -37,33 +37,33 @@ export const TabsBlock: React.FC<any> = (props) => {
     none: "rounded-none",
     sm: "rounded-sm",
     md: "rounded-md",
-    lg: "rounded-lg",
+    lg: "rounded-lg"
   };
 
   const paddingClasses = {
     sm: "p-4",
     md: "p-6",
     lg: "p-8",
-    xl: "p-10",
+    xl: "p-10"
   };
 
   const shadowClasses = {
     none: "shadow-none",
     sm: "shadow-sm",
     md: "shadow-md",
-    lg: "shadow-lg",
+    lg: "shadow-lg"
   };
 
   const tabsAlignmentClasses = {
     left: "justify-start",
     center: "justify-center",
-    right: "justify-end",
+    right: "justify-end"
   };
 
   const animationClasses = {
     none: "",
     fade: "animate-fadeIn",
-    slide: "animate-slideUp",
+    slide: "animate-slideUp"
   };
 
   const getTabClasses = (index: number) => {
@@ -106,7 +106,7 @@ export const TabsBlock: React.FC<any> = (props) => {
     backgroundColor: contentBackgroundColor || undefined,
     borderColor: contentBorderColor || "#e5e7eb",
     borderWidth: contentBorderColor ? "1px" : undefined,
-    borderStyle: contentBorderColor ? "solid" : undefined,
+    borderStyle: contentBorderColor ? "solid" : undefined
   };
 
   const layoutClasses =

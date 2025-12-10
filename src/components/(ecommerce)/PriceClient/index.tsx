@@ -5,7 +5,7 @@ import { useCurrency } from "@/stores/Currency";
 import { formatPrice } from "@/utilities/formatPrices";
 
 export const PriceClient = ({
-  pricing,
+  pricing
 }: {
   pricing: {
     value: number;

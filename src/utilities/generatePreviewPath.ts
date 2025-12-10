@@ -4,7 +4,7 @@ import { type Locale } from "@/i18n/config";
 
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
   posts: "/posts",
-  pages: "",
+  pages: ""
 };
 
 type Props = {
@@ -21,7 +21,7 @@ export const generatePreviewPath1 = ({ collection, slug, req }: Props) => {
     locale,
     slug,
     collection,
-    path,
+    path
   };
 
   const encodedParams = new URLSearchParams();

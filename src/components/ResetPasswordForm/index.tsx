@@ -16,8 +16,8 @@ export const ResetPasswordForm = ({ token, collection }: { token: string; collec
     resolver: zodResolver(ResetPasswordFormResolver),
     defaultValues: {
       newPassword: "",
-      confirmPassword: "",
-    },
+      confirmPassword: ""
+    }
   });
   const router = useRouter();
 
@@ -25,7 +25,7 @@ export const ResetPasswordForm = ({ token, collection }: { token: string; collec
     try {
       const { status } = await axios.post(`/api/${collection}/reset-password`, {
         token: token,
-        password: values.newPassword,
+        password: values.newPassword
       });
 
       console.log(status);

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 import {
   type CustomTranslationsObject,
-  type CustomTranslationsKeys,
+  type CustomTranslationsKeys
 } from "@/admin/translations/custom-translations";
 import { useEffect } from "react";
 import axios from "axios";

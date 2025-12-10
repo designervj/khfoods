@@ -35,28 +35,28 @@ export const plugins: Plugin[] = [
             return {
               ...field,
               admin: {
-                description: "You will need to rebuild the website when changing this field.",
-              },
+                description: "You will need to rebuild the website when changing this field."
+              }
             };
           }
           return field;
         });
       },
       hooks: {
-        afterChange: [revalidateRedirects],
-      },
-    },
+        afterChange: [revalidateRedirects]
+      }
+    }
   }),
   nestedDocsPlugin({
-    collections: ["categories"],
+    collections: ["categories"]
   }),
   seoPlugin({
     generateTitle,
-    generateURL,
+    generateURL
   }),
   formBuilderPlugin({
     fields: {
-      payment: false,
+      payment: false
     },
     formOverrides: {
       fields: ({ defaultFields }) => {
@@ -71,14 +71,14 @@ export const plugins: Plugin[] = [
                     FixedToolbarFeature(),
                     HeadingFeature({ enabledHeadingSizes: ["h1", "h2", "h3", "h4"] }),
                   ];
-                },
-              }),
+                }
+              })
             };
           }
           return field;
         });
-      },
-    },
+      }
+    }
   }),
   searchPlugin({
     collections: ["posts"],
@@ -86,8 +86,8 @@ export const plugins: Plugin[] = [
     searchOverrides: {
       fields: ({ defaultFields }) => {
         return [...defaultFields, ...searchFields];
-      },
-    },
+      }
+    }
   }),
   payloadCloudPlugin(),
 ];

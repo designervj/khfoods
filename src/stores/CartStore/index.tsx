@@ -132,7 +132,7 @@ const useCartStore = create<CartState>((set) => ({
 
     window.localStorage.setItem("cart", JSON.stringify(cartFromUserAccount));
     set({ cart: cartFromUserAccount });
-  },
+  }
 }));
 
 export const useCart = () => useCartStore((state) => state);

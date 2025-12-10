@@ -17,7 +17,7 @@ export const InfoBlurbBlock: ComponentConfig = {
         { label: "Center", value: "center" },
         { label: "Left", value: "left" },
         { label: "Right", value: "right" },
-      ],
+      ]
     },
 
     cards: {
@@ -36,7 +36,7 @@ export const InfoBlurbBlock: ComponentConfig = {
           options: [
             { label: "No", value: "no" },
             { label: "Yes", value: "yes" },
-          ],
+          ]
         },
         imageUrl: { type: "text", label: "Image URL" },
         imageHeight: { type: "number", label: "Image Height (px)" },
@@ -47,7 +47,7 @@ export const InfoBlurbBlock: ComponentConfig = {
           options: [
             { label: "No", value: "no" },
             { label: "Yes", value: "yes" },
-          ],
+          ]
         },
         iconValue: { type: "text", label: "Icon (Emoji or URL)" },
         iconSize: { type: "number", label: "Icon Size (px)" },
@@ -61,7 +61,7 @@ export const InfoBlurbBlock: ComponentConfig = {
             { label: "Left", value: "left" },
             { label: "Center", value: "center" },
             { label: "Right", value: "right" },
-          ],
+          ]
         },
 
         content: { type: "textarea", label: "Card Content" },
@@ -72,7 +72,7 @@ export const InfoBlurbBlock: ComponentConfig = {
             { label: "Left", value: "left" },
             { label: "Center", value: "center" },
             { label: "Right", value: "right" },
-          ],
+          ]
         },
 
         // BUTTON
@@ -85,10 +85,10 @@ export const InfoBlurbBlock: ComponentConfig = {
             { label: "Left", value: "left" },
             { label: "Center", value: "center" },
             { label: "Right", value: "right" },
-          ],
-        },
-      },
-    },
+          ]
+        }
+      }
+    }
   },
 
   // ------------------------------------------------------
@@ -122,7 +122,7 @@ export const InfoBlurbBlock: ComponentConfig = {
 
         btnText: "Learn More",
         btnLink: "#",
-        btnAlign: "center",
+        btnAlign: "center"
       },
       {
         cardBg: "#ffffff",
@@ -141,7 +141,7 @@ export const InfoBlurbBlock: ComponentConfig = {
         contentAlign: "center",
         btnText: "Explore",
         btnLink: "#",
-        btnAlign: "center",
+        btnAlign: "center"
       },
       {
         cardBg: "#ffffff",
@@ -166,9 +166,9 @@ export const InfoBlurbBlock: ComponentConfig = {
 
         btnText: "Read More",
         btnLink: "#",
-        btnAlign: "center",
+        btnAlign: "center"
       },
-    ],
+    ]
   },
 
   // ------------------------------------------------------
@@ -183,7 +183,7 @@ export const InfoBlurbBlock: ComponentConfig = {
             textAlign: sectionAlign,
             fontSize: "42px",
             fontWeight: "700",
-            marginBottom: "50px",
+            marginBottom: "50px"
           }}
         >
           {sectionTitle}
@@ -195,7 +195,7 @@ export const InfoBlurbBlock: ComponentConfig = {
             display: "flex",
             flexWrap: "wrap",
             gap: "30px",
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         >
           {cards.map((card: any, i: number) => (
@@ -207,7 +207,7 @@ export const InfoBlurbBlock: ComponentConfig = {
                 padding: `${card.cardPadding}px`,
                 borderRadius: `${card.cardRadius}px`,
                 boxShadow: "0px 4px 20px rgba(0,0,0,0.08)",
-                overflow: "hidden",
+                overflow: "hidden"
               }}
             >
               {/* IMAGE */}
@@ -219,7 +219,7 @@ export const InfoBlurbBlock: ComponentConfig = {
                     height: `${card.imageHeight}px`,
                     objectFit: "cover",
                     borderRadius: "8px",
-                    marginBottom: "15px",
+                    marginBottom: "15px"
                   }}
                 />
               )}
@@ -230,7 +230,7 @@ export const InfoBlurbBlock: ComponentConfig = {
                   style={{
                     fontSize: `${card.iconSize}px`,
                     textAlign: "center",
-                    marginBottom: "15px",
+                    marginBottom: "15px"
                   }}
                 >
                   {card.iconValue}
@@ -243,7 +243,7 @@ export const InfoBlurbBlock: ComponentConfig = {
                   fontSize: "22px",
                   fontWeight: "700",
                   textAlign: card.titleAlign,
-                  marginBottom: "10px",
+                  marginBottom: "10px"
                 }}
               >
                 {card.title}
@@ -256,7 +256,7 @@ export const InfoBlurbBlock: ComponentConfig = {
                   opacity: 0.9,
                   textAlign: card.contentAlign,
                   lineHeight: "1.5",
-                  marginBottom: "18px",
+                  marginBottom: "18px"
                 }}
               >
                 {card.content}
@@ -275,7 +275,7 @@ export const InfoBlurbBlock: ComponentConfig = {
                       borderRadius: "8px",
                       fontSize: "15px",
                       textDecoration: "none",
-                      fontWeight: "600",
+                      fontWeight: "600"
                     }}
                   >
                     {card.btnText}
@@ -287,5 +287,5 @@ export const InfoBlurbBlock: ComponentConfig = {
         </div>
       </section>
     );
-  },
+  }
 };

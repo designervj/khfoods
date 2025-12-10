@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 const AccountPage = async ({
   params,
-  children,
+  children
 }: {
   params: Promise<{ locale: Locale }>;
   children: ReactNode;

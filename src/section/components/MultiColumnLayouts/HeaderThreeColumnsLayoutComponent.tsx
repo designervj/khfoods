@@ -19,7 +19,7 @@ export const HeaderThreeColumnsLayoutComponent: React.FC<HeaderThreeColumnsLayou
   gap = "md",
   header = [],
   columns = [],
-  className,
+  className
 }) => {
   // Render header and columns
   const renderedContent = [

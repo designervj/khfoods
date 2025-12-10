@@ -16,7 +16,7 @@ export const SlugComponent = ({
   fieldToUse,
   checkboxFieldPath: checkboxFieldPathFromProps,
   path,
-  readOnly: readOnlyFromProps,
+  readOnly: readOnlyFromProps
 }: SlugComponentProps) => {
   const { label } = field;
 
@@ -58,7 +58,7 @@ export const SlugComponent = ({
       dispatchFields({
         type: "UPDATE",
         path: checkboxFieldPath,
-        value: !checkboxValue,
+        value: !checkboxValue
       });
     },
     [checkboxValue, checkboxFieldPath, dispatchFields],

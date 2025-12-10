@@ -21,7 +21,7 @@ export const getTotal = (filledProducts: FilledProduct[]) => {
     total &&
     Object.entries(total).map(([currency, value]) => ({
       currency,
-      value: parseFloat(value.toFixed(2)),
+      value: parseFloat(value.toFixed(2))
     }));
 
   return totalFormatted;

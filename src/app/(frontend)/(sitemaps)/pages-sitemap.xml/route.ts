@@ -21,13 +21,13 @@ const getPagesSitemap = unstable_cache(
       pagination: false,
       where: {
         _status: {
-          equals: "published",
-        },
+          equals: "published"
+        }
       },
       select: {
         slug: true,
-        updatedAt: true,
-      },
+        updatedAt: true
+      }
     });
 
     const dateFallback = new Date().toISOString();
@@ -35,11 +35,11 @@ const getPagesSitemap = unstable_cache(
     const defaultSitemap = [
       {
         loc: `${SITE_URL}/search`,
-        lastmod: dateFallback,
+        lastmod: dateFallback
       },
       {
         loc: `${SITE_URL}/posts`,
-        lastmod: dateFallback,
+        lastmod: dateFallback
       },
     ];
 
@@ -49,7 +49,7 @@ const getPagesSitemap = unstable_cache(
           .map((page) => {
             return {
               loc: page?.slug === "home" ? `${SITE_URL}/` : `${SITE_URL}/${page?.slug}`,
-              lastmod: page.updatedAt || dateFallback,
+              lastmod: page.updatedAt || dateFallback
             };
           })
       : [];
@@ -58,7 +58,7 @@ const getPagesSitemap = unstable_cache(
   },
   ["pages-sitemap"],
   {
-    tags: ["pages-sitemap"],
+    tags: ["pages-sitemap"]
   },
 );
 

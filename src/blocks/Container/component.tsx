@@ -86,7 +86,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       black: "#000000",
       primary: "var(--bg-primary, #eff6ff)",
       secondary: "var(--bg-secondary, #f5f3ff)",
-      accent: "var(--bg-accent, #fdf2f8)",
+      accent: "var(--bg-accent, #fdf2f8)"
     };
 
     return colorMap[block.backgroundColor] || "transparent";
@@ -108,7 +108,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       backgroundSize: block.backgroundImage.size || "cover",
       backgroundPosition: block.backgroundImage.position || "center",
       backgroundAttachment: block.backgroundImage.attachment || "scroll",
-      backgroundRepeat: "no-repeat",
+      backgroundRepeat: "no-repeat"
     };
   };
 
@@ -127,16 +127,16 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       "to-left": "to left",
       "to-bottom": "to bottom",
       "to-top": "to top",
-      "to-bottom-right": "to bottom right",
+      "to-bottom-right": "to bottom right"
     };
 
     if (type === "linear") {
       return {
-        backgroundImage: `linear-gradient(${directionMap[direction]}, ${colors})`,
+        backgroundImage: `linear-gradient(${directionMap[direction]}, ${colors})`
       };
     } else {
       return {
-        backgroundImage: `radial-gradient(circle, ${colors})`,
+        backgroundImage: `radial-gradient(circle, ${colors})`
       };
     }
   };
@@ -151,7 +151,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       lg: "2rem",
       xl: "3rem",
       "2xl": "4rem",
-      "3xl": "6rem",
+      "3xl": "6rem"
     };
     return spacingMap[value] || "0";
   };
@@ -169,7 +169,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       lg: "1280px",
       xl: "1536px",
       "2xl": "1792px",
-      full: "100%",
+      full: "100%"
     };
 
     return maxWidthMap[block.maxWidth] || "1536px";
@@ -196,34 +196,34 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
         "1-2": "1fr 2fr",
         "2-1": "2fr 1fr",
         "1-3": "1fr 3fr",
-        "3-1": "3fr 1fr",
+        "3-1": "3fr 1fr"
       },
       "three-columns": {
         equal: "1fr 1fr 1fr",
-        "1-2-1": "1fr 2fr 1fr",
+        "1-2-1": "1fr 2fr 1fr"
       },
       "four-columns": {
-        equal: "1fr 1fr 1fr 1fr",
+        equal: "1fr 1fr 1fr 1fr"
       },
       "sidebar-left": {
         equal: "300px 1fr",
         "1-2": "1fr 2fr",
-        "1-3": "1fr 3fr",
+        "1-3": "1fr 3fr"
       },
       "sidebar-right": {
         equal: "1fr 300px",
         "2-1": "2fr 1fr",
-        "3-1": "3fr 1fr",
+        "3-1": "3fr 1fr"
       },
       "split-screen": {
-        equal: "1fr 1fr",
+        equal: "1fr 1fr"
       },
       "card-grid": {
-        equal: "repeat(auto-fit, minmax(300px, 1fr))",
+        equal: "repeat(auto-fit, minmax(300px, 1fr))"
       },
       masonry: {
-        equal: "repeat(auto-fill, minmax(250px, 1fr))",
-      },
+        equal: "repeat(auto-fill, minmax(250px, 1fr))"
+      }
     };
 
     return ratioMap[layoutType]?.[ratio] || "1fr";
@@ -235,7 +235,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       top: "flex-start",
       center: "center",
       bottom: "flex-end",
-      stretch: "stretch",
+      stretch: "stretch"
     };
     return alignMap[block.verticalAlignment] || "flex-start";
   };
@@ -247,7 +247,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       sm: "0.25rem",
       md: "0.5rem",
       lg: "0.75rem",
-      xl: "1rem",
+      xl: "1rem"
     };
     return radiusMap[block.borderRadius] || "0";
   };
@@ -259,7 +259,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
       md: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
       lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
     };
     return shadowMap[block.shadow] || "none";
   };
@@ -269,7 +269,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
     if (!block.border?.enable) return {};
 
     return {
-      border: `${block.border.width || "1"}px ${block.border.style || "solid"} ${block.border.color || "#e5e5e5"}`,
+      border: `${block.border.width || "1"}px ${block.border.style || "solid"} ${block.border.color || "#e5e5e5"}`
     };
   };
 
@@ -286,7 +286,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       "500": "500px",
       "50vh": "50vh",
       "75vh": "75vh",
-      "100vh": "100vh",
+      "100vh": "100vh"
     };
 
     return minHeightMap[block.minHeight || "none"] || "auto";
@@ -300,7 +300,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
       "fade-in": "layout-fade-in",
       "fade-in-up": "layout-fade-in-up",
       "slide-up": "layout-slide-up",
-      "zoom-in": "layout-zoom-in",
+      "zoom-in": "layout-zoom-in"
     };
 
     return animationMap[block.animation.type || "fade-in"] || "";
@@ -311,7 +311,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
     const durationMap: Record<string, string> = {
       fast: "300ms",
       normal: "500ms",
-      slow: "700ms",
+      slow: "700ms"
     };
     return durationMap[block.animation?.duration || "normal"] || "500ms";
   };
@@ -324,7 +324,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
     marginRight: block.alignment === "center" ? "auto" : block.alignment === "left" ? "auto" : "0",
     marginTop: getSpacing(block.margin.top),
     marginBottom: getSpacing(block.margin.bottom),
-    position: "relative",
+    position: "relative"
   };
 
   // Inner container styles
@@ -341,7 +341,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
     boxShadow: getBoxShadow(),
     minHeight: getMinHeight(),
     position: "relative",
-    overflow: "hidden",
+    overflow: "hidden"
   };
 
   // Grid styles
@@ -350,7 +350,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
     gridTemplateColumns: getGridTemplateColumns(),
     gap: getSpacing(block.gap),
     alignItems: getAlignItems(),
-    width: "100%",
+    width: "100%"
   };
 
   // Responsive styles
@@ -442,7 +442,7 @@ export const LayoutBlockRenderer: React.FC<LayoutBlockProps> = ({ block }) => {
                 right: 0,
                 bottom: 0,
                 backgroundColor: block.backgroundImage.overlayColor || "rgba(0,0,0,0.5)",
-                pointerEvents: "none",
+                pointerEvents: "none"
               }}
             />
           )}

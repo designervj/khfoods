@@ -9,15 +9,15 @@ export const BorderStylesFields = {
         { label: "Bottom", value: "bottom" },
         { label: "Left", value: "left" },
         { label: "Right", value: "right" },
-      ],
+      ]
     },
     "Border Width": {
       type: "text",
-      label: "Border Width",
+      label: "Border Width"
     },
     "Border Color": {
       type: "text",
-      label: "Border Color",
+      label: "Border Color"
     },
     "Border Line Style": {
       type: "select",
@@ -27,11 +27,11 @@ export const BorderStylesFields = {
         { label: "Dotted", value: "dotted" },
         { label: "Double", value: "double" },
         { label: "None", value: "none" },
-      ],
+      ]
     },
     "Border Radius": {
       type: "text",
-      label: "Border Radius",
-    },
-  },
+      label: "Border Radius"
+    }
+  }
 };

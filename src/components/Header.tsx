@@ -9,7 +9,6 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
 
-
 const HeaderMinor = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [open, setOpen] = useState(false);
@@ -28,7 +27,7 @@ const HeaderMinor = () => {
     [t("products")]: [
       { name: t("domestic"), link: "/our-products/domestic" },
       { name: t("international"), link: "/our-products/international" },
-    ],
+    ]
   };
 
   const mainMenu = [
@@ -40,8 +39,13 @@ const HeaderMinor = () => {
     { name: t("wholesale"), link: "/wholesale" },
     {
       name: "",
+<<<<<<< Updated upstream
       icon: <MdOutlineShoppingBag size={20}/>,
       link: "/cart",
+=======
+      icon: <MdOutlineShoppingBag size={15}/>,
+      link: "/cart"
+>>>>>>> Stashed changes
     },
   ];
 

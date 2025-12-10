@@ -15,7 +15,7 @@ export const Text = ({
   label,
   register,
   required: requiredFromProps,
-  width,
+  width
 }: TextField & {
   errors: Partial<FieldErrorsImpl<Record<string, any>>>;
   register: UseFormRegister<FieldValues>;

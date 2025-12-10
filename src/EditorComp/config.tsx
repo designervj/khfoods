@@ -22,7 +22,6 @@ import { AboutNormalType } from "./Blocks/About/AboutTypeNormal";
 import { PortfolioSimpleType } from "./Blocks/Portfolio/PortfolioSimple";
 import { NavBar } from "./Blocks/Header/Navigation";
 
-
 export const config: Config = {
   components: {
     HeadingBlock: HeadingBlock,
@@ -47,24 +46,24 @@ export const config: Config = {
     FAQSection: FAQSection,
     AboutNormalType: AboutNormalType,
     PortfolioSimpleType: PortfolioSimpleType,
-    NavBar: NavBar,
+    NavBar: NavBar
   },
   categories: {
     Hero: {
-      components: ["HeroNormalBlock", "HeroBlock", "HeroSliderBlock"],
+      components: ["HeroNormalBlock", "HeroBlock", "HeroSliderBlock"]
     },
     About: {
-      components: ["AboutNormalType", "AboutSliderBlock"],
+      components: ["AboutNormalType", "AboutSliderBlock"]
     },
     Portfolio: {
-      components: ["PortfolioSimpleType"],
+      components: ["PortfolioSimpleType"]
     },
     "New Module": {
       components: ["HeaderBlock"]
     },
     Header: {
-      components: ["NavBar"],
-    },
+      components: ["NavBar"]
+    }
   },
 
   root: {
@@ -77,6 +76,6 @@ export const config: Config = {
         />
         {children}
       </div>
-    ),
-  },
+    )
+  }
 };

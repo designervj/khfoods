@@ -24,10 +24,10 @@ export const WithSidebarOrders = async () => {
     collection: "orders",
     where: {
       customer: {
-        equals: user?.id,
-      },
+        equals: user?.id
+      }
     },
-    pagination: false,
+    pagination: false
   });
 
   return (
@@ -40,7 +40,7 @@ export const WithSidebarOrders = async () => {
               {t.rich(order.orderDetails.status, {
                 yellow: (chunks) => <p className="font-medium text-yellow-600">{chunks}</p>,
                 green: (chunks) => <p className="font-medium text-green-600">{chunks}</p>,
-                red: (chunks) => <p className="font-medium text-red-600">{chunks}</p>,
+                red: (chunks) => <p className="font-medium text-red-600">{chunks}</p>
               })}
               <p className="text-sm">{formatDateTime(order.createdAt, "EU")}</p>
               <p className="text-xs">Nr: {order.id}</p>

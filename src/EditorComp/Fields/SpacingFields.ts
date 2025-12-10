@@ -3,35 +3,35 @@ export const SpacingFields = {
   objectFields: {
     "Margin Top": {
       type: "text",
-      label: "Top",
+      label: "Top"
     },
     "Margin Bottom": {
       type: "text",
-      label: "Bottom",
+      label: "Bottom"
     },
     "Margin Left": {
       type: "text",
-      label: "Left",
+      label: "Left"
     },
     "Margin Right": {
       type: "text",
-      label: "Right",
+      label: "Right"
     },
     "Padding Top": {
       type: "text",
-      label: "Top",
+      label: "Top"
     },
     "Padding Bottom": {
       type: "text",
-      label: "Bottom",
+      label: "Bottom"
     },
     "Padding Left": {
       type: "text",
-      label: "Left",
+      label: "Left"
     },
     "Padding Right": {
       type: "text",
-      label: "Right",
-    },
-  },
+      label: "Right"
+    }
+  }
 };

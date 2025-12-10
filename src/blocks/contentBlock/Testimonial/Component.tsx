@@ -25,85 +25,85 @@ export const TestimonialBlock: React.FC<any> = (props) => {
     quoteIconColor,
     starColor,
     animation = "fadeIn",
-    className,
+    className
   } = props;
 
   const quoteSizeClasses = {
     base: "text-base",
     lg: "text-lg",
-    xl: "text-xl",
+    xl: "text-xl"
   };
 
   const imageSizeClasses = {
     sm: "w-12 h-12",
     md: "w-16 h-16",
-    lg: "w-20 h-20",
+    lg: "w-20 h-20"
   };
 
   const imageShapeClasses = {
     circle: "rounded-full",
     square: "rounded-none",
-    rounded: "rounded-lg",
+    rounded: "rounded-lg"
   };
 
   const textAlignClasses = {
     left: "text-left items-start",
-    center: "text-center items-center",
+    center: "text-center items-center"
   };
 
   const borderRadiusClasses = {
     none: "rounded-none",
     sm: "rounded-sm",
     md: "rounded-md",
-    lg: "rounded-lg",
+    lg: "rounded-lg"
   };
 
   const paddingClasses = {
     sm: "p-4",
     md: "p-6",
     lg: "p-8",
-    xl: "p-10",
+    xl: "p-10"
   };
 
   const shadowClasses = {
     none: "shadow-none",
     sm: "shadow-sm",
     md: "shadow-md",
-    lg: "shadow-lg",
+    lg: "shadow-lg"
   };
 
   const animationClasses = {
     none: "",
     fadeIn: "animate-fadeIn",
     slideUp: "animate-slideUp",
-    scale: "animate-scale",
+    scale: "animate-scale"
   };
 
   const containerStyle: React.CSSProperties = {
     backgroundColor: backgroundColor || undefined,
     borderColor: borderColor || "#e5e7eb",
     borderWidth: borderColor ? "1px" : undefined,
-    borderStyle: borderColor ? "solid" : undefined,
+    borderStyle: borderColor ? "solid" : undefined
   };
 
   const quoteStyle: React.CSSProperties = {
-    color: quoteColor || undefined,
+    color: quoteColor || undefined
   };
 
   const authorNameStyle: React.CSSProperties = {
-    color: authorNameColor || undefined,
+    color: authorNameColor || undefined
   };
 
   const authorTitleStyle: React.CSSProperties = {
-    color: authorTitleColor || "#6b7280",
+    color: authorTitleColor || "#6b7280"
   };
 
   const quoteIconStyle: React.CSSProperties = {
-    color: quoteIconColor || "#d1d5db",
+    color: quoteIconColor || "#d1d5db"
   };
 
   const starStyle: React.CSSProperties = {
-    color: starColor || "#fbbf24",
+    color: starColor || "#fbbf24"
   };
 
   const renderStars = () => {

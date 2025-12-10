@@ -7,7 +7,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
 
 import { Error } from "../Error";
@@ -22,7 +22,7 @@ export const Select = ({
   label,
   options,
   required,
-  width,
+  width
 }: SelectField & {
   control: Control<FieldValues, any>;
   errors: Partial<FieldErrorsImpl<Record<string, any>>>;

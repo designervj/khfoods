@@ -20,8 +20,8 @@ export async function POST(req: Request) {
       collection: "products",
       where: {
         id: {
-          in: wishlist.map((product) => product.id),
-        },
+          in: wishlist.map((product) => product.id)
+        }
       },
       locale,
       select: {
@@ -34,8 +34,8 @@ export async function POST(req: Request) {
         colors: true,
         slug: true,
         sizes: true,
-        pricing: true,
-      },
+        pricing: true
+      }
     });
 
     const filledProducts = getFilledProducts(products, wishlist);

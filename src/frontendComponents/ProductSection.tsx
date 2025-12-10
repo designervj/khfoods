@@ -15,7 +15,7 @@ const products = [
     title: "Suscipit Laboriosam Nisi",
     price: "241.99",
     img: "/assets/Image/khfoodImage/2Q6A4963.jpg",
-    rating: 4,
+    rating: 4
   },
   {
     id: 2,
@@ -24,21 +24,21 @@ const products = [
      img: "/assets/Image/khfoodImage/2Q6A4963.jpg",
 
     
-    rating: 4,
+    rating: 4
   },
   {
     id: 3,
     title: "Quis Autem Veleuminium",
     price: "122.00",
       img: "/assets/Image/khfoodImage/2Q6A4963.jpg",
-    rating: 4,
+    rating: 4
   },
   {
     id: 4,
     title: "Perspicitatis Unde Omnis",
     price: "14.00",
        img: "/assets/Image/khfoodImage/2Q6A4963.jpg",
-    rating: 4,
+    rating: 4
   },
 ];
 
@@ -69,7 +69,7 @@ export default function ProductSection() {
           slidesPerView={1}
           breakpoints={{
             640: { slidesPerView: 2, spaceBetween: 30 },
-            1024: { slidesPerView: 4, spaceBetween: 40 },
+            1024: { slidesPerView: 4, spaceBetween: 40 }
           }}
           pagination={{ clickable: true }}
           autoplay={{ delay: 2500 }}

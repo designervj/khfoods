@@ -6,7 +6,7 @@ export const LayoutBlock: Block = {
   slug: "layoutBlock",
   labels: {
     singular: "Layout Block",
-    plural: "Layout Blocks",
+    plural: "Layout Blocks"
   },
   fields: [
     {
@@ -34,7 +34,7 @@ export const LayoutBlock: Block = {
                 { label: "Masonry", value: "masonry" },
                 { label: "Feature Sections", value: "feature-sections" },
                 { label: "Custom Grid", value: "custom-grid" },
-              ],
+              ]
             },
             {
               name: "columnRatio",
@@ -54,8 +54,8 @@ export const LayoutBlock: Block = {
                 condition: (data, siblingData) =>
                   ["two-columns", "three-columns", "sidebar-left", "sidebar-right"].includes(
                     siblingData?.layoutType,
-                  ),
-              },
+                  )
+              }
             },
             {
               name: "customColumnRatio",
@@ -64,8 +64,8 @@ export const LayoutBlock: Block = {
               admin: {
                 condition: (data, siblingData) => siblingData?.columnRatio === "custom",
                 placeholder: "1fr 2fr 1fr",
-                description: "Use CSS grid values (e.g., 1fr 2fr or 300px 1fr)",
-              },
+                description: "Use CSS grid values (e.g., 1fr 2fr or 300px 1fr)"
+              }
             },
             {
               name: "maxWidth",
@@ -81,7 +81,7 @@ export const LayoutBlock: Block = {
                 { label: "2XL (1792px)", value: "2xl" },
                 { label: "Full Width", value: "full" },
                 { label: "Custom", value: "custom" },
-              ],
+              ]
             },
             {
               name: "customMaxWidth",
@@ -89,8 +89,8 @@ export const LayoutBlock: Block = {
               label: "Custom Max Width",
               admin: {
                 condition: (data, siblingData) => siblingData?.maxWidth === "custom",
-                placeholder: "1400px",
-              },
+                placeholder: "1400px"
+              }
             },
             {
               name: "alignment",
@@ -101,7 +101,7 @@ export const LayoutBlock: Block = {
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
                 { label: "Right", value: "right" },
-              ],
+              ]
             },
             {
               name: "verticalAlignment",
@@ -113,7 +113,7 @@ export const LayoutBlock: Block = {
                 { label: "Center", value: "center" },
                 { label: "Bottom", value: "bottom" },
                 { label: "Stretch", value: "stretch" },
-              ],
+              ]
             },
             {
               name: "gap",
@@ -129,7 +129,7 @@ export const LayoutBlock: Block = {
                 { label: "Extra Large", value: "xl" },
                 { label: "2XL", value: "2xl" },
                 { label: "3XL", value: "3xl" },
-              ],
+              ]
             },
             {
               name: "responsiveBehavior",
@@ -141,7 +141,7 @@ export const LayoutBlock: Block = {
                 { label: "Keep Layout", value: "keep" },
                 { label: "Reverse Order", value: "reverse" },
                 { label: "Hide on Mobile", value: "hide-mobile" },
-              ],
+              ]
             },
             {
               name: "backgroundColor",
@@ -159,7 +159,7 @@ export const LayoutBlock: Block = {
                 { label: "Secondary", value: "secondary" },
                 { label: "Accent", value: "accent" },
                 { label: "Custom", value: "custom" },
-              ],
+              ]
             },
             {
               name: "customBackgroundColor",
@@ -167,8 +167,8 @@ export const LayoutBlock: Block = {
               label: "Custom Background Color",
               admin: {
                 condition: (data, siblingData) => siblingData?.backgroundColor === "custom",
-                placeholder: "#f5f5f5",
-              },
+                placeholder: "#f5f5f5"
+              }
             },
             {
               name: "backgroundImage",
@@ -179,7 +179,7 @@ export const LayoutBlock: Block = {
                   name: "enable",
                   type: "checkbox",
                   label: "Enable Background Image",
-                  defaultValue: false,
+                  defaultValue: false
                 },
                 {
                   name: "image",
@@ -187,8 +187,8 @@ export const LayoutBlock: Block = {
                   label: "Image",
                   relationTo: "media",
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "size",
@@ -201,8 +201,8 @@ export const LayoutBlock: Block = {
                     { label: "Auto", value: "auto" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "position",
@@ -217,8 +217,8 @@ export const LayoutBlock: Block = {
                     { label: "Right", value: "right" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "attachment",
@@ -230,8 +230,8 @@ export const LayoutBlock: Block = {
                     { label: "Fixed (Parallax)", value: "fixed" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "overlay",
@@ -239,8 +239,8 @@ export const LayoutBlock: Block = {
                   label: "Enable Overlay",
                   defaultValue: false,
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "overlayColor",
@@ -249,10 +249,10 @@ export const LayoutBlock: Block = {
                   admin: {
                     condition: (data, siblingData) =>
                       siblingData?.enable === true && siblingData?.overlay === true,
-                    placeholder: "rgba(0,0,0,0.5)",
-                  },
+                    placeholder: "rgba(0,0,0,0.5)"
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "gradient",
@@ -263,7 +263,7 @@ export const LayoutBlock: Block = {
                   name: "enable",
                   type: "checkbox",
                   label: "Enable Gradient",
-                  defaultValue: false,
+                  defaultValue: false
                 },
                 {
                   name: "type",
@@ -275,8 +275,8 @@ export const LayoutBlock: Block = {
                     { label: "Radial", value: "radial" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "direction",
@@ -292,8 +292,8 @@ export const LayoutBlock: Block = {
                   ],
                   admin: {
                     condition: (data, siblingData) =>
-                      siblingData?.enable === true && siblingData?.type === "linear",
-                  },
+                      siblingData?.enable === true && siblingData?.type === "linear"
+                  }
                 },
                 {
                   name: "colorStops",
@@ -301,10 +301,10 @@ export const LayoutBlock: Block = {
                   label: "Color Stops",
                   admin: {
                     condition: (data, siblingData) => siblingData?.enable === true,
-                    placeholder: "#ff0000, #00ff00, #0000ff",
-                  },
+                    placeholder: "#ff0000, #00ff00, #0000ff"
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -325,7 +325,7 @@ export const LayoutBlock: Block = {
                     { label: "Extra Large", value: "xl" },
                     { label: "2XL", value: "2xl" },
                     { label: "3XL", value: "3xl" },
-                  ],
+                  ]
                 },
                 {
                   name: "bottom",
@@ -341,7 +341,7 @@ export const LayoutBlock: Block = {
                     { label: "Extra Large", value: "xl" },
                     { label: "2XL", value: "2xl" },
                     { label: "3XL", value: "3xl" },
-                  ],
+                  ]
                 },
                 {
                   name: "left",
@@ -357,7 +357,7 @@ export const LayoutBlock: Block = {
                     { label: "Extra Large", value: "xl" },
                     { label: "2XL", value: "2xl" },
                     { label: "3XL", value: "3xl" },
-                  ],
+                  ]
                 },
                 {
                   name: "right",
@@ -373,9 +373,9 @@ export const LayoutBlock: Block = {
                     { label: "Extra Large", value: "xl" },
                     { label: "2XL", value: "2xl" },
                     { label: "3XL", value: "3xl" },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
             {
               name: "margin",
@@ -396,7 +396,7 @@ export const LayoutBlock: Block = {
                     { label: "Extra Large", value: "xl" },
                     { label: "2XL", value: "2xl" },
                     { label: "3XL", value: "3xl" },
-                  ],
+                  ]
                 },
                 {
                   name: "bottom",
@@ -412,9 +412,9 @@ export const LayoutBlock: Block = {
                     { label: "Extra Large", value: "xl" },
                     { label: "2XL", value: "2xl" },
                     { label: "3XL", value: "3xl" },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
             {
               name: "border",
@@ -425,7 +425,7 @@ export const LayoutBlock: Block = {
                   name: "enable",
                   type: "checkbox",
                   label: "Enable Border",
-                  defaultValue: false,
+                  defaultValue: false
                 },
                 {
                   name: "width",
@@ -439,8 +439,8 @@ export const LayoutBlock: Block = {
                     { label: "8px", value: "8" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "style",
@@ -453,8 +453,8 @@ export const LayoutBlock: Block = {
                     { label: "Dotted", value: "dotted" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "color",
@@ -462,10 +462,10 @@ export const LayoutBlock: Block = {
                   label: "Border Color",
                   admin: {
                     condition: (data, siblingData) => siblingData?.enable === true,
-                    placeholder: "#e5e5e5",
-                  },
+                    placeholder: "#e5e5e5"
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "borderRadius",
@@ -478,7 +478,7 @@ export const LayoutBlock: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -491,7 +491,7 @@ export const LayoutBlock: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "minHeight",
@@ -509,8 +509,8 @@ export const LayoutBlock: Block = {
                 { label: "Custom", value: "custom" },
               ],
               admin: {
-                condition: (data, siblingData) => siblingData?.layoutType === "hero",
-              },
+                condition: (data, siblingData) => siblingData?.layoutType === "hero"
+              }
             },
             {
               name: "customMinHeight",
@@ -518,8 +518,8 @@ export const LayoutBlock: Block = {
               label: "Custom Min Height",
               admin: {
                 condition: (data, siblingData) => siblingData?.minHeight === "custom",
-                placeholder: "600px",
-              },
+                placeholder: "600px"
+              }
             },
             {
               name: "animation",
@@ -530,7 +530,7 @@ export const LayoutBlock: Block = {
                   name: "enable",
                   type: "checkbox",
                   label: "Enable Animation",
-                  defaultValue: false,
+                  defaultValue: false
                 },
                 {
                   name: "type",
@@ -544,8 +544,8 @@ export const LayoutBlock: Block = {
                     { label: "Zoom In", value: "zoom-in" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
                 {
                   name: "duration",
@@ -558,10 +558,10 @@ export const LayoutBlock: Block = {
                     { label: "Slow (700ms)", value: "slow" },
                   ],
                   admin: {
-                    condition: (data, siblingData) => siblingData?.enable === true,
-                  },
+                    condition: (data, siblingData) => siblingData?.enable === true
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "customId",
@@ -569,15 +569,15 @@ export const LayoutBlock: Block = {
               label: "Custom ID",
               admin: {
                 description: "For anchor links",
-                placeholder: "section-id",
-              },
+                placeholder: "section-id"
+              }
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Class",
+              label: "Custom CSS Class"
             },
-          ],
+          ]
         },
         {
           label: "Details",
@@ -592,20 +592,20 @@ export const LayoutBlock: Block = {
                   type: "text",
                   label: "Column Name",
                   admin: {
-                    description: "Optional label for this column",
-                  },
+                    description: "Optional label for this column"
+                  }
                 },
                 {
                   name: "content",
                   type: "blocks",
                   label: "Column Content",
-                  blocks: [TextBlock, ButtonBlock],
+                  blocks: [TextBlock, ButtonBlock]
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

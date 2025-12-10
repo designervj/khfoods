@@ -11,22 +11,22 @@ export const RowBlock: ComponentConfig = {
       type: "number",
       label: "Number of columns",
       min: 1,
-      max: 12,
+      max: 12
     },
     gap: {
       label: "Gap",
       type: "number",
-      min: 0,
+      min: 0
     },
     columns: {
-      type: "slot",
-    },
+      type: "slot"
+    }
    
   },
   defaultProps: {
     numColumns: 4,
     gap: 24,
-    columns: [],
+    columns: []
   },
   render: ({ gap, numColumns, columns: Columns }) => {
     return (
@@ -38,12 +38,11 @@ export const RowBlock: ComponentConfig = {
           style={{
             gap,
             display: "grid",
-            gridTemplateColumns: `repeat(${numColumns}, 1fr)`,
+            gridTemplateColumns: `repeat(${numColumns}, 1fr)`
           }}
         />
       </section>
     );
-  },
+  }
 };
-
 

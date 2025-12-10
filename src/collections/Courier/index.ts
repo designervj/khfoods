@@ -7,12 +7,12 @@ import type { CollectionConfig } from "payload";
 export const Courier: CollectionConfig = {
   slug: "courier",
   access: {
-    read: () => true,
+    read: () => true
   },
   admin: {
     group: {
       en: "Courier integrations",
-      pl: "Integracje kurierskie",
+      zh: "快递集成"
     },
     useAsTitle: "website"
   },
@@ -22,47 +22,47 @@ export const Courier: CollectionConfig = {
       tabs: [
         {
           label: {
-            en: "InPost Courier",
-            pl: "Kurier InPost",
+            en: "InPost Courier"
+
           },
-          fields: courierFields,
+          fields: courierFields
         },
         {
           label: {
-            en: "API Keys",
-            pl: "Klucze API",
+            en: "API Keys"
+
           },
           fields: [
             {
               name: "clientId",
               type: "text",
               label: {
-                en: "Client ID",
-                pl: "ID Klienta",
+                en: "Client ID"
+
               },
 
               required: true,
               admin: {
-                condition: (data) => Boolean(data.enabled),
-              },
+                condition: (data) => Boolean(data.enabled)
+              }
             },
             {
               name: "accountnumber",
               type: "text",
               label: {
-                en: "Account Number",
-                pl: "ID Klienta",
+                en: "Account Number"
+
               },
               admin: {
-                condition: (data) => Boolean(data.enabled),
-              },
+                condition: (data) => Boolean(data.enabled)
+              }
             },
             {
               name: "APIUrl",
               type: "select",
               label: {
-                en: "Environment",
-                pl: "Środowisko",
+                en: "Environment"
+
               },
 
               required: true,
@@ -70,63 +70,63 @@ export const Courier: CollectionConfig = {
               options: [
                 {
                   label: {
-                    en: "Production",
-                    pl: "Produkcja",
+                    en: "Production"
+
                   },
-                  value: "https://api-shipx-pl.easypack24.net",
+                  value: "https://api-shipx-pl.easypack24.net"
                 },
                 {
                   label: {
-                    en: "Sandbox",
-                    pl: "Sandbox",
+                    en: "Sandbox"
+
                   },
-                  value: "https://apis-sandbox.fedex.com",
+                  value: "https://apis-sandbox.fedex.com"
                 },
               ],
               admin: {
                 condition: (data) => Boolean(data.enabled),
                 description: {
-                  en: "Remember to pass matching keys for choosen environment",
-                  pl: "Pamiętaj o przekazaniu odpowiednich kluczy dla wybranego środowiska",
-                },
-              },
+                  en: "Remember to pass matching keys for choosen environment"
+
+                }
+              }
             },
             {
               name: "shipXAPIKey",
               type: "text",
               label: {
-                en: "API ShipX key",
-                pl: "Klucz API ShipX",
+                en: "API ShipX key"
+
               },
               required: true,
               admin: {
-                condition: (data) => Boolean(data.enabled),
-              },
+                condition: (data) => Boolean(data.enabled)
+              }
             },
             {
               name: "shipSecretKey",
               type: "text",
               label: {
-                en: "Secret ShipX key",
-                pl: "Klucz API ShipX",
+                en: "Secret ShipX key"
+
               },
 
               required: true,
               admin: {
-                condition: (data) => Boolean(data.enabled),
-              },
+                condition: (data) => Boolean(data.enabled)
+              }
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "website",
       type: "relationship",
       relationTo: "websites",
       admin: {
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
-  ],
+  ]
 };

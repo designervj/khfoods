@@ -27,7 +27,7 @@ export const StoryBlock: React.FC<StoryBlockProps> = ({
   background,
   padding,
   margin,
-  fieldPath = "",
+  fieldPath = ""
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -109,7 +109,7 @@ export const MissionVisionBlock: React.FC<MissionVisionBlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -195,7 +195,7 @@ export const ValuesBlock: React.FC<ValuesBlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -285,7 +285,7 @@ export const TeamBlock: React.FC<TeamBlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -409,7 +409,7 @@ export const TimelineBlock: React.FC<TimelineBlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -512,7 +512,7 @@ export const StatsBlock: React.FC<StatsBlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -597,7 +597,7 @@ export const CultureBlock: React.FC<CultureBlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (background?.type === "color") return { backgroundColor: background.color };
@@ -698,14 +698,14 @@ export const CTABlock: React.FC<CTABlockProps> = ({
   alignment,
   background,
   padding,
-  margin,
+  margin
 }) => {
   const getBackgroundStyle = () => {
     if (backgroundImage) {
       return {
         backgroundImage: `url(${backgroundImage.url})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center"
       };
     }
     if (background?.type === "color") return { backgroundColor: background.color };

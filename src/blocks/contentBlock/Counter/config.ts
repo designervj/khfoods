@@ -5,7 +5,7 @@ export const Counter: Block = {
   interfaceName: "CounterBlock",
   labels: {
     singular: "🔢 Counter",
-    plural: "🔢 Counters",
+    plural: "🔢 Counters"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -29,28 +29,28 @@ export const Counter: Block = {
               name: "number",
               type: "number",
               label: "Target Number",
-              required: true,
+              required: true
             },
             {
               name: "prefix",
               type: "text",
-              label: "Prefix (e.g., $, +)",
+              label: "Prefix (e.g., $, +)"
             },
             {
               name: "suffix",
               type: "text",
-              label: "Suffix (e.g., %, K, M)",
+              label: "Suffix (e.g., %, K, M)"
             },
             {
               name: "title",
               type: "text",
               label: "Title",
-              required: true,
+              required: true
             },
             {
               name: "description",
               type: "textarea",
-              label: "Description",
+              label: "Description"
             },
             {
               name: "icon",
@@ -64,7 +64,7 @@ export const Counter: Block = {
                 { label: "Trophy", value: "trophy" },
                 { label: "Chart", value: "chart" },
                 { label: "Globe", value: "globe" },
-              ],
+              ]
             },
             {
               name: "animationDuration",
@@ -72,9 +72,9 @@ export const Counter: Block = {
               label: "Animation Duration (seconds)",
               defaultValue: 2,
               min: 0.5,
-              max: 10,
+              max: 10
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -90,32 +90,32 @@ export const Counter: Block = {
                 { label: "4XL", value: "4xl" },
                 { label: "5XL", value: "5xl" },
                 { label: "6XL", value: "6xl" },
-              ],
+              ]
             },
             {
               name: "numberColor",
               type: "text",
-              label: "Number Color",
+              label: "Number Color"
             },
             {
               name: "titleColor",
               type: "text",
-              label: "Title Color",
+              label: "Title Color"
             },
             {
               name: "descriptionColor",
               type: "text",
-              label: "Description Color",
+              label: "Description Color"
             },
             {
               name: "iconColor",
               type: "text",
-              label: "Icon Color",
+              label: "Icon Color"
             },
             {
               name: "backgroundColor",
               type: "text",
-              label: "Background Color",
+              label: "Background Color"
             },
             {
               name: "textAlign",
@@ -125,7 +125,7 @@ export const Counter: Block = {
               options: [
                 { label: "Left", value: "left" },
                 { label: "Center", value: "center" },
-              ],
+              ]
             },
             {
               name: "borderRadius",
@@ -137,7 +137,7 @@ export const Counter: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -149,7 +149,7 @@ export const Counter: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -161,7 +161,7 @@ export const Counter: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -172,16 +172,16 @@ export const Counter: Block = {
                 { label: "None", value: "none" },
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Scale", value: "scale" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

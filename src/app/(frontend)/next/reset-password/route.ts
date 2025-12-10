@@ -26,9 +26,9 @@ export async function POST(req: Request) {
       collection: collection,
       where: {
         email: {
-          equals: email,
-        },
-      },
+          equals: email
+        }
+      }
     });
 
     if (!docs || docs.length === 0) {
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     user = await payload.update({
       collection: collection,
       id: user.id,
-      data: user,
+      data: user
     });
 
     const locale = (await getLocale()) as Locale;
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
       await ResetPasswordEmail({
         url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/reset-password?token=${token}&collection=${collection}`,
         locale,
-        name,
+        name
       }),
     );
 

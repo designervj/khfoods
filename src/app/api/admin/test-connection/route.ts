@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
         success: true,
         message: "Connection successful! MongoDB credentials are working correctly.",
         cluster: mongodbCluster,
-        user: mongodbUser,
+        user: mongodbUser
       });
     } finally {
       await client.close();
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
       {
         success: false,
         error: errorMessage,
-        details,
+        details
       },
       { status: 400 },
     );

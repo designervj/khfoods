@@ -292,7 +292,6 @@
 //   ))}
 // </Swiper>
 
-
 //           {/* ✅ Bottom Controls */}
 //           <div className="flex flex-col items-center justify-center mt-8 gap-3">
 //             <div className="flex items-center gap-6">
@@ -343,7 +342,7 @@ export const AboutSliderBlock: ComponentConfig = {
       options: [
         { label: "Text Left - Slider Right", value: "text-left" },
         { label: "Slider Left - Text Right", value: "slider-left" },
-      ],
+      ]
     },
     
     // Text Content
@@ -359,8 +358,8 @@ export const AboutSliderBlock: ComponentConfig = {
       type: "array",
       label: "Additional Paragraphs",
       arrayFields: {
-        text: { type: "textarea", label: "Paragraph Text" },
-      },
+        text: { type: "textarea", label: "Paragraph Text" }
+      }
     },
     
     // Buttons
@@ -371,8 +370,8 @@ export const AboutSliderBlock: ComponentConfig = {
         label: { type: "text", label: "Button Label" },
         link: { type: "text", label: "Button Link" },
         backgroundColor: { type: "text", label: "Background Color" },
-        textColor: { type: "text", label: "Text Color" },
-      },
+        textColor: { type: "text", label: "Text Color" }
+      }
     },
     
     // Slider Images
@@ -381,8 +380,8 @@ export const AboutSliderBlock: ComponentConfig = {
       label: "Slider Images",
       arrayFields: {
         url: { type: "text", label: "Image URL" },
-        alt: { type: "text", label: "Alt Text" },
-      },
+        alt: { type: "text", label: "Alt Text" }
+      }
     },
     
     // Slider Settings
@@ -465,7 +464,7 @@ export const AboutSliderBlock: ComponentConfig = {
     borderRadius: { 
       type: "number", 
       label: "Image Border Radius (px)" 
-    },
+    }
   },
 
   defaultProps: {
@@ -474,29 +473,29 @@ export const AboutSliderBlock: ComponentConfig = {
     mainParagraph: "Po struci inženjer strojarstva, Karlo Ban već više od deset godina slijedi svoju strast prema čeliku i kovačkom zanatu.",
     paragraphs: [
       {
-        text: "U zagorskom selu Jelenjak kraj Desinića, Karlo u svojoj kovačnici svaki nož izrađuje od početka do kraja ručno, spajajući tehničko znanje i umjetničku preciznost. Kao istaknuti hrvatski majstor ('bladesmith'), u malim je serijama i po narudžbi iskovao preko 3000 noževa.",
+        text: "U zagorskom selu Jelenjak kraj Desinića, Karlo u svojoj kovačnici svaki nož izrađuje od početka do kraja ručno, spajajući tehničko znanje i umjetničku preciznost. Kao istaknuti hrvatski majstor ('bladesmith'), u malim je serijama i po narudžbi iskovao preko 3000 noževa."
       },
       {
-        text: "Njegovi kuhinjski i lovački noževi često se rade prema japanskim i skandinavskim principima: troslojno, jednostavne konstrukcije, kvalitetni visokougljični čelici bez prisustva nikla, uz majstorsko kaljenje i popuštanje čelika.",
+        text: "Njegovi kuhinjski i lovački noževi često se rade prema japanskim i skandinavskim principima: troslojno, jednostavne konstrukcije, kvalitetni visokougljični čelici bez prisustva nikla, uz majstorsko kaljenje i popuštanje čelika."
       },
     ],
     buttons: [],
     images: [
       {
         url: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800",
-        alt: "Slide 1",
+        alt: "Slide 1"
       },
       {
         url: "https://images.unsplash.com/photo-1593007791459-dd3ae7f1d3b1?w=800",
-        alt: "Slide 2",
+        alt: "Slide 2"
       },
       {
         url: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800",
-        alt: "Slide 3",
+        alt: "Slide 3"
       },
       {
         url: "https://images.unsplash.com/photo-1593007791459-dd3ae7f1d3b1?w=800",
-        alt: "Slide 4",
+        alt: "Slide 4"
       },
     ],
     slidesPerView: 2,
@@ -514,7 +513,7 @@ export const AboutSliderBlock: ComponentConfig = {
     navigationBgColor: "#EDEDED",
     paddingY: 80,
     marginTop: 24,
-    borderRadius: 16,
+    borderRadius: 16
   },
 
   render: ({
@@ -539,7 +538,7 @@ export const AboutSliderBlock: ComponentConfig = {
     navigationBgColor,
     paddingY,
     marginTop,
-    borderRadius,
+    borderRadius
   }) => {
    
   const paginationRef = useRef<HTMLDivElement>(null);
@@ -609,15 +608,15 @@ export const AboutSliderBlock: ComponentConfig = {
                 swiper.pagination.update();
               }}
               pagination={{
-                type: "fraction",
+                type: "fraction"
               }}
               breakpoints={{
                 0: {
-                  slidesPerView: 1,
+                  slidesPerView: 1
                 },
                 768: {
-                  slidesPerView: 2,
-                },
+                  slidesPerView: 2
+                }
               }}
               className="rounded-xl swiper-about"
             >
@@ -664,5 +663,5 @@ export const AboutSliderBlock: ComponentConfig = {
       </section>
     </>
   );
-  },
+  }
 };

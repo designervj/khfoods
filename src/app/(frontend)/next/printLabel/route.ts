@@ -29,7 +29,7 @@ export async function GET(req: Request) {
 
     const order = await payload.findByID({
       collection: "orders",
-      id: orderID,
+      id: orderID
     });
 
     if (!order) {
@@ -58,8 +58,8 @@ export async function GET(req: Request) {
     return new Response(pdfBuffer, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="${orderID}.pdf"`,
-      },
+        "Content-Disposition": `attachment; filename="${orderID}.pdf"`
+      }
     });
   } catch (error) {
     if (isAxiosError(error)) {

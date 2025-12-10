@@ -49,7 +49,7 @@ export const TwoEqualColumnsSection: Block = {
   interfaceName: "EqualColumns",
   labels: {
     singular: "Two Equal Columns",
-    plural: "Two Equal Columns",
+    plural: "Two Equal Columns"
   },
   // imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="37" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="47" y="6" width="37" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Two Equal Columns Layout",
@@ -69,8 +69,8 @@ export const TwoEqualColumnsSection: Block = {
               minRows: 1,
               admin: {
                 initCollapsed: false,
-                description: "Add one or more blocks for the left column content",
-              },
+                description: "Add one or more blocks for the left column content"
+              }
             },
             {
               name: "rightColumn",
@@ -81,10 +81,10 @@ export const TwoEqualColumnsSection: Block = {
               minRows: 1,
               admin: {
                 initCollapsed: false,
-                description: "Add one or more blocks for the right column content",
-              },
+                description: "Add one or more blocks for the right column content"
+              }
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -98,7 +98,7 @@ export const TwoEqualColumnsSection: Block = {
                 { label: "Gray", value: "gray" },
                 { label: "Blue", value: "blue" },
                 { label: "Transparent", value: "transparent" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -110,7 +110,7 @@ export const TwoEqualColumnsSection: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "gap",
@@ -120,18 +120,18 @@ export const TwoEqualColumnsSection: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };
 
 export const ThreeEqualColumnsSection: Block = {
@@ -139,7 +139,7 @@ export const ThreeEqualColumnsSection: Block = {
   interfaceName: "EqualColumns",
   labels: {
     singular: "Three Equal Columns",
-    plural: "Three Equal Columns",
+    plural: "Three Equal Columns"
   },
   // imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="23.3333" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="33.333" y="6" width="23.3333" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="60.667" y="6" width="23.3333" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Three Equal Columns Layout",
@@ -159,8 +159,8 @@ export const ThreeEqualColumnsSection: Block = {
               minRows: 1,
               admin: {
                 initCollapsed: false,
-                description: "Add one or more blocks for the left column content",
-              },
+                description: "Add one or more blocks for the left column content"
+              }
             },
             {
               name: "centerColumn",
@@ -171,8 +171,8 @@ export const ThreeEqualColumnsSection: Block = {
               minRows: 1,
               admin: {
                 initCollapsed: false,
-                description: "Add one or more blocks for the center column content",
-              },
+                description: "Add one or more blocks for the center column content"
+              }
             },
             {
               name: "rightColumn",
@@ -183,10 +183,10 @@ export const ThreeEqualColumnsSection: Block = {
               minRows: 1,
               admin: {
                 initCollapsed: false,
-                description: "Add one or more blocks for the right column content",
-              },
+                description: "Add one or more blocks for the right column content"
+              }
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -200,7 +200,7 @@ export const ThreeEqualColumnsSection: Block = {
                 { label: "Gray", value: "gray" },
                 { label: "Blue", value: "blue" },
                 { label: "Transparent", value: "transparent" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -212,7 +212,7 @@ export const ThreeEqualColumnsSection: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "gap",
@@ -222,18 +222,18 @@ export const ThreeEqualColumnsSection: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };
 
 export const FourEqualColumnsSection: Block = {
@@ -241,7 +241,7 @@ export const FourEqualColumnsSection: Block = {
   interfaceName: "EqualColumns",
   labels: {
     singular: "Four Equal Columns",
-    plural: "Four Equal Columns",
+    plural: "Four Equal Columns"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="16.5" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="26.5" y="6" width="16.5" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="47" y="6" width="16.5" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="67.5" y="6" width="16.5" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Four Equal Columns Layout",
@@ -267,10 +267,10 @@ export const FourEqualColumnsSection: Block = {
                   minRows: 1,
                   maxRows: 2,
                   admin: {
-                    initCollapsed: false,
-                  },
+                    initCollapsed: false
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "columns2",
@@ -287,10 +287,10 @@ export const FourEqualColumnsSection: Block = {
                   minRows: 1,
                   maxRows: 2,
                   admin: {
-                    initCollapsed: false,
-                  },
+                    initCollapsed: false
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "columns3",
@@ -307,10 +307,10 @@ export const FourEqualColumnsSection: Block = {
                   minRows: 1,
                   maxRows: 2,
                   admin: {
-                    initCollapsed: false,
-                  },
+                    initCollapsed: false
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "columns4",
@@ -327,10 +327,10 @@ export const FourEqualColumnsSection: Block = {
                   minRows: 1,
                   maxRows: 2,
                   admin: {
-                    initCollapsed: false,
-                  },
+                    initCollapsed: false
+                  }
                 },
-              ],
+              ]
             },
           ]
         },
@@ -346,7 +346,7 @@ export const FourEqualColumnsSection: Block = {
                 { label: "Gray", value: "gray" },
                 { label: "Blue", value: "blue" },
                 { label: "Transparent", value: "transparent" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -358,7 +358,7 @@ export const FourEqualColumnsSection: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "gap",
@@ -368,16 +368,16 @@ export const FourEqualColumnsSection: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

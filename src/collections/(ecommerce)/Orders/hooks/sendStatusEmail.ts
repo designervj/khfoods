@@ -11,7 +11,7 @@ import type { FieldHook } from "payload";
 export const sendStatusEmail: FieldHook<Order, Order["orderDetails"]["status"] | undefined> = async ({
   operation,
   value,
-  originalDoc,
+  originalDoc
 }) => {
   if (operation !== "update" || !originalDoc || !value) return value;
 
@@ -28,7 +28,7 @@ export const sendStatusEmail: FieldHook<Order, Order["orderDetails"]["status"] |
       await sendEmail({
         html,
         subject: t(`${order.orderDetails.status}.title`),
-        to: order.shippingAddress.email,
+        to: order.shippingAddress.email
       });
     }
   } catch (error) {

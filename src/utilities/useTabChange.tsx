@@ -28,7 +28,7 @@ export function TabProvider({ children }: TabProviderProps) {
         activeTab,
         isContentPanelOpen,
         handleTabChange,
-        setIsContentPanelOpen,
+        setIsContentPanelOpen
       }}
     >
       {children}

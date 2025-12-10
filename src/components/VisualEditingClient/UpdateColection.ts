@@ -22,7 +22,7 @@ export const updateField = async (request: NextRequest) => {
       id: docId,
       depth: 0,
       overrideAccess: false,
-      //req: request as any,
+      //req: request as any
     });
 
     console.log("📄 Current document fetched for updateField", currentDoc);
@@ -40,7 +40,7 @@ export const updateField = async (request: NextRequest) => {
       if (typeof blockType !== "string" || typeof blockId !== "string" || typeof layoutId !== "string") {
         return NextResponse.json(
           {
-            error: "blockType, blockId, and layoutId must be strings",
+            error: "blockType, blockId, and layoutId must be strings"
           },
           { status: 400 },
         );
@@ -50,7 +50,7 @@ export const updateField = async (request: NextRequest) => {
       if (!updated) {
         return NextResponse.json(
           {
-            error: "Block not found with the specified blockType and blockId",
+            error: "Block not found with the specified blockType and blockId"
           },
           { status: 404 },
         );
@@ -67,14 +67,14 @@ export const updateField = async (request: NextRequest) => {
       data: updatedData,
       depth: 0,
       overrideAccess: false,
-      // req: request as any,
+      // req: request as any
     });
 
     console.log("✅ Document updated successfully", updatedDoc);
 
     return NextResponse.json({
       success: true,
-      updatedDoc,
+      updatedDoc
     });
   } catch (error) {
     console.error("Error updating field:", error);

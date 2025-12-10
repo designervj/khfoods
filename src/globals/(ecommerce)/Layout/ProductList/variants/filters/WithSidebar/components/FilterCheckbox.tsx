@@ -5,7 +5,7 @@ import { type ChangeEvent } from "react";
 export const FilterCheckbox = ({
   option,
   sectionId,
-  optionIdx,
+  optionIdx
 }: {
   option: {
     value: string;

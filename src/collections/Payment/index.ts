@@ -6,12 +6,12 @@ import type { CollectionConfig } from "payload";
 export const Payment: CollectionConfig = {
   slug: "payment",
   access: {
-    read: () => true,
+    read: () => true
   },
   admin: {
     group: {
       en: "Payments settings",
-      pl: "Ustawienia płatności",
+      zh: "支付设置"
     },
     useAsTitle: "website"
   },
@@ -19,41 +19,41 @@ export const Payment: CollectionConfig = {
     {
       name: "paywall",
       label: {
-        en: "Paywall",
-        pl: "Bramka płatności",
+        en: "Paywall"
+
       },
       type: "select",
       options: [
         {
           label: {
-            en: "Stripe",
-            pl: "Stripe",
+            en: "Stripe"
+
           },
-          value: "stripe",
+          value: "stripe"
         },
         {
           label: {
-            en: "Autopay",
-            pl: "Autopay",
+            en: "Autopay"
+
           },
-          value: "autopay",
+          value: "autopay"
         },
         {
           label: {
-            en: "Przelewy24",
-            pl: "Przelewy24",
+            en: "Przelewy24"
+
           },
-          value: "p24",
+          value: "p24"
         },
       ],
       defaultValue: "stripe",
-      required: true,
+      required: true
     },
     {
       name: "stripe",
       label: {
-        en: "Stripe configuration",
-        pl: "Konfiguracja Stripe",
+        en: "Stripe configuration"
+
       },
       type: "group",
       admin: {
@@ -61,47 +61,47 @@ export const Payment: CollectionConfig = {
           return data.paywall === "stripe";
         },
         description: {
-          pl: "Jeśli chcesz korzystać ze środowiska testowego, podaj tu odpowiadające klucze.",
-          en: "If you want to use test environment, you can also provide test keys here.",
-        },
+
+          en: "If you want to use test environment, you can also provide test keys here."
+        }
       },
       fields: [
         {
           name: "secret",
           type: "text",
           label: {
-            en: "Secret API Key",
-            pl: "Prywatny klucz API",
+            en: "Secret API Key"
+
           },
          
-          required: true,
+          required: true
         },
         {
           name: "webhookSecret",
           type: "text",
           label: {
-            en: "Webhook Secret API Key",
-            pl: "Prywatny klucz API Webhook",
+            en: "Webhook Secret API Key"
+
           },
           
-          required: true,
+          required: true
         },
         {
           name: "public",
           type: "text",
           label: {
-            en: "Public API Key",
-            pl: "Publiczny klucz API",
-          },
+            en: "Public API Key"
+
+          }
           
         },
-      ],
+      ]
     },
     {
       name: "autopay",
       label: {
-        en: "Autopay configuration",
-        pl: "Konfiguracja Autopay",
+        en: "Autopay configuration"
+
       },
       type: "group",
       admin: {
@@ -109,47 +109,47 @@ export const Payment: CollectionConfig = {
           return data.paywall === "autopay";
         },
         description: {
-          pl: "Jeśli chcesz korzystać ze środowiska testowego, podaj tu odpowiadające klucze.",
-          en: "If you want to use test environment, you can also provide test keys here.",
-        },
+
+          en: "If you want to use test environment, you can also provide test keys here."
+        }
       },
       fields: [
         {
           name: "serviceID",
           type: "text",
           label: {
-            en: "Service ID",
-            pl: "ServiceID (Identyfikator Serwisu Partnera)",
+            en: "Service ID"
+
           },
           
-          required: true,
+          required: true
         },
         {
           name: "hashKey",
           type: "text",
           label: {
-            en: "Hash Key",
-            pl: "HashKey (Klucz do generowania hasha)",
+            en: "Hash Key"
+
           },
          
-          required: true,
+          required: true
         },
         {
           name: "endpoint",
           type: "text",
           label: {
-            en: "Endpoint",
-            pl: "Endpoint",
+            en: "Endpoint"
+
           },
-          required: true,
+          required: true
         },
-      ],
+      ]
     },
     {
       name: "p24",
       label: {
-        en: "Przelewy24 configuration",
-        pl: "Konfiguracja Przelewy24",
+        en: "Przelewy24 configuration"
+
       },
       type: "group",
       admin: {
@@ -157,58 +157,58 @@ export const Payment: CollectionConfig = {
           return data.paywall === "p24";
         },
         description: {
-          pl: "Jeśli chcesz korzystać ze środowiska testowego, podaj tu odpowiadające klucze.",
-          en: "If you want to use test environment, you can also provide test keys here.",
-        },
+
+          en: "If you want to use test environment, you can also provide test keys here."
+        }
       },
       fields: [
         {
           name: "posId",
           type: "text",
           label: {
-            en: "POS ID (User ID)",
-            pl: "POS ID (ID użytkownika)",
+            en: "POS ID (User ID)"
+
           },
        
-          required: true,
+          required: true
         },
         {
           name: "crc",
           type: "text",
           label: {
-            en: "CRC Key",
-            pl: "CRC (Klucz do CRC)",
+            en: "CRC Key"
+
           },
-          required: true,
+          required: true
         },
         {
           name: "secretId",
           type: "text",
           label: {
-            en: "Secret ID (Klucz do raportów)",
-            pl: "Secret ID (Klucz do raportów)",
+            en: "Secret ID (Klucz do raportów)"
+
           },
        
-          required: true,
+          required: true
         },
         {
           name: "endpoint",
           type: "text",
           label: {
-            en: "Endpoint",
-            pl: "Endpoint",
+            en: "Endpoint"
+
           },
-          required: true,
+          required: true
         },
-      ],
+      ]
     },
       {
       name: "website",
       type: "relationship",
       relationTo: "websites",
       admin: {
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
-  ],
+  ]
 };

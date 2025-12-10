@@ -39,32 +39,32 @@ export const createInpostPickupPackage = async (order: Order, dimension: string)
           building_number,
           city: shopAddress.city,
           post_code: shopAddress.postalCode,
-          country_code: shopAddress.country.toUpperCase(),
-        },
+          country_code: shopAddress.country.toUpperCase()
+        }
       },
       receiver: {
         ...(order.invoice?.isCompany
           ? { company_name: shippingAddress.name }
           : {
               first_name: shippingAddress.name.split(" ")[0],
-              last_name: shippingAddress.name.split(" ").slice(1).join(" "),
+              last_name: shippingAddress.name.split(" ").slice(1).join(" ")
             }),
         email: shippingAddress.email,
-        phone: shippingAddress.phone,
+        phone: shippingAddress.phone
       },
       parcels: {
-        template: dimension,
+        template: dimension
       },
       custom_attributes: {
-        target_point: shippingAddress.pickupPointID,
+        target_point: shippingAddress.pickupPointID
       },
       service: "inpost_locker_standard",
-      reference: order.id,
+      reference: order.id
     },
     {
       headers: {
-        Authorization: `Bearer ${shipXAPIKey}`,
-      },
+        Authorization: `Bearer ${shipXAPIKey}`
+      }
     },
   );
 
@@ -77,8 +77,8 @@ export const createInpostPickupPackage = async (order: Order, dimension: string)
         `${APIUrl}/v1/shipments/${packageID}`,
         {
           headers: {
-            Authorization: `Bearer ${shipXAPIKey}`,
-          },
+            Authorization: `Bearer ${shipXAPIKey}`
+          }
         },
       );
       if (shipmentData.status === "confirmed" && shipmentData.tracking_number) {
@@ -87,12 +87,12 @@ export const createInpostPickupPackage = async (order: Order, dimension: string)
           collection: "orders",
           data: {
             orderDetails: {
-              trackingNumber: shipmentData.tracking_number,
+              trackingNumber: shipmentData.tracking_number
             },
             printLabel: {
-              packageNumber: packageID,
-            },
-          },
+              packageNumber: packageID
+            }
+          }
         });
 
         return packageID;

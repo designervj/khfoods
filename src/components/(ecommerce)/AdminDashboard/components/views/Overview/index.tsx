@@ -12,12 +12,12 @@ import {
   useState,
   useCallback,
   useRef,
-  type RefObject,
+  type RefObject
 } from "react";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 import { type OrderCountResponse } from "@/endpoints/adminDashboard/getOrderCount";
 import { type RevenueResponse } from "@/endpoints/adminDashboard/getRevenue";
@@ -32,20 +32,20 @@ import { OverviewLastOrders } from "../../OverviewLastOrders";
 export const Overview = () => {
   const [totalRevenue, setTotalRevenue] = useState<{ value: number; percentage: number }>({
     value: 0,
-    percentage: 0,
+    percentage: 0
   });
   const [totalOrders, setTotalOrders] = useState<{ value: number; percentage: number }>({
     value: 0,
-    percentage: 0,
+    percentage: 0
   });
 
   const [rangedRevenue, setRangedRevenue] = useState<{ value: number; percentage: number }>({
     value: 0,
-    percentage: 0,
+    percentage: 0
   });
   const [rangedOrders, setRangedOrders] = useState<{ value: number; percentage: number }>({
     value: 0,
-    percentage: 0,
+    percentage: 0
   });
 
   const [currency, setCurrency] = useState<Currency | null>(null);
@@ -79,7 +79,7 @@ export const Overview = () => {
       requestData?: { dateFrom?: string; dateTo?: string },
     ) => {
       const { data } = await axios.post<RevenueResponse>("/api/orders/revenue", requestData ?? {}, {
-        withCredentials: true,
+        withCredentials: true
       });
 
       const valueAnimation = animate(currentRef.current, data.totalRevenue, {
@@ -87,14 +87,14 @@ export const Overview = () => {
         onUpdate: (value) => {
           currentRef.current = Math.round(value);
           setRevenue((prev) => ({ ...prev, value: currentRef.current }));
-        },
+        }
       });
 
       const percentageAnimation = animate(0, data.percentage, {
         duration: 1,
         onUpdate: (value) => {
           setRevenue((prev) => ({ ...prev, percentage: Number(value.toFixed(1)) }));
-        },
+        }
       });
 
       return () => {
@@ -112,7 +112,7 @@ export const Overview = () => {
       requestData?: { dateFrom?: string; dateTo?: string },
     ) => {
       const { data } = await axios.post<OrderCountResponse>("/api/orders/count", requestData ?? {}, {
-        withCredentials: true,
+        withCredentials: true
       });
 
       const valueAnimation = animate(currentRef.current, data.total, {
@@ -120,14 +120,14 @@ export const Overview = () => {
         onUpdate: (value) => {
           currentRef.current = Math.round(value);
           setOrders((prev) => ({ ...prev, value: currentRef.current }));
-        },
+        }
       });
 
       const percentageAnimation = animate(0, data.percentage, {
         duration: 1,
         onUpdate: (value) => {
           setOrders((prev) => ({ ...prev, percentage: Number(value.toFixed(1)) }));
-        },
+        }
       });
 
       return () => {

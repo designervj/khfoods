@@ -12,7 +12,7 @@ export const customTranslationsObject = {
       resetPackage: "Reset package",
       resetPassword: "Reset password (enter email in form)",
       resetPasswordSuccess: "Password reset link sent to email",
-      resetPasswordError: "Error resetting password",
+      resetPasswordError: "Error resetting password"
     },
     adminDashboard: {
       linkTitle: "Dashboard",
@@ -60,9 +60,9 @@ export const customTranslationsObject = {
       copyPaymentID: "Copy payment ID",
       viewCustomer: "View customer",
       viewOrder: "View order",
-      openMenu: "Open menu",
+      openMenu: "Open menu"
       
-    },
+    }
   },
   zh: {
   custom: {
@@ -75,7 +75,7 @@ export const customTranslationsObject = {
     resetPackage: "重設包裹",
     resetPassword: "重設密碼（請在表單中輸入電子郵件）",
     resetPasswordSuccess: "密碼重設連結已寄至您的電子郵件",
-    resetPasswordError: "重設密碼時發生錯誤",
+    resetPasswordError: "重設密碼時發生錯誤"
   },
   adminDashboard: {
     linkTitle: "控制台",
@@ -123,9 +123,9 @@ export const customTranslationsObject = {
     copyPaymentID: "複製付款 ID",
     viewCustomer: "查看客戶",
     viewOrder: "查看訂單",
-    openMenu: "開啟選單",
-  },
-},
+    openMenu: "開啟選單"
+  }
+}
 
 };
 

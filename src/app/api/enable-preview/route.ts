@@ -68,6 +68,6 @@ export async function GET(req: Request): Promise<Response> {
   return NextResponse.json({
     success: true,
     previewUrl,
-    message: "Preview mode enabled",
+    message: "Preview mode enabled"
   });
 }

@@ -11,7 +11,7 @@ const projects = [
     location: "JALGAON",
     categories: ["HOUSES", "DESIGN", "SKYSCRAPPER"],
     image: "/assets/Image/jalgoan.jpg",
-    slug: "/projects/makra-tower",
+    slug: "/projects/makra-tower"
   },
   {
     id: 2,
@@ -19,24 +19,24 @@ const projects = [
     location: "LOWER PAREL, MUMBAI",
     categories: ["INTERIOR", "MINIMALISM", "ELEGANCE"],
     image: "/assets/Image/home-slider.jpg",
-    slug: "/projects/zope-residence",
+    slug: "/projects/zope-residence"
   },
 ];
 
 // Animations
 const textVariants = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
 };
 
 const textVariantsRight = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
 };
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.85 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
 };
 
 export default function FeaturedWorks() {

@@ -13,8 +13,8 @@ export async function GET() {
         missing: {
           projectId: !PROJECT_ID,
           publicKey: !PUBLIC_KEY,
-          privateKey: !PRIVATE_KEY,
-        },
+          privateKey: !PRIVATE_KEY
+        }
       },
       { status: 400 },
     );
@@ -29,7 +29,7 @@ export async function GET() {
     return NextResponse.json(
       {
         error: "Please update the placeholder values in your .env file with real Atlas API credentials",
-        setup_guide: "https://www.mongodb.com/docs/atlas/configure-api-access/",
+        setup_guide: "https://www.mongodb.com/docs/atlas/configure-api-access/"
       },
       { status: 400 },
     );
@@ -44,8 +44,8 @@ export async function GET() {
       headers: {
         Authorization: `Basic ${auth}`,
         "Content-Type": "application/json",
-        Accept: "application/json",
-      },
+        Accept: "application/json"
+      }
     });
 
     const data = await res.json();
@@ -59,8 +59,8 @@ export async function GET() {
           troubleshooting: {
             401: "Invalid API keys - regenerate them in Atlas",
             403: "Insufficient permissions - need 'Organization Owner' role",
-            404: "Invalid Project ID - check your project settings",
-          },
+            404: "Invalid Project ID - check your project settings"
+          }
         },
         { status: res.status },
       );
@@ -72,15 +72,15 @@ export async function GET() {
       project: {
         name: data.name,
         id: data.id,
-        orgId: data.orgId,
+        orgId: data.orgId
       },
-      credentials_status: "✅ Valid",
+      credentials_status: "✅ Valid"
     });
   } catch (err) {
     return NextResponse.json(
       {
         error: "Network error testing Atlas API",
-        details: err instanceof Error ? err.message : "Unknown error",
+        details: err instanceof Error ? err.message : "Unknown error"
       },
       { status: 500 },
     );

@@ -15,7 +15,7 @@ export const Email = ({
   label,
   register,
   required: requiredFromProps,
-  width,
+  width
 }: EmailField & {
   errors: Partial<FieldErrorsImpl<Record<string, any>>>;
   register: UseFormRegister<FieldValues>;

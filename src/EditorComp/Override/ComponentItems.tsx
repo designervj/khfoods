@@ -14,7 +14,7 @@ export const ComponentItem = ({ name }) => {
     Object.keys(comps).forEach((key) => {
       enrichedComponents[key] = {
         ...enrichedComponents[key],
-        image: svgIcons[key],
+        image: svgIcons[key]
       };
     });
     

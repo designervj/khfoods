@@ -23,9 +23,9 @@ const createEmailTransporter = async () => {
       host: host ?? process.env.SMTP_HOST,
       port: Number(port ?? 587),
       secure: secure ?? false,
-      auth: { user: user ?? process.env.SMTP_USER, pass: password ?? process.env.SMTP_PASS },
+      auth: { user: user ?? process.env.SMTP_USER, pass: password ?? process.env.SMTP_PASS }
     }),
-    fromEmail: fromEmail ?? process.env.SMTP_USER,
+    fromEmail: fromEmail ?? process.env.SMTP_USER
   };
 };
 
@@ -37,7 +37,7 @@ export const sendEmail = async ({ to, subject, html }: EmailPayload): Promise<Em
       from: fromEmail,
       to,
       subject,
-      html,
+      html
     });
 
     return { success: true, messageId };

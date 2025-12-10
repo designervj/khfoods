@@ -9,7 +9,7 @@ export const ProductUnitPriceFieldClient = ({
   unitPrice,
   field,
   schemaPath,
-  permissions,
+  permissions
 }: {
   path: string;
   unitPrice?: number;
@@ -30,7 +30,7 @@ export const ProductUnitPriceFieldClient = ({
     dispatchFields({
       type: "UPDATE",
       path: checkboxPath,
-      value: !checkboxValue,
+      value: !checkboxValue
     });
   };
 

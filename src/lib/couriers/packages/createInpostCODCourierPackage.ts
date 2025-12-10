@@ -44,15 +44,15 @@ export const createInpostCODCourierPackage = async (order: Order, dimensions: Di
           building_number,
           city: shopAddress.city,
           post_code: shopAddress.postalCode,
-          country_code: shopAddress.country.toUpperCase(),
-        },
+          country_code: shopAddress.country.toUpperCase()
+        }
       },
       receiver: {
         ...(order.invoice?.isCompany
           ? { company_name: shippingAddress.name }
           : {
               first_name: shippingAddress.name.split(" ")[0],
-              last_name: shippingAddress.name.split(" ").slice(1).join(" "),
+              last_name: shippingAddress.name.split(" ").slice(1).join(" ")
             }),
         email: shippingAddress.email,
         phone: shippingAddress.phone,
@@ -61,8 +61,8 @@ export const createInpostCODCourierPackage = async (order: Order, dimensions: Di
           building_number: shippingBuildingNumber,
           city: shippingAddress.city,
           post_code: shippingAddress.postalCode,
-          country_code: shippingAddress.country.toUpperCase(),
-        },
+          country_code: shippingAddress.country.toUpperCase()
+        }
       },
       parcels: [
         {
@@ -71,30 +71,30 @@ export const createInpostCODCourierPackage = async (order: Order, dimensions: Di
             width: dimensions.width,
             height: dimensions.height,
             length: dimensions.length,
-            unit: "mm",
+            unit: "mm"
           },
           weight: {
             amount: dimensions.weight,
-            unit: "kg",
+            unit: "kg"
           },
-          is_non_standard: false,
+          is_non_standard: false
         },
       ],
       insurance: {
         amount: order.orderDetails?.totalWithShipping ?? 0 * 2,
-        currency: order.orderDetails?.currency ?? "PLN",
+        currency: order.orderDetails?.currency ?? "PLN"
       },
       cod: {
         amount: order.orderDetails?.totalWithShipping ?? 0,
-        currency: order.orderDetails?.currency ?? "PLN",
+        currency: order.orderDetails?.currency ?? "PLN"
       },
       service: "inpost_courier_standard",
-      reference: order.id,
+      reference: order.id
     },
     {
       headers: {
-        Authorization: `Bearer ${shipXAPIKey}`,
-      },
+        Authorization: `Bearer ${shipXAPIKey}`
+      }
     },
   );
 
@@ -106,8 +106,8 @@ export const createInpostCODCourierPackage = async (order: Order, dimensions: Di
         `${APIUrl}/v1/shipments/${packageID}`,
         {
           headers: {
-            Authorization: `Bearer ${shipXAPIKey}`,
-          },
+            Authorization: `Bearer ${shipXAPIKey}`
+          }
         },
       );
       if (shipmentData.status === "confirmed" && shipmentData.tracking_number) {
@@ -116,12 +116,12 @@ export const createInpostCODCourierPackage = async (order: Order, dimensions: Di
           collection: "orders",
           data: {
             orderDetails: {
-              trackingNumber: shipmentData.tracking_number,
+              trackingNumber: shipmentData.tracking_number
             },
             printLabel: {
-              packageNumber: packageID,
-            },
-          },
+              packageNumber: packageID
+            }
+          }
         });
 
         return packageID;

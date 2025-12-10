@@ -7,17 +7,19 @@ export const EmailMessages: GlobalConfig = {
   slug: "emailMessages",
   label: {
     en: "Email Messages",
-    pl: "Wiadomości e-mail",
+
+    zh: "电子邮件消息"
   },
   access: {
     read: authenticated,
-    update: authenticated,
+    update: authenticated
   },
   admin: {
     group: {
       en: "Shop settings",
-      pl: "Ustawienia sklepu",
-    },
+
+      zh: "商店设置"
+    }
   },
   fields: [
     {
@@ -27,7 +29,8 @@ export const EmailMessages: GlobalConfig = {
           name: "smtp",
           label: {
             en: "SMTP",
-            pl: "SMTP",
+
+            zh: "SMTP"
           },
           fields: [
             {
@@ -36,8 +39,9 @@ export const EmailMessages: GlobalConfig = {
               required: true,
               label: {
                 en: "Host",
-                pl: "Host",
-              },
+
+                zh: "主机"
+              }
             },
             {
               name: "port",
@@ -45,18 +49,20 @@ export const EmailMessages: GlobalConfig = {
               required: true,
               label: {
                 en: "SMTP Port",
-                pl: "Port SMTP",
-              },
+
+                zh: "SMTP端口"
+              }
             },
             {
               name: "secure",
               type: "checkbox",
               label: {
                 en: "Secure",
-                pl: "Bezpieczne",
+
+                zh: "安全"
               },
               required: true,
-              defaultValue: false,
+              defaultValue: false
             },
             {
               name: "user",
@@ -64,8 +70,9 @@ export const EmailMessages: GlobalConfig = {
               required: true,
               label: {
                 en: "User",
-                pl: "Użytkownik",
-              },
+
+                zh: "用户"
+              }
             },
             {
               name: "password",
@@ -73,8 +80,9 @@ export const EmailMessages: GlobalConfig = {
               required: true,
               label: {
                 en: "Password",
-                pl: "Hasło",
-              },
+
+                zh: "密码"
+              }
             },
             {
               name: "fromEmail",
@@ -82,16 +90,18 @@ export const EmailMessages: GlobalConfig = {
               required: true,
               label: {
                 en: "From Email",
-                pl: "Z adresu e-mail",
-              },
+
+                zh: "发件人邮箱"
+              }
             },
-          ],
+          ]
         },
         {
           name: "messages",
           label: {
             en: "Messages",
-            pl: "Wiadomości",
+
+            zh: "消息"
           },
           fields: [
             {
@@ -99,31 +109,35 @@ export const EmailMessages: GlobalConfig = {
               type: "upload",
               label: {
                 en: "Logo",
-                pl: "Logo",
+
+                zh: "标志"
               },
-              relationTo: "media",
+              relationTo: "media"
             },
             {
               name: "additionalText",
               type: "textarea",
               label: {
                 en: "Additional text",
-                pl: "Dodatkowy tekst",
-              },
+
+                zh: "附加文本"
+              }
             },
             {
               name: "template",
               type: "select",
               required: true,
               defaultValue: "default",
-              options: [{ value: "default", label: { en: "Default", pl: "Domyślny" } }],
+              options: [{ value: "default", label: { en: "Default", zh: "默认" } },
+                { value: "template 1", label: { en: "template 1", zh: "默认" } }
+              ]
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
   ],
   hooks: {
-    afterChange: [revalidateGlobal],
-  },
+    afterChange: [revalidateGlobal]
+  }
 };

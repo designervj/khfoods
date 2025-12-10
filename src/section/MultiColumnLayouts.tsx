@@ -16,7 +16,7 @@ export const SidebarMainLayout: React.FC<ComplexLayoutProps> = ({ content, gap =
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -36,7 +36,7 @@ export const MainSidebarLayout: React.FC<ComplexLayoutProps> = ({ content, gap =
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -60,7 +60,7 @@ export const HeaderTwoColumnsLayout: React.FC<ComplexLayoutProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -87,7 +87,7 @@ export const HeaderThreeColumnsLayout: React.FC<ComplexLayoutProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -115,7 +115,7 @@ export const TwoColumnsFooterLayout: React.FC<ComplexLayoutProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -138,7 +138,7 @@ export const MasonryLayout: React.FC<ComplexLayoutProps> = ({ content, gap = "md
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -163,7 +163,7 @@ export const CenterWithSidePanels: React.FC<ComplexLayoutProps> = ({
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -187,7 +187,7 @@ const MultiColumnLayoutComponents = {
   HeaderThreeColumnsLayout,
   TwoColumnsFooterLayout,
   MasonryLayout,
-  CenterWithSidePanels,
+  CenterWithSidePanels
 };
 
 export default MultiColumnLayoutComponents;

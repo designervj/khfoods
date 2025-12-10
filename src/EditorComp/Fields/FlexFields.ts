@@ -1,11 +1,11 @@
 export const FlexLayoutFields = {
   "Horizontal Gap": {
     type: "text",
-    label: "Horizontal Gap",
+    label: "Horizontal Gap"
   },
   "Vertical Gap": {
     type: "text",
-    label: "Vertical Gap",
+    label: "Vertical Gap"
   },
   "Layout Direction": {
     type: "radio",
@@ -14,7 +14,7 @@ export const FlexLayoutFields = {
       { label: "Vertical", value: "column" },
       { label: "Horizontal Reverse", value: "row-reverse" },
       { label: "Vertical Reverse", value: "column-reverse" },
-    ],
+    ]
   },
   "Justify Content": {
     type: "radio",
@@ -25,7 +25,7 @@ export const FlexLayoutFields = {
       { label: "Space Between", value: "space-between" },
       { label: "Space Around", value: "space-around" },
       { label: "Space Evenly", value: "space-evenly" },
-    ],
+    ]
   },
   "Align Items": {
     type: "radio",
@@ -34,7 +34,7 @@ export const FlexLayoutFields = {
       { label: "Center", value: "center" },
       { label: "End", value: "flex-end" },
       { label: "Stretch", value: "stretch" },
-    ],
+    ]
   },
   "Layout Wrapping": {
     type: "radio",
@@ -42,7 +42,7 @@ export const FlexLayoutFields = {
       { label: "No Wrap", value: "nowrap" },
       { label: "Wrap", value: "wrap" },
       { label: "Wrap Reverse", value: "wrap-reverse" },
-    ],
+    ]
   },
   "Align Content": {
     type: "radio",
@@ -53,6 +53,6 @@ export const FlexLayoutFields = {
       { label: "Space Between", value: "space-between" },
       { label: "Space Around", value: "space-around" },
       { label: "Stretch", value: "stretch" },
-    ],
-  },
+    ]
+  }
 };

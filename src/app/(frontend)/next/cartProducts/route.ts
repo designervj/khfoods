@@ -21,8 +21,8 @@ export async function POST(req: Request) {
       collection: "products",
       where: {
         id: {
-          in: cart.map((product) => product.id),
-        },
+          in: cart.map((product) => product.id)
+        }
       },
       locale,
       select: {
@@ -36,8 +36,8 @@ export async function POST(req: Request) {
         slug: true,
         stock: true,
         sizes: true,
-        pricing: true,
-      },
+        pricing: true
+      }
     });
 
     const filledProducts = getFilledProducts(products, cart);
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     const productsWithTotal = {
       filledProducts,
       total,
-      totalQuantity: filledProducts.reduce((acc, product) => acc + (product?.quantity ?? 0), 0),
+      totalQuantity: filledProducts.reduce((acc, product) => acc + (product?.quantity ?? 0), 0)
     };
 
     return Response.json({ status: 200, productsWithTotal });

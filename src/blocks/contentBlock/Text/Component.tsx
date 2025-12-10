@@ -17,7 +17,7 @@ export const TextBlock: React.FC<any> = (props) => {
     fontStyle = "normal",
     maxWidth = "full",
     animation = "none",
-    className,
+    className
   } = props;
 
   const fontSizeClasses = {
@@ -27,7 +27,7 @@ export const TextBlock: React.FC<any> = (props) => {
     lg: "text-lg",
     xl: "text-xl",
     "2xl": "text-2xl",
-    "3xl": "text-3xl",
+    "3xl": "text-3xl"
   };
 
   const fontWeightClasses = {
@@ -35,21 +35,21 @@ export const TextBlock: React.FC<any> = (props) => {
     normal: "font-normal",
     medium: "font-medium",
     semibold: "font-semibold",
-    bold: "font-bold",
+    bold: "font-bold"
   };
 
   const textAlignClasses = {
     left: "text-left",
     center: "text-center",
     right: "text-right",
-    justify: "text-justify",
+    justify: "text-justify"
   };
 
   const lineHeightClasses = {
     tight: "leading-tight",
     normal: "leading-normal",
     relaxed: "leading-relaxed",
-    loose: "leading-loose",
+    loose: "leading-loose"
   };
 
   const letterSpacingClasses = {
@@ -57,7 +57,7 @@ export const TextBlock: React.FC<any> = (props) => {
     tight: "tracking-tight",
     normal: "tracking-normal",
     wide: "tracking-wide",
-    wider: "tracking-wider",
+    wider: "tracking-wider"
   };
 
   const paddingClasses = {
@@ -65,7 +65,7 @@ export const TextBlock: React.FC<any> = (props) => {
     sm: "p-2",
     md: "p-4",
     lg: "p-6",
-    xl: "p-8",
+    xl: "p-8"
   };
 
   const marginClasses = {
@@ -73,25 +73,25 @@ export const TextBlock: React.FC<any> = (props) => {
     sm: "m-2",
     md: "m-4",
     lg: "m-6",
-    xl: "m-8",
+    xl: "m-8"
   };
 
   const textTransformClasses = {
     none: "normal-case",
     uppercase: "uppercase",
     lowercase: "lowercase",
-    capitalize: "capitalize",
+    capitalize: "capitalize"
   };
 
   const textDecorationClasses = {
     none: "no-underline",
     underline: "underline",
-    "line-through": "line-through",
+    "line-through": "line-through"
   };
 
   const fontStyleClasses = {
     normal: "not-italic",
-    italic: "italic",
+    italic: "italic"
   };
 
   const maxWidthClasses = {
@@ -99,7 +99,7 @@ export const TextBlock: React.FC<any> = (props) => {
     sm: "max-w-sm",
     md: "max-w-md",
     lg: "max-w-lg",
-    xl: "max-w-xl",
+    xl: "max-w-xl"
   };
 
   const animationClasses = {
@@ -107,12 +107,12 @@ export const TextBlock: React.FC<any> = (props) => {
     fadeIn: "animate-fadeIn",
     slideUp: "animate-slideUp",
     slideLeft: "animate-slideLeft",
-    slideRight: "animate-slideRight",
+    slideRight: "animate-slideRight"
   };
 
   const style: React.CSSProperties = {
     color: textColor || undefined,
-    backgroundColor: backgroundColor || undefined,
+    backgroundColor: backgroundColor || undefined
   };
 
   return (

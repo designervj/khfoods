@@ -4,7 +4,7 @@
 import {
   useSelectedLayoutSegments,
   useRouter,
-  usePathname,
+  usePathname
 } from "next/navigation";
 import { type PayloadAdminBarProps, PayloadAdminBar } from "payload-admin-bar";
 import { useCallback, useState } from "react";
@@ -21,16 +21,16 @@ const baseClass = "admin-bar";
 const collectionLabels = {
   pages: {
     plural: "Pages",
-    singular: "Page",
+    singular: "Page"
   },
   posts: {
     plural: "Posts",
-    singular: "Post",
+    singular: "Post"
   },
   projects: {
     plural: "Projects",
-    singular: "Project",
-  },
+    singular: "Project"
+  }
 };
 
 const Title = () => <span>Dashboard</span>;
@@ -146,13 +146,13 @@ export const AdminBar = (props: { adminBarProps?: PayloadAdminBarProps }) => {
             classNames={{
               controls: "font-medium text-white",
               logo: "text-white",
-              user: "text-white",
+              user: "text-white"
             }}
             cmsURL={getClientSideURL()}
             collection={collection}
             collectionLabels={{
               plural: collectionLabels[collection]?.plural || "Pages",
-              singular: collectionLabels[collection]?.singular || "Page",
+              singular: collectionLabels[collection]?.singular || "Page"
             }}
             logo={<Title />}
             onAuthChange={onAuthChange}
@@ -166,7 +166,7 @@ export const AdminBar = (props: { adminBarProps?: PayloadAdminBarProps }) => {
               backgroundColor: "transparent",
               padding: 0,
               position: "relative",
-              zIndex: "unset",
+              zIndex: "unset"
             }}
           />
         </div>

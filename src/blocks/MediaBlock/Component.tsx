@@ -4,7 +4,7 @@ import {
   paddingBottomClasses,
   paddingTopClasses,
   spacingBottomClasses,
-  spacingTopClasses,
+  spacingTopClasses
 } from "@/blocks/globals";
 import RichText from "@/components/RichText";
 import { cn } from "src/utilities/cn";
@@ -36,7 +36,7 @@ export const MediaBlock = (props: Props) => {
     spacingTop,
     spacingBottom,
     paddingBottom,
-    paddingTop,
+    paddingTop
   } = props;
 
   let caption: SerializedEditorState<SerializedLexicalNode> | null | undefined;
@@ -47,7 +47,7 @@ export const MediaBlock = (props: Props) => {
       className={cn(
         "",
         {
-          container: enableGutter,
+          container: enableGutter
         },
         className,
         spacingTopClasses[spacingTop ?? "medium"],
@@ -66,7 +66,7 @@ export const MediaBlock = (props: Props) => {
           className={cn(
             "mt-6",
             {
-              container: !disableInnerContainer,
+              container: !disableInnerContainer
             },
             captionClassName,
           )}

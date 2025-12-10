@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/utilities/cn";
@@ -32,15 +32,15 @@ export const PickupShipmentMenuClient = ({ orderID }: { orderID: string }) => {
   const inPostDimensions = [
     {
       label: "A (8 x 38 x 64 cm), 25kg limit",
-      value: "small",
+      value: "small"
     },
     {
       label: "B (19 x 38 x 64 cm), 25kg limit",
-      value: "medium",
+      value: "medium"
     },
     {
       label: "C (41 x 38 x 64 cm), 25kg limit",
-      value: "large",
+      value: "large"
     },
   ];
 
@@ -49,7 +49,7 @@ export const PickupShipmentMenuClient = ({ orderID }: { orderID: string }) => {
       setIsLoading(true);
       const { data } = await axios.post<string>(`/next/package`, {
         orderID,
-        dimension,
+        dimension
       });
 
       await form.submit({ skipValidation: true, overrides: { printLabel: { packageNumber: data } } });
@@ -82,7 +82,7 @@ export const PickupShipmentMenuClient = ({ orderID }: { orderID: string }) => {
           <Select
             value={{
               value: dimension,
-              label: inPostDimensions.find((option) => option.value === dimension)?.label,
+              label: inPostDimensions.find((option) => option.value === dimension)?.label
             }}
             onChange={handleDimensionChange}
             options={inPostDimensions}

@@ -14,65 +14,65 @@ export const AboutNormalType: ComponentConfig = {
 
   fields: {
     ServicesTitle: {
-      type: "text",
+      type: "text"
     },
     ServicesTitleSize: {
-      type: "number",
+      type: "number"
     },
     ServicesTitleColor: {
-      type: "text",
+      type: "text"
     },
     ServicesContentSize: {
-      type: "number",
+      type: "number"
     },
     margin: {
       type: "object",
       objectFields: {
         marginleft: {
-          type: "text",
+          type: "text"
         },
         marginright: {
-          type: "text",
+          type: "text"
         },
         margintop: {
-          type: "text",
+          type: "text"
         },
         marginbottom: {
-          type: "text",
-        },
-      },
+          type: "text"
+        }
+      }
     },
     width: {
-      type: "number",
+      type: "number"
     },
     cardContent: {
       type: "array",
       arrayFields: {
         cardtitle: {
-          type: "text",
+          type: "text"
         },
         carddescription: {
-          type: "text",
+          type: "text"
         },
         cardicon: {
           type: "select",
           options: [
             {
               label: "Layout",
-              value: "layout",
+              value: "layout"
             },
             {
               label: "Building",
-              value: "building",
+              value: "building"
             },
             {
               label: "House",
-              value: "house",
+              value: "house"
             },
-          ],
-        },
-      },
-    },
+          ]
+        }
+      }
+    }
   },
 
   defaultProps: {
@@ -86,11 +86,11 @@ export const AboutNormalType: ComponentConfig = {
       marginright: "auto",
       margintop: "0",
       marginbottom: "0",
-      marginleft: "auto",
+      marginleft: "auto"
     },
     cardContent: [
     ],
-    width: 85,
+    width: 85
   },
 
   render: ({
@@ -102,10 +102,10 @@ export const AboutNormalType: ComponentConfig = {
     SerTitleSize,
     margin,
     width,
-    cardContent,
+    cardContent
   }) => {
     const icons = {
-      house: <LuHouse />,
+      house: <LuHouse />
     };
 
     return (
@@ -113,13 +113,13 @@ export const AboutNormalType: ComponentConfig = {
         style={{
           backgroundColor: ServicesBg,
           paddingTop: "60px",
-          paddingBottom: "60px",
+          paddingBottom: "60px"
         }}
       >
         <div
           style={{
             width: `${width}%`,
-            margin: `${margin.margintop} ${margin.marginright} ${margin.marginbottom} ${margin.marginleft}`,
+            margin: `${margin.margintop} ${margin.marginright} ${margin.marginbottom} ${margin.marginleft}`
           }}
         >
           {/* ⭐ TITLE comes from props */}
@@ -129,7 +129,7 @@ export const AboutNormalType: ComponentConfig = {
               fontSize: `${ServicesTitleSize}px`,
               color: ServicesTitleColor,
               fontWeight: "700",
-              marginBottom: "40px",
+              marginBottom: "40px"
             }}
           >
             {ServicesTitle}
@@ -139,7 +139,7 @@ export const AboutNormalType: ComponentConfig = {
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr 1fr",
-              gap: "30px",
+              gap: "30px"
             }}
           >
             {cardContent.length>0 && cardContent.map(({ cardtitle, carddescription, cardicon },index) => {
@@ -150,14 +150,14 @@ export const AboutNormalType: ComponentConfig = {
                     backgroundColor: "#fff",
                     padding: "30px",
                     borderRadius: "10px",
-                    boxShadow: "0px 0px 15px rgba(0,0,0,0.08)",
+                    boxShadow: "0px 0px 15px rgba(0,0,0,0.08)"
                   }}
                 >
                   <div
                     style={{
                       fontSize: `${ServicesTitleSize}px`,
                       marginBottom: "20px",
-                      color: "#e0b36c",
+                      color: "#e0b36c"
                     }}
                   >
                     {IconMain}
@@ -166,7 +166,7 @@ export const AboutNormalType: ComponentConfig = {
                     style={{
                       fontSize: `${SerTitleSize}px`,
                       fontWeight: "700",
-                      paddingBottom: "10px",
+                      paddingBottom: "10px"
                     }}
                   >
                     {cardtitle}
@@ -174,7 +174,7 @@ export const AboutNormalType: ComponentConfig = {
                   <p
                     style={{
                       fontSize: `${ServicesContentSize}px`,
-                      lineHeight: "28px",
+                      lineHeight: "28px"
                     }}
                   >
                     {carddescription}
@@ -189,14 +189,14 @@ export const AboutNormalType: ComponentConfig = {
                 backgroundColor: "#fff",
                 padding: "30px",
                 borderRadius: "10px",
-                boxShadow: "0px 0px 15px rgba(0,0,0,0.08)",
+                boxShadow: "0px 0px 15px rgba(0,0,0,0.08)"
               }}
             >
               <div
                 style={{
                   fontSize: `${ServicesTitleSize}px`,
                   marginBottom: "20px",
-                  color: "#e0b36c",
+                  color: "#e0b36c"
                 }}
               >
                 <LayoutGrid />
@@ -205,7 +205,7 @@ export const AboutNormalType: ComponentConfig = {
                 style={{
                   fontSize: `${SerTitleSize}px`,
                   fontWeight: "700",
-                  paddingBottom: "10px",
+                  paddingBottom: "10px"
                 }}
               >
                 ARCHITECTURE
@@ -213,7 +213,7 @@ export const AboutNormalType: ComponentConfig = {
               <p
                 style={{
                   fontSize: `${ServicesContentSize}px`,
-                  lineHeight: "28px",
+                  lineHeight: "28px"
                 }}
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -229,14 +229,14 @@ export const AboutNormalType: ComponentConfig = {
                 backgroundColor: "#fff",
                 padding: "30px",
                 borderRadius: "10px",
-                boxShadow: "0px 0px 15px rgba(0,0,0,0.08)",
+                boxShadow: "0px 0px 15px rgba(0,0,0,0.08)"
               }}
             >
               <div
                 style={{
                   fontSize: `${ServicesTitleSize}px`,
                   marginBottom: "20px",
-                  color: "#e0b36c",
+                  color: "#e0b36c"
                 }}
               >
                 <LuHouse />
@@ -245,7 +245,7 @@ export const AboutNormalType: ComponentConfig = {
                 style={{
                   fontSize: `${SerTitleSize}px`,
                   fontWeight: "700",
-                  paddingBottom: "10px",
+                  paddingBottom: "10px"
                 }}
               >
                 INTERIOR
@@ -253,7 +253,7 @@ export const AboutNormalType: ComponentConfig = {
               <p
                 style={{
                   fontSize: `${ServicesContentSize}px`,
-                  lineHeight: "28px",
+                  lineHeight: "28px"
                 }}
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -266,5 +266,5 @@ export const AboutNormalType: ComponentConfig = {
         </div>
       </div>
     );
-  },
+  }
 };

@@ -5,7 +5,7 @@ export const ProgressBar: Block = {
   interfaceName: "ProgressBarBlock",
   labels: {
     singular: "📊 Progress Bar",
-    plural: "📊 Progress Bars",
+    plural: "📊 Progress Bars"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -29,7 +29,7 @@ export const ProgressBar: Block = {
               name: "label",
               type: "text",
               label: "Label",
-              required: true,
+              required: true
             },
             {
               name: "percentage",
@@ -37,21 +37,21 @@ export const ProgressBar: Block = {
               label: "Percentage",
               required: true,
               min: 0,
-              max: 100,
+              max: 100
             },
             {
               name: "showPercentage",
               type: "checkbox",
               label: "Show Percentage",
-              defaultValue: true,
+              defaultValue: true
             },
             {
               name: "animateOnScroll",
               type: "checkbox",
               label: "Animate When Scrolled Into View",
-              defaultValue: true,
+              defaultValue: true
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -60,23 +60,23 @@ export const ProgressBar: Block = {
               name: "barColor",
               type: "text",
               label: "Bar Color",
-              defaultValue: "#3b82f6",
+              defaultValue: "#3b82f6"
             },
             {
               name: "backgroundColor",
               type: "text",
               label: "Background Color",
-              defaultValue: "#e5e7eb",
+              defaultValue: "#e5e7eb"
             },
             {
               name: "labelColor",
               type: "text",
-              label: "Label Color",
+              label: "Label Color"
             },
             {
               name: "percentageColor",
               type: "text",
-              label: "Percentage Color",
+              label: "Percentage Color"
             },
             {
               name: "height",
@@ -87,7 +87,7 @@ export const ProgressBar: Block = {
                 { label: "Thin", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Thick", value: "lg" },
-              ],
+              ]
             },
             {
               name: "borderRadius",
@@ -99,13 +99,13 @@ export const ProgressBar: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Full", value: "full" },
-              ],
+              ]
             },
             {
               name: "striped",
               type: "checkbox",
               label: "Striped Effect",
-              defaultValue: false,
+              defaultValue: false
             },
             {
               name: "animated",
@@ -113,14 +113,14 @@ export const ProgressBar: Block = {
               label: "Animated Stripes",
               defaultValue: false,
               admin: {
-                condition: (data) => Boolean(data.striped),
-              },
+                condition: (data) => Boolean(data.striped)
+              }
             },
             {
               name: "showGlow",
               type: "checkbox",
               label: "Show Glow Effect",
-              defaultValue: false,
+              defaultValue: false
             },
             {
               name: "margin",
@@ -132,16 +132,16 @@ export const ProgressBar: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

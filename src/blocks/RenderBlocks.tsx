@@ -20,14 +20,14 @@ import {
   ThreeEqualColumnsComponent,
   FourEqualColumnsComponent,
   FiveEqualColumnsComponent,
-  SixEqualColumnsComponent,
+  SixEqualColumnsComponent
 } from "@/section/components/EqualColumns";
 // Offset Columns
 import {
   TwoThirdsOneThirdComponent,
   OneThirdTwoThirdsComponent,
   OneQuarterThreeQuartersComponent,
-  ThreeQuartersOneQuarterComponent,
+  ThreeQuartersOneQuarterComponent
 } from "@/section/components/OffsetColumns";
 // Multi-Column Layouts
 import {
@@ -35,14 +35,14 @@ import {
   MainSidebarLayoutComponent,
   HeaderTwoColumnsLayoutComponent,
   HeaderThreeColumnsLayoutComponent,
-  MasonryLayoutComponent,
+  MasonryLayoutComponent
 } from "@/section/components/MultiColumnLayouts";
 // Multi-Row Columns
 import {
   TwoRowsTwoColumnsComponent,
   TwoRowsThreeColumnsComponent,
   ThreeRowsTwoColumnsComponent,
-  ThreeRowsThreeColumnsComponent,
+  ThreeRowsThreeColumnsComponent
 } from "@/section/components/MultiRowColumns";
 import { BlurbBlock } from "@/blocks/contentBlock/Blurb/Component";
 import { TextBlock } from "@/blocks/contentBlock/Text/Component";
@@ -86,12 +86,12 @@ const blockComponents = {
   blurb: BlurbBlock,
   text: TextBlock,
   toggle: ToggleBlock,
-  divider: DividerBlock,
+  divider: DividerBlock
 };
 
 export const RenderBlocks = ({
   blocks,
-  pageId,
+  pageId
 }: {
   blocks: NonNullable<
     NonNullable<Page["sections"]>[number]["rows"]

@@ -38,14 +38,14 @@ export const getRevenue = async (req: PayloadRequest) => {
       case "from": {
         whereQuery = {
           createdAt: {
-            greater_than_equal: dateFromISO,
-          },
+            greater_than_equal: dateFromISO
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(dateFrom!), 30).toISOString(),
-            less_than: dateFromISO,
-          },
+            less_than: dateFromISO
+          }
         };
         break;
       }
@@ -54,14 +54,14 @@ export const getRevenue = async (req: PayloadRequest) => {
         whereQuery = {
           createdAt: {
             greater_than_equal: thirtyDaysAgo,
-            less_than_equal: dateToISO,
-          },
+            less_than_equal: dateToISO
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(), 60).toISOString(),
-            less_than: thirtyDaysAgo,
-          },
+            less_than: thirtyDaysAgo
+          }
         };
         break;
       }
@@ -69,14 +69,14 @@ export const getRevenue = async (req: PayloadRequest) => {
         whereQuery = {
           createdAt: {
             greater_than_equal: dateFromISO,
-            less_than_equal: dateToISO,
-          },
+            less_than_equal: dateToISO
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(dateFrom!), 30).toISOString(),
-            less_than: dateFromISO,
-          },
+            less_than: dateFromISO
+          }
         };
         break;
       }
@@ -85,8 +85,8 @@ export const getRevenue = async (req: PayloadRequest) => {
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(), 60).toISOString(),
-            less_than: thirtyDaysAgo,
-          },
+            less_than: thirtyDaysAgo
+          }
         };
       }
     }
@@ -98,11 +98,11 @@ export const getRevenue = async (req: PayloadRequest) => {
       select: {
         orderDetails: {
           total: true,
-          currency: true,
+          currency: true
         },
-        createdAt: true,
+        createdAt: true
       },
-      where: whereQuery,
+      where: whereQuery
     });
 
     // console.log(whereQuery);
@@ -134,10 +134,10 @@ export const getRevenue = async (req: PayloadRequest) => {
       select: {
         orderDetails: {
           total: true,
-          currency: true,
-        },
+          currency: true
+        }
       },
-      where: previousPeriodWhereQuery,
+      where: previousPeriodWhereQuery
     });
 
     const previousPeriodRevenue = Number(
@@ -164,7 +164,7 @@ export const getRevenue = async (req: PayloadRequest) => {
     return Response.json(
       {
         totalRevenue,
-        percentage,
+        percentage
       },
       { status: 200 },
     );

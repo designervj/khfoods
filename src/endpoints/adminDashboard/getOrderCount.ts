@@ -35,14 +35,14 @@ export const getOrderCount = async (req: PayloadRequest) => {
       case "from": {
         whereQuery = {
           createdAt: {
-            greater_than_equal: dateFromISO,
-          },
+            greater_than_equal: dateFromISO
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(dateFrom!), 30).toISOString(),
-            less_than: dateFromISO,
-          },
+            less_than: dateFromISO
+          }
         };
         break;
       }
@@ -51,14 +51,14 @@ export const getOrderCount = async (req: PayloadRequest) => {
         whereQuery = {
           createdAt: {
             greater_than_equal: thirtyDaysAgo,
-            less_than_equal: dateToISO,
-          },
+            less_than_equal: dateToISO
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(), 60).toISOString(),
-            less_than: thirtyDaysAgo,
-          },
+            less_than: thirtyDaysAgo
+          }
         };
         break;
       }
@@ -66,14 +66,14 @@ export const getOrderCount = async (req: PayloadRequest) => {
         whereQuery = {
           createdAt: {
             greater_than_equal: dateFromISO,
-            less_than_equal: dateToISO,
-          },
+            less_than_equal: dateToISO
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(dateFrom!), 30).toISOString(),
-            less_than: dateFromISO,
-          },
+            less_than: dateFromISO
+          }
         };
         break;
       }
@@ -81,14 +81,14 @@ export const getOrderCount = async (req: PayloadRequest) => {
         const thirtyDaysAgo = subDays(new Date(), 30).toISOString();
         whereQuery = {
           createdAt: {
-            greater_than_equal: thirtyDaysAgo,
-          },
+            greater_than_equal: thirtyDaysAgo
+          }
         };
         previousPeriodWhereQuery = {
           createdAt: {
             greater_than_equal: subDays(new Date(), 60).toISOString(),
-            less_than: thirtyDaysAgo,
-          },
+            less_than: thirtyDaysAgo
+          }
         };
       }
     }
@@ -96,13 +96,13 @@ export const getOrderCount = async (req: PayloadRequest) => {
     const { totalDocs } = await payload.find({
       collection: "orders",
       depth: 0,
-      where: whereQuery,
+      where: whereQuery
     });
 
     const { totalDocs: previousPeriodTotal } = await payload.find({
       collection: "orders",
       depth: 0,
-      where: previousPeriodWhereQuery,
+      where: previousPeriodWhereQuery
     });
 
     const percentage =
@@ -113,7 +113,7 @@ export const getOrderCount = async (req: PayloadRequest) => {
     return Response.json(
       {
         total: totalDocs,
-        percentage,
+        percentage
       },
       { status: 200 },
     );

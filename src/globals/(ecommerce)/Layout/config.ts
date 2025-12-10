@@ -4,7 +4,7 @@ import {
   HeadingFeature,
   HorizontalRuleFeature,
   InlineToolbarFeature,
-  lexicalEditor,
+  lexicalEditor
 } from "@payloadcms/richtext-lexical";
 
 import { Accordion } from "@/blocks/Accordion/config";
@@ -21,16 +21,18 @@ export const ShopLayout: GlobalConfig = {
   slug: "shopLayout",
   label: {
     en: "Shop Layout",
-    pl: "Wygląd sklepu",
+
+    zh: "商店布局"
   },
   access: {
-    read: () => true,
+    read: () => true
   },
   admin: {
     group: {
       en: "Shop settings",
-      pl: "Ustawienia sklepu",
-    },
+
+      zh: "商店设置"
+    }
   },
   fields: [
     {
@@ -39,7 +41,8 @@ export const ShopLayout: GlobalConfig = {
         {
           label: {
             en: "Product Details",
-            pl: "Karta produktu",
+
+            zh: "产品详情"
           },
           name: "productDetails",
           fields: [
@@ -50,34 +53,38 @@ export const ShopLayout: GlobalConfig = {
                 {
                   label: {
                     en: "With image gallery and expandable details",
-                    pl: "Z galerią zdjęć i rozszerzalnymi szczegółami",
+
+                    zh: "带图库和可展开详情"
                   },
-                  value: "WithImageGalleryExpandableDetails",
+                  value: "WithImageGalleryExpandableDetails"
                 },
               ],
               label: {
                 en: "Type of product card",
-                pl: "Rodzaj karty produktu",
+
+                zh: "产品卡类型"
               },
               required: true,
-              defaultValue: "WithImageGalleryExpandableDetails",
+              defaultValue: "WithImageGalleryExpandableDetails"
             },
             {
               name: "reviewsEnabled",
               type: "checkbox",
               label: {
                 en: "Enable product reviews",
-                pl: "Włącz opinie o produkcie",
+
+                zh: "启用产品评论"
               },
               defaultValue: true,
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
         {
           label: {
             en: "Product List",
-            pl: "Lista produktów",
+
+            zh: "产品列表"
           },
           name: "productList",
           fields: [
@@ -86,39 +93,44 @@ export const ShopLayout: GlobalConfig = {
               type: "select",
               label: {
                 en: "Filters",
-                pl: "Filtry",
+
+                zh: "过滤器"
               },
               required: true,
               options: [
                 {
                   label: {
                     en: "None",
-                    pl: "Brak",
+
+                    zh: "无"
                   },
-                  value: "none",
+                  value: "none"
                 },
                 {
                   label: {
                     en: "With sidebar",
-                    pl: "Z bocznym panelem",
+
+                    zh: "带侧边栏"
                   },
-                  value: "withSidebar",
+                  value: "withSidebar"
                 },
                 {
                   label: {
                     en: "Sort only",
-                    pl: "Tylko sortowanie",
+
+                    zh: "仅排序"
                   },
-                  value: "sortOnly",
+                  value: "sortOnly"
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
         {
           label: {
             en: "Cart and Wishlist",
-            pl: "Koszyk i lista życzeń",
+
+            zh: "购物车和心愿单"
           },
           name: "cartAndWishlist",
           fields: [
@@ -129,24 +141,27 @@ export const ShopLayout: GlobalConfig = {
                 {
                   label: {
                     en: "Slide-over",
-                    pl: "Wysuwane",
+
+                    zh: "滑出式"
                   },
-                  value: "slideOver",
+                  value: "slideOver"
                 },
               ],
               label: {
                 en: "Type of cart and wishlist",
-                pl: "Rodzaj koszyka i listy życzeń",
+
+                zh: "购物车和心愿单类型"
               },
               defaultValue: "slideOver",
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
         {
           label: {
             en: "Checkout page",
-            pl: "Strona checkout",
+
+            zh: "结账页面"
           },
           name: "checkout",
           fields: [
@@ -157,24 +172,27 @@ export const ShopLayout: GlobalConfig = {
                 {
                   label: {
                     en: "One Step With Summary",
-                    pl: "Jeden krok z podsumowaniem",
+
+                    zh: "一步式结账含摘要"
                   },
-                  value: "OneStepWithSummary",
+                  value: "OneStepWithSummary"
                 },
               ],
               label: {
                 en: "Type of checkout page",
-                pl: "Rodzaj strony checkout",
+
+                zh: "结账页面类型"
               },
               required: true,
-              defaultValue: "OneStepWithSummary",
+              defaultValue: "OneStepWithSummary"
             },
-          ],
+          ]
         },
         {
           label: {
             en: "Client panel",
-            pl: "Panel klienta",
+
+            zh: "客户面板"
           },
           name: "clientPanel",
           fields: [
@@ -185,24 +203,27 @@ export const ShopLayout: GlobalConfig = {
                 {
                   label: {
                     en: "With sidebar",
-                    pl: "Z bocznym panelem",
+
+                    zh: "带侧边栏"
                   },
-                  value: "withSidebar",
+                  value: "withSidebar"
                 },
               ],
               label: {
                 en: "Type of client panel",
-                pl: "Rodzaj panelu klienta",
+
+                zh: "客户面板类型"
               },
               required: true,
-              defaultValue: "withSidebar",
+              defaultValue: "withSidebar"
             },
             {
               name: "help",
               type: "group",
               label: {
                 en: "Help page",
-                pl: "Strona pomocy",
+
+                zh: "帮助页面"
               },
               fields: [
                 {
@@ -210,10 +231,11 @@ export const ShopLayout: GlobalConfig = {
                   type: "text",
                   label: {
                     en: "Title",
-                    pl: "Tytuł",
+
+                    zh: "标题"
                   },
                   localized: true,
-                  required: true,
+                  required: true
                 },
                 {
                   name: "content",
@@ -228,23 +250,24 @@ export const ShopLayout: GlobalConfig = {
                         InlineToolbarFeature(),
                         HorizontalRuleFeature(),
                       ];
-                    },
+                    }
                   }),
                   label: {
                     en: "Content",
-                    pl: "Treść",
+
+                    zh: "内容"
                   },
                   localized: true,
-                  required: true,
+                  required: true
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
   ],
   hooks: {
-    afterChange: [revalidateGlobal],
-  },
+    afterChange: [revalidateGlobal]
+  }
 };

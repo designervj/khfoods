@@ -3,7 +3,7 @@ import {
   spacingBottomClasses,
   getCenteringClasses,
   paddingBottomClasses,
-  paddingTopClasses,
+  paddingTopClasses
 } from "@/blocks/globals";
 import { CMSLink } from "@/components/Link";
 import RichText from "@/components/RichText";
@@ -19,7 +19,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
     half: "lg:col-span-6",
     twoThirds: "lg:col-span-8",
     fiveSixth: "lg:col-span-10",
-    full: "lg:col-span-12",
+    full: "lg:col-span-12"
   };
 
   const isSingleRadius = !props.specifiedRadius && props.radius && props.radiusAll;
@@ -44,7 +44,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
           `${props.radiusTopLeft} ${props.radiusTopRight} ${props.radiusBottomRight} ${props.radiusBottomLeft}`,
       )}
       style={{
-        ...backgroundStyle,
+        ...backgroundStyle
       }}
     >
       {(!props.alignment || props.alignment === null || props.alignment === "center") && (
@@ -64,7 +64,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
                 className={cn(
                   `col-span-4 px-8`,
                   {
-                    "md:col-span-2": size !== "full",
+                    "md:col-span-2": size !== "full"
                   },
                   colsSpanClasses[size!],
                   props.alignment !== "center" ? "lg:first:pl-0 lg:last:pr-0" : "",

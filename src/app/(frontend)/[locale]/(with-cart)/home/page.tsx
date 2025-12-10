@@ -8,7 +8,6 @@ import ProductSection from "@/frontendComponents/ProductSection";
 import SliderBrand from "@/frontendComponents/SliderBrand";
 import TestimonialsSection from "@/frontendComponents/TestimonialsSection";
 
-
 export const dynamic = "force-dynamic";
 
 const HomePage = () => {

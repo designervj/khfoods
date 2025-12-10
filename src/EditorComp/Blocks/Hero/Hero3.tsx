@@ -26,8 +26,8 @@ export const HeroSliderBlock: ComponentConfig = {
         width: { type: "number", label: "Content Width (%)" },
         textColor: { type: "text", label: "Text Color" },
         overlayOpacity: { type: "number", label: "Overlay Opacity (0-1)" }
-      },
-    },
+      }
+    }
   },
 
   // ----------------------------------------------
@@ -60,7 +60,7 @@ export const HeroSliderBlock: ComponentConfig = {
         textColor: "#ffffff",
         overlayOpacity: 0.4
       },
-    ],
+    ]
   },
 
   // ----------------------------------------------
@@ -89,7 +89,7 @@ export const HeroSliderBlock: ComponentConfig = {
           marginTop: `${marginTop}px`,
           borderRadius: `${borderRadius}px`,
           overflow: "hidden",
-          width: "100%",
+          width: "100%"
         }}
       >
         {/* Slide Background */}
@@ -104,7 +104,7 @@ export const HeroSliderBlock: ComponentConfig = {
             transition: "all 0.5s ease",
             position: "absolute",
         
-            inset: 0,
+            inset: 0
           }}
         />
 
@@ -113,7 +113,7 @@ export const HeroSliderBlock: ComponentConfig = {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundColor: `rgba(0,0,0,${s.overlayOpacity})`,
+            backgroundColor: `rgba(0,0,0,${s.overlayOpacity})`
           }}
         />
 
@@ -128,14 +128,14 @@ export const HeroSliderBlock: ComponentConfig = {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-            padding: "20px",
+            padding: "20px"
           }}
         >
           <h2
             style={{
               fontSize: `${s.fontsize}px`,
               color: s.textColor,
-              marginBottom: "10px",
+              marginBottom: "10px"
             }}
           >
             {s.title}
@@ -145,7 +145,7 @@ export const HeroSliderBlock: ComponentConfig = {
             style={{
               fontSize: `${s.fontsizeContent}px`,
               color: s.textColor,
-              maxWidth: `${s.width}%`,
+              maxWidth: `${s.width}%`
             }}
           >
             {s.content}
@@ -156,7 +156,7 @@ export const HeroSliderBlock: ComponentConfig = {
     marginTop: "20px",
     display: "flex",
     gap: "15px",
-    justifyContent: "center",
+    justifyContent: "center"
   }}
 >
   <button
@@ -168,7 +168,7 @@ export const HeroSliderBlock: ComponentConfig = {
       fontSize: "16px",
       border: "none",
       cursor: "pointer",
-      fontWeight: "600",
+      fontWeight: "600"
     }}
   >
     Learn More
@@ -183,7 +183,7 @@ export const HeroSliderBlock: ComponentConfig = {
       fontSize: "16px",
       border: "2px solid #fff",
       cursor: "pointer",
-      fontWeight: "600",
+      fontWeight: "600"
     }}
   >
     Contact Us
@@ -206,7 +206,7 @@ export const HeroSliderBlock: ComponentConfig = {
             cursor: "pointer",
             color: "#fff",
             fontSize: "22px",
-            zIndex: 20,
+            zIndex: 20
           }}
         >
           ❮
@@ -226,7 +226,7 @@ export const HeroSliderBlock: ComponentConfig = {
             cursor: "pointer",
             color: "#fff",
             fontSize: "22px",
-            zIndex: 20,
+            zIndex: 20
           }}
         >
           ❯
@@ -241,7 +241,7 @@ export const HeroSliderBlock: ComponentConfig = {
             display: "flex",
             justifyContent: "center",
             gap: "8px",
-            zIndex: 20,
+            zIndex: 20
           }}
         >
           {slides.map((_, i) => (
@@ -253,12 +253,12 @@ export const HeroSliderBlock: ComponentConfig = {
                 width: "10px",
                 borderRadius: "50%",
                 background: i === currentIndex ? "#fff" : "rgba(255,255,255,0.5)",
-                cursor: "pointer",
+                cursor: "pointer"
               }}
             />
           ))}
         </div>
       </section>
     );
-  },
+  }
 };

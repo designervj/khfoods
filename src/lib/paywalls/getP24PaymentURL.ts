@@ -17,7 +17,7 @@ export const getP24PaymentURL = async ({
   description,
   email,
   locale,
-  client = undefined,
+  client = undefined
 }: {
   secretId: string;
   posId: number;
@@ -39,7 +39,7 @@ export const getP24PaymentURL = async ({
       merchantId: posId,
       amount: amountInt,
       currency: currency,
-      crc: crc,
+      crc: crc
     });
 
     const sign = createHash("sha384").update(dataToSign).digest("hex");
@@ -54,7 +54,7 @@ export const getP24PaymentURL = async ({
       email: email,
       client: `${client?.firstName} ${client?.lastName}`,
       urlReturn: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/order/${sessionId}`,
-      sign,
+      sign
     };
 
     console.log(posId);
@@ -65,12 +65,12 @@ export const getP24PaymentURL = async ({
       };
     }>(`${endpoint}/api/v1/transaction/register`, data, {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       auth: {
         username: `${posId}`,
-        password: secretId,
-      },
+        password: secretId
+      }
     });
 
     const token = res.data.data.token;

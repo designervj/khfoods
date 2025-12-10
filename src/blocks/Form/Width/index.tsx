@@ -1,7 +1,7 @@
 export const Width = ({
   children,
   className,
-  width,
+  width
 }: {
   children: React.ReactNode;
   className?: string;

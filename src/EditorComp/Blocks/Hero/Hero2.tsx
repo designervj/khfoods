@@ -17,8 +17,8 @@ export const HeroNormalBlock: ComponentConfig = {
         marginLeft: { type: "text" },
         marginRight: { type: "text" },
         marginTop: { type: "text" },
-        marginBottom: { type: "text" },
-      },
+        marginBottom: { type: "text" }
+      }
     },
     width: { type: "number", label: "Width (%)" },
     backgroundColor: { type: "text", label: "Background Color" },
@@ -29,7 +29,7 @@ export const HeroNormalBlock: ComponentConfig = {
     AboutTitleSize: { type: "number", label: "About Title Size" },
     AboutTitleContent: { type: "number", label: "About Content Font Size" },
     title: { type: "text", label: "Title" },
-    content: { type: "textarea", label: "Content" },
+    content: { type: "textarea", label: "Content" }
   },
 
   // --------------------------------------------------
@@ -40,7 +40,7 @@ export const HeroNormalBlock: ComponentConfig = {
       marginLeft: "auto",
       marginRight: "auto",
       marginTop: 0,
-      marginBottom: 0,
+      marginBottom: 0
     },
     width: 85,
     backgroundColor: "#fff",
@@ -48,7 +48,7 @@ export const HeroNormalBlock: ComponentConfig = {
     fontsize: 50,
     fontsizeContent: 18,
     title: "Title",
-    content: "Content",
+    content: "Content"
   },
 
   // --------------------------------------------------
@@ -62,7 +62,7 @@ export const HeroNormalBlock: ComponentConfig = {
     fontsize,
     fontsizeContent,
     title,
-    content,
+    content
   }) => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
@@ -77,19 +77,19 @@ export const HeroNormalBlock: ComponentConfig = {
           display: "grid",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor,
+          backgroundColor
         }}
       >
         <div
           style={{
             width: `${width}%`,
-            margin: `${margin?.marginTop} ${margin?.marginRight} ${margin?.marginBottom} ${margin?.marginLeft}`,
+            margin: `${margin?.marginTop} ${margin?.marginRight} ${margin?.marginBottom} ${margin?.marginLeft}`
           }}
         >
           <h2
             style={{
               fontSize: `${fontsize}px`,
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
             {title}
@@ -98,7 +98,7 @@ export const HeroNormalBlock: ComponentConfig = {
           <p
             style={{
               fontSize: `${fontsizeContent}px`,
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
             {content}
@@ -106,5 +106,5 @@ export const HeroNormalBlock: ComponentConfig = {
         </div>
       </div>
     );
-  },
+  }
 };

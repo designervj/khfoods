@@ -17,7 +17,7 @@ export const FourEqualColumnsComponent: React.FC<FourEqualColumnsBlockProps> = (
   padding = "md",
   gap = "md",
   columns = [],
-  className,
+  className
 }) => {
   // Render each column's blocks
   const renderedColumns = columns

@@ -7,39 +7,39 @@ export const Fulfilment: GlobalConfig = {
   admin: {
     group: {
       en: "Orders",
-      pl: "Zamówienia",
-    },
+      zh: "订单"
+    }
   },
   label: {
     en: "Fulfilment data",
-    pl: "Dane realizacji",
+    zh: "履行数据"
   },
   fields: [
     {
       name: "shopAddress",
       type: "group",
       label: {
-        en: "Shop Address",
-        pl: "Adres sklepu",
+        en: "Shop Address"
+
       },
       fields: [
         {
           name: "name",
           type: "text",
           label: {
-            en: "Name",
-            pl: "Nazwa",
+            en: "Name"
+
           },
-          required: true,
+          required: true
         },
         {
           name: "address",
           type: "text",
           label: {
-            en: "Address",
-            pl: "Adres",
+            en: "Address"
+
           },
-          required: true,
+          required: true
         },
         {
           type: "row",
@@ -48,28 +48,28 @@ export const Fulfilment: GlobalConfig = {
               name: "city",
               type: "text",
               label: {
-                en: "City",
-                pl: "Miasto",
+                en: "City"
+
               },
               admin: {
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
             {
               name: "country",
               type: "select",
               label: {
-                en: "Country",
-                pl: "Kraj",
+                en: "Country"
+
               },
               options: [...countryList],
               admin: {
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
         {
           type: "row",
@@ -78,27 +78,27 @@ export const Fulfilment: GlobalConfig = {
               name: "region",
               type: "text",
               label: {
-                en: "Region",
-                pl: "Region",
+                en: "Region"
+
               },
               admin: {
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
             {
               name: "postalCode",
               type: "text",
               label: {
-                en: "Postal Code",
-                pl: "Kod pocztowy",
+                en: "Postal Code"
+
               },
               admin: {
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
         {
           type: "row",
@@ -107,29 +107,29 @@ export const Fulfilment: GlobalConfig = {
               name: "email",
               type: "text",
               label: {
-                en: "Email",
-                pl: "Email",
+                en: "Email"
+
               },
               admin: {
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
             {
               name: "phone",
               type: "text",
               label: {
-                en: "Phone number",
-                pl: "Numer telefonu",
+                en: "Phone number"
+
               },
               admin: {
-                width: "50%",
+                width: "50%"
               },
-              required: true,
+              required: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

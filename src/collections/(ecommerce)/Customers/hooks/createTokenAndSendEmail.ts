@@ -10,7 +10,7 @@ import type { CollectionAfterOperationHook } from "payload";
 export const createTokenAndSendEmail: CollectionAfterOperationHook<"customers"> = async ({
   operation,
   result,
-  req,
+  req
 }) => {
   const payload = req.payload;
   if (operation !== "create" || !result) return result;
@@ -19,7 +19,7 @@ export const createTokenAndSendEmail: CollectionAfterOperationHook<"customers"> 
     collection: "customers",
     id: result.id,
     req,
-    showHiddenFields: true,
+    showHiddenFields: true
   });
 
   try {
@@ -29,7 +29,7 @@ export const createTokenAndSendEmail: CollectionAfterOperationHook<"customers"> 
       await VerifyAccountEmail({
         url: `${process.env.NEXT_PUBLIC_SERVER_URL}/next/verify-email?token=${user._verificationToken}`,
         locale,
-        name: result.firstName ?? "Customer",
+        name: result.firstName ?? "Customer"
       }),
     );
 

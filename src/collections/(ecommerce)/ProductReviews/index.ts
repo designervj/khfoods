@@ -6,62 +6,62 @@ export const ProductReviews: CollectionConfig = {
     read: () => true,
     create: () => true,
     update: () => true,
-    delete: () => true,
+    delete: () => true
   },
   admin: {
     group: {
       en: "Products",
-      pl: "Produkty",
-      hr: "Proizvodi",
-    },
+      zh: "产品",
+      hr: "Proizvodi"
+    }
   },
   labels: {
     singular: {
       en: "Product Review",
-      pl: "Opinia o produkcie",
-      hr: "Recenzija proizvoda",
+      zh: "产品评论",
+      hr: "Recenzija proizvoda"
     },
     plural: {
       en: "Product Reviews",
-      pl: "Opinie o produktach",
-      hr: "Recenzije proizvoda",
-    },
+      zh: "产品评论",
+      hr: "Recenzije proizvoda"
+    }
   },
   fields: [
     {
       name: "product",
       type: "relationship",
       relationTo: "products",
-      required: true,
+      required: true
     },
     {
       name: "author",
       label: {
-        pl: "Autor opinii",
-        en: "Review author",
+
+        en: "Review author"
       },
       type: "relationship",
       relationTo: "customers",
-      required: true,
+      required: true
     },
     {
       name: "rating",
       label: {
-        pl: "Ocena",
-        en: "Rating",
+
+        en: "Rating"
       },
       type: "number",
       required: true,
       max: 5,
-      min: 1,
+      min: 1
     },
     {
       name: "review",
       label: {
-        pl: "Treść opinii",
-        en: "Review content",
+
+        en: "Review content"
       },
-      type: "richText",
+      type: "richText"
     },
-  ],
+  ]
 };

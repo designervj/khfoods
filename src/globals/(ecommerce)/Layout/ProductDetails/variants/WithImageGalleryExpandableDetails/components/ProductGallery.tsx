@@ -13,7 +13,7 @@ export const ProductGallery = ({
   selectedVariant,
   minQuantity,
   maxQuantity,
-  children,
+  children
 }: {
   product: Product;
   selectedVariant?: FilledVariant;

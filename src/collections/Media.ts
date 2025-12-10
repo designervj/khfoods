@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import {
   FixedToolbarFeature,
   InlineToolbarFeature,
-  lexicalEditor,
+  lexicalEditor
 } from "@payloadcms/richtext-lexical";
 
 import { anyone } from "@/access/anyone";
@@ -18,7 +18,6 @@ import { checkUserPermission } from "@/access/roleBasedAccess";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-
 const isReadAccess = async (args: AccessArgs<Administrator>) => {
   const base = await checkUserPermission(args, "read", "mediaPermission");
   if (base === true  &&args.req?.user?.collection === "administrators" && args.req?.user?.id) {
@@ -31,7 +30,6 @@ const isReadAccess = async (args: AccessArgs<Administrator>) => {
   }
   return base;
 };
-
 
 const isCreateAccess = (args: AccessArgs<Administrator>) =>
   checkUserPermission(args, "create", "mediaPermission");
@@ -48,32 +46,32 @@ export const Media: CollectionConfig = {
   labels: {
     singular: {
       en: "Media",
-      pl: "Plik",
+      zh: "媒体"
     },
     plural: {
       en: "Media",
-      pl: "Pliki",
-    },
+      zh: "媒体"
+    }
   },
   access:{
    read: isReadAccess,
     create: isCreateAccess,
     update: isUpdateAccess,
     delete: isDeleteAccess,
-    admin: isReadAccess,
+    admin: isReadAccess
   },
   admin: {
     group: {
-      en: "Page Settings",
-      pl: "Ustawienia strony",
-    },
+      en: "Page Settings"
+
+    }
   },
   fields: [
     {
       name: "alt",
       type: "text",
       required: true,
-      localized: true,
+      localized: true
     },
     {
       name: "caption",
@@ -85,9 +83,9 @@ export const Media: CollectionConfig = {
             FixedToolbarFeature(),
             InlineToolbarFeature(),
           ];
-        },
+        }
       }),
-      localized: true,
+      localized: true
     },
       {
       name: "createdBy",
@@ -97,8 +95,8 @@ export const Media: CollectionConfig = {
       defaultValue: ({ req: { user } }) => user?.id,
       admin: {
         readOnly: true,
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
 
   ],
@@ -110,35 +108,35 @@ export const Media: CollectionConfig = {
     imageSizes: [
       {
         name: "thumbnail",
-        width: 300,
+        width: 300
       },
       {
         name: "square",
         width: 500,
-        height: 500,
+        height: 500
       },
       {
         name: "small",
-        width: 600,
+        width: 600
       },
       {
         name: "medium",
-        width: 900,
+        width: 900
       },
       {
         name: "large",
-        width: 1400,
+        width: 1400
       },
       {
         name: "xlarge",
-        width: 1920,
+        width: 1920
       },
       {
         name: "og",
         width: 1200,
         height: 630,
-        crop: "center",
+        crop: "center"
       },
-    ],
-  },
+    ]
+  }
 };

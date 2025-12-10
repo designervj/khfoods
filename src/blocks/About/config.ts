@@ -13,7 +13,7 @@ export const StoryBlock: Block = {
   interfaceName: "StoryBlock",
   labels: {
     singular: "Story Section",
-    plural: "Story Sections",
+    plural: "Story Sections"
   },
   fields: [
     {
@@ -21,24 +21,24 @@ export const StoryBlock: Block = {
       type: "text",
       required: true,
       label: "Heading",
-      defaultValue: "Our Story",
+      defaultValue: "Our Story"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "content",
       type: "richText",
       required: true,
-      label: "Story Content",
+      label: "Story Content"
     },
     {
       name: "image",
       type: "upload",
       relationTo: "media",
-      label: "Featured Image",
+      label: "Featured Image"
     },
     {
       name: "imagePosition",
@@ -48,14 +48,14 @@ export const StoryBlock: Block = {
         { label: "Right", value: "right" },
       ],
       defaultValue: "right",
-      label: "Image Position",
+      label: "Image Position"
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Mission & Vision Block
@@ -64,14 +64,14 @@ export const MissionVisionBlock: Block = {
   interfaceName: "MissionVisionBlock",
   labels: {
     singular: "Mission & Vision",
-    plural: "Mission & Vision Sections",
+    plural: "Mission & Vision Sections"
   },
   fields: [
     {
       name: "heading",
       type: "text",
       label: "Section Heading",
-      defaultValue: "Mission & Vision",
+      defaultValue: "Mission & Vision"
     },
     {
       name: "mission",
@@ -82,20 +82,20 @@ export const MissionVisionBlock: Block = {
           name: "title",
           type: "text",
           required: true,
-          defaultValue: "Our Mission",
+          defaultValue: "Our Mission"
         },
         {
           name: "content",
           type: "richText",
-          required: true,
+          required: true
         },
         {
           name: "icon",
           type: "upload",
           relationTo: "media",
-          label: "Icon/Image",
+          label: "Icon/Image"
         },
-      ],
+      ]
     },
     {
       name: "vision",
@@ -106,27 +106,27 @@ export const MissionVisionBlock: Block = {
           name: "title",
           type: "text",
           required: true,
-          defaultValue: "Our Vision",
+          defaultValue: "Our Vision"
         },
         {
           name: "content",
           type: "richText",
-          required: true,
+          required: true
         },
         {
           name: "icon",
           type: "upload",
           relationTo: "media",
-          label: "Icon/Image",
+          label: "Icon/Image"
         },
-      ],
+      ]
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Values Block
@@ -135,7 +135,7 @@ export const ValuesBlock: Block = {
   interfaceName: "ValuesBlock",
   labels: {
     singular: "Values Section",
-    plural: "Values Sections",
+    plural: "Values Sections"
   },
   fields: [
     {
@@ -143,12 +143,12 @@ export const ValuesBlock: Block = {
       type: "text",
       required: true,
       label: "Heading",
-      defaultValue: "Our Values",
+      defaultValue: "Our Values"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "values",
@@ -161,21 +161,21 @@ export const ValuesBlock: Block = {
           name: "title",
           type: "text",
           required: true,
-          label: "Value Title",
+          label: "Value Title"
         },
         {
           name: "description",
           type: "textarea",
           required: true,
-          label: "Description",
+          label: "Description"
         },
         {
           name: "icon",
           type: "upload",
           relationTo: "media",
-          label: "Icon",
+          label: "Icon"
         },
-      ],
+      ]
     },
     {
       name: "layout",
@@ -187,14 +187,14 @@ export const ValuesBlock: Block = {
         { label: "List", value: "list" },
       ],
       defaultValue: "grid-3",
-      label: "Layout Style",
+      label: "Layout Style"
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Team Block
@@ -203,7 +203,7 @@ export const TeamBlock: Block = {
   interfaceName: "TeamBlock",
   labels: {
     singular: "Team Section",
-    plural: "Team Sections",
+    plural: "Team Sections"
   },
   fields: [
     {
@@ -211,12 +211,12 @@ export const TeamBlock: Block = {
       type: "text",
       required: true,
       label: "Heading",
-      defaultValue: "Meet Our Team",
+      defaultValue: "Meet Our Team"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "teamMembers",
@@ -228,25 +228,25 @@ export const TeamBlock: Block = {
           name: "name",
           type: "text",
           required: true,
-          label: "Name",
+          label: "Name"
         },
         {
           name: "position",
           type: "text",
           required: true,
-          label: "Position/Title",
+          label: "Position/Title"
         },
         {
           name: "bio",
           type: "textarea",
-          label: "Short Bio",
+          label: "Short Bio"
         },
         {
           name: "image",
           type: "upload",
           relationTo: "media",
           required: true,
-          label: "Photo",
+          label: "Photo"
         },
         {
           name: "socials",
@@ -256,21 +256,21 @@ export const TeamBlock: Block = {
             {
               name: "linkedin",
               type: "text",
-              label: "LinkedIn URL",
+              label: "LinkedIn URL"
             },
             {
               name: "twitter",
               type: "text",
-              label: "Twitter/X URL",
+              label: "Twitter/X URL"
             },
             {
               name: "email",
               type: "email",
-              label: "Email",
+              label: "Email"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
     {
       name: "layout",
@@ -281,14 +281,14 @@ export const TeamBlock: Block = {
         { label: "Grid (4 columns)", value: "grid-4" },
       ],
       defaultValue: "grid-3",
-      label: "Layout Style",
+      label: "Layout Style"
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Timeline/History Block
@@ -297,7 +297,7 @@ export const TimelineBlock: Block = {
   interfaceName: "TimelineBlock",
   labels: {
     singular: "Timeline Section",
-    plural: "Timeline Sections",
+    plural: "Timeline Sections"
   },
   fields: [
     {
@@ -305,12 +305,12 @@ export const TimelineBlock: Block = {
       type: "text",
       required: true,
       label: "Heading",
-      defaultValue: "Our Journey",
+      defaultValue: "Our Journey"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "milestones",
@@ -322,27 +322,27 @@ export const TimelineBlock: Block = {
           name: "year",
           type: "text",
           required: true,
-          label: "Year/Date",
+          label: "Year/Date"
         },
         {
           name: "title",
           type: "text",
           required: true,
-          label: "Milestone Title",
+          label: "Milestone Title"
         },
         {
           name: "description",
           type: "textarea",
           required: true,
-          label: "Description",
+          label: "Description"
         },
         {
           name: "image",
           type: "upload",
           relationTo: "media",
-          label: "Image (Optional)",
+          label: "Image (Optional)"
         },
-      ],
+      ]
     },
     {
       name: "style",
@@ -353,14 +353,14 @@ export const TimelineBlock: Block = {
         { label: "Cards", value: "cards" },
       ],
       defaultValue: "vertical",
-      label: "Timeline Style",
+      label: "Timeline Style"
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Stats/Numbers Block
@@ -369,19 +369,19 @@ export const StatsBlock: Block = {
   interfaceName: "StatsBlock",
   labels: {
     singular: "Stats Section",
-    plural: "Stats Sections",
+    plural: "Stats Sections"
   },
   fields: [
     {
       name: "heading",
       type: "text",
       label: "Heading",
-      defaultValue: "By The Numbers",
+      defaultValue: "By The Numbers"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "statistics",
@@ -396,8 +396,8 @@ export const StatsBlock: Block = {
           required: true,
           label: "Number/Statistic",
           admin: {
-            description: "e.g., 500+, 10M, 99%",
-          },
+            description: "e.g., 500+, 10M, 99%"
+          }
         },
         {
           name: "label",
@@ -405,16 +405,16 @@ export const StatsBlock: Block = {
           required: true,
           label: "Label",
           admin: {
-            description: "e.g., Happy Clients, Products Sold",
-          },
+            description: "e.g., Happy Clients, Products Sold"
+          }
         },
         {
           name: "icon",
           type: "upload",
           relationTo: "media",
-          label: "Icon (Optional)",
+          label: "Icon (Optional)"
         },
-      ],
+      ]
     },
     {
       name: "layout",
@@ -426,14 +426,14 @@ export const StatsBlock: Block = {
         { label: "Inline", value: "inline" },
       ],
       defaultValue: "grid-4",
-      label: "Layout Style",
+      label: "Layout Style"
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Testimonials/Culture Block
@@ -442,7 +442,7 @@ export const CultureBlock: Block = {
   interfaceName: "CultureBlock",
   labels: {
     singular: "Culture Section",
-    plural: "Culture Sections",
+    plural: "Culture Sections"
   },
   fields: [
     {
@@ -450,17 +450,17 @@ export const CultureBlock: Block = {
       type: "text",
       required: true,
       label: "Heading",
-      defaultValue: "Our Culture",
+      defaultValue: "Our Culture"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "content",
       type: "richText",
-      label: "Culture Description",
+      label: "Culture Description"
     },
     {
       name: "images",
@@ -472,14 +472,14 @@ export const CultureBlock: Block = {
           name: "image",
           type: "upload",
           relationTo: "media",
-          required: true,
+          required: true
         },
         {
           name: "caption",
           type: "text",
-          label: "Caption (Optional)",
+          label: "Caption (Optional)"
         },
-      ],
+      ]
     },
     {
       name: "highlights",
@@ -489,26 +489,26 @@ export const CultureBlock: Block = {
         {
           name: "title",
           type: "text",
-          required: true,
+          required: true
         },
         {
           name: "description",
-          type: "textarea",
+          type: "textarea"
         },
         {
           name: "icon",
           type: "upload",
           relationTo: "media",
-          label: "Icon",
+          label: "Icon"
         },
-      ],
+      ]
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Call to Action Block
@@ -517,24 +517,24 @@ export const CTABlock: Block = {
   interfaceName: "CTABlock",
   labels: {
     singular: "CTA Section",
-    plural: "CTA Sections",
+    plural: "CTA Sections"
   },
   fields: [
     {
       name: "heading",
       type: "text",
       required: true,
-      label: "Heading",
+      label: "Heading"
     },
     {
       name: "subheading",
       type: "text",
-      label: "Subheading",
+      label: "Subheading"
     },
     {
       name: "content",
       type: "textarea",
-      label: "Description",
+      label: "Description"
     },
     {
       name: "buttons",
@@ -547,13 +547,13 @@ export const CTABlock: Block = {
           name: "text",
           type: "text",
           required: true,
-          label: "Button Text",
+          label: "Button Text"
         },
         {
           name: "url",
           type: "text",
           required: true,
-          label: "Button URL",
+          label: "Button URL"
         },
         {
           name: "style",
@@ -563,15 +563,15 @@ export const CTABlock: Block = {
             { label: "Secondary", value: "secondary" },
             { label: "Outline", value: "outline" },
           ],
-          defaultValue: "primary",
+          defaultValue: "primary"
         },
         {
           name: "openInNewTab",
           type: "checkbox",
           label: "Open in New Tab",
-          defaultValue: false,
+          defaultValue: false
         },
-      ],
+      ]
     },
     {
       name: "style",
@@ -582,20 +582,20 @@ export const CTABlock: Block = {
         { label: "Split (Text + Image)", value: "split" },
       ],
       defaultValue: "centered",
-      label: "CTA Style",
+      label: "CTA Style"
     },
     {
       name: "backgroundImage",
       type: "upload",
       relationTo: "media",
-      label: "Background Image (Optional)",
+      label: "Background Image (Optional)"
     },
     AlignmentField,
     backgroundPicker,
     paddingFields,
     marginFields,
     ...radiusFields,
-  ],
+  ]
 };
 
 // Main About Page Block Configuration
@@ -604,7 +604,7 @@ export const AboutPage: Block = {
   interfaceName: "AboutPageBlock",
   labels: {
     singular: "About Page",
-    plural: "About Pages",
+    plural: "About Pages"
   },
   fields: [
     {
@@ -620,7 +620,7 @@ export const AboutPage: Block = {
         StatsBlock,
         CultureBlock,
         CTABlock,
-      ],
+      ]
     },
-  ],
+  ]
 };

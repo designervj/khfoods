@@ -14,14 +14,14 @@ export const Products: CollectionConfig = {
   labels: {
     singular: {
       en: "Product",
-      pl: "Produkt",
+      zh: "产品",
       hr: "Proizvod", // Croatian
     },
     plural: {
       en: "Products list",
-      pl: "Lista Produktów",
+      zh: "产品列表",
       hr: "Popis proizvoda", // Croatian
-    },
+    }
   },
   admin: {
     defaultColumns: ["title"],
@@ -30,33 +30,33 @@ export const Products: CollectionConfig = {
       url: ({ data, req }) => {
         const path = generatePreviewPath({
           path: `/product/${typeof data?.slug === "string" ? data.slug : ""}`,
-          locale: req.locale,
+          locale: req.locale
         });
         return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
-      },
+      }
     },
     preview: (data, { req }) =>
       generatePreviewPath({
         path: `/product/${typeof data?.slug === "string" ? data.slug : ""}`,
-        locale: req.locale,
+        locale: req.locale
       }),
     group: {
       en: "Products",
-      pl: "Produkty",
+      zh: "产品",
       hr: "Proizvodi", // Croatian
-    },
+    }
   },
   fields: [
     {
       name: "title",
       label: {
         en: "Product name",
-        pl: "Nazwa proizvoda",
+
         hr: "Naziv proizvoda", // Croatian
       },
       type: "text",
       localized: true,
-      required: true,
+      required: true
     },
     ...slugField(),
     {
@@ -64,26 +64,26 @@ export const Products: CollectionConfig = {
       tabs: [
         {
           label: {
-            en: "Content",
-            pl: "Zawartość",
+            en: "Content"
+
           },
           fields: [
             {
               name: "description",
               label: {
                 en: "Product description",
-                pl: "Opis proizvoda",
+
                 hr: "Opis proizvoda", // Croatian
               },
               localized: true,
               type: "richText",
-              editor: defaultLexical,
+              editor: defaultLexical
             },
             {
               name: "images",
               label: {
                 en: "Product images",
-                pl: "Zdjęcia proizvoda",
+
                 hr: "Slike proizvoda", // Croatian
               },
               type: "upload",
@@ -95,68 +95,68 @@ export const Products: CollectionConfig = {
               admin: {
                 description: {
                   en: "If you have variants, first image will be variant image.",
-                  pl: "Jeśli masz warianty, pierwsze zdjęcie będzie zdjęciem wariantu.",
+
                   hr: "Ako imate varijante, prva slika će biti slika varijante.", // Croatian
-                },
-              },
+                }
+              }
             },
             {
               name: "details",
               type: "array",
               label: {
                 en: "Details",
-                pl: "Szczegóły",
+
                 hr: "Detalji", // Croatian
               },
               labels: {
                 singular: {
                   en: "Detail",
-                  pl: "Szczegół",
+
                   hr: "Detalj", // Croatian
                 },
                 plural: {
                   en: "Details",
-                  pl: "Szczegóły",
+
                   hr: "Detalji", // Croatian
-                },
+                }
               },
               admin: {
                 components: {
-                  RowLabel: "@/collections/(ecommerce)/Products/components/RowLabels/DetailLabel#DetailLabel",
-                },
+                  RowLabel: "@/collections/(ecommerce)/Products/components/RowLabels/DetailLabel#DetailLabel"
+                }
               },
               fields: [
                 {
                   name: "title",
                   label: {
                     en: "Title",
-                    pl: "Tytuł",
+
                     hr: "Naslov", // Croatian
                   },
                   localized: true,
                   type: "text",
-                  required: true,
+                  required: true
                 },
                 {
                   name: "content",
                   label: {
                     en: "Content",
-                    pl: "Zawartość",
+
                     hr: "Sadržaj", // Croatian
                   },
                   localized: true,
                   required: true,
                   type: "richText",
-                  editor: defaultLexical,
+                  editor: defaultLexical
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
         {
           label: {
             en: "Variants options",
-            pl: "Opcje wariantów",
+
             hr: "Opcije varijanti", // Croatian
           },
           fields: [
@@ -167,19 +167,19 @@ export const Products: CollectionConfig = {
                   name: "enableVariants",
                   label: {
                     en: "Enable variants",
-                    pl: "Włącz warianty",
+
                     hr: "Omogući varijante", // Croatian
                   },
                   type: "checkbox",
                   admin: {
-                    width: "fit-content",
-                  },
+                    width: "fit-content"
+                  }
                 },
                 {
                   name: "enableVariantPrices",
                   label: {
                     en: "Variants have different prices",
-                    pl: "Warianty mają różne ceny",
+
                     hr: "Varijante imaju različite cijene", // Croatian
                   },
 
@@ -187,20 +187,20 @@ export const Products: CollectionConfig = {
                   admin: {
                     description: {
                       en: "If false, price is in Product Details",
-                      pl: "Jeśli fałsz, cena jest w Szczegółach produktu",
+
                       hr: "Ako je netočno, cijena je u detaljima proizvoda.", // Croatian
                     },
                     width: "fit-content",
                     style: {
-                      marginLeft: "2rem",
-                    },
-                  },
+                      marginLeft: "2rem"
+                    }
+                  }
                 },
                 {
                   name: "enableVariantWeights",
                   label: {
                     en: "Variants have different weights",
-                    pl: "Warianty mają różne wagi",
+
                     hr: "Varijante imaju različite težine", // Croatian
                   },
 
@@ -208,72 +208,72 @@ export const Products: CollectionConfig = {
                   admin: {
                     description: {
                       en: "If false, weight is in Product Details",
-                      pl: "Jeśli fałsz, waga jest w Szczegółach produktu",
+
                       hr: "Ako je netočno, težina je u detaljima proizvoda.", // Croatian
                     },
                     width: "fit-content",
                     style: {
-                      marginLeft: "2rem",
-                    },
-                  },
+                      marginLeft: "2rem"
+                    }
+                  }
                 },
-              ],
+              ]
             },
             {
               type: "radio",
               name: "variantsType",
               label: {
-                en: "Variants type",
-                pl: "Rodzaj wariantów",
+                en: "Variants type"
+
               },
               admin: {
-                condition: (data) => Boolean(data.enableVariants),
+                condition: (data) => Boolean(data.enableVariants)
               },
               defaultValue: "sizes",
               options: [
                 {
                   value: "sizes",
                   label: {
-                    en: "Only sizes",
-                    pl: "Tylko rozmiary",
-                  },
+                    en: "Only sizes"
+
+                  }
                 },
                 {
                   value: "colors",
                   label: {
-                    en: "Only colors",
-                    pl: "Tylko kolory",
-                  },
+                    en: "Only colors"
+
+                  }
                 },
                 {
                   value: "colorsAndSizes",
                   label: {
-                    en: "Colors and sizes",
-                    pl: "Kolory i rozmiary",
-                  },
+                    en: "Colors and sizes"
+
+                  }
                 },
-              ],
+              ]
             },
             {
               name: "colors",
               labels: {
                 singular: {
-                  en: "Color",
-                  pl: "Kolor",
+                  en: "Color"
+
                 },
                 plural: {
-                  en: "Colors",
-                  pl: "Kolory",
-                },
+                  en: "Colors"
+
+                }
               },
               type: "array",
               admin: {
                 components: {
-                  RowLabel: "@/collections/(ecommerce)/Products/components/RowLabels/OptionLabel#OptionLabel",
+                  RowLabel: "@/collections/(ecommerce)/Products/components/RowLabels/OptionLabel#OptionLabel"
                 },
                 condition: (_, siblingData) =>
                   Boolean(siblingData.enableVariants && siblingData.variantsType !== "sizes"),
-                initCollapsed: true,
+                initCollapsed: true
               },
               fields: [
                 {
@@ -282,91 +282,91 @@ export const Products: CollectionConfig = {
                     {
                       name: "label",
                       label: {
-                        en: "Color name",
-                        pl: "Nazwa koloru",
+                        en: "Color name"
+
                       },
                       type: "text",
                       localized: true,
-                      required: true,
+                      required: true
                     },
                     {
                       name: "slug",
                       type: "text",
                       required: true,
                       label: {
-                        en: "Color slug",
-                        pl: "Slug koloru",
-                      },
+                        en: "Color slug"
+
+                      }
                     },
-                  ],
+                  ]
                 },
                 {
                   name: "colorValue",
                   label: {
-                    en: "Color",
-                    pl: "Kolor",
+                    en: "Color"
+
                   },
                   type: "text",
                   admin: {
                     components: {
-                      Field: "@/components/AdminColorPicker#AdminColorPicker",
-                    },
-                  },
+                      Field: "@/components/AdminColorPicker#AdminColorPicker"
+                    }
+                  }
                 },
               ],
               label: {
-                en: "Color options",
-                pl: "Opcje kolorów",
+                en: "Color options"
+
               },
-              minRows: 1,
+              minRows: 1
             },
             {
               name: "sizes",
               labels: {
                 singular: {
-                  en: "Size",
-                  pl: "Rozmiar",
+                  en: "Size"
+
                 },
                 plural: {
-                  en: "Sizes",
-                  pl: "Rozmiary",
-                },
+                  en: "Sizes"
+
+                }
               },
               type: "array",
               admin: {
                 components: {
-                  RowLabel: "@/collections/(ecommerce)/Products/components/RowLabels/OptionLabel#OptionLabel",
+                  RowLabel: "@/collections/(ecommerce)/Products/components/RowLabels/OptionLabel#OptionLabel"
                 },
                 condition: (_, siblingData) =>
                   Boolean(siblingData.enableVariants && siblingData.variantsType !== "colors"),
-                initCollapsed: true,
+                initCollapsed: true
               },
               fields: [
                 {
                   name: "label",
                   label: {
-                    en: "Size label",
-                    pl: "Etykieta rozmiaru",
+                    en: "Size label"
+
                   },
                   type: "text",
                   localized: true,
-                  required: true,
+                  required: true
                 },
                 {
                   name: "slug",
                   type: "text",
                   required: true,
                   label: {
-                    en: "Size slug",
-                    pl: "Slug rozmiaru",
-                  },
+                    en: "Size slug"
+
+                  }
                 },
               ],
               label: {
-                en: "Size options",
-                pl: "Opcje rozmiarów",
+                en: "Size options"
+
               },
-              minRows: 1,
+              minRows: 1
             },
             {
               name: "variants",
@@ -374,11 +374,11 @@ export const Products: CollectionConfig = {
               admin: {
                 components: {
                   RowLabel:
-                    "@/collections/(ecommerce)/Products/components/RowLabels/VariantLabel#VariantLabel",
+                    "@/collections/(ecommerce)/Products/components/RowLabels/VariantLabel#VariantLabel"
                 },
                 condition: (_, siblingData) => {
                   return Boolean(siblingData.enableVariants);
-                },
+                }
               },
               validate: (value) => {
                 if (!value) return true;
@@ -404,7 +404,7 @@ export const Products: CollectionConfig = {
                 {
                   type: "row",
                   admin: {
-                    className: "variant-gap-row",
+                    className: "variant-gap-row"
                   },
                   fields: [
                     {
@@ -412,98 +412,98 @@ export const Products: CollectionConfig = {
                       type: "text",
                       index: true,
                       label: {
-                        en: "Size",
-                        pl: "Rozmiar",
+                        en: "Size"
+
                       },
                       admin: {
                         components: {
-                          Field: "@/collections/(ecommerce)/Products/components/SizeSelect#SizeSelect",
+                          Field: "@/collections/(ecommerce)/Products/components/SizeSelect#SizeSelect"
                         },
-                        condition: (_, siblingData) => siblingData.variantsType !== "colors",
-                      },
+                        condition: (_, siblingData) => siblingData.variantsType !== "colors"
+                      }
                     },
                     {
                       name: "color",
                       index: true,
                       type: "text",
                       label: {
-                        en: "Color",
-                        pl: "Kolor",
+                        en: "Color"
+
                       },
                       admin: {
                         components: {
-                          Field: "@/collections/(ecommerce)/Products/components/ColorSelect#ColorSelect",
+                          Field: "@/collections/(ecommerce)/Products/components/ColorSelect#ColorSelect"
                         },
-                        condition: (_, siblingData) => siblingData.variantsType !== "sizes",
-                      },
+                        condition: (_, siblingData) => siblingData.variantsType !== "sizes"
+                      }
                     },
-                  ],
+                  ]
                 },
                 {
                   name: "variantSlug",
                   type: "text",
                   admin: {
-                    readOnly: true,
-                  },
+                    readOnly: true
+                  }
                 },
                 {
                   name: "image",
                   type: "upload",
-                  relationTo: "media",
+                  relationTo: "media"
                 },
                 {
                   name: "stock",
                   type: "number",
                   admin: {
                     description: {
-                      en: "Define stock for this variant. A stock of 0 disables checkout for this variant.",
-                      pl: "Zdefiniuj stan magazynowy dla tego wariantu. Stan magazynowy 0 wyłącza możliwość zakupu tego wariantu.",
-                    },
+                      en: "Define stock for this variant. A stock of 0 disables checkout for this variant."
+
+                    }
                   },
                   defaultValue: 0,
-                  required: true,
+                  required: true
                 },
                 {
                   name: "weight",
                   label: {
-                    en: "Weight (g)",
-                    pl: "Waga (g)",
+                    en: "Weight (g)"
+
                   },
                   type: "number",
                   admin: {
                     condition: (data) => Boolean(data.enableVariantWeights),
                     description: {
-                      en: "Define weight for this variant.",
-                      pl: "Zdefiniuj wagę dla tego wariantu.",
-                    },
+                      en: "Define weight for this variant."
+
+                    }
                   },
                   defaultValue: 0,
-                  required: true,
+                  required: true
                 },
                 {
                   name: "pricing",
                   type: "array",
                   label: {
-                    en: "Pricing",
-                    pl: "Cennik",
+                    en: "Pricing"
+
                   },
                   minRows: 1,
                   required: true,
                   labels: {
                     singular: {
-                      en: "Price",
-                      pl: "Cena",
+                      en: "Price"
+
                     },
                     plural: {
-                      en: "Prices",
-                      pl: "Ceny",
-                    },
+                      en: "Prices"
+
+                    }
                   },
                   admin: {
                     condition: (data) => Boolean(data.enableVariantPrices),
                     components: {
-                      RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel",
-                    },
+                      RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel"
+                    }
                   },
                   fields: [
                     {
@@ -514,69 +514,69 @@ export const Products: CollectionConfig = {
                           index: true,
                           type: "number",
                           label: {
-                            en: "Price",
-                            pl: "Cena",
+                            en: "Price"
+
                           },
-                          required: true,
+                          required: true
                         },
                         currencyField,
-                      ],
+                      ]
                     },
-                  ],
+                  ]
                 },
               ],
-              minRows: 1,
+              minRows: 1
             },
-          ],
+          ]
         },
         {
           label: {
-            en: "Product details",
-            pl: "Szczegóły produktu",
+            en: "Product details"
+
           },
           admin: {
             // todo: not working condition, waiting for payload team to fix conditional tabs.
             // condition: (data) => {
             //   return !data.enableVariants && !data.enableVariantPrices;
-            // },
+            // }
           },
           fields: [
             {
               name: "categoriesArr",
               label: {
-                en: "Product categories",
-                pl: "Kategorie produktu",
+                en: "Product categories"
+
               },
               labels: {
                 singular: {
-                  en: "Category",
-                  pl: "Kategoria",
+                  en: "Category"
+
                 },
                 plural: {
-                  en: "Categories",
-                  pl: "Kategorie",
-                },
+                  en: "Categories"
+
+                }
               },
               type: "array",
               fields: [
                 {
                   name: "category",
                   label: {
-                    en: "Category",
-                    pl: "Kategoria",
+                    en: "Category"
+
                   },
                   type: "relationship",
                   index: true,
                   relationTo: "productCategories",
-                  required: true,
+                  required: true
                 },
                 {
                   name: "subcategories",
                   index: true,
                   type: "relationship",
                   label: {
-                    en: "Subcategories",
-                    pl: "Podkategorie",
+                    en: "Subcategories"
+
                   },
                   relationTo: "productSubCategories",
                   filterOptions: ({ siblingData }) => {
@@ -585,72 +585,72 @@ export const Products: CollectionConfig = {
                     } = siblingData as any;
                     return {
                       category: {
-                        equals: siblingDataTyped.category,
-                      },
+                        equals: siblingDataTyped.category
+                      }
                     };
                   },
-                  hasMany: true,
+                  hasMany: true
                 },
-              ],
+              ]
             },
             {
               name: "stock",
               label: {
-                en: "Stock",
-                pl: "Stan magazynowy",
+                en: "Stock"
+
               },
               type: "number",
               admin: {
                 condition: (data) => !data.enableVariants,
                 description: {
-                  en: "Define stock for whole product. A stock of 0 disables checkout for this product.",
-                  pl: "Zdefiniuj stan magazynowy dla całego produktu. Stan magazynowy 0 wyłącza możliwość zakupu tego produktu.",
-                },
+                  en: "Define stock for whole product. A stock of 0 disables checkout for this product."
+
+                }
               },
               defaultValue: 0,
-              required: true,
+              required: true
             },
             {
               name: "weight",
               label: {
-                en: "Weight (g)",
-                pl: "Waga (g)",
+                en: "Weight (g)"
+
               },
               type: "number",
               admin: {
                 condition: (data) => !data.enableVariantWeights,
                 description: {
-                  en: "Define weight for whole product.",
-                  pl: "Zdefiniuj wagę dla całego produktu.",
-                },
+                  en: "Define weight for whole product."
+
+                }
               },
               defaultValue: 0,
-              required: true,
+              required: true
             },
             {
               name: "pricing",
               type: "array",
               label: {
-                en: "Pricing",
-                pl: "Cennik",
+                en: "Pricing"
+
               },
               minRows: 1,
               required: true,
               labels: {
                 singular: {
-                  en: "Price",
-                  pl: "Cena",
+                  en: "Price"
+
                 },
                 plural: {
-                  en: "Prices",
-                  pl: "Ceny",
-                },
+                  en: "Prices"
+
+                }
               },
               admin: {
                 condition: (data) => !data.enableVariantPrices,
                 components: {
-                  RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel",
-                },
+                  RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel"
+                }
               },
               fields: [
                 {
@@ -661,38 +661,38 @@ export const Products: CollectionConfig = {
                       type: "number",
                       index: true,
                       label: {
-                        en: "Price",
-                        pl: "Cena",
+                        en: "Price"
+
                       },
-                      required: true,
+                      required: true
                     },
                     currencyField,
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
             {
               name: "bought",
               index: true,
               label: {
-                en: "Bought",
-                pl: "Kupiono",
+                en: "Bought"
+
               },
               type: "number",
-              defaultValue: 0,
+              defaultValue: 0
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
   ],
   versions: {
     drafts: {
       autosave: {
-        interval: 100,
+        interval: 100
       },
-      schedulePublish: true,
+      schedulePublish: true
     },
-    maxPerDoc: 50,
-  },
+    maxPerDoc: 50
+  }
 };

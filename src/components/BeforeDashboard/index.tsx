@@ -33,7 +33,7 @@ export const BeforeDashboard: React.FC = () => {
               padding: "8px 16px",
               borderRadius: "4px",
               textDecoration: "none",
-              marginRight: "8px",
+              marginRight: "8px"
             }}
           >
             Manage MongoDB

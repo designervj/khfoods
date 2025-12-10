@@ -37,7 +37,7 @@ const PaginationLink = ({ className, isActive, size = "icon", ...props }: Pagina
     className={cn(
       buttonVariants({
         size,
-        variant: isActive ? "outline" : "ghost",
+        variant: isActive ? "outline" : "ghost"
       }),
       className,
     )}
@@ -87,5 +87,5 @@ export {
   PaginationItem,
   PaginationLink,
   PaginationNext,
-  PaginationPrevious,
+  PaginationPrevious
 };

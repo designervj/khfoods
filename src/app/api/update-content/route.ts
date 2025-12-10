@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
       collection,
       id: docId,
       depth: 0,
-      overrideAccess: true,
+      overrideAccess: true
     });
 
     if (!currentDoc) {
@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
           createdBy: pageData.createdBy,
           slugLock: pageData.slugLock,
           hero: pageData.hero ? "{ ... }" : undefined,
-          layout: pageData.layout ? `[${pageData.layout.length} blocks]` : undefined,
+          layout: pageData.layout ? `[${pageData.layout.length} blocks]` : undefined
         },
         null,
         2,
@@ -163,7 +163,7 @@ export async function POST(req: NextRequest) {
       data: pageData,
       depth: 0, // Return IDs instead of populated objects
       overrideAccess: true,
-      showHiddenFields: false,
+      showHiddenFields: false
     });
 
     console.log("✅ Update successful!");
@@ -171,7 +171,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       message: "Content updated successfully",
-      data: updatedDoc,
+      data: updatedDoc
     });
   } catch (error) {
     console.error("❌ Update content error:", error);
@@ -201,7 +201,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error: "Failed to update content",
-        details: error instanceof Error ? error.message : "Unknown error",
+        details: error instanceof Error ? error.message : "Unknown error"
       },
       { status: 500 },
     );

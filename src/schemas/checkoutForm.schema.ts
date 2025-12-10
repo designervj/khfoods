@@ -12,7 +12,7 @@ export const CheckoutFormSchemaServer = z.object({
       country: z.string().nonempty(),
       region: z.string().nonempty(),
       postalCode: z.string().nonempty(),
-      tin: z.string().optional(),
+      tin: z.string().optional()
     })
     .optional(),
   shipping: z.object({
@@ -26,9 +26,9 @@ export const CheckoutFormSchemaServer = z.object({
     phone: z.string().nonempty(),
     email: z.string().nonempty().email(),
     pickupPointID: z.string().optional(),
-    pickupPointAddress: z.string().optional(),
+    pickupPointAddress: z.string().optional()
   }),
-  deliveryMethod: z.string().nonempty(),
+  deliveryMethod: z.string().nonempty()
 });
 
 export type CheckoutFormData = z.infer<typeof CheckoutFormSchemaServer>;
@@ -47,7 +47,7 @@ export const useCheckoutFormSchema = () => {
         country: z.string(),
         region: z.string(),
         postalCode: z.string(),
-        tin: z.string().optional(),
+        tin: z.string().optional()
       })
       .optional(),
     shipping: z.object({
@@ -64,9 +64,9 @@ export const useCheckoutFormSchema = () => {
         .nonempty(t("shipping.email"))
         .email(t("shipping.email")),
       pickupPointID: z.string().optional(),
-      pickupPointAddress: z.string().optional(),
+      pickupPointAddress: z.string().optional()
     }),
-    deliveryMethod: z.string().nonempty(t("deliveryMethod")),
+    deliveryMethod: z.string().nonempty(t("deliveryMethod"))
   });
 
   const RefinedCheckoutFormSchema = CheckoutFormSchema.superRefine(
@@ -81,7 +81,7 @@ export const useCheckoutFormSchema = () => {
           ctx.addIssue({
             code: "custom",
             message: t("invoice.name"),
-            path: ["invoice", "name"],
+            path: ["invoice", "name"]
           });
           return;
         }
@@ -109,7 +109,7 @@ export const useCheckoutFormSchema = () => {
             ctx.addIssue({
               code: "custom",
               message: t(`invoice.${typedKey}`),
-              path: ["invoice", field],
+              path: ["invoice", field]
             });
           }
         });
@@ -122,7 +122,7 @@ export const useCheckoutFormSchema = () => {
           ctx.addIssue({
             code: "custom",
             message: t("invoice.tin"),
-            path: ["invoice", "tin"],
+            path: ["invoice", "tin"]
           });
         }
       }
@@ -133,12 +133,12 @@ export const useCheckoutFormSchema = () => {
     RefinedCheckoutFormSchema;
 
   const ShippingSchema = z.object({
-    shipping: CheckoutFormSchema.shape.shipping,
+    shipping: CheckoutFormSchema.shape.shipping
   });
 
   return {
     CheckoutFormSchema: RefinedCheckoutFormSchema,
     CheckoutFormSchemaResolver,
-    ShippingFormSchemaResolver: ShippingSchema,
+    ShippingFormSchemaResolver: ShippingSchema
   };
 };

@@ -5,7 +5,7 @@ export const Text: Block = {
   interfaceName: "TextBlock",
   labels: {
     singular: "📝 Text",
-    plural: "📝 Text Blocks",
+    plural: "📝 Text Blocks"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -32,10 +32,10 @@ export const Text: Block = {
               label: "Text Content",
               required: true,
               admin: {
-                rows: 5,
-              },
+                rows: 5
+              }
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -53,7 +53,7 @@ export const Text: Block = {
                 { label: "Extra Large", value: "xl" },
                 { label: "2XL", value: "2xl" },
                 { label: "3XL", value: "3xl" },
-              ],
+              ]
             },
             {
               name: "fontWeight",
@@ -66,7 +66,7 @@ export const Text: Block = {
                 { label: "Medium", value: "medium" },
                 { label: "Semibold", value: "semibold" },
                 { label: "Bold", value: "bold" },
-              ],
+              ]
             },
             {
               name: "textAlign",
@@ -78,23 +78,23 @@ export const Text: Block = {
                 { label: "Center", value: "center" },
                 { label: "Right", value: "right" },
                 { label: "Justify", value: "justify" },
-              ],
+              ]
             },
             {
               name: "textColor",
               type: "text",
               label: "Text Color",
               admin: {
-                description: "Hex color code (e.g., #000000)",
-              },
+                description: "Hex color code (e.g., #000000)"
+              }
             },
             {
               name: "backgroundColor",
               type: "text",
               label: "Background Color",
               admin: {
-                description: "Hex color code",
-              },
+                description: "Hex color code"
+              }
             },
             {
               name: "lineHeight",
@@ -106,7 +106,7 @@ export const Text: Block = {
                 { label: "Normal", value: "normal" },
                 { label: "Relaxed", value: "relaxed" },
                 { label: "Loose", value: "loose" },
-              ],
+              ]
             },
             {
               name: "letterSpacing",
@@ -119,7 +119,7 @@ export const Text: Block = {
                 { label: "Normal", value: "normal" },
                 { label: "Wide", value: "wide" },
                 { label: "Wider", value: "wider" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -132,7 +132,7 @@ export const Text: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "margin",
@@ -145,7 +145,7 @@ export const Text: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "textTransform",
@@ -157,7 +157,7 @@ export const Text: Block = {
                 { label: "Uppercase", value: "uppercase" },
                 { label: "Lowercase", value: "lowercase" },
                 { label: "Capitalize", value: "capitalize" },
-              ],
+              ]
             },
             {
               name: "textDecoration",
@@ -168,7 +168,7 @@ export const Text: Block = {
                 { label: "None", value: "none" },
                 { label: "Underline", value: "underline" },
                 { label: "Line Through", value: "line-through" },
-              ],
+              ]
             },
             {
               name: "fontStyle",
@@ -178,7 +178,7 @@ export const Text: Block = {
               options: [
                 { label: "Normal", value: "normal" },
                 { label: "Italic", value: "italic" },
-              ],
+              ]
             },
             {
               name: "maxWidth",
@@ -191,7 +191,7 @@ export const Text: Block = {
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -204,16 +204,16 @@ export const Text: Block = {
                 { label: "Slide Up", value: "slideUp" },
                 { label: "Slide Left", value: "slideLeft" },
                 { label: "Slide Right", value: "slideRight" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

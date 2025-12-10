@@ -18,7 +18,7 @@ import { type FilledVariant } from "../../types";
 export const WithImageGalleryExpandableDetails = ({
   variant,
   product,
-  productSettings,
+  productSettings
 }: {
   variant?: string;
   product: Product;
@@ -35,7 +35,7 @@ export const WithImageGalleryExpandableDetails = ({
     pricing: variant.pricing as
       | { value: number; currency: Currency; id?: string | null }[]
       | null
-      | undefined,
+      | undefined
   }));
 
   const selectedVariant =

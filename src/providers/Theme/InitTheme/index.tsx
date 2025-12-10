@@ -40,7 +40,7 @@ export const InitTheme = () => {
 
     document.documentElement.setAttribute('data-theme', themeToSet)
   })();
-  `,
+  `
       }}
       id="theme-script"
       strategy="beforeInteractive"

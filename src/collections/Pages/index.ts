@@ -14,7 +14,7 @@ import {
   MainSidebarLayoutSection,
   HeaderTwoColumnsLayoutSection,
   HeaderThreeColumnsLayoutSection,
-  MasonryLayoutSection,
+  MasonryLayoutSection
 } from "@/section/blocks";
 
 import { hero } from "@/components/heros/config";
@@ -25,7 +25,7 @@ import type {
   Access,
   AccessArgs,
   AccessResult,
-  CollectionConfig,
+  CollectionConfig
 } from "payload";
 import type { Administrator } from "@/payload-types";
 import { checkUserPermission } from "@/access/roleBasedAccess";
@@ -40,27 +40,27 @@ import {
   MetaImageField,
   MetaTitleField,
   OverviewField,
-  PreviewField,
+  PreviewField
 } from "@payloadcms/plugin-seo/fields";
 import { SaveToLibrary } from "@/components/CustomeButton";
 
 // Helper functions that return AccessResult
 const createdByUserWhere = (userId: string): AccessResult => ({
   createdBy: {
-    equals: userId,
-  },
+    equals: userId
+  }
 });
 
 const websitesInListWhere = (websiteIds: string[]): AccessResult => ({
   website: {
-    in: websiteIds,
-  },
+    in: websiteIds
+  }
 });
 
 const publicAccessWhere = (): AccessResult => ({
   _status: {
-    equals: "published",
-  },
+    equals: "published"
+  }
 });
 
 // Define Module blocks (content components)
@@ -102,7 +102,7 @@ const columnConfig: any = {
       slug: "column",
       labels: {
         singular: "Column",
-        plural: "Columns",
+        plural: "Columns"
       },
       fields: [
         {
@@ -117,9 +117,9 @@ const columnConfig: any = {
                   type: "blocks",
                   label: "Modules",
                   blocks: moduleBlocks,
-                  required: false,
+                  required: false
                 },
-              ],
+              ]
             },
             {
               label: "Column Styling",
@@ -159,8 +159,8 @@ const columnConfig: any = {
                             //   "Products",
                             //   "Orders",
                             //   "Administration Setting",
-                            // ],
-                          },
+                            // ]
+                          }
                         },
                         {
                           name: "verticalAlign",
@@ -172,9 +172,9 @@ const columnConfig: any = {
                             { label: "Bottom", value: "bottom" },
                             { label: "Stretch", value: "stretch" },
                           ],
-                          admin: { width: "50%" },
+                          admin: { width: "50%" }
                         },
-                      ],
+                      ]
                     },
                     {
                       type: "row",
@@ -190,7 +190,7 @@ const columnConfig: any = {
                             { label: "Large", value: "large" },
                           ],
                           defaultValue: "medium",
-                          admin: { width: "50%" },
+                          admin: { width: "50%" }
                         },
                         {
                           name: "backgroundColor",
@@ -198,20 +198,20 @@ const columnConfig: any = {
                           label: "Background Color",
                           admin: {
                             width: "50%",
-                            description: "Hex, RGB, or named color",
-                          },
+                            description: "Hex, RGB, or named color"
+                          }
                         },
-                      ],
+                      ]
                     },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };
 
 // Define Row configuration
@@ -224,7 +224,7 @@ const rowConfig: any = {
       slug: "row",
       labels: {
         singular: "Row",
-        plural: "Rows",
+        plural: "Rows"
       },
       fields: [
         {
@@ -237,9 +237,9 @@ const rowConfig: any = {
                 {
                   name: "Columns",
                   type: "blocks",
-                  blocks: columnBlocks,
+                  blocks: columnBlocks
                 },
-              ],
+              ]
             },
             {
               label: "Row Styling",
@@ -260,7 +260,7 @@ const rowConfig: any = {
                             { label: "Grid", value: "grid" },
                           ],
                           defaultValue: "flex",
-                          admin: { width: "33%" },
+                          admin: { width: "33%" }
                         },
                         {
                           name: "gap",
@@ -273,7 +273,7 @@ const rowConfig: any = {
                             { label: "Large", value: "large" },
                           ],
                           defaultValue: "medium",
-                          admin: { width: "33%" },
+                          admin: { width: "33%" }
                         },
                         {
                           name: "align",
@@ -287,9 +287,9 @@ const rowConfig: any = {
                             { label: "Space Around", value: "space-around" },
                           ],
                           defaultValue: "start",
-                          admin: { width: "34%" },
+                          admin: { width: "34%" }
                         },
-                      ],
+                      ]
                     },
                     {
                       type: "row",
@@ -299,28 +299,28 @@ const rowConfig: any = {
                           type: "checkbox",
                           label: "Wrap Columns",
                           defaultValue: true,
-                          admin: { width: "50%" },
+                          admin: { width: "50%" }
                         },
                         {
                           name: "reverse",
                           type: "checkbox",
                           label: "Reverse Column Order",
                           defaultValue: false,
-                          admin: { width: "50%" },
+                          admin: { width: "50%" }
                         },
-                      ],
+                      ]
                     },
                     {
                       name: "customCSS",
                       type: "textarea",
                       label: "Custom CSS Classes",
                       admin: {
-                        description: "Add custom CSS classes (space-separated)",
-                      },
+                        description: "Add custom CSS classes (space-separated)"
+                      }
                     },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
             {
               label: "Save to Library",
@@ -330,17 +330,17 @@ const rowConfig: any = {
                   name: "saveToLibraryButton",
                   admin: {
                     components: {
-                      Field: "@/components/CustomeButton#SaveToLibrary",
-                    },
-                  },
+                      Field: "@/components/CustomeButton#SaveToLibrary"
+                    }
+                  }
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };
 
 // const isReadAccess = (args: AccessArgs<Administrator>) =>
@@ -350,7 +350,7 @@ const isReadAccess = async (args: AccessArgs<Administrator>) => {
   const base = checkUserPermission(args, "read", "pagesPermission");
   if (args.req?.user?.id) {
     return {
-      and: [base, { createdBy: { equals: args.req.user.id } }],
+      and: [base, { createdBy: { equals: args.req.user.id } }]
     };
   }
   return base;
@@ -370,44 +370,44 @@ export const Pages: CollectionConfig<"pages"> = {
     create: isCreateAccess,
     update: isUpdateAccess,
     delete: isDeleteAccess,
-    admin: isReadAccess,
+    admin: isReadAccess
   },
   labels: {
     singular: {
         en: "Page",
-        pl: "Strona",
-        hr: "Stranica",
+        zh: "页面",
+        hr: "Stranica"
     },
     plural: {
         en: "Pages",
-        pl: "Strony",
-        hr: "Stranice",
-    },
+        zh: "页面",
+        hr: "Stranice"
+    }
   },
   defaultPopulate: {
     title: true,
-    slug: true,
+    slug: true
   },
   admin: {
     defaultColumns: ["title", "slug", "updatedAt"],
     useAsTitle: "title",
     group: {
         en: "Page Settings",
-        hr: "Postavke stranice",
-         pl: "Ustawienia strony",
+        hr: "Postavke stranice"
+
     },
       meta: {
    other: {
-        order: 3,
-      },
-  },
+        order: 3
+      }
+  }
   },
   fields: [
     {
       name: "title",
       type: "text",
       required: true,
-      localized: true,
+      localized: true
     },
     {
       type: "tabs",
@@ -415,7 +415,7 @@ export const Pages: CollectionConfig<"pages"> = {
         {
           label: "Hero",
           
-          fields: [hero],
+          fields: [hero]
 
         },
         {
@@ -423,7 +423,7 @@ export const Pages: CollectionConfig<"pages"> = {
           fields: [
             {
               name: "Page Data",
-              type: "json",
+              type: "json"
             },
             {
               name: "sections",
@@ -434,7 +434,7 @@ export const Pages: CollectionConfig<"pages"> = {
                   slug: "section",
                   labels: {
                     singular: "Section",
-                    plural: "Sections",
+                    plural: "Sections"
                   },
                   fields: [
                     {
@@ -442,7 +442,7 @@ export const Pages: CollectionConfig<"pages"> = {
                       tabs: [
                         {
                           label: "Content",
-                          fields: [rowConfig],
+                          fields: [rowConfig]
                         },
                         {
                           label: "Section Styling",
@@ -461,8 +461,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                       admin: {
                                         width: "50%",
                                         description:
-                                          "Hex, RGB, or named color (e.g., #ffffff, rgb(255,255,255), white)",
-                                      },
+                                          "Hex, RGB, or named color (e.g., #ffffff, rgb(255,255,255), white)"
+                                      }
                                     },
                                     {
                                       name: "backgroundImage",
@@ -470,10 +470,10 @@ export const Pages: CollectionConfig<"pages"> = {
                                       relationTo: "media",
                                       label: "Background Image",
                                       admin: {
-                                        width: "50%",
-                                      },
+                                        width: "50%"
+                                      }
                                     },
-                                  ],
+                                  ]
                                 },
                                 {
                                   type: "row",
@@ -491,8 +491,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "XLarge", value: "xlarge" },
                                       ],
                                       admin: {
-                                        width: "25%",
-                                      },
+                                        width: "25%"
+                                      }
                                     },
                                     {
                                       name: "paddingBottom",
@@ -507,8 +507,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "XLarge", value: "xlarge" },
                                       ],
                                       admin: {
-                                        width: "25%",
-                                      },
+                                        width: "25%"
+                                      }
                                     },
                                     {
                                       name: "paddingLeft",
@@ -523,8 +523,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "XLarge", value: "xlarge" },
                                       ],
                                       admin: {
-                                        width: "25%",
-                                      },
+                                        width: "25%"
+                                      }
                                     },
                                     {
                                       name: "paddingRight",
@@ -539,10 +539,10 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "XLarge", value: "xlarge" },
                                       ],
                                       admin: {
-                                        width: "25%",
-                                      },
+                                        width: "25%"
+                                      }
                                     },
-                                  ],
+                                  ]
                                 },
                                 {
                                   type: "row",
@@ -560,8 +560,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "XLarge", value: "xlarge" },
                                       ],
                                       admin: {
-                                        width: "50%",
-                                      },
+                                        width: "50%"
+                                      }
                                     },
                                     {
                                       name: "marginBottom",
@@ -576,10 +576,10 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "XLarge", value: "xlarge" },
                                       ],
                                       admin: {
-                                        width: "50%",
-                                      },
+                                        width: "50%"
+                                      }
                                     },
-                                  ],
+                                  ]
                                 },
                                 {
                                   type: "row",
@@ -593,20 +593,20 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "Full Width", value: "full" },
                                         {
                                           label: "Container (1280px)",
-                                          value: "container",
+                                          value: "container"
                                         },
                                         {
                                           label: "Medium (960px)",
-                                          value: "medium",
+                                          value: "medium"
                                         },
                                         {
                                           label: "Small (640px)",
-                                          value: "small",
+                                          value: "small"
                                         },
                                       ],
                                       admin: {
-                                        width: "50%",
-                                      },
+                                        width: "50%"
+                                      }
                                     },
                                     {
                                       name: "textAlign",
@@ -618,10 +618,10 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "Right", value: "right" },
                                       ],
                                       admin: {
-                                        width: "50%",
-                                      },
+                                        width: "50%"
+                                      }
                                     },
-                                  ],
+                                  ]
                                 },
                                 {
                                   type: "row",
@@ -635,16 +635,16 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "Thin (1px)", value: "thin" },
                                         {
                                           label: "Medium (2px)",
-                                          value: "medium",
+                                          value: "medium"
                                         },
                                         {
                                           label: "Thick (4px)",
-                                          value: "thick",
+                                          value: "thick"
                                         },
                                       ],
                                       admin: {
-                                        width: "33%",
-                                      },
+                                        width: "33%"
+                                      }
                                     },
                                     {
                                       name: "borderColor",
@@ -652,8 +652,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                       label: "Border Color",
                                       admin: {
                                         width: "33%",
-                                        description: "Hex, RGB, or named color",
-                                      },
+                                        description: "Hex, RGB, or named color"
+                                      }
                                     },
                                     {
                                       name: "borderRadius",
@@ -663,23 +663,23 @@ export const Pages: CollectionConfig<"pages"> = {
                                         { label: "None", value: "none" },
                                         {
                                           label: "Small (4px)",
-                                          value: "small",
+                                          value: "small"
                                         },
                                         {
                                           label: "Medium (8px)",
-                                          value: "medium",
+                                          value: "medium"
                                         },
                                         {
                                           label: "Large (16px)",
-                                          value: "large",
+                                          value: "large"
                                         },
                                         { label: "Full", value: "full" },
                                       ],
                                       admin: {
-                                        width: "34%",
-                                      },
+                                        width: "34%"
+                                      }
                                     },
-                                  ],
+                                  ]
                                 },
                                 {
                                   name: "customCSS",
@@ -687,8 +687,8 @@ export const Pages: CollectionConfig<"pages"> = {
                                   label: "Custom CSS Classes",
                                   admin: {
                                     description:
-                                      "Add custom CSS classes (space-separated)",
-                                  },
+                                      "Add custom CSS classes (space-separated)"
+                                  }
                                 },
                                 {
                                   name: "customStyles",
@@ -697,12 +697,12 @@ export const Pages: CollectionConfig<"pages"> = {
                                   admin: {
                                     language: "css",
                                     description:
-                                      "Add custom inline styles (CSS properties)",
-                                  },
+                                      "Add custom inline styles (CSS properties)"
+                                  }
                                 },
-                              ],
+                              ]
                             },
-                          ],
+                          ]
                         },
                         {
                           label: "Save to Library",
@@ -713,17 +713,17 @@ export const Pages: CollectionConfig<"pages"> = {
                               admin: {
                                 components: {
                                   Field:
-                                    "@/components/CustomeButton#SaveToLibrary",
-                                },
-                              },
+                                    "@/components/CustomeButton#SaveToLibrary"
+                                }
+                              }
                             },
-                          ],
+                          ]
                         },
-                      ],
+                      ]
                     },
-                  ],
+                  ]
                 },
-              ],
+              ]
             },
             {
               type: 'ui',
@@ -734,7 +734,7 @@ export const Pages: CollectionConfig<"pages"> = {
                 }
               }
             }
-          ],
+          ]
         },
         {
           label: "SEO",
@@ -744,38 +744,38 @@ export const Pages: CollectionConfig<"pages"> = {
             OverviewField({
               titlePath: "meta.title",
               descriptionPath: "meta.description",
-              imagePath: "meta.image",
+              imagePath: "meta.image"
             }),
             MetaTitleField({
-              hasGenerateFn: true,
+              hasGenerateFn: true
             }),
             MetaImageField({
-              relationTo: "media",
+              relationTo: "media"
             }),
             MetaDescriptionField({}),
             PreviewField({
               hasGenerateFn: true,
               titlePath: "meta.title",
-              descriptionPath: "meta.description",
+              descriptionPath: "meta.description"
             }),
-          ],
+          ]
         },
-      ],
+      ]
         
     },
     {
       name: "publishedAt",
       type: "date",
       admin: {
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
     {
       name: "website",
       type: "relationship",
       relationTo: "websites",
       required: true,
-      admin: { position: "sidebar" },
+      admin: { position: "sidebar" }
     },
     {
       name: "createdBy",
@@ -785,23 +785,23 @@ export const Pages: CollectionConfig<"pages"> = {
       defaultValue: ({ req: { user } }) => user?.id,
       admin: {
         readOnly: true,
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
     ...slugField(),
   ],
   hooks: {
     afterChange: [revalidatePage],
     beforeChange: [populatePublishedAt],
-    beforeDelete: [revalidateDelete],
+    beforeDelete: [revalidateDelete]
   },
   versions: {
     drafts: {
       autosave: {
-        interval: 100,
+        interval: 100
       },
-      schedulePublish: true,
+      schedulePublish: true
     },
-    maxPerDoc: 50,
-  },
+    maxPerDoc: 50
+  }
 };

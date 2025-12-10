@@ -15,7 +15,7 @@ export const Banner: Block = {
         { label: "Error", value: "error" },
         { label: "Success", value: "success" },
       ],
-      required: true,
+      required: true
     },
     {
       name: "content",
@@ -23,12 +23,12 @@ export const Banner: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
           return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()];
-        },
+        }
       }),
       label: false,
       localized: true,
-      required: true,
+      required: true
     },
   ],
-  interfaceName: "BannerBlock",
+  interfaceName: "BannerBlock"
 };

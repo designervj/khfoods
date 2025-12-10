@@ -9,7 +9,7 @@ export const QuantityInput = ({
   quantity,
   setQuantity,
   updateQuantity,
-  inputVariant = "default",
+  inputVariant = "default"
 }: {
   minQuantity: number;
   maxQuantity: number;

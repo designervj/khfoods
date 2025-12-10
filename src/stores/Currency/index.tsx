@@ -18,7 +18,7 @@ const useCurrencyStore = create<CurrencyState>((set) => ({
       window.localStorage.setItem("currency", currencyToSet);
     }
     set({ currency: currencyToSet });
-  },
+  }
 }));
 
 export const useCurrency = () => {

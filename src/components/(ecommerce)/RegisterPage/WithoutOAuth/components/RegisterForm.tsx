@@ -19,8 +19,8 @@ export const RegisterForm = () => {
     defaultValues: {
       email: "",
       password: "",
-      confirmPassword: "",
-    },
+      confirmPassword: ""
+    }
   });
 
   const [message, setMessage] = useState("");
@@ -32,7 +32,7 @@ export const RegisterForm = () => {
     try {
       const res = await axios.post("/api/customers", {
         email: values.email,
-        password: values.password,
+        password: values.password
       });
 
       if (res.status === 200 || res.status === 201) {

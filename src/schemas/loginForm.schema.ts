@@ -11,7 +11,7 @@ export const useLoginFormSchema = () => {
 
   const LoginFormSchema = z.object({
     email: z.string().nonempty(t("email-empty")).email(t("email")),
-    password: z.string().nonempty(t("password")),
+    password: z.string().nonempty(t("password"))
   });
 
   const LoginFormSchemaResolver: ZodType<LoginFormData> = LoginFormSchema;

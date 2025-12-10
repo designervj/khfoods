@@ -17,7 +17,7 @@ export const State = ({
   errors,
   label,
   required,
-  width,
+  width
 }: StateField & {
   control: Control<FieldValues, any>;
   errors: Partial<FieldErrorsImpl<Record<string, any>>>;

@@ -17,7 +17,6 @@ import type { Administrator } from "@/payload-types";
 import {authenticated} from "@/access/authenticated";
 import { checkUserPermission } from "@/access/roleBasedAccess";
 
-
 const isReadAccess = async(args: AccessArgs<Administrator>) => {
   const base = await checkUserPermission(args, "read", "adminPermission");
   if (base === true &&args.req?.user?.id) {
@@ -66,20 +65,20 @@ export const Permission: CollectionConfig = {
         }
         return data;
       },
-    ],
+    ]
   },
   slug: "permission",
   labels: {
     singular: {
       en: "Permission",
-      pl: "Zestaw Uprawnień",
-      hr: "Dozvola",
+      zh: "权限",
+      hr: "Dozvola"
     },
     plural: {
       en: "Permissions",
-      pl: "Zestawy Uprawnień",
-      hr: "Dozvole",
-    },
+      zh: "权限",
+      hr: "Dozvole"
+    }
   },
   access: {
     read: isReadAccess,
@@ -92,35 +91,35 @@ export const Permission: CollectionConfig = {
    defaultColumns:["roleTitle","administrators"],
     group: {
       en: "Administration",
-      pl: "Administracja",
-      hr: "Administracija",
-    },
+      zh: "管理",
+      hr: "Administracija"
+    }
   },
   fields: [
     {
       name: "roleTitle",
       label: {
         en: "Role Title",
-        hr: "Naziv uloge",
-        pl: "Nazwa roli",
+        hr: "Naziv uloge"
+
       },
       type: "text",
-      required: true,
+      required: true
     },
     {
       name: "administrators",
       label: {
         en: "Administrators",
-        hr: "Administratori",
-        pl: "Administratorzy",
+        hr: "Administratori"
+
       },
       type: "relationship",
       relationTo: "administrators",
       hasMany: true,
       required: true,
       admin: {
-        description: "All administrators with this role",
-      },
+        description: "All administrators with this role"
+      }
     },
    
      /// administration collection
@@ -137,48 +136,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "admin_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "admin_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "admin_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
     // Pages Collection Permissions
     {
@@ -193,48 +192,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "pages_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "pages_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "pages_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Products Collection Permissions
@@ -250,48 +249,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "products_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "products_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "products_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Media Collection Permissions
@@ -307,48 +306,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "media_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "media_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "media_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // PostCollection Permissions
@@ -364,48 +363,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "post_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "post_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "post_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // website Collection Permissions
@@ -421,48 +420,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "website_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "website_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "website_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // order Collection Permissions
@@ -478,48 +477,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "order_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "order_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "order_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Shop Collection Permissions
@@ -535,48 +534,48 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "shop_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "shop_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "shop_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
     // Courier Collection Permissions
@@ -592,50 +591,49 @@ export const Permission: CollectionConfig = {
               type: "checkbox",
               label: {
                 en: "Create",
-                hr: "Kreiraj",
-                pl: "Utwórz",
+                hr: "Kreiraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "courier_read",
               type: "checkbox",
               label: {
                 en: "Read",
-                hr: "Čitaj",
-                pl: "Czytaj",
+                hr: "Čitaj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "courier_update",
               type: "checkbox",
               label: {
                 en: "Update",
-                hr: "Ažuriraj",
-                pl: "Aktualizuj",
+                hr: "Ažuriraj"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
             {
               name: "courier_delete",
               type: "checkbox",
               label: {
                 en: "Delete",
-                hr: "Obriši",
-                pl: "Usuń",
+                hr: "Obriši"
+
               },
               defaultValue: false,
-              virtual: true,
+              virtual: true
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-
 
     // Metadata fields
     {
@@ -646,8 +644,8 @@ export const Permission: CollectionConfig = {
   defaultValue: (req) => req.user ? req.user.id : null,
       admin: {
         position: "sidebar",
-        readOnly: true,
-      },
+        readOnly: true
+      }
     },
    // Hidden permission array fields for database storage
     // These fields store the transformed checkbox data as arrays
@@ -656,73 +654,73 @@ export const Permission: CollectionConfig = {
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "pagesPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "productsPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "mediaPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "postPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "websitePermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "orderPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "shopPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
     {
       name: "courierPermission",
       type: "text",
       hasMany: true,
       admin: {
-        hidden: true,
-      },
+        hidden: true
+      }
     },
   ],
-  timestamps: true,
+  timestamps: true
 };

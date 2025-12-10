@@ -12,7 +12,7 @@ export const SidebarMainLayoutSection: Block = {
   interfaceName: "MultiColumn",
   labels: {
     singular: "Sidebar + Main Layout",
-    plural: "Sidebar + Main Layouts",
+    plural: "Sidebar + Main Layouts"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="17" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="27" y="6" width="57" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Sidebar + Main Layout",
@@ -26,7 +26,7 @@ export const SidebarMainLayoutSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -38,7 +38,7 @@ export const SidebarMainLayoutSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -48,7 +48,7 @@ export const SidebarMainLayoutSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "sidebar",
@@ -59,8 +59,8 @@ export const SidebarMainLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the sidebar content",
-      },
+        description: "Add one or more blocks for the sidebar content"
+      }
     },
     {
       name: "mainContent",
@@ -71,15 +71,15 @@ export const SidebarMainLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the main content area",
-      },
+        description: "Add one or more blocks for the main content area"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const MainSidebarLayoutSection: Block = {
@@ -87,7 +87,7 @@ export const MainSidebarLayoutSection: Block = {
   interfaceName: "MultiColumn",
   labels: {
     singular: "Main + Sidebar Layout",
-    plural: "Main + Sidebar Layouts",
+    plural: "Main + Sidebar Layouts"
   },
   imageURL: `<svg width="90" height="28" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="57" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="67" y="6" width="17" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Main + Sidebar Layout",
@@ -101,7 +101,7 @@ export const MainSidebarLayoutSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -113,7 +113,7 @@ export const MainSidebarLayoutSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -123,7 +123,7 @@ export const MainSidebarLayoutSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "mainContent",
@@ -134,8 +134,8 @@ export const MainSidebarLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the main content area",
-      },
+        description: "Add one or more blocks for the main content area"
+      }
     },
     {
       name: "sidebar",
@@ -146,15 +146,15 @@ export const MainSidebarLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the sidebar content",
-      },
+        description: "Add one or more blocks for the sidebar content"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const HeaderTwoColumnsLayoutSection: Block = {
@@ -162,7 +162,7 @@ export const HeaderTwoColumnsLayoutSection: Block = {
   interfaceName: "MultiColumn",
   labels: {
     singular: "Header + Two Columns Layout",
-    plural: "Header + Two Columns Layouts",
+    plural: "Header + Two Columns Layouts"
   },
   imageURL: `<svg width="90" height="48" viewBox="0 0 90 48" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="78" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="6" y="26" width="37" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect><rect x="47" y="26" width="37" height="16" fill="#D2D7E4" class="et-vb-svg-nofill"></rect></svg>`,
   imageAltText: "Header + Two Columns Layout",
@@ -176,7 +176,7 @@ export const HeaderTwoColumnsLayoutSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -188,7 +188,7 @@ export const HeaderTwoColumnsLayoutSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -198,7 +198,7 @@ export const HeaderTwoColumnsLayoutSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "header",
@@ -209,8 +209,8 @@ export const HeaderTwoColumnsLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the header content",
-      },
+        description: "Add one or more blocks for the header content"
+      }
     },
     {
       name: "leftColumn",
@@ -221,8 +221,8 @@ export const HeaderTwoColumnsLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the left column content",
-      },
+        description: "Add one or more blocks for the left column content"
+      }
     },
     {
       name: "rightColumn",
@@ -233,15 +233,15 @@ export const HeaderTwoColumnsLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the right column content",
-      },
+        description: "Add one or more blocks for the right column content"
+      }
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const HeaderThreeColumnsLayoutSection: Block = {
@@ -251,7 +251,7 @@ export const HeaderThreeColumnsLayoutSection: Block = {
   imageAltText: "Header + Three Columns Layout",
   labels: {
     singular: "Header + Three Columns Layout",
-    plural: "Header + Three Columns Layouts",
+    plural: "Header + Three Columns Layouts"
   },
   fields: [
     {
@@ -263,7 +263,7 @@ export const HeaderThreeColumnsLayoutSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -275,7 +275,7 @@ export const HeaderThreeColumnsLayoutSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -285,7 +285,7 @@ export const HeaderThreeColumnsLayoutSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "header",
@@ -296,8 +296,8 @@ export const HeaderThreeColumnsLayoutSection: Block = {
       minRows: 1,
       admin: {
         initCollapsed: false,
-        description: "Add one or more blocks for the header content",
-      },
+        description: "Add one or more blocks for the header content"
+      }
     },
     {
       name: "columns",
@@ -313,17 +313,17 @@ export const HeaderThreeColumnsLayoutSection: Block = {
           minRows: 1,
           admin: {
             initCollapsed: false,
-            description: "Add one or more blocks for this column",
-          },
+            description: "Add one or more blocks for this column"
+          }
         },
-      ],
+      ]
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };
 
 export const MasonryLayoutSection: Block = {
@@ -333,7 +333,7 @@ export const MasonryLayoutSection: Block = {
   imageAltText: "Masonry Layout",
   labels: {
     singular: "Masonry Layout",
-    plural: "Masonry Layouts",
+    plural: "Masonry Layouts"
   },
   fields: [
     {
@@ -345,7 +345,7 @@ export const MasonryLayoutSection: Block = {
         { label: "Gray", value: "gray" },
         { label: "Blue", value: "blue" },
         { label: "Transparent", value: "transparent" },
-      ],
+      ]
     },
     {
       name: "padding",
@@ -357,7 +357,7 @@ export const MasonryLayoutSection: Block = {
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
         { label: "Extra Large", value: "xl" },
-      ],
+      ]
     },
     {
       name: "gap",
@@ -367,7 +367,7 @@ export const MasonryLayoutSection: Block = {
         { label: "Small", value: "sm" },
         { label: "Medium", value: "md" },
         { label: "Large", value: "lg" },
-      ],
+      ]
     },
     {
       name: "items",
@@ -381,15 +381,15 @@ export const MasonryLayoutSection: Block = {
           minRows: 1,
           admin: {
             initCollapsed: false,
-            description: "Add one or more blocks for this masonry item",
-          },
+            description: "Add one or more blocks for this masonry item"
+          }
         },
-      ],
+      ]
     },
     {
       name: "className",
       type: "text",
-      label: "Custom CSS Classes",
+      label: "Custom CSS Classes"
     },
-  ],
+  ]
 };

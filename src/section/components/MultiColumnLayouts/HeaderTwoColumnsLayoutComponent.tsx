@@ -21,7 +21,7 @@ export const HeaderTwoColumnsLayoutComponent: React.FC<HeaderTwoColumnsLayoutBlo
   header = [],
   leftColumn = [],
   rightColumn = [],
-  className,
+  className
 }) => {
   // Render each section's blocks
   const renderedContent = [

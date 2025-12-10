@@ -40,7 +40,7 @@ async function getTenantByDomainPayload(
       locale,
       limit: 1,
       pagination: false,
-      depth: 2,
+      depth: 2
     });
 
     if (pages.docs[0]) {
@@ -54,7 +54,7 @@ async function getTenantByDomainPayload(
       const websites = await payload.find({
         collection: "websites",
         limit: 1,
-        pagination: false,
+        pagination: false
       });
       website = websites.docs[0];
       // console.log('Found default website:', !!website);
@@ -63,11 +63,11 @@ async function getTenantByDomainPayload(
         collection: "websites",
         where: {
           "domains.domain": {
-            equals: domain,
-          },
+            equals: domain
+          }
         },
         limit: 1,
-        pagination: false,
+        pagination: false
       });
       website = websites.docs[0];
       // console.log('Found website for domain', domain, ':', !!website);
@@ -90,7 +90,7 @@ async function getTenantByDomainPayload(
       locale,
       limit: 1,
       pagination: false,
-      depth: 2,
+      depth: 2
     });
 
     // console.log('Found page with website constraint:', !!pages.docs[0]);

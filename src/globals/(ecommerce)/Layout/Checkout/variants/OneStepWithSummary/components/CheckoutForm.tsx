@@ -16,7 +16,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
@@ -24,7 +24,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { type Country } from "@/globals/(ecommerce)/Couriers/utils/countryList";
@@ -34,7 +34,7 @@ import { useRouter } from "@/i18n/routing";
 import { type Customer, type Media } from "@/payload-types";
 import {
   type CheckoutFormData,
-  useCheckoutFormSchema,
+  useCheckoutFormSchema
 } from "@/schemas/checkoutForm.schema";
 import { useCart } from "@/stores/CartStore";
 import { type Cart } from "@/stores/CartStore/types";
@@ -62,7 +62,7 @@ export type FilledCourier = {
 
 export const CheckoutForm = ({
   user,
-  geowidgetToken,
+  geowidgetToken
 }: {
   user?: Customer;
   geowidgetToken?: string;
@@ -93,7 +93,7 @@ export const CheckoutForm = ({
         country: "pl", // Set default country
         region: "",
         postalCode: "",
-        tin: "",
+        tin: ""
       },
       shipping: {
         id: defaultShippingAddress?.id ?? "",
@@ -106,23 +106,23 @@ export const CheckoutForm = ({
         phone: defaultShippingAddress?.phone ?? "",
         email: defaultShippingAddress?.email ?? "",
         pickupPointID: "",
-        pickupPointAddress: "",
+        pickupPointAddress: ""
       },
-      deliveryMethod: "",
-    },
+      deliveryMethod: ""
+    }
   });
   const [shippingDialogOpen, setShippingDialogOpen] = useState(false);
   const [addShippingDialogOpen, setAddShippingDialogOpen] = useState(false);
 
   const wantsInvoice = useWatch({
     control: form.control,
-    name: "individualInvoice",
+    name: "individualInvoice"
   });
   const isCompany =
     useWatch({ control: form.control, name: "buyerType" }) === "company";
   const selectedDelivery = useWatch({
     control: form.control,
-    name: "deliveryMethod",
+    name: "deliveryMethod"
   });
   const shipping = useWatch({ control: form.control, name: "shipping" });
 
@@ -161,7 +161,7 @@ export const CheckoutForm = ({
         }>("/next/checkout", {
           cart: cartToCalculate,
           selectedCountry: countryToCalculate,
-          locale,
+          locale
         });
         const { filledProducts, total, couriers } =
           data.productsWithTotalAndCouriers;
@@ -209,7 +209,7 @@ export const CheckoutForm = ({
           selectedCountry: shipping.country,
           checkoutData: values,
           locale,
-          currency: currency.currency,
+          currency: currency.currency
         }
       );
       console.log("Payment API Response:", data);
@@ -219,7 +219,7 @@ export const CheckoutForm = ({
       } else {
         console.error("Payment failed with status:", data.status);
         form.setError("root", {
-          message: (data as any)?.message || t("internal-server-error"),
+          message: (data as any)?.message || t("internal-server-error")
         });
       }
     } catch (error) {
@@ -232,7 +232,7 @@ export const CheckoutForm = ({
       form.setError("root", {
         message: errorMessage.includes("Internal server error")
           ? t("internal-server-error")
-          : errorMessage,
+          : errorMessage
       });
     }
   };

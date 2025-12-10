@@ -5,7 +5,7 @@ export const List: Block = {
   interfaceName: "ListBlock",
   labels: {
     singular: "📝 List",
-    plural: "📝 Lists",
+    plural: "📝 Lists"
   },
   imageURL:
     "data:image/svg+xml," +
@@ -36,7 +36,7 @@ export const List: Block = {
                 { label: "Unordered (Bullets)", value: "unordered" },
                 { label: "Ordered (Numbers)", value: "ordered" },
                 { label: "Icon List", value: "icon" },
-              ],
+              ]
             },
             {
               name: "items",
@@ -49,7 +49,7 @@ export const List: Block = {
                   name: "text",
                   type: "text",
                   label: "Text",
-                  required: true,
+                  required: true
                 },
                 {
                   name: "icon",
@@ -67,12 +67,12 @@ export const List: Block = {
                     condition: (data, siblingData, { user }) => {
                       // Access parent data through the full data object
                       return data.listType === "icon";
-                    },
-                  },
+                    }
+                  }
                 },
-              ],
+              ]
             },
-          ],
+          ]
         },
         {
           label: "Styling",
@@ -88,8 +88,8 @@ export const List: Block = {
                 { label: "Square", value: "square" },
               ],
               admin: {
-                condition: (data) => data.listType === "unordered",
-              },
+                condition: (data) => data.listType === "unordered"
+              }
             },
             {
               name: "numberStyle",
@@ -103,18 +103,18 @@ export const List: Block = {
                 { label: "Lower Alpha (a, b, c)", value: "lower-alpha" },
               ],
               admin: {
-                condition: (data) => data.listType === "ordered",
-              },
+                condition: (data) => data.listType === "ordered"
+              }
             },
             {
               name: "iconColor",
               type: "text",
-              label: "Icon/Bullet Color",
+              label: "Icon/Bullet Color"
             },
             {
               name: "textColor",
               type: "text",
-              label: "Text Color",
+              label: "Text Color"
             },
             {
               name: "fontSize",
@@ -126,7 +126,7 @@ export const List: Block = {
                 { label: "Base", value: "base" },
                 { label: "Large", value: "lg" },
                 { label: "Extra Large", value: "xl" },
-              ],
+              ]
             },
             {
               name: "spacing",
@@ -137,7 +137,7 @@ export const List: Block = {
                 { label: "Tight", value: "sm" },
                 { label: "Normal", value: "md" },
                 { label: "Relaxed", value: "lg" },
-              ],
+              ]
             },
             {
               name: "indentation",
@@ -149,17 +149,17 @@ export const List: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "backgroundColor",
               type: "text",
-              label: "Background Color",
+              label: "Background Color"
             },
             {
               name: "borderColor",
               type: "text",
-              label: "Border Color",
+              label: "Border Color"
             },
             {
               name: "borderRadius",
@@ -171,7 +171,7 @@ export const List: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "padding",
@@ -183,7 +183,7 @@ export const List: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "shadow",
@@ -195,7 +195,7 @@ export const List: Block = {
                 { label: "Small", value: "sm" },
                 { label: "Medium", value: "md" },
                 { label: "Large", value: "lg" },
-              ],
+              ]
             },
             {
               name: "animation",
@@ -207,16 +207,16 @@ export const List: Block = {
                 { label: "Fade In", value: "fadeIn" },
                 { label: "Slide Left", value: "slideLeft" },
                 { label: "Stagger", value: "stagger" },
-              ],
+              ]
             },
             {
               name: "className",
               type: "text",
-              label: "Custom CSS Classes",
+              label: "Custom CSS Classes"
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

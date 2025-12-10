@@ -8,6 +8,6 @@ export async function GET() {
 
   return NextResponse.json({
     message: "Draft mode disabled",
-    isEnabled: false,
+    isEnabled: false
   });
 }

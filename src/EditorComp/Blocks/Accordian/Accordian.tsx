@@ -12,8 +12,8 @@ export const AccordionBlock: ComponentConfig = {
       label: "Accordion Items",
       arrayFields: {
         title: { type: "text", label: "Title" },
-        content: { type: "textarea", label: "Content" },
-      },
+        content: { type: "textarea", label: "Content" }
+      }
     },
     defaultOpenIndex: { type: "number", label: "Default Open Index (0-based)" },
     allowMultiple: { type: "radio", label: "Allow Multiple Open", options: [
@@ -27,7 +27,7 @@ export const AccordionBlock: ComponentConfig = {
     backgroundColor: { type: "text", label: "Background Color" },
     textColor: { type: "text", label: "Text Color" },
     borderColor: { type: "text", label: "Border Color" },
-    borderRadius: { type: "number", label: "Border Radius (px)" },
+    borderRadius: { type: "number", label: "Border Radius (px)" }
   },
 
   defaultProps: {
@@ -35,17 +35,17 @@ export const AccordionBlock: ComponentConfig = {
       {
         title: "What is Puck?",
         content:
-          "Puck is a visual editor for React that lets you build and edit page layouts dynamically with structured content blocks.",
+          "Puck is a visual editor for React that lets you build and edit page layouts dynamically with structured content blocks."
       },
       {
         title: "Can I use it with my CMS?",
         content:
-          "Yes! You can integrate Puck with Payload CMS, Sanity, Strapi, or any other headless CMS easily.",
+          "Yes! You can integrate Puck with Payload CMS, Sanity, Strapi, or any other headless CMS easily."
       },
       {
         title: "Is it customizable?",
         content:
-          "Absolutely. You can define your own React components, fields, and styling inside your Puck configuration.",
+          "Absolutely. You can define your own React components, fields, and styling inside your Puck configuration."
       },
     ],
     defaultOpenIndex: 0,
@@ -53,7 +53,7 @@ export const AccordionBlock: ComponentConfig = {
     backgroundColor: "#ffffff",
     textColor: "#111827",
     borderColor: "#e5e7eb",
-    borderRadius: 8,
+    borderRadius: 8
   },
 
   render: ({
@@ -63,7 +63,7 @@ export const AccordionBlock: ComponentConfig = {
     backgroundColor,
     textColor,
     borderColor,
-    borderRadius,
+    borderRadius
   }) => {
     const [openIndexes, setOpenIndexes] = useState<number[]>(
       defaultOpenIndex !== undefined ? [defaultOpenIndex] : []
@@ -89,7 +89,7 @@ export const AccordionBlock: ComponentConfig = {
           color: textColor,
           borderRadius,
           border: `1px solid ${borderColor}`,
-          overflow: "hidden",
+          overflow: "hidden"
         }}
       >
         {items.map((item, index) => {
@@ -101,7 +101,7 @@ export const AccordionBlock: ComponentConfig = {
                 borderBottom:
                   index !== items.length - 1
                     ? `1px solid ${borderColor}`
-                    : "none",
+                    : "none"
               }}
             >
               <button
@@ -117,7 +117,7 @@ export const AccordionBlock: ComponentConfig = {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  cursor: "pointer",
+                  cursor: "pointer"
                 }}
               >
                 <span>{item.title}</span>
@@ -125,7 +125,7 @@ export const AccordionBlock: ComponentConfig = {
                   style={{
                     transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
                     transition: "transform 0.3s ease",
-                    fontSize: 18,
+                    fontSize: 18
                   }}
                 >
                   ▶
@@ -140,7 +140,7 @@ export const AccordionBlock: ComponentConfig = {
                   padding: isOpen ? "0 20px 16px 20px" : "0 20px",
                   opacity: isOpen ? 1 : 0,
                   transitionProperty: "max-height, opacity, padding",
-                  transitionDuration: "0.4s",
+                  transitionDuration: "0.4s"
                 }}
               >
                 <p
@@ -148,7 +148,7 @@ export const AccordionBlock: ComponentConfig = {
                     margin: 0,
                     lineHeight: 1.6,
                     fontSize: 14,
-                    color: textColor,
+                    color: textColor
                   }}
                 >
                   {item.content}
@@ -159,5 +159,5 @@ export const AccordionBlock: ComponentConfig = {
         })}
       </div>
     );
-  },
+  }
 };

@@ -27,11 +27,11 @@ export const TabsBlock: ComponentConfig = {
             name: { type: "text", label: "Product Name" },
             priceEUR: { type: "number", label: "Price (EUR)" },
             image: { type: "text", label: "Image URL" },
-            size: { type: "text", label: "Size" },
-          },
-        },
-      },
-    },
+            size: { type: "text", label: "Size" }
+          }
+        }
+      }
+    }
   },
 
   // --------------------------------------------
@@ -51,8 +51,8 @@ export const TabsBlock: ComponentConfig = {
           name: "Petty 173mm",
           priceEUR: 220,
           image: "/assets/products/product-img.png",
-          size: "173mm",
-        }),
+          size: "173mm"
+        })
       },
       {
         id: "gyuto",
@@ -62,8 +62,8 @@ export const TabsBlock: ComponentConfig = {
           name: "Gyuto 210mm",
           priceEUR: 260,
           image: "/assets/products/product-img.png",
-          size: "210mm",
-        }),
+          size: "210mm"
+        })
       },
       {
         id: "santoku",
@@ -73,8 +73,8 @@ export const TabsBlock: ComponentConfig = {
           name: "Santoku 180mm",
           priceEUR: 240,
           image: "/assets/products/product-img.png",
-          size: "180mm",
-        }),
+          size: "180mm"
+        })
       },
       {
         id: "nakiri",
@@ -84,10 +84,10 @@ export const TabsBlock: ComponentConfig = {
           name: "Nakiri 165mm",
           priceEUR: 230,
           image: "/assets/products/product-img.png",
-          size: "165mm",
-        }),
+          size: "165mm"
+        })
       },
-    ],
+    ]
   },
 
   // --------------------------------------------
@@ -109,7 +109,7 @@ export const TabsBlock: ComponentConfig = {
               paddingBottom: "10px",
               marginBottom: "15px",
               width: "100%",
-              display: "block",
+              display: "block"
             }}
           >
             {sectionTitle}
@@ -122,7 +122,7 @@ export const TabsBlock: ComponentConfig = {
               maxWidth: "900px",
               lineHeight: "160%",
               marginBottom: "40px",
-              fontWeight: "500",
+              fontWeight: "500"
             }}
           >
             {sectionDesc}
@@ -140,7 +140,7 @@ export const TabsBlock: ComponentConfig = {
                   background: "#fff",
                   cursor: "pointer",
                   borderRadius: "4px",
-                  fontWeight: 500,
+                  fontWeight: 500
                 }}
               >
                 {c.label}
@@ -157,7 +157,7 @@ export const TabsBlock: ComponentConfig = {
                 marginTop: "40px",
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                gap: "20px",
+                gap: "20px"
               }}
             >
               {c.products.map((p, i) => (
@@ -166,7 +166,7 @@ export const TabsBlock: ComponentConfig = {
                   style={{
                     border: "1px solid #eee",
                     borderRadius: "8px",
-                    overflow: "hidden",
+                    overflow: "hidden"
                   }}
                 >
                   <div style={{ width: "100%", height: "250px", overflow: "hidden" }}>
@@ -177,7 +177,7 @@ export const TabsBlock: ComponentConfig = {
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
-                        transition: "0.3s",
+                        transition: "0.3s"
                       }}
                     />
                   </div>
@@ -192,7 +192,7 @@ export const TabsBlock: ComponentConfig = {
                       borderTop: "1px solid #eee",
                       padding: "12px 15px",
                       display: "flex",
-                      justifyContent: "space-between",
+                      justifyContent: "space-between"
                     }}
                   >
                     <span style={{ fontWeight: 600, color: "#FF7020" }}>
@@ -206,5 +206,5 @@ export const TabsBlock: ComponentConfig = {
         </div>
       </section>
     );
-  },
+  }
 };

@@ -7,7 +7,7 @@ import { type Locale } from "@/i18n/config";
 export const VerifyAccountEmail = async ({
   url,
   locale,
-  name,
+  name
 }: {
   url: string;
   locale: Locale;
@@ -22,7 +22,7 @@ export const VerifyAccountEmail = async ({
           color: "#000",
           display: "block",
           textAlign: "center",
-          fontSize: "16px",
+          fontSize: "16px"
         }}
       >
         {t("greeting", { name })},
@@ -33,7 +33,7 @@ export const VerifyAccountEmail = async ({
           color: "#000",
           display: "block",
           textAlign: "center",
-          fontSize: "16px",
+          fontSize: "16px"
         }}
       >
         {t("body")}
@@ -45,7 +45,7 @@ export const VerifyAccountEmail = async ({
           color: "#fff",
           padding: "12px 20px",
           backgroundColor: "#6366f1",
-          margin: "0 auto",
+          margin: "0 auto"
         }}
       >
         {t("button")}

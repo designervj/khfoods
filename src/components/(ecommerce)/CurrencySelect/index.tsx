@@ -23,7 +23,7 @@ export const CurrencySelect: TextFieldClientComponent = ({ path }) => {
         setOptions(
           data.availableCurrencies.map((currency) => ({
             label: currency,
-            value: currency,
+            value: currency
           })),
         );
       } catch {
@@ -39,7 +39,7 @@ export const CurrencySelect: TextFieldClientComponent = ({ path }) => {
       <Select
         value={{
           label: value,
-          value,
+          value
         }}
         onChange={(option: { value: string }) => setValue(option.value)}
         options={options}

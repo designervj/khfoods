@@ -35,7 +35,7 @@ export default async function Page({ params: paramsPromise }: Args) {
     limit: 12,
     locale,
     page: sanitizedPageNumber,
-    overrideAccess: true,
+    overrideAccess: true
   });
 
   return (
@@ -65,7 +65,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
   const { pageNumber } = await paramsPromise;
   return {
-    title: `Payload Ecommerce Template Posts Page ${pageNumber || ""}`,
+    title: `Payload Ecommerce Template Posts Page ${pageNumber || ""}`
   };
 }
 
@@ -73,7 +73,7 @@ export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise });
   const { totalDocs } = await payload.count({
     collection: "posts",
-    overrideAccess: true,
+    overrideAccess: true
   });
 
   const totalPages = Math.ceil(totalDocs / 10);

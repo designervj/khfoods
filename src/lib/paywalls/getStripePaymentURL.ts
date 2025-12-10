@@ -13,7 +13,7 @@ export const getStripePaymentURL = async ({
   locale,
   apiKey,
   orderID,
-  host,
+  host
 }: {
   filledProducts: FilledProduct[];
   shippingCost: number;
@@ -65,9 +65,9 @@ export const getStripePaymentURL = async ({
       price_data: {
         currency: currency.toLowerCase(),
         product_data: productData,
-        unit_amount: productPrice * 100,
+        unit_amount: productPrice * 100
       },
-      quantity: product.quantity,
+      quantity: product.quantity
     };
   });
   try {
@@ -80,19 +80,19 @@ export const getStripePaymentURL = async ({
             type: "fixed_amount",
             fixed_amount: {
               amount: shippingCost * 100,
-              currency: currency.toLowerCase(),
+              currency: currency.toLowerCase()
             },
-            display_name: shippingLabel,
-          },
+            display_name: shippingLabel
+          }
         },
       ],
       payment_intent_data: {
         metadata: {
-          orderID,
-        },
+          orderID
+        }
       },
       success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/order/${orderID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/order/${orderID}?cancelled=true`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/order/${orderID}?cancelled=true`
     });
 
     return session.url;

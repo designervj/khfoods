@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 import { type Dimensions } from "@/app/(frontend)/next/package/route";
 import { AdminInput } from "@/components/ui/AdminInput";
@@ -37,7 +37,7 @@ export const CourierShipmentMenuClient = ({ orderID }: { orderID: string }) => {
       setIsLoading(true);
       const { data } = await axios.post<string>(`/next/package`, {
         orderID,
-        dimensions,
+        dimensions
       });
 
       await form.submit({ skipValidation: true, overrides: { printLabel: { packageNumber: data } } });

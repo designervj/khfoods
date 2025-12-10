@@ -6,7 +6,7 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "paylo
 export const revalidatePage: CollectionAfterChangeHook<Page> = ({
   doc,
   previousDoc,
-  req: { payload, context },
+  req: { payload, context }
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === "published") {

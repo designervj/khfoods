@@ -10,7 +10,7 @@ export async function getRedirects(depth = 1) {
     collection: "redirects",
     depth,
     limit: 0,
-    pagination: false,
+    pagination: false
   });
 
   return redirects;
@@ -23,5 +23,5 @@ export async function getRedirects(depth = 1) {
  */
 export const getCachedRedirects = () =>
   unstable_cache(async () => getRedirects(), ["redirects"], {
-    tags: ["redirects"],
+    tags: ["redirects"]
   });

@@ -3,7 +3,7 @@ export const SizingFields = {
   objectFields: {
     Width: {
       type: "text",
-      label: "Width",
+      label: "Width"
     },
     "Max Width": {
       type: "select",
@@ -14,11 +14,11 @@ export const SizingFields = {
         { label: "Large", value: "large" },
         { label: "Full", value: "full" },
         { label: "Custom", value: "custom" },
-      ],
+      ]
     },
     "Custom Max Width": {
       type: "text",
-      label: "Custom Max Width",
+      label: "Custom Max Width"
     },
     "Section Alignment": {
       type: "radio",
@@ -26,19 +26,19 @@ export const SizingFields = {
         { label: "Left", value: "left" },
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
-      ],
+      ]
     },
     "Min Height": {
       type: "text",
-      label: "Min Height",
+      label: "Min Height"
     },
     Height: {
       type: "text",
-      label: "Height",
+      label: "Height"
     },
     "Max Height": {
       type: "text",
-      label: "Max Height",
-    },
-  },
+      label: "Max Height"
+    }
+  }
 };

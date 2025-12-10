@@ -34,17 +34,17 @@ const SearchPage = async ({ params, searchParams }: SearchPageProps) => {
           or: [
             {
               title: {
-                contains: search,
-              },
+                contains: search
+              }
             },
             {
               slug: {
-                contains: search,
-              },
+                contains: search
+              }
             },
-          ],
+          ]
         },
-        pagination: false,
+        pagination: false
       })
     : { docs: [] };
 

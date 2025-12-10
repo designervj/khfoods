@@ -17,19 +17,19 @@ const AboutSection = () => {
         {
           icon: <LuUsersRound className="h-6 w-6 text-[#FD7839]" />,
           text: "3 Sloja čelka",
-          sub: "bez prisustva nikla",
+          sub: "bez prisustva nikla"
         },
         {
           icon: <LuUsersRound className="h-6 w-6 text-[#FD7839]" />,
           text: "Dugotrajna oštrina",
-          sub: "& uz niski kut oštrenja",
+          sub: "& uz niski kut oštrenja"
         },
       ],
       cta: "Više o Noževima",
       image: "/assets/Image/about-img-1.png",
       overlay: "bg-gradient-to-t from-black/85 via-black/60 to-transparent",
       buttonColor: "bg-[#AD1100] hover:bg-[#E73D12]",
-      video: "https://www.youtube.com/embed/tgbNymZ7vqY",
+      video: "https://www.youtube.com/embed/tgbNymZ7vqY"
     },
     {
       id: 2,
@@ -38,19 +38,19 @@ const AboutSection = () => {
         {
           icon: <LuUsersRound className="h-6 w-6 text-[#7893AA]" />,
           text: "Preko 3500+ iskovanih noževa",
-          sub: "uglavnom japanskih vrsta",
+          sub: "uglavnom japanskih vrsta"
         },
         {
           icon: <LuUsersRound className="h-6 w-6 text-[#7893AA]" />,
           text: "Spoj struke i hobija",
-          sub: "u službi visoke kvalitete",
+          sub: "u službi visoke kvalitete"
         },
       ],
       cta: "Više o Karlu",
       image: "/assets/Image/about-img.png",
       overlay: "bg-gradient-to-t from-black/85 via-black/60 to-transparent",
       buttonColor: "bg-[#7893AA] hover:bg-[#5E6979]",
-      video: "https://www.youtube.com/embed/tgbNymZ7vqY",
+      video: "https://www.youtube.com/embed/tgbNymZ7vqY"
     },
   ];
 

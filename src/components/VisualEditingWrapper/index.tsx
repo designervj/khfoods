@@ -21,7 +21,7 @@ export const VisualEditingWrapper: React.FC<VisualEditingWrapperProps> = ({
   collection = "pages",
   field = "layout",
   className = "",
-  isInlineEditable = false,
+  isInlineEditable = false
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDraft, setIsDraft] = useState(false);
@@ -64,7 +64,7 @@ export const VisualEditingWrapper: React.FC<VisualEditingWrapperProps> = ({
         transition: "all 0.2s ease-in-out",
   /* cursor: isInlineEditable ? "text" : "pointer", Removed to avoid conflict with drag handles */
         backgroundColor: isHovered ? "rgba(59, 130, 246, 0.05)" : "transparent",
-        borderRadius: "4px",
+        borderRadius: "4px"
       }
     : {};
 
@@ -84,7 +84,7 @@ export const VisualEditingWrapper: React.FC<VisualEditingWrapperProps> = ({
           zIndex: 1000,
           pointerEvents: "none" as const,
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
-          letterSpacing: "0.5px",
+          letterSpacing: "0.5px"
         }
       : { display: "none" };
 

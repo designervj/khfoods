@@ -16,7 +16,7 @@ export const TwoRowsTwoColumns: React.FC<MultiRowProps> = ({ rows, gap = "md", .
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -39,7 +39,7 @@ export const TwoRowsThreeColumns: React.FC<MultiRowProps> = ({ rows, gap = "md",
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -65,7 +65,7 @@ export const ThreeRowsTwoColumns: React.FC<MultiRowProps> = ({ rows, gap = "md",
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -88,7 +88,7 @@ export const ThreeRowsThreeColumns: React.FC<MultiRowProps> = ({ rows, gap = "md
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -114,7 +114,7 @@ export const TwoRowsFourColumns: React.FC<MultiRowProps> = ({ rows, gap = "md", 
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -140,7 +140,7 @@ export const ThreeRowsFourColumns: React.FC<MultiRowProps> = ({ rows, gap = "md"
   const gapClasses = {
     sm: "gap-4",
     md: "gap-6",
-    lg: "gap-8",
+    lg: "gap-8"
   };
 
   return (
@@ -167,7 +167,7 @@ const MultiRowColumnsComponents = {
   ThreeRowsTwoColumns,
   ThreeRowsThreeColumns,
   TwoRowsFourColumns,
-  ThreeRowsFourColumns,
+  ThreeRowsFourColumns
 };
 
 export default MultiRowColumnsComponents;

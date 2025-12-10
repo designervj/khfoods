@@ -10,55 +10,55 @@ export const courierFields: Field[] = [
     name: "enabled",
     type: "checkbox",
     label: {
-      en: "Enable this courier",
-      pl: "Włącz tego kuriera",
-    },
+      en: "Enable this courier"
+
+    }
   },
   {
     name: "settings",
     label: {
-      en: "Settings",
-      pl: "Ustawienia",
+      en: "Settings"
+
     },
     type: "group",
 
-    fields: courierSettingsFields,
+    fields: courierSettingsFields
   },
   {
     name: "deliveryZones",
     type: "array",
     label: {
-      en: "Delivery zones",
-      pl: "Strefy dostaw",
+      en: "Delivery zones"
+
     },
     labels: {
       plural: {
-        en: "Delivery zones",
-        pl: "Strefy dostaw",
+        en: "Delivery zones"
+
       },
       singular: {
-        en: "Delivery zone",
-        pl: "Strefa dostaw",
-      },
+        en: "Delivery zone"
+
+      }
     },
 
     fields: [countryPickerField, freeShippingField, weightRangesField],
     admin: {
       components: {
-        RowLabel: "@/components/(ecommerce)/RowLabels/DeliveryZonesRowLabel#DeliveryZonesRowLabel",
-      },
-    },
+        RowLabel: "@/components/(ecommerce)/RowLabels/DeliveryZonesRowLabel#DeliveryZonesRowLabel"
+      }
+    }
   },
   {
     name: "icon",
     type: "upload",
     label: {
-      en: "Icon",
-      pl: "Ikona",
+      en: "Icon"
+
     },
     relationTo: "media",
     admin: {
-      condition: (data) => Boolean(data.enabled),
-    },
+      condition: (data) => Boolean(data.enabled)
+    }
   },
 ];

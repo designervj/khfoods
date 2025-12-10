@@ -8,7 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
+  CarouselPrevious
 } from "@/components/ui/carousel";
 import { Link } from "@/i18n/routing";
 import { type Product } from "@/payload-types";
@@ -21,7 +21,7 @@ type CarouselOptions = UseCarouselParameters[0];
 
 export const WithInlinePriceSlider = ({
   products,
-  opts,
+  opts
 }: {
   products: Product[];
   opts?: Partial<CarouselOptions>;
@@ -34,12 +34,12 @@ export const WithInlinePriceSlider = ({
         slidesToScroll: 2,
         breakpoints: {
           "(min-width: 768px)": {
-            slidesToScroll: 3,
+            slidesToScroll: 3
           },
           "(min-width: 1280px)": {
-            slidesToScroll: 4,
-          },
-        },
+            slidesToScroll: 4
+          }
+        }
       }}
     >
       <CarouselContent>

@@ -23,7 +23,7 @@ export const ImageMedia = (props: MediaProps) => {
     size: sizeFromProps,
     src: srcFromProps,
     loading: loadingFromProps,
-    placeholder: placeholderFromProps,
+    placeholder: placeholderFromProps
   } = props;
 
   let width: number | undefined;

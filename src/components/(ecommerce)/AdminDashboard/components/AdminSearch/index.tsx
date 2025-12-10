@@ -7,7 +7,7 @@ import { Fragment } from "react";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 import {
   Command,
@@ -16,14 +16,14 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
+  CommandSeparator
 } from "@/components/ui/command";
 
 export const AdminSearch = ({ groups }: { groups: NavGroupType[] }) => {
   const {
     config: {
-      routes: { admin: adminRoute },
-    },
+      routes: { admin: adminRoute }
+    }
   } = useConfig();
 
   const { i18n, t } = useTranslation<CustomTranslationsObject, CustomTranslationsKeys>();

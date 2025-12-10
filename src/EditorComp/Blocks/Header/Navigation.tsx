@@ -73,19 +73,19 @@ export const NavBar: ComponentConfig<NavBarProps> = {
     // Logo Section
     logoText: {
       type: "text",
-      label: "Logo Text",
+      label: "Logo Text"
     },
     logoLink: {
       type: "text",
-      label: "Logo Link",
+      label: "Logo Link"
     },
     logoColor: {
       type: "text",
-      label: "Logo Color",
+      label: "Logo Color"
     },
     logoFontSize: {
       type: "number",
-      label: "Logo Font Size",
+      label: "Logo Font Size"
     },
     logoFontWeight: {
       type: "select",
@@ -96,7 +96,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
         { label: "Medium", value: "500" },
         { label: "Semibold", value: "600" },
         { label: "Bold", value: "700" },
-      ],
+      ]
     },
 
     // Navigation Items
@@ -106,11 +106,11 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       arrayFields: {
         label: {
           type: "text",
-          label: "Label",
+          label: "Label"
         },
         link: {
           type: "text",
-          label: "Link",
+          label: "Link"
         },
         hasDropdown: {
           type: "radio",
@@ -118,7 +118,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
           options: [
             { label: "Yes", value: true },
             { label: "No", value: false },
-          ],
+          ]
         },
         dropdownItems: {
           type: "array",
@@ -126,37 +126,37 @@ export const NavBar: ComponentConfig<NavBarProps> = {
           arrayFields: {
             label: {
               type: "text",
-              label: "Label",
+              label: "Label"
             },
             link: {
               type: "text",
-              label: "Link",
-            },
+              label: "Link"
+            }
           },
-          getItemSummary: (item) => item.label || "Dropdown Item",
-        },
+          getItemSummary: (item) => item.label || "Dropdown Item"
+        }
       },
       getItemSummary: (item) => item.label || "Nav Item",
       defaultItemProps: {
         label: "Nav Item",
         link: "#",
         hasDropdown: false,
-        dropdownItems: [],
-      },
+        dropdownItems: []
+      }
     },
 
     // Nav Item Styling
     navTextColor: {
       type: "text",
-      label: "Nav Text Color",
+      label: "Nav Text Color"
     },
     navHoverColor: {
       type: "text",
-      label: "Nav Hover Color",
+      label: "Nav Hover Color"
     },
     navFontSize: {
       type: "number",
-      label: "Nav Font Size",
+      label: "Nav Font Size"
     },
     navFontWeight: {
       type: "select",
@@ -167,43 +167,43 @@ export const NavBar: ComponentConfig<NavBarProps> = {
         { label: "Medium", value: "500" },
         { label: "Semibold", value: "600" },
         { label: "Bold", value: "700" },
-      ],
+      ]
     },
 
     // CTA Button
     ctaText: {
       type: "text",
-      label: "CTA Button Text",
+      label: "CTA Button Text"
     },
     ctaLink: {
       type: "text",
-      label: "CTA Button Link",
+      label: "CTA Button Link"
     },
     ctaBackgroundColor: {
       type: "text",
-      label: "CTA Background Color",
+      label: "CTA Background Color"
     },
     ctaTextColor: {
       type: "text",
-      label: "CTA Text Color",
+      label: "CTA Text Color"
     },
     ctaHoverBackgroundColor: {
       type: "text",
-      label: "CTA Hover Background",
+      label: "CTA Hover Background"
     },
     ctaBorderRadius: {
       type: "number",
-      label: "CTA Border Radius",
+      label: "CTA Border Radius"
     },
 
     // NavBar Container
     backgroundColor: {
       type: "text",
-      label: "Background Color",
+      label: "Background Color"
     },
     height: {
       type: "number",
-      label: "NavBar Height",
+      label: "NavBar Height"
     },
     hasShadow: {
       type: "radio",
@@ -211,7 +211,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       options: [
         { label: "Yes", value: true },
         { label: "No", value: false },
-      ],
+      ]
     },
     isSticky: {
       type: "radio",
@@ -219,25 +219,25 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       options: [
         { label: "Yes", value: true },
         { label: "No", value: false },
-      ],
+      ]
     },
 
     // Dropdown Styling
     dropdownBackgroundColor: {
       type: "text",
-      label: "Dropdown Background Color",
+      label: "Dropdown Background Color"
     },
     dropdownTextColor: {
       type: "text",
-      label: "Dropdown Text Color",
+      label: "Dropdown Text Color"
     },
     dropdownHoverBackgroundColor: {
       type: "text",
-      label: "Dropdown Hover Background",
+      label: "Dropdown Hover Background"
     },
     dropdownBorderRadius: {
       type: "number",
-      label: "Dropdown Border Radius",
+      label: "Dropdown Border Radius"
     },
 
     // Spacing
@@ -248,8 +248,8 @@ export const NavBar: ComponentConfig<NavBarProps> = {
         paddingLeft: { type: "number", label: "Left" },
         paddingRight: { type: "number", label: "Right" },
         paddingTop: { type: "number", label: "Top" },
-        paddingBottom: { type: "number", label: "Bottom" },
-      },
+        paddingBottom: { type: "number", label: "Bottom" }
+      }
     },
     margin: {
       label: "Margin",
@@ -258,9 +258,9 @@ export const NavBar: ComponentConfig<NavBarProps> = {
         marginLeft: { type: "number", label: "Left" },
         marginRight: { type: "number", label: "Right" },
         marginTop: { type: "number", label: "Top" },
-        marginBottom: { type: "number", label: "Bottom" },
-      },
-    },
+        marginBottom: { type: "number", label: "Bottom" }
+      }
+    }
   },
 
   defaultProps: {
@@ -277,7 +277,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
         label: "Home",
         link: "/",
         hasDropdown: false,
-        dropdownItems: [],
+        dropdownItems: []
       },
       {
         label: "Services",
@@ -287,19 +287,19 @@ export const NavBar: ComponentConfig<NavBarProps> = {
           { label: "Web Design", link: "/services/web-design" },
           { label: "SEO", link: "/services/seo" },
           { label: "Marketing", link: "/services/marketing" },
-        ],
+        ]
       },
       {
         label: "About",
         link: "/about",
         hasDropdown: false,
-        dropdownItems: [],
+        dropdownItems: []
       },
       {
         label: "Contact",
         link: "/contact",
         hasDropdown: false,
-        dropdownItems: [],
+        dropdownItems: []
       },
     ],
 
@@ -334,14 +334,14 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       paddingLeft: 16,
       paddingRight: 16,
       paddingTop: 0,
-      paddingBottom: 0,
+      paddingBottom: 0
     },
     margin: {
       marginLeft: 0,
       marginRight: 0,
       marginTop: 0,
-      marginBottom: 0,
-    },
+      marginBottom: 0
+    }
   },
 
   render: ({
@@ -370,7 +370,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
     dropdownHoverBackgroundColor,
     dropdownBorderRadius,
     padding,
-    margin,
+    margin
   }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -389,7 +389,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       marginLeft: margin?.marginLeft,
       marginRight: margin?.marginRight,
       marginTop: margin?.marginTop,
-      marginBottom: margin?.marginBottom,
+      marginBottom: margin?.marginBottom
     };
 
     const innerContainerStyle: React.CSSProperties = {
@@ -402,7 +402,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       paddingLeft: padding?.paddingLeft,
       paddingRight: padding?.paddingRight,
       paddingTop: padding?.paddingTop,
-      paddingBottom: padding?.paddingBottom,
+      paddingBottom: padding?.paddingBottom
     };
 
     const logoStyle: React.CSSProperties = {
@@ -410,7 +410,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       fontSize: `${logoFontSize}px`,
       fontWeight: logoFontWeight,
       textDecoration: "none",
-      cursor: "pointer",
+      cursor: "pointer"
     };
 
     const navLinkStyle: React.CSSProperties = {
@@ -424,7 +424,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       transition: "all 0.2s",
       display: "inline-flex",
       alignItems: "center",
-      gap: "4px",
+      gap: "4px"
     };
 
     const ctaButtonStyle: React.CSSProperties = {
@@ -437,7 +437,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       cursor: "pointer",
       transition: "all 0.2s",
       border: "none",
-      display: "inline-block",
+      display: "inline-block"
     };
 
     const dropdownStyle: React.CSSProperties = {
@@ -450,7 +450,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
       minWidth: "224px",
       padding: "8px 0",
-      zIndex: 10,
+      zIndex: 10
     };
 
     const dropdownItemStyle: React.CSSProperties = {
@@ -459,7 +459,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
       color: dropdownTextColor,
       textDecoration: "none",
       fontSize: "14px",
-      transition: "all 0.2s",
+      transition: "all 0.2s"
     };
 
     return (
@@ -477,7 +477,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "4px",
+              gap: "4px"
             }}
             className="desktop-nav"
           >
@@ -490,7 +490,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
                       style={{
                         ...navLinkStyle,
                         background: "none",
-                        border: "none",
+                        border: "none"
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.color = navHoverColor;
@@ -583,7 +583,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
               border: "none",
               background: "none",
               cursor: "pointer",
-              color: navTextColor,
+              color: navTextColor
             }}
             className="mobile-menu-btn"
           >
@@ -608,7 +608,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
             style={{
               backgroundColor,
               borderTop: "1px solid #e5e7eb",
-              padding: "16px",
+              padding: "16px"
             }}
             className="mobile-menu"
           >
@@ -629,7 +629,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
                         color: navTextColor,
                         fontSize: `${navFontSize}px`,
                         cursor: "pointer",
-                        borderRadius: "6px",
+                        borderRadius: "6px"
                       }}
                     >
                       <span>{item.label}</span>
@@ -642,7 +642,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
                         strokeWidth="2"
                         style={{
                           transform: openDropdown === index ? "rotate(180deg)" : "rotate(0deg)",
-                          transition: "transform 0.2s",
+                          transition: "transform 0.2s"
                         }}
                       >
                         <polyline points="6 9 12 15 18 9"></polyline>
@@ -660,7 +660,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
                               color: dropdownTextColor,
                               textDecoration: "none",
                               fontSize: "14px",
-                              borderRadius: "6px",
+                              borderRadius: "6px"
                             }}
                           >
                             {dropItem.label}
@@ -678,7 +678,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
                       color: navTextColor,
                       textDecoration: "none",
                       fontSize: `${navFontSize}px`,
-                      borderRadius: "6px",
+                      borderRadius: "6px"
                     }}
                   >
                     {item.label}
@@ -692,7 +692,7 @@ export const NavBar: ComponentConfig<NavBarProps> = {
                 ...ctaButtonStyle,
                 display: "block",
                 textAlign: "center",
-                marginTop: "12px",
+                marginTop: "12px"
               }}
             >
               {ctaText}
@@ -713,5 +713,5 @@ export const NavBar: ComponentConfig<NavBarProps> = {
         `}</style>
       </nav>
     );
-  },
+  }
 };

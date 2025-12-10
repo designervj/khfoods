@@ -24,7 +24,7 @@ export const AdminLanguageSelector = () => {
       await fetch("/api/administrators/me", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ language: newLocale }),
+        body: JSON.stringify({ language: newLocale })
       });
       // Optionally update the URL
       const newPath = pathname.replace(/^\/admin\/[^/]+/, `/admin/${newLocale}`);
@@ -48,7 +48,7 @@ export const AdminLanguageSelector = () => {
           borderRadius: "4px",
           background: "#f3f4f6",
           border: "none",
-          cursor: "pointer",
+          cursor: "pointer"
         }}
       >
         {locales.find((l) => l.code === currentLocale)?.label || "English"} ▼
@@ -63,7 +63,7 @@ export const AdminLanguageSelector = () => {
             border: "1px solid #e5e7eb",
             borderRadius: "4px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            zIndex: 10,
+            zIndex: 10
           }}
         >
           {locales.map((locale) => (
@@ -78,7 +78,7 @@ export const AdminLanguageSelector = () => {
                 border: "none",
                 textAlign: "left",
                 cursor: "pointer",
-                fontWeight: locale.code === currentLocale ? "bold" : "normal",
+                fontWeight: locale.code === currentLocale ? "bold" : "normal"
               }}
             >
               {locale.label}
@@ -89,5 +89,4 @@ export const AdminLanguageSelector = () => {
     </div>
   );
 };
-
 

@@ -19,7 +19,7 @@ export const SidebarMainLayoutComponent: React.FC<SidebarMainLayoutBlockProps> =
   gap = "md",
   sidebar = [],
   mainContent = [],
-  className,
+  className
 }) => {
   // Render each section's blocks
   const renderedContent = [

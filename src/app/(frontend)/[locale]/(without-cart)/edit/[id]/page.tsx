@@ -11,9 +11,8 @@ const EditorPage = async ({ params }) => {
 const payload = await getPayload({ config: configPromise });
   const page = await payload.findByID({
     collection: "pages",
-    id: param.id,
+    id: param.id
   });
-
 
   return <Editor mode="edit" data={page} />;
 };

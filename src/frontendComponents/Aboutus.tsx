@@ -8,18 +8,18 @@ export default function AboutSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
+      transition: { staggerChildren: 0.2 }
+    }
   };
 
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
   };
 
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
   };
 
   return (

@@ -10,29 +10,29 @@ export const FormBlock: Block = {
       name: "form",
       type: "relationship",
       relationTo: "forms",
-      required: true,
+      required: true
     },
     {
       name: "enableIntro",
       type: "checkbox",
-      label: "Enable Intro Content",
+      label: "Enable Intro Content"
     },
     {
       name: "introContent",
       type: "richText",
       admin: {
-        condition: (_, { enableIntro }) => Boolean(enableIntro),
+        condition: (_, { enableIntro }) => Boolean(enableIntro)
       },
       localized: true,
       editor: noBlocksLexical,
-      label: "Intro Content",
+      label: "Intro Content"
     },
   ],
   graphQL: {
-    singularName: "FormBlock",
+    singularName: "FormBlock"
   },
   labels: {
     plural: "Form Blocks",
-    singular: "Form Block",
-  },
+    singular: "Form Block"
+  }
 };

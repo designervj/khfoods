@@ -6,7 +6,7 @@ import {
   ThreeEqualColumns,
   FourEqualColumns,
   FiveEqualColumns,
-  SixEqualColumns,
+  SixEqualColumns
 } from "./EqualColumns";
 import {
   TwoThirdsOneThird,
@@ -14,7 +14,7 @@ import {
   OneQuarterThreeQuarters,
   ThreeQuartersOneQuarter,
   OffsetSmallLeft,
-  OffsetSmallRight,
+  OffsetSmallRight
 } from "./OffsetColumns";
 import {
   TwoRowsTwoColumns,
@@ -22,7 +22,7 @@ import {
   ThreeRowsTwoColumns,
   ThreeRowsThreeColumns,
   TwoRowsFourColumns,
-  ThreeRowsFourColumns,
+  ThreeRowsFourColumns
 } from "./MultiRowColumns";
 import {
   SidebarMainLayout,
@@ -31,7 +31,7 @@ import {
   HeaderThreeColumnsLayout,
   TwoColumnsFooterLayout,
   MasonryLayout,
-  CenterWithSidePanels,
+  CenterWithSidePanels
 } from "./MultiColumnLayouts";
 import ContentCard from "./ContentCard";
 import ImageCard from "./ImageCard";

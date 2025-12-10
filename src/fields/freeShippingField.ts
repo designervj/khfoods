@@ -6,23 +6,23 @@ export const freeShippingField: Field = {
   name: "freeShipping",
   type: "array",
   label: {
-    en: "Free shipping from",
-    pl: "Darmowa dostawa od",
+    en: "Free shipping from"
+
   },
   labels: {
     singular: {
-      en: "Price",
-      pl: "Cena",
+      en: "Price"
+
     },
     plural: {
-      en: "Prices",
-      pl: "Ceny",
-    },
+      en: "Prices"
+
+    }
   },
   admin: {
     components: {
-      RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel",
-    },
+      RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel"
+    }
   },
   fields: [
     {
@@ -32,13 +32,13 @@ export const freeShippingField: Field = {
           name: "value",
           type: "number",
           label: {
-            en: "Price",
-            pl: "Cena",
+            en: "Price"
+
           },
-          required: true,
+          required: true
         },
         currencyField,
-      ],
+      ]
     },
-  ],
+  ]
 };

@@ -35,18 +35,17 @@ const isUpdateAccess = (args: AccessArgs<Administrator>) =>
 const isDeleteAccess = (args: AccessArgs<Administrator>) =>
   checkUserPermission(args, "delete", "adminPermission");
 
-
 export const Administrators: CollectionConfig = {
   slug: "administrators",
   labels: {
     singular: {
       en: "Administrator",
-      pl: "Administrator",
+      zh: "管理员"
     },
     plural: {
       en: "Administrators",
-      pl: "Administratorzy",
-    },
+      zh: "管理员"
+    }
   },
 
   admin: {
@@ -54,8 +53,8 @@ export const Administrators: CollectionConfig = {
     useAsTitle: "name",
     group: {
       en: "Administration",
-      pl: "Administracja",
-    },
+      zh: "管理"
+    }
   },
   auth: {
     loginWithUsername: false,
@@ -67,7 +66,7 @@ export const Administrators: CollectionConfig = {
     create: isCreateAccess,
     update: isUpdateAccess,
     delete: isDeleteAccess,
-    admin:()=>true,
+    admin:()=>true
   },
 
   hooks: {
@@ -81,7 +80,7 @@ export const Administrators: CollectionConfig = {
             const roleDocArr = await req.payload.find({
               collection: 'roles',
               where: { roleTitle: { equals: data.role } },
-              limit: 1,
+              limit: 1
             });
             const roleDoc = roleDocArr?.docs?.[0];
             // console.log("roleDoc-----", roleDoc);
@@ -173,7 +172,7 @@ export const Administrators: CollectionConfig = {
             const roleDocArr = await req.payload.find({
               collection: 'roles',
               where: { roleTitle: { equals: data.role } },
-              limit: 1,
+              limit: 1
             });
             const roleDoc = roleDocArr?.docs?.[0];
             // console.log('🔍 Set permissions based on role:', roleDoc);
@@ -262,7 +261,7 @@ afterChange: [
         const roleDocArr = await req.payload.find({
           collection: 'roles',
           where: { roleTitle: { equals: roleTitle } },
-          limit: 1,
+          limit: 1
         });
   console.log("get role based permisiion",roleDocArr)
         const roleDoc = roleDocArr?.docs?.[0];
@@ -298,8 +297,8 @@ afterChange: [
           data: {
             roleTitle: roleTitle,
             administrators: req.user ? [req.user.id] : [],
-            ...updateData,
-          },
+            ...updateData
+          }
         });
 
         console.log(`✅ New permission created for role "${roleTitle}"`);
@@ -310,7 +309,6 @@ afterChange: [
     }
   },
 ],
-
 
     afterLogin: [
       async ({ req, user }) => {
@@ -329,7 +327,7 @@ afterChange: [
         }
       },
     ],
-    afterForgotPassword: [async ({ args }) => {}],
+    afterForgotPassword: [async ({ args }) => {}]
   },
   fields: [
     {
@@ -347,8 +345,8 @@ afterChange: [
       ],
       required: false,
       admin: {
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
     {
       name: "role",
@@ -356,8 +354,8 @@ afterChange: [
       required: false,
      
       admin: {
-        condition: ({ operation }) => operation === 'create',
-      },
+        condition: ({ operation }) => operation === 'create'
+      }
     },
     // {
     //   name: "roles",
@@ -372,9 +370,9 @@ afterChange: [
       type: "ui",
      admin: {
     components: {
-      Field: "@/components/roleSelection#DynamicRoleSelector",
-    },
-  },
+      Field: "@/components/roleSelection#DynamicRoleSelector"
+    }
+  }
     },
    
     
@@ -385,9 +383,9 @@ afterChange: [
       relationTo: "administrators",
       defaultValue:({req})=>req.user? req.user.id:"",
       admin: {
-        position: "sidebar",
-      },
+        position: "sidebar"
+      }
     },
   ],
-  timestamps: true,
+  timestamps: true
 };  

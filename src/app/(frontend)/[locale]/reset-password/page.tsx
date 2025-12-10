@@ -3,7 +3,7 @@ import { redirect } from "@/i18n/routing";
 
 const ResetPassword = async ({
   params,
-  searchParams,
+  searchParams
 }: {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ token?: string; collection: string }>;

@@ -6,23 +6,23 @@ export const weightRangesField: Field = {
   name: "range",
   type: "array",
   label: {
-    en: "Weight ranges",
-    pl: "Zakresy wagowe",
+    en: "Weight ranges"
+
   },
   labels: {
     plural: {
-      en: "Weight ranges",
-      pl: "Zakresy wagowe",
+      en: "Weight ranges"
+
     },
     singular: {
-      en: "Weight range",
-      pl: "Zakres wagowy",
-    },
+      en: "Weight range"
+
+    }
   },
   admin: {
     components: {
-      RowLabel: "@/components/(ecommerce)/RowLabels/WeightRangeRowLabel#WeightRangeRowLabel",
-    },
+      RowLabel: "@/components/(ecommerce)/RowLabels/WeightRangeRowLabel#WeightRangeRowLabel"
+    }
   },
   fields: [
     {
@@ -31,46 +31,46 @@ export const weightRangesField: Field = {
         {
           name: "weightFrom",
           label: {
-            en: "Weight from (g)",
-            pl: "Waga od (g)",
+            en: "Weight from (g)"
+
           },
           type: "number",
-          required: true,
+          required: true
         },
         {
           name: "weightTo",
           label: {
-            en: "Weight to (g)",
-            pl: "Waga do (g)",
+            en: "Weight to (g)"
+
           },
           type: "number",
-          required: true,
+          required: true
         },
-      ],
+      ]
     },
     {
       name: "pricing",
       type: "array",
       label: {
-        en: "Pricing",
-        pl: "Cennik",
+        en: "Pricing"
+
       },
       minRows: 1,
       required: true,
       labels: {
         singular: {
-          en: "Price",
-          pl: "Cena",
+          en: "Price"
+
         },
         plural: {
-          en: "Prices",
-          pl: "Ceny",
-        },
+          en: "Prices"
+
+        }
       },
       admin: {
         components: {
-          RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel",
-        },
+          RowLabel: "@/components/(ecommerce)/RowLabels/PriceRowLabel#PriceRowLabel"
+        }
       },
       fields: [
         {
@@ -80,15 +80,15 @@ export const weightRangesField: Field = {
               name: "value",
               type: "number",
               label: {
-                en: "Price",
-                pl: "Cena",
+                en: "Price"
+
               },
-              required: true,
+              required: true
             },
             currencyField,
-          ],
+          ]
         },
-      ],
+      ]
     },
-  ],
+  ]
 };

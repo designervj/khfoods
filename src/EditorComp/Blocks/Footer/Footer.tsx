@@ -16,7 +16,7 @@ export const FooterBlock: ComponentConfig = {
         { label: "Left", value: "left" },
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
-      ],
+      ]
     },
 
     brandText: { type: "textarea", label: "Brand Description" },
@@ -26,8 +26,8 @@ export const FooterBlock: ComponentConfig = {
       label: "Quick Links",
       arrayFields: {
         label: { type: "text", label: "Label" },
-        href: { type: "text", label: "URL" },
-      },
+        href: { type: "text", label: "URL" }
+      }
     },
 
     customerLinks: {
@@ -35,12 +35,12 @@ export const FooterBlock: ComponentConfig = {
       label: "Customer Links",
       arrayFields: {
         label: { type: "text", label: "Label" },
-        href: { type: "text", label: "URL" },
-      },
+        href: { type: "text", label: "URL" }
+      }
     },
 
     contactText: { type: "textarea", label: "Contact Text" },
-    contactPhone: { type: "text", label: "Phone Number" },
+    contactPhone: { type: "text", label: "Phone Number" }
   },
 
   defaultProps: {
@@ -70,7 +70,7 @@ export const FooterBlock: ComponentConfig = {
 
     contactText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    contactPhone: "+123 456 789",
+    contactPhone: "+123 456 789"
   },
 
   render: ({
@@ -81,7 +81,7 @@ export const FooterBlock: ComponentConfig = {
     quickLinks,
     customerLinks,
     contactText,
-    contactPhone,
+    contactPhone
   }) => {
     return (
       <footer
@@ -90,7 +90,7 @@ export const FooterBlock: ComponentConfig = {
           color: textColor,
           padding: "40px 20px",
           width: "100%",
-          textAlign: alignment as any,
+          textAlign: alignment as any
         }}
       >
         {/* TOP SECTION */}
@@ -98,7 +98,7 @@ export const FooterBlock: ComponentConfig = {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "30px",
+            gap: "30px"
           }}
         >
           {/* BRAND */}
@@ -123,7 +123,7 @@ export const FooterBlock: ComponentConfig = {
                   style={{
                     color: textColor,
                     textDecoration: "none",
-                    opacity: 0.8,
+                    opacity: 0.8
                   }}
                 >
                   {l.label}
@@ -143,7 +143,7 @@ export const FooterBlock: ComponentConfig = {
                   style={{
                     color: textColor,
                     textDecoration: "none",
-                    opacity: 0.8,
+                    opacity: 0.8
                   }}
                 >
                   {l.label}
@@ -181,7 +181,7 @@ export const FooterBlock: ComponentConfig = {
                 padding: "8px 20px",
                 borderRadius: "12px",
                 color: "#3D7BD8",
-                fontWeight: "600",
+                fontWeight: "600"
               }}
             >
               LIVE CHAT
@@ -205,7 +205,7 @@ export const FooterBlock: ComponentConfig = {
             height: "1px",
             backgroundColor: "#ccc",
             margin: "30px 0",
-            opacity: 0.4,
+            opacity: 0.4
           }}
         />
 
@@ -216,7 +216,7 @@ export const FooterBlock: ComponentConfig = {
             justifyContent: "space-between",
             flexWrap: "wrap",
             gap: "20px",
-            fontSize: "14px",
+            fontSize: "14px"
           }}
         >
           <div>© All Rights Reserved</div>
@@ -229,5 +229,5 @@ export const FooterBlock: ComponentConfig = {
         </div>
       </footer>
     );
-  },
+  }
 };

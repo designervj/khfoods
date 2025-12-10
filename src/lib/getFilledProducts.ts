@@ -30,7 +30,7 @@ export const getFilledProducts = <T extends CartProduct | WishlistProduct>(
               variant: null as any,
               stock: product.stock,
               pricing: product.pricing,
-              ...(isCart(item) ? { quantity: item.quantity } : {}),
+              ...(isCart(item) ? { quantity: item.quantity } : {})
             },
           ]
         : [];
@@ -59,9 +59,9 @@ export const getFilledProducts = <T extends CartProduct | WishlistProduct>(
             slug: variant.variantSlug,
             stock: variant.stock,
             image: typeof variant.image !== "string" ? variant.image : null,
-            pricing: variant.pricing,
+            pricing: variant.pricing
           },
-          ...(isCart(item!) ? { quantity: item.quantity } : {}),
+          ...(isCart(item!) ? { quantity: item.quantity } : {})
         };
       });
   });

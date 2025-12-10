@@ -15,53 +15,53 @@ const columnFields: Field[] = [
     options: [
       {
         label: "One Sixth",
-        value: "oneSixth",
+        value: "oneSixth"
       },
       {
         label: "One Third",
-        value: "oneThird",
+        value: "oneThird"
       },
       {
         label: "Half",
-        value: "half",
+        value: "half"
       },
       {
         label: "Two Thirds",
-        value: "twoThirds",
+        value: "twoThirds"
       },
       {
         label: "Five Sixth",
-        value: "fiveSixth",
+        value: "fiveSixth"
       },
       {
         label: "Full",
-        value: "full",
+        value: "full"
       },
-    ],
+    ]
   },
   {
     name: "richText",
     type: "richText",
     editor: defaultLexical,
     localized: true,
-    label: false,
+    label: false
   },
   {
     name: "enableLink",
-    type: "checkbox",
+    type: "checkbox"
   },
   {
     name: "enableProse",
     type: "checkbox",
-    defaultValue: true,
+    defaultValue: true
   },
   paddingFields,
   link({
     overrides: {
       admin: {
-        condition: (_, { enableLink }) => Boolean(enableLink),
-      },
-    },
+        condition: (_, { enableLink }) => Boolean(enableLink)
+      }
+    }
   }),
   backgroundPicker,
 ];
@@ -74,14 +74,14 @@ export const Content: Block = {
       name: "columns",
       type: "array",
       admin: {
-        initCollapsed: true,
+        initCollapsed: true
       },
-      fields: columnFields,
+      fields: columnFields
     },
     {
       label: "Styling Options",
       type: "collapsible",
-      fields: [AlignmentField, marginFields, paddingFields, ...radiusFields, backgroundPicker],
+      fields: [AlignmentField, marginFields, paddingFields, ...radiusFields, backgroundPicker]
     },
-  ],
+  ]
 };

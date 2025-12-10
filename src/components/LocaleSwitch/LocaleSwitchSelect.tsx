@@ -23,7 +23,7 @@ export function LocaleSwitchSelect({ children, defaultValue, label }: Props) {
   async function onSelectChange(locale: Locale) {
     startTransition(() => {
       const query = {
-        ...Object.fromEntries(searchParams.entries()),
+        ...Object.fromEntries(searchParams.entries())
       };
 
       router.replace(

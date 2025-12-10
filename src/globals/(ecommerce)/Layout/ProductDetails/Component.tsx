@@ -12,7 +12,7 @@ import { ProductBreadcrumbs } from "../../../../components/(ecommerce)/ProductBr
 
 export const ProductDetails = async ({
   variant,
-  product,
+  product
 }: {
   variant?: string;
   product: Product;

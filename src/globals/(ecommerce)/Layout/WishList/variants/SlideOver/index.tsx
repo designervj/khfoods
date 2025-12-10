@@ -134,12 +134,12 @@ export const SlideOver = () => {
                                         product.enableVariantPrices
                                           ? (product.variant?.pricing?.map((p) => ({
                                               ...p,
-                                              value: p.value,
+                                              value: p.value
                                             })) ?? [])
                                           : product.pricing
                                             ? product.pricing.map((p) => ({
                                                 ...p,
-                                                value: p.value,
+                                                value: p.value
                                               }))
                                             : []
                                       }
@@ -175,7 +175,7 @@ export const SlideOver = () => {
                                       {
                                         id: product.id,
                                         quantity: 1,
-                                        choosenVariantSlug: product.variant?.slug ?? undefined,
+                                        choosenVariantSlug: product.variant?.slug ?? undefined
                                       },
                                     ]);
                                     removeFromWishList(product.id, product.variant?.slug ?? undefined);

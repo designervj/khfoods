@@ -11,24 +11,24 @@ export const Code: Block = {
       options: [
         {
           label: "Typescript",
-          value: "typescript",
+          value: "typescript"
         },
         {
           label: "Javascript",
-          value: "javascript",
+          value: "javascript"
         },
         {
           label: "CSS",
-          value: "css",
+          value: "css"
         },
-      ],
+      ]
     },
     {
       name: "code",
       type: "code",
       label: false,
       required: true,
-      localized: true,
+      localized: true
     },
-  ],
+  ]
 };

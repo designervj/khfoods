@@ -14,7 +14,7 @@ import NewsletterSection from "@/frontendComponents/sections/NewsletterSection";
 
 const ProductPage = async ({
   params,
-  searchParams,
+  searchParams
 }: {
   params: Promise<{ slug: string }>;
   searchParams: Promise<Record<string, string | undefined>>;
@@ -29,9 +29,9 @@ const ProductPage = async ({
       locale,
       where: {
         slug: {
-          equals: slug,
-        },
-      },
+          equals: slug
+        }
+      }
     });
     const { variant } = await searchParams;
 
@@ -72,7 +72,7 @@ const ProductPage = async ({
                   { label: "Gift type", value: "Kitchen Knife" },
                   {
                     label: "Knife use",
-                    value: "All purposes – except bone cutting",
+                    value: "All purposes – except bone cutting"
                   },
                 ]}
                 shipping="Enjoy Free shipping on $100+ orders in the US. We ship from our NYC office within 1–2 business days or less, often the same day as your order. Select from USPS and UPS shipping options for US & International orders, with Express options available for fast delivery anywhere in the world. Special shipping requirements? Just let us know."

@@ -9,34 +9,34 @@ import {
   Star,
   RotateCcw,
   MessageCircle,
-  CreditCard,
+  CreditCard
 } from "lucide-react";
 
 const features = [
   {
     icon: <Truck className="w-10 h-10 text-orange-500" />,
     title: "Free Delivery",
-    desc: "from $40",
+    desc: "from $40"
   },
   {
     icon: <Star className="w-10 h-10 text-orange-500" />,
     title: "Best Quality",
-    desc: "Brand",
+    desc: "Brand"
   },
   {
     icon: <RotateCcw className="w-10 h-10 text-orange-500" />,
     title: "1 Year",
-    desc: "for free Return",
+    desc: "for free Return"
   },
   {
     icon: <MessageCircle className="w-10 h-10 text-orange-500" />,
     title: "Feedback",
-    desc: "98% Real Data",
+    desc: "98% Real Data"
   },
   {
     icon: <CreditCard className="w-10 h-10 text-orange-500" />,
     title: "Payment",
-    desc: "Secure",
+    desc: "Secure"
   },
 ];
 
@@ -80,7 +80,6 @@ const SliderBrand = () => {
   
  
 
-
             {/* ---------- Bottom Brand Slider ---------- */}
             <div className="pt-8">
         <Swiper
@@ -92,7 +91,7 @@ const SliderBrand = () => {
           breakpoints={{
             320: { slidesPerView: 3 },
             640: { slidesPerView: 4 },
-            1024: { slidesPerView: 6 },
+            1024: { slidesPerView: 6 }
           }}
           className="flex items-center"
         >

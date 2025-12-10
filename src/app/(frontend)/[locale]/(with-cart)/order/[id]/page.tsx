@@ -13,7 +13,7 @@ import { getOrderProducts } from "@/utilities/getOrderProducts";
 import { headers } from "next/headers";
 
 const OrdersPage = async ({
-  params,
+  params
 }: {
   params: Promise<{ locale: Locale; id: string }>;
 }) => {
@@ -37,14 +37,14 @@ const OrdersPage = async ({
     collection: "orders",
     where: {
       id: {
-        equals: id,
+        equals: id
         
       },
       // "orderDetails.website": {
       //   equals: websiteId,
-      // },
+      // }
     },
-    locale,
+    locale
   });
 
   const order = orders.docs[0];

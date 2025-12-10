@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 
 import {
   type CustomTranslationsKeys,
-  type CustomTranslationsObject,
+  type CustomTranslationsObject
 } from "@/admin/translations/custom-translations";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -11,7 +11,7 @@ export const OverviewCard = ({
   label,
   value,
   percentage,
-  icon,
+  icon
 }: {
   label: string;
   value: string | number;

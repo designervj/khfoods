@@ -21,7 +21,7 @@ type Props = {
 export function useClickableCard<T extends HTMLElement>({
   external = false,
   newTab = false,
-  scroll = true,
+  scroll = true
 }: Props): UseClickableCardType<T> {
   const router = useRouter();
   const card = useRef<T>(null);
@@ -95,10 +95,10 @@ export function useClickableCard<T extends HTMLElement>({
 
   return {
     card: {
-      ref: card,
+      ref: card
     },
     link: {
-      ref: link,
-    },
+      ref: link
+    }
   };
 }

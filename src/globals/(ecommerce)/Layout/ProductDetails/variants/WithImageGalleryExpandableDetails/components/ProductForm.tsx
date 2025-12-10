@@ -21,7 +21,7 @@ export const ProductForm = ({
   selectedVariant,
   filledVariants,
   minQuantity,
-  maxQuantity,
+  maxQuantity
 }: {
   product: Product;
   filledVariants?: FilledVariant[];
@@ -209,7 +209,7 @@ export const ProductForm = ({
                 {
                   id: product.id,
                   quantity: quantity,
-                  choosenVariantSlug: selectedVariant?.slug ?? undefined,
+                  choosenVariantSlug: selectedVariant?.slug ?? undefined
                 },
               ]);
             } else {
@@ -235,7 +235,7 @@ export const ProductForm = ({
               toggleWishList([
                 {
                   id: product.id,
-                  choosenVariantSlug: selectedVariant?.slug ?? undefined,
+                  choosenVariantSlug: selectedVariant?.slug ?? undefined
                 },
               ]);
             }}

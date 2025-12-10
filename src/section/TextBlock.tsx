@@ -24,35 +24,35 @@ export const TextBlock: React.FC<TextBlockProps> = ({
   size = "md",
   variant = "default",
   className,
-  children,
+  children
 }) => {
   const alignmentClasses = {
     left: "text-left",
     center: "text-center",
-    right: "text-right",
+    right: "text-right"
   };
 
   const sizeClasses = {
     sm: {
       heading: "text-lg",
       subheading: "text-sm",
-      content: "text-sm",
+      content: "text-sm"
     },
     md: {
       heading: "text-2xl",
       subheading: "text-base",
-      content: "text-base",
+      content: "text-base"
     },
     lg: {
       heading: "text-3xl",
       subheading: "text-lg",
-      content: "text-lg",
+      content: "text-lg"
     },
     xl: {
       heading: "text-4xl",
       subheading: "text-xl",
-      content: "text-xl",
-    },
+      content: "text-xl"
+    }
   };
 
   const variantClasses = {
@@ -60,26 +60,26 @@ export const TextBlock: React.FC<TextBlockProps> = ({
       container: "bg-white p-6",
       heading: "text-gray-900 font-bold",
       subheading: "text-gray-600 font-medium",
-      content: "text-gray-700",
+      content: "text-gray-700"
     },
     featured: {
       container: "bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg",
       heading: "text-blue-900 font-bold",
       subheading: "text-blue-700 font-medium",
-      content: "text-blue-800",
+      content: "text-blue-800"
     },
     minimal: {
       container: "bg-transparent p-0",
       heading: "text-gray-900 font-semibold",
       subheading: "text-gray-500 font-normal",
-      content: "text-gray-600",
+      content: "text-gray-600"
     },
     accent: {
       container: "bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500",
       heading: "text-gray-900 font-bold",
       subheading: "text-gray-600 font-medium",
-      content: "text-gray-700",
-    },
+      content: "text-gray-700"
+    }
   };
 
   return (
