@@ -4,7 +4,8 @@ import { MediumImpactHero } from "@/components/heros/MediumImpact";
 
 import type { Page } from "@/payload-types";
 import { VideoModalHero } from "./VideoModal";
-import Hero from "@/frontendComponents/Hero";
+import Hero from "@/frontendComponents/Home/Hero";
+
 
 const heroes = {
   highImpact: HighImpactHero,

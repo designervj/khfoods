@@ -2,33 +2,33 @@ import { useTranslations } from "next-intl";
 import { z, type ZodType } from "zod";
 
 export const CheckoutFormSchemaServer = z.object({
-  buyerType: z.string().nonempty(),
+  buyerType: z.string().min(1),
   individualInvoice: z.boolean(),
   invoice: z
     .object({
-      name: z.string().nonempty(),
-      address: z.string().nonempty(),
-      city: z.string().nonempty(),
-      country: z.string().nonempty(),
-      region: z.string().nonempty(),
-      postalCode: z.string().nonempty(),
+      name: z.string().min(1),
+      address: z.string().min(1),
+      city: z.string().min(1),
+      country: z.string().min(1),
+      region: z.string().min(1),
+      postalCode: z.string().min(1),
       tin: z.string().optional()
     })
     .optional(),
   shipping: z.object({
     id: z.string().optional(),
-    name: z.string().nonempty(),
-    address: z.string().nonempty(),
-    city: z.string().nonempty(),
-    country: z.string().nonempty(),
-    region: z.string().nonempty(),
-    postalCode: z.string().nonempty(),
-    phone: z.string().nonempty(),
-    email: z.string().nonempty().email(),
+    name: z.string().min(1),
+    address: z.string().min(1),
+    city: z.string().min(1),
+    country: z.string().min(1),
+    region: z.string().min(1),
+    postalCode: z.string().min(1),
+    phone: z.string().min(1),
+    email: z.string().min(1).email(),
     pickupPointID: z.string().optional(),
     pickupPointAddress: z.string().optional()
   }),
-  deliveryMethod: z.string().nonempty()
+  deliveryMethod: z.string().min(1)
 });
 
 export type CheckoutFormData = z.infer<typeof CheckoutFormSchemaServer>;
@@ -37,7 +37,7 @@ export const useCheckoutFormSchema = () => {
   const t = useTranslations("CheckoutForm.errors");
 
   const CheckoutFormSchema = z.object({
-    buyerType: z.string().nonempty(),
+    buyerType: z.string().min(1),
     individualInvoice: z.boolean(),
     invoice: z
       .object({
@@ -52,21 +52,21 @@ export const useCheckoutFormSchema = () => {
       .optional(),
     shipping: z.object({
       id: z.string().optional(),
-      name: z.string().nonempty(t("shipping.name")),
-      address: z.string().nonempty(t("shipping.address")),
-      city: z.string().nonempty(t("shipping.city")),
-      country: z.string().nonempty(t("shipping.country")),
-      region: z.string().nonempty(t("shipping.region")),
-      postalCode: z.string().nonempty(t("shipping.postalCode")),
-      phone: z.string().nonempty(t("shipping.phone")),
+      name: z.string().min(1, t("shipping.name")),
+      address: z.string().min(1, t("shipping.address")),
+      city: z.string().min(1, t("shipping.city")),
+      country: z.string().min(1, t("shipping.country")),
+      region: z.string().min(1, t("shipping.region")),
+      postalCode: z.string().min(1, t("shipping.postalCode")),
+      phone: z.string().min(1, t("shipping.phone")),
       email: z
         .string()
-        .nonempty(t("shipping.email"))
+        .min(1, t("shipping.email"))
         .email(t("shipping.email")),
       pickupPointID: z.string().optional(),
       pickupPointAddress: z.string().optional()
     }),
-    deliveryMethod: z.string().nonempty(t("deliveryMethod"))
+    deliveryMethod: z.string().min(1, t("deliveryMethod"))
   });
 
   const RefinedCheckoutFormSchema = CheckoutFormSchema.superRefine(

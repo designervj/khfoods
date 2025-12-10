@@ -18,19 +18,34 @@ const createEmailTransporter = async () => {
 
   const { host, fromEmail, password, port, secure, user } = smtp ?? {};
 
+  // Trim whitespace from all string values to prevent DNS errors
+  const finalHost = (host ?? process.env.SMTP_HOST)?.trim();
+  const finalUser = (user ?? process.env.SMTP_USER)?.trim();
+  const finalPassword = (password ?? process.env.SMTP_PASS)?.trim();
+  const finalFromEmail = (fromEmail ?? process.env.SMTP_USER)?.trim();
+
+  console.log(`[SMTP] Configuring email transporter with host: ${finalHost}, user: ${finalUser}`);
+
+  if (!finalHost || !finalUser || !finalPassword) {
+    console.error('[SMTP] ❌ Missing SMTP configuration. Please configure in Admin Panel or environment variables.');
+    throw new Error('SMTP configuration is incomplete. Please set up email settings in the Admin Panel.');
+  }
+
   return {
     transporter: nodemailer.createTransport({
-      host: host ?? process.env.SMTP_HOST,
+      host: finalHost,
       port: Number(port ?? 587),
       secure: secure ?? false,
-      auth: { user: user ?? process.env.SMTP_USER, pass: password ?? process.env.SMTP_PASS }
+      auth: { user: finalUser, pass: finalPassword }
     }),
-    fromEmail: fromEmail ?? process.env.SMTP_USER
+    fromEmail: finalFromEmail
   };
 };
 
 export const sendEmail = async ({ to, subject, html }: EmailPayload): Promise<EmailResponse> => {
   const { transporter, fromEmail } = await createEmailTransporter();
+
+  console.log(`[Email] Sending email to: ${to}, subject: ${subject}, from: ${fromEmail}`);
 
   try {
     const { messageId } = await transporter.sendMail({
@@ -40,9 +55,11 @@ export const sendEmail = async ({ to, subject, html }: EmailPayload): Promise<Em
       html
     });
 
+    console.log(`[Email] ✅ Email sent successfully. MessageId: ${messageId}`);
     return { success: true, messageId };
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "Unknown email error";
+    console.error(`[Email] ❌ Failed to send email:`, error);
     throw new Error(`Failed to send email: ${errorMessage}`);
   }
 };

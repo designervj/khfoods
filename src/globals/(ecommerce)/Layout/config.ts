@@ -25,7 +25,9 @@ export const ShopLayout: GlobalConfig = {
     zh: "商店布局"
   },
   access: {
-    read: () => true
+    read: () => true,
+    update:()=>true,
+   
   },
   admin: {
     group: {
@@ -96,7 +98,6 @@ export const ShopLayout: GlobalConfig = {
 
                 zh: "过滤器"
               },
-              required: true,
               options: [
                 {
                   label: {
@@ -234,8 +235,7 @@ export const ShopLayout: GlobalConfig = {
 
                     zh: "标题"
                   },
-                  localized: true,
-                  required: true
+                  localized: true
                 },
                 {
                   name: "content",
@@ -257,8 +257,7 @@ export const ShopLayout: GlobalConfig = {
 
                     zh: "内容"
                   },
-                  localized: true,
-                  required: true
+                  localized: true
                 },
               ]
             },

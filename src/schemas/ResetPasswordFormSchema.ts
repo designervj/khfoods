@@ -11,8 +11,8 @@ export const useResetPasswordForm = () => {
 
   const ResetPasswordForm = z
     .object({
-      newPassword: z.string().nonempty(t("password-length")).min(8, t("password-length")),
-      confirmPassword: z.string().nonempty(t("password-length")).min(8, t("password-length"))
+      newPassword: z.string().min(1, t("password-length")).min(8, t("password-length")),
+      confirmPassword: z.string().min(1, t("password-length")).min(8, t("password-length"))
     })
     .refine((data) => data.newPassword === data.confirmPassword, {
       message: t("passwords-mismatch"),

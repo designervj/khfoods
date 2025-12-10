@@ -10,7 +10,7 @@ export const ClientHelp = async () => {
   return (
     <div className="no-prose">
       <h2 className="mb-8 text-xl font-bold">{clientPanel.help?.title}</h2>
-      <RichText data={clientPanel.help?.content} />
+      {clientPanel?.help?.content && <RichText data={clientPanel.help.content} />}
     </div>
   );
 };

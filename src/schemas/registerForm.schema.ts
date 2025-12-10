@@ -9,12 +9,13 @@ export type RegisterFormData = {
 
 export const RegisterFormSchemaServer = z
   .object({
-    email: z.string().nonempty().email(),
-    password: z.string().nonempty().min(8),
-    confirmPassword: z.string().nonempty()
+    email: z.string().min(1, "Email is required").email(),
+    password: z.string().min(8, "Password must be at least 8 characters"),
+    confirmPassword: z.string().min(1, "Please confirm your password")
   })
   .refine((data) => data.password === data.confirmPassword, {
-    path: ["confirmPassword"]
+    path: ["confirmPassword"],
+    message: "Passwords do not match"
   });
 
 export const useRegisterFormSchema = () => {
@@ -22,9 +23,9 @@ export const useRegisterFormSchema = () => {
 
   const RegisterFormSchema = z
     .object({
-      email: z.string().nonempty(t("email-empty")).email(t("email")),
-      password: z.string().nonempty(t("password")).min(8, t("password-length")),
-      confirmPassword: z.string().nonempty(t("password"))
+      email: z.string().min(1, t("email-empty")).email(t("email")),
+      password: z.string().min(1, t("password")).min(8, t("password-length")),
+      confirmPassword: z.string().min(1, t("password"))
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: t("passwords-mismatch"),

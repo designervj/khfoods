@@ -111,9 +111,9 @@ const HeaderMinor = ({logourl}:any) => {
             </div>
 
          
-            <span className="flex items-center gap-1 cursor-pointer">
+            <Link href="/my-account" className="flex items-center gap-1 cursor-pointer hover:text-gray-200 transition">
               <MdAccountCircle size={18} /> {t("my-account")}
-            </span>
+            </Link>
           </div>
         </div>
       </div>

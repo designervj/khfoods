@@ -18,7 +18,7 @@ import PageClient from "./page.client";
 
 import type { Metadata } from "next";
 import { getTenantByDomain } from "@/lib/getPage";
-import Hero from "../../../../../frontendComponents/Hero";
+
 import AboutKarloBan from "@/frontendComponents/sections/AboutKarloBan";
 import AboutStrip from "@/frontendComponents/sections/AboutStrip";
 import Testimonials from "@/frontendComponents/sections/Testimonials";

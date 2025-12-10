@@ -5,6 +5,7 @@ import { superAdminOnlyAdmin } from "@/access/roleBasedAccess";
 import { countryList } from "@/globals/(ecommerce)/Couriers/utils/countryList";
 
 import { createTokenAndSendEmail } from "./hooks/createTokenAndSendEmail";
+import { sendWelcomeEmail } from "./hooks/sendWelcomeEmail";
 
 export const Customers: CollectionConfig = {
   slug: "customers",
@@ -40,6 +41,7 @@ export const Customers: CollectionConfig = {
   },
   hooks: {
     afterOperation: [createTokenAndSendEmail],
+    afterChange: [sendWelcomeEmail],
     afterLogin: [
       async () => {
         revalidateTag("user-auth");

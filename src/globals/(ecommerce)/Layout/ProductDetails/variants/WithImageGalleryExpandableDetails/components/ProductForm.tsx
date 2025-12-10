@@ -112,6 +112,25 @@ export const ProductForm = ({
     (item) => item.id === product.id && item.choosenVariantSlug === selectedVariant?.slug,
   );
 
+  const handleCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    
+    if (quantity <= maxQuantity - (cartItem?.quantity ?? 0)) {
+      setOverStock(false);
+      updateCart([
+        {
+          id: product.id,
+          quantity: quantity,
+          choosenVariantSlug: selectedVariant?.slug ?? undefined
+        },
+      ]);
+
+  
+    } else {
+      setOverStock(true);
+    }
+  }
+
   return (
     <form className="mt-6">
       {/* Colors */}
@@ -202,19 +221,7 @@ export const ProductForm = ({
             !isProductAvailable && "cursor-not-allowed opacity-25",
           )}
           onClick={(e) => {
-            e.preventDefault();
-            if (quantity <= maxQuantity - (cartItem?.quantity ?? 0)) {
-              setOverStock(false);
-              updateCart([
-                {
-                  id: product.id,
-                  quantity: quantity,
-                  choosenVariantSlug: selectedVariant?.slug ?? undefined
-                },
-              ]);
-            } else {
-              setOverStock(true);
-            }
+     handleCart(e)
           }}
         >
           {isProductAvailable ? t("add-to-cart") : t("product-unavailable")}

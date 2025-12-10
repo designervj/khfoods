@@ -10,8 +10,8 @@ export const useLoginFormSchema = () => {
   const t = useTranslations("LoginForm.errors");
 
   const LoginFormSchema = z.object({
-    email: z.string().nonempty(t("email-empty")).email(t("email")),
-    password: z.string().nonempty(t("password"))
+    email: z.string().min(1, t("email-empty")).email(t("email")),
+    password: z.string().min(1, t("password"))
   });
 
   const LoginFormSchemaResolver: ZodType<LoginFormData> = LoginFormSchema;

@@ -4602,8 +4602,8 @@ export interface ShopLayout {
     type: 'WithImageGalleryExpandableDetails';
     reviewsEnabled: boolean;
   };
-  productList: {
-    filters: 'none' | 'withSidebar' | 'sortOnly';
+  productList?: {
+    filters?: ('none' | 'withSidebar' | 'sortOnly') | null;
   };
   cartAndWishlist: {
     type: 'slideOver';
@@ -4613,9 +4613,9 @@ export interface ShopLayout {
   };
   clientPanel: {
     type: 'withSidebar';
-    help: {
-      title: string;
-      content: {
+    help?: {
+      title?: string | null;
+      content?: {
         root: {
           type: string;
           children: {
@@ -4629,7 +4629,7 @@ export interface ShopLayout {
           version: number;
         };
         [k: string]: unknown;
-      };
+      } | null;
     };
   };
   updatedAt?: string | null;

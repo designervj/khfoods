@@ -38,7 +38,7 @@ export const  ProductList = async ({
     const { productList } = await getCachedGlobal("shopLayout", locale, 1)();
     console.log("productList--",productList)
     let ProductDetailsComponent: typeof WithSidebar | typeof None = None;
-    switch (productList.filters) {
+    switch (productList?.filters) {
       case "withSidebar":
         ProductDetailsComponent = WithSidebar;
         break;
