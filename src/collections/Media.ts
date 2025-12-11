@@ -53,13 +53,6 @@ export const Media: CollectionConfig = {
       zh: "媒体"
     }
   },
-  access:{
-   read: isReadAccess,
-    create: isCreateAccess,
-    update: isUpdateAccess,
-    delete: isDeleteAccess,
-    admin: isReadAccess
-  },
   admin: {
     group: {
       en: "Page Settings"

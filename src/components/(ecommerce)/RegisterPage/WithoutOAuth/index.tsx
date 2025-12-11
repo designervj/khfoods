@@ -16,7 +16,7 @@ export const RegisterPageWithoutOAuth = () => {
             width={125}
             height={88}
             src="/mandala.svg"
-            className="mx-auto -my-5 h-20 w-auto invert"
+            className="mx-auto -my-5 h-20 w-auto"
           />
           <h2 className="mt-6 text-center text-2xl/9 font-bold tracking-tight text-gray-900">{t("title")}</h2>
         </div>

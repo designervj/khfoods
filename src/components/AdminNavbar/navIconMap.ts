@@ -63,7 +63,7 @@ export const navIconMap: Partial<Record<CollectionSlug | GlobalSlug | ExtraNavKe
   "inpost-pickup": BoxesIcon,
   // paywalls: CircleDollarSign,
   websites: Monitor,
-  presets: FilePlus,
+  // presets: FilePlus,
   "websites/create": LayoutTemplate,
   // permission: UserCheck,
   "payment":CircleDollarSign,
