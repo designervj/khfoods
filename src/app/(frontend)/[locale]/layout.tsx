@@ -6,7 +6,10 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import PlausibleProvider from "next-plausible";
-import { type ReactNode, unstable_ViewTransition as ViewTransition } from "react";
+import {
+  type ReactNode,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
 
 import "../globals.css";
 import { AdminBar } from "@/components/AdminBar";
@@ -20,6 +23,8 @@ import { mergeOpenGraph } from "@/utilities/mergeOpenGraph";
 import { cn } from "src/utilities/cn";
 
 import type { Metadata } from "next";
+import { getCachedGlobal } from "@/utilities/getGlobals";
+import { getSiteSettings } from "@/utilities/getSiteSettings";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -27,7 +32,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   params,
-  children
+  children,
 }: {
   params: Promise<{ locale: string }>;
   children: ReactNode;
@@ -43,9 +48,15 @@ export default async function RootLayout({
 
   const messages = await getMessages({ locale });
 
+  const data = await getSiteSettings("sitesetting", "en", 1);
+
   return (
     <html
-      className={cn(GeistSans.variable, GeistMono.variable, "twp overflow-x-clip lg:overflow-y-scroll")}
+      className={cn(
+        GeistSans.variable,
+        GeistMono.variable,
+        "twp overflow-x-clip lg:overflow-y-scroll"
+      )}
       lang={locale}
       // data-thmee="light"
       // suppressHydrationWarning
@@ -54,27 +65,28 @@ export default async function RootLayout({
         {/* <InitTheme /> */}
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <style>{data}</style>
       </head>
       <body className="max-w-screen overflow-x-clip">
         {/* <ViewTransition> */}
-          <Providers>
-            <PlausibleProvider
-              domain="ecommerce.mandala.sh"
-              selfHosted={true}
-              customDomain="plausible.pimento.cloud"
+        <Providers>
+          <PlausibleProvider
+            domain="ecommerce.mandala.sh"
+            selfHosted={true}
+            customDomain="plausible.pimento.cloud"
+          />
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <AdminBar
+              adminBarProps={{
+                preview: isEnabled,
+              }}
             />
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              <AdminBar
-                adminBarProps={{
-                  preview: isEnabled
-                }}
-              />
-              {isEnabled && <LivePreviewListener />}
+            {isEnabled && <LivePreviewListener />}
 
-              {children}
-              <Footer />
-            </NextIntlClientProvider>
-          </Providers>
+            {children}
+            <Footer />
+          </NextIntlClientProvider>
+        </Providers>
         {/* </ViewTransition> */}
       </body>
     </html>
@@ -86,10 +98,10 @@ export const metadata: Metadata = {
   openGraph: mergeOpenGraph(),
   twitter: {
     card: "summary_large_image",
-    creator: "@payloadcms"
+    creator: "@payloadcms",
   },
   robots: {
     index: !(process.env.NEXT_PUBLIC_ROBOTS_INDEX === "false"),
-    follow: !(process.env.NEXT_PUBLIC_ROBOTS_INDEX === "false")
-  }
+    follow: !(process.env.NEXT_PUBLIC_ROBOTS_INDEX === "false"),
+  },
 };

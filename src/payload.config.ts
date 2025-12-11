@@ -149,7 +149,7 @@ export default buildConfig({
     Websites,
     Permission,
     Roles,
-    Library,
+    // Library,
     Payment,
     // Courier,
   ],

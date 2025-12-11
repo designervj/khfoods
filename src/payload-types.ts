@@ -82,7 +82,6 @@ export interface Config {
     websites: Website;
     permission: Permission;
     roles: Role;
-    presets: Preset;
     payment: Payment;
     redirects: Redirect;
     forms: Form;
@@ -120,7 +119,6 @@ export interface Config {
     websites: WebsitesSelect<false> | WebsitesSelect<true>;
     permission: PermissionSelect<false> | PermissionSelect<true>;
     roles: RolesSelect<false> | RolesSelect<true>;
-    presets: PresetsSelect<false> | PresetsSelect<true>;
     payment: PaymentSelect<false> | PaymentSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
@@ -2426,26 +2424,6 @@ export interface Role {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "presets".
- */
-export interface Preset {
-  id: string;
-  name: string;
-  type: 'layout' | 'section' | 'module';
-  value:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payment".
  */
 export interface Payment {
@@ -2707,10 +2685,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'roles';
         value: string | Role;
-      } | null)
-    | ({
-        relationTo: 'presets';
-        value: string | Preset;
       } | null)
     | ({
         relationTo: 'payment';
@@ -4176,17 +4150,6 @@ export interface RolesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "presets_select".
- */
-export interface PresetsSelect<T extends boolean = true> {
-  name?: T;
-  type?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payment_select".
  */
 export interface PaymentSelect<T extends boolean = true> {
@@ -4998,6 +4961,9 @@ export interface Sitesetting {
   favicon?: (string | null) | Media;
   logoWidth?: number | null;
   logoHeight?: number | null;
+  siteicon?: (string | null) | Media;
+  sitetitle?: string | null;
+  tagline?: string | null;
   /**
    * Main brand color
    */
@@ -5413,6 +5379,9 @@ export interface SitesettingSelect<T extends boolean = true> {
   favicon?: T;
   logoWidth?: T;
   logoHeight?: T;
+  siteicon?: T;
+  sitetitle?: T;
+  tagline?: T;
   primaryColor?: T;
   primaryHover?: T;
   primaryLight?: T;

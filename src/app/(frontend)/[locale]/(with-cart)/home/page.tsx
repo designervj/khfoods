@@ -12,11 +12,7 @@ import { getCachedGlobal } from "@/utilities/getGlobals";
 export const dynamic = "force-dynamic";
 
 const HomePage = async () => {
-  const data = await getCachedGlobal("sitesetting", "en", 1);
-
-  const d = await data()
-
-  // console.log(d)
+ 
 
   return (
     <main>

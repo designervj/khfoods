@@ -123,6 +123,28 @@ export const SiteSetting: GlobalConfig = {
             },
           ],
         },
+         {
+          label: "Site Identity",
+          fields: [
+            {
+              name: "siteicon",
+              type: "upload",
+              relationTo: "media",
+              label: "Site Icon",
+              required: false,
+            },
+            {
+              name: "sitetitle",
+              type: "text",
+              label: "Site Title",
+            },
+            {
+              name: "tagline",
+              type: "text",
+              label: "Tagline",
+            },
+          ],
+        },
         // Colors Tab
         {
           label: "Colors",

@@ -21,7 +21,7 @@ const NutritionPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="max-w-6xl mx-auto px-4 py-20">
+      <section className=" max-w-6xl mx-auto px-4 py-20">
         <div className="text-center">
           <p className="text-amber-600 uppercase tracking-wider text-sm font-semibold mb-4">
             We value our simplicity

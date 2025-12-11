@@ -240,6 +240,7 @@ html[data-theme="light"] {
 .bg-primary {
   background-color: var(--primary);
 }
+
 .bg-lightblack{
   background-color: var(--light-black);
 }
