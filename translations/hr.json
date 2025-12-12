@@ -146,6 +146,11 @@
       "save": "Spremi",
       "saving": "Spremanje..."
     },
+    "edit-address-dialog": {
+      "edit-address": "Uredi Adresu",
+      "save": "Spremi Promjene",
+      "saving": "Spremanje..."
+    },
     "countries": {
       "ad": "Andora",
       "al": "Albanija",

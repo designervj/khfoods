@@ -168,6 +168,11 @@
       "save": "儲存",
       "saving": "儲存中..."
     },
+    "edit-address-dialog": {
+      "edit-address": "編輯地址",
+      "save": "儲存變更",
+      "saving": "儲存中..."
+    },
     "countries": {
       "ad": "安道爾",
       "al": "阿爾巴尼亞",

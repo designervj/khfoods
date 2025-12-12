@@ -168,6 +168,11 @@
       "save": "Save",
       "saving": "Saving..."
     },
+    "edit-address-dialog": {
+      "edit-address": "Edit Address",
+      "save": "Save Changes",
+      "saving": "Saving..."
+    },
     "countries": {
       "ad": "Andorra",
       "al": "Albania",

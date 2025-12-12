@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { Pencil, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { type Country } from "@/globals/(ecommerce)/Couriers/utils/countryList";
@@ -9,6 +10,7 @@ import { type Customer } from "@/payload-types";
 import { cn } from "@/utilities/cn";
 
 import { AddNewAddressDialog } from "../../Checkout/variants/OneStepWithSummary/components/AddNewAddressDialog";
+import { EditAddressDialog } from "../../Checkout/variants/OneStepWithSummary/components/EditAddressDialog";
 
 export const OrdersData = ({
   user,
@@ -23,6 +25,8 @@ export const OrdersData = ({
   );
   const [shippings, setShippings] = useState(user.shippings ?? []);
   const [addressDialogOpen, setAddressDialogOpen] = useState(false);
+  const [editDialogOpen, setEditDialogOpen] = useState(false);
+  const [editingAddress, setEditingAddress] = useState<any>(null);
 
   const t = useTranslations("Account.orders-data");
 
@@ -59,6 +63,40 @@ export const OrdersData = ({
     }
   };
 
+  const deleteAddress = async (addressId: string) => {
+    if (!confirm(t("confirm-delete"))) return;
+
+    try {
+      const updatedShippings = shippings.filter((shipping) => shipping.id !== addressId);
+      
+      const { data } = await axios.patch<{ doc: Customer }>(
+        `/api/customers/${user.id}`,
+        {
+          shippings: updatedShippings
+        }
+      );
+
+      if (data?.doc.shippings) {
+        setShippings(data.doc.shippings);
+        if (selectedShipping?.id === addressId) {
+          const newDefault = data.doc.shippings.find((s) => s.default) ?? data.doc.shippings[0];
+          setSelectedShipping(newDefault ? {
+            ...newDefault,
+            email: newDefault.email ?? ''
+          } : undefined);
+        }
+      }
+      await updateCustomerData();
+    } catch (error) {
+      console.error("Failed to delete address:", error);
+    }
+  };
+
+  const handleEditAddress = (shipping: any) => {
+    setEditingAddress(shipping);
+    setEditDialogOpen(true);
+  };
+
   useEffect(() => {
     setShippings(user.shippings ?? []);
     setSelectedShipping(
@@ -84,6 +122,15 @@ export const OrdersData = ({
           await updateCustomerData();
         }}
       />
+      {editingAddress && (
+        <EditAddressDialog
+          open={editDialogOpen}
+          setOpen={setEditDialogOpen}
+          user={user}
+          address={editingAddress}
+          onUpdate={updateCustomerData}
+        />
+      )}
       <h2 className="mb-8 text-xl font-bold">{t("title")}</h2>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {shippings
@@ -93,19 +140,21 @@ export const OrdersData = ({
           })
           .map((shipping) => (
             <div
-              onClick={() => {
-                setSelectedShipping({
-                  ...shipping,
-                  id: shipping.id ?? undefined
-                });
-              }}
               key={shipping.id}
               className={cn(
                 "group relative flex cursor-pointer rounded-lg border border-gray-300 border-transparent bg-white p-4 shadow-xs ring-2 ring-gray-200 focus:outline-hidden",
                 shipping.id === selectedShipping?.id && "ring-main-500"
               )}
             >
-              <span className="flex flex-1">
+              <span 
+                className="flex flex-1"
+                onClick={() => {
+                  setSelectedShipping({
+                    ...shipping,
+                    id: shipping.id ?? undefined
+                  });
+                }}
+              >
                 <span className="flex w-full flex-col">
                   <span className="block text-left text-sm font-medium text-gray-900">
                     {shipping.name}
@@ -124,6 +173,28 @@ export const OrdersData = ({
                   </span>
                 </span>
               </span>
+              <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleEditAddress(shipping);
+                  }}
+                  className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                  title={t("edit")}
+                >
+                  <Pencil size={16} />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    void deleteAddress(shipping.id ?? '');
+                  }}
+                  className="p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+                  title={t("delete")}
+                >
+                  <Trash2 size={16} />
+                </button>
+              </div>
             </div>
           ))}
       </div>
