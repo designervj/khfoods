@@ -1,5 +1,8 @@
 export const AdminLogoBig = () => {
   return (
-    <h1>Logo In AdminLogoBigFile</h1>
+    <div>
+      <img src="/assets/Image/khfood_logo.png" alt="Admin Logo Big" className="w-[150px] h-auto" />
+    </div>
+    
   );
 };

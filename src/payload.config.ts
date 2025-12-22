@@ -85,7 +85,7 @@ export default buildConfig({
       icons: [
         {
           type: "image/svg+xml",
-          url: "/favicon.svg",
+          url: "/khfood-favicon.svg",
           rel: "icon"
         },
       ],

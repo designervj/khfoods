@@ -52,21 +52,21 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 bg-[#f6f3ec]">
       <div className="px-6 max-w-7xl mx-auto">
-        <h5 className="text-2xl font-semibold text-[#8d5c29] text-center ">
+        <h5 className="text-2xl font-semibold text-[#7d1a03] text-center pb-2">
           Testimonials
         </h5>
-        <h2 className="text-4xl font-semibold  text-[#8d5c29]  text-center mb-14">
+        <h2 className="text-4xl sm:text-4xl font-bold mb-16 tracking-normal text-black text-center">
           We love our clients
         </h2>
         {/* <span className="text-primary">About Us</span>  */}
         <div className="relative">
           {/* LEFT ARROW */}
-          <button className="custom-prev absolute -left-6 top-1/2 -translate-y-1/2 bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:text-white transition-all z-10">
+          <button className="custom-prev absolute -left-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:text-white transition-all z-10">
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           {/* RIGHT ARROW */}
-          <button className="custom-next absolute -right-6 top-1/2 -translate-y-1/2 bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:text-white transition-all z-10">
+          <button className="custom-next absolute -right-6 top-1/2 -translate-y-1/2 bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:text-white transition-all z-10">
             <ChevronRight className="w-6 h-6" />
           </button>
 
