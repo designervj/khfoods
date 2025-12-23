@@ -7,7 +7,7 @@ import { getPayload } from "payload";
 
 export const getInpostLabel = async (
   tracking_number: string,
-  courierSlug: "inpost-pickup" | "inpost-courier" | "inpost-courier-cod"
+  courierSlug:  "inpost-courier" | "inpost-courier-cod"
 ) => {
   const locale = (await getLocale()) as Locale;
   const inpostSettings = await getCachedGlobal(courierSlug, locale, 1)();

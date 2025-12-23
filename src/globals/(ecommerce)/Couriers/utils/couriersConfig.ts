@@ -3,20 +3,20 @@ import { type Locale } from "@/i18n/config";
 import { getInpostLabel } from "@/lib/couriers/labels/getInpostLabel";
 import { createInpostCODCourierPackage } from "@/lib/couriers/packages/createInpostCODCourierPackage";
 import { createInpostCourierPackage } from "@/lib/couriers/packages/createInpostCourierPackage";
-import { createInpostPickupPackage } from "@/lib/couriers/packages/createInpostPickupPackage";
+//import { createInpostPickupPackage } from "@/lib/couriers/packages/createInpostPickupPackage";
 import { type Order } from "@/payload-types";
 import { getCachedGlobal } from "@/utilities/getGlobals";
 
 export const createCouriers = (locale: Locale) =>
   [
-    {
-      key: "inpost-pickup",
-      getSettings: () => getCachedGlobal("inpost-pickup", locale, 1)(),
-      prepaid: true,
-      createPackage: (order: Order, dimension: string, _dimensions?: Dimensions) =>
-        createInpostPickupPackage(order, dimension),
-      getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-pickup")
-    },
+    // {
+    //   key: "inpost-pickup",
+    //   getSettings: () => getCachedGlobal("inpost-pickup", locale, 1)(),
+    //   prepaid: true,
+    //   createPackage: (order: Order, dimension: string, _dimensions?: Dimensions) =>
+    //     createInpostPickupPackage(order, dimension),
+    //   getLabel: (packageID: string) => getInpostLabel(packageID, "inpost-pickup")
+    // },
     {
       key: "inpost-courier",
       getSettings: () => getCachedGlobal("inpost-courier", locale, 1)(),

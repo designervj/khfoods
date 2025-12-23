@@ -85,6 +85,7 @@ export async function POST(req: Request) {
     }
 
     const courierData = await courier.getSettings();
+       
     const shippingCost = courierData?.deliveryZones
       ?.find((zone) => zone.countries.includes(selectedCountry))
       ?.range?.find(
