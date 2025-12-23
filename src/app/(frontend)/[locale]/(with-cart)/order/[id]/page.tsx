@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { getPayload } from "payload";
+import { DataFromGlobalSlug, getPayload } from "payload";
 
 import { Media as MediaComponent } from "@/components/Media";
 import RichText from "@/components/RichText";
@@ -13,7 +13,7 @@ import { getOrderProducts } from "@/utilities/getOrderProducts";
 import { headers } from "next/headers";
 
 const OrdersPage = async ({
-  params
+  params,
 }: {
   params: Promise<{ locale: Locale; id: string }>;
 }) => {
@@ -37,14 +37,13 @@ const OrdersPage = async ({
     collection: "orders",
     where: {
       id: {
-        equals: id
-        
+        equals: id,
       },
       // "orderDetails.website": {
       //   equals: websiteId,
       // }
     },
-    locale
+    locale,
   });
 
   const order = orders.docs[0];
@@ -60,10 +59,18 @@ const OrdersPage = async ({
 
   const filledProducts = await getOrderProducts(order.products, locale);
 
-  const courier =
-    order.orderDetails.shipping &&
-    (await getCachedGlobal(order.orderDetails.shipping, locale, 1)());
+  // const courier =
+  //   order.orderDetails.shipping &&
+  //   (await getCachedGlobal(order?.orderDetails?.shipping, locale, 1)());
 
+
+let courier: DataFromGlobalSlug<"inpost-courier" | "inpost-courier-cod"> | null = null;
+if (
+  order.orderDetails.shipping === "inpost-courier" ||
+  order.orderDetails.shipping === "inpost-courier-cod"
+) {
+  courier = await getCachedGlobal(order.orderDetails.shipping, locale, 1)();
+}
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -212,8 +219,12 @@ const OrdersPage = async ({
                   {t("shipping-method")}
                 </dt>
                 <dd className="mt-2 text-gray-700">
-                  <p>{courier?.settings.label}</p>
-                  <p>{courier?.settings.description}</p>
+                  {courier && "settings" in courier && (
+                    <>
+                      <p>{courier.settings.label}</p>
+                      <p>{courier.settings.description}</p>
+                    </>
+                  )}
                 </dd>
               </div>
             </dl>

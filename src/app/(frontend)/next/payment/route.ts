@@ -85,7 +85,7 @@ export async function POST(req: Request) {
     }
 
     const courierData = await courier.getSettings();
-    const shippingCost = courierData.deliveryZones
+    const shippingCost = courierData?.deliveryZones
       ?.find((zone) => zone.countries.includes(selectedCountry))
       ?.range?.find(
         (range) =>
@@ -97,7 +97,7 @@ export async function POST(req: Request) {
       return Response.json({ status: 400, message: "Shipping cost not found" });
     }
 
-    const host = await req.headers.get("host");
+    const host = req.headers.get("host");
 
     if(!host){
       return
