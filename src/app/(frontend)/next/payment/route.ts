@@ -93,7 +93,7 @@ export async function POST(req: Request) {
           range.weightFrom <= totalWeight && range.weightTo >= totalWeight
       )
       ?.pricing.find((pricing) => pricing.currency === currency)?.value;
-
+       console.log("shiiping cost",shippingCost)
     if (!shippingCost) {
       return Response.json({ status: 400, message: "Shipping cost not found" });
     }

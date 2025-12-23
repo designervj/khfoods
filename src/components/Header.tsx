@@ -8,6 +8,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
+import { a } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 
 interface ItemModel {
   id?: string;
@@ -68,6 +69,7 @@ const HeaderMinor = ({logourl}:any) => {
   }, []);
 
   const itemCount = useMemo(() => {
+    if(allItems &&allItems.length>0)
     return allItems.length;
   }, [allItems]);
 

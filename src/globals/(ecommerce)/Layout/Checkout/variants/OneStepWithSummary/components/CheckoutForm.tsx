@@ -185,8 +185,9 @@ export const CheckoutForm = ({
   }, [cart, debouncedFetchCartProducts, shipping.country]);
 
   const router = useRouter();
-
+  console.log("delivery method",deliveryMethods)
   const onSubmit = async (values: CheckoutFormData) => {
+
     try {
       console.log("Form submission started with values:", values);
       console.log("Current cart:", cart);
@@ -222,12 +223,16 @@ export const CheckoutForm = ({
           message: (data as any)?.message || t("internal-server-error")
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Checkout submission error:", error);
+      // Log Zod error details if present
+      if (error?.name === "ZodError" && error.errors) {
+        console.error("Zod validation errors:", error.errors);
+      }
       // Try to extract error message from axios error
       const errorMessage = axios.isAxiosError(error)
         ? error.response?.data?.message || error.message
-        : "Unknown error occurred";
+        : error?.message || "Unknown error occurred";
 
       form.setError("root", {
         message: errorMessage.includes("Internal server error")

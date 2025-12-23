@@ -11,14 +11,17 @@ import { QuantityInput } from "@/components/(ecommerce)/QuantityInput";
 import { Media as MediaComponent } from "@/components/Media";
 import { type FilledVariant } from "@/globals/(ecommerce)/Layout/ProductDetails/types";
 import { type Locale } from "@/i18n/config";
-import { Link, useRouter } from "@/i18n/routing";
+import { Link, redirect, useRouter } from "@/i18n/routing";
 import { Customer, type Media, type Product } from "@/payload-types";
 import { useCart } from "@/stores/CartStore";
 import { type Cart } from "@/stores/CartStore/types";
 import { type Currency } from "@/stores/Currency/types";
 import useUserStore from "@/stores/UserStore";
 
-export type ProductWithFilledVariants = Omit<Product, "variants" | "pricing"> & {
+export type ProductWithFilledVariants = Omit<
+  Product,
+  "variants" | "pricing"
+> & {
   variant: FilledVariant | undefined;
   image: Media | null;
   quantity: number;
@@ -31,11 +34,13 @@ export type ProductWithFilledVariants = Omit<Product, "variants" | "pricing"> & 
 
 const CartPage = () => {
   const { cart, updateCart, setCart, removeFromCart } = useCart();
-
+  const [isloading, setIsLoading] = useState<boolean>(false);
   const { setUser, user, isAuthenticated } = useUserStore();
   const router = useRouter();
   const isLoggedIn = isAuthenticated();
-  const [cartProducts, setCartProducts] = useState<ProductWithFilledVariants[]>([]);
+  const [cartProducts, setCartProducts] = useState<ProductWithFilledVariants[]>(
+    []
+  );
   const [total, setTotal] = useState<
     {
       currency: Currency;
@@ -48,6 +53,7 @@ const CartPage = () => {
 
   const fetchCartProducts = useCallback(
     async (cartToCalculate: Cart | null) => {
+      setIsLoading(true);
       try {
         const { data } = await axios.post<{
           status: number;
@@ -67,10 +73,13 @@ const CartPage = () => {
         console.error(error);
       }
     },
-    [locale, setCartProducts, setTotal],
+    [locale, setCartProducts, setTotal]
   );
 
-  const debouncedFetchCartProducts = useMemo(() => debounce(fetchCartProducts, 300), [fetchCartProducts]);
+  const debouncedFetchCartProducts = useMemo(
+    () => debounce(fetchCartProducts, 300),
+    [fetchCartProducts]
+  );
 
   useEffect(() => {
     void debouncedFetchCartProducts(cart);
@@ -80,7 +89,7 @@ const CartPage = () => {
     const loadUser = async () => {
       try {
         const { data } = await axios.get("/next/me");
-        const custdata:Customer=data.user
+        const custdata: Customer = data.user;
         setUser(custdata);
       } catch {
         setUser(null);
@@ -89,43 +98,52 @@ const CartPage = () => {
     void loadUser();
   }, [setUser]);
 
-  const setCartQuantity = (quantity: number, productID: string, productVariantSlug: string | undefined) => {
+  const setCartQuantity = (
+    quantity: number,
+    productID: string,
+    productVariantSlug: string | undefined
+  ) => {
     setCart([
       ...(cart?.filter((cartProduct) => cartProduct.id !== productID) ?? []),
       {
         id: productID,
         quantity,
-        choosenVariantSlug: productVariantSlug
+        choosenVariantSlug: productVariantSlug,
       },
     ]);
   };
 
-  const updateCartQuantity = (delta: number, productID: string, productVariantSlug: string | undefined) => {
+  const updateCartQuantity = (
+    delta: number,
+    productID: string,
+    productVariantSlug: string | undefined
+  ) => {
     updateCart([
       {
         id: productID,
         quantity: delta,
-        choosenVariantSlug: productVariantSlug
+        choosenVariantSlug: productVariantSlug,
       },
     ]);
   };
 
-
-  console.log("isLoggedIn---", user)
   const handleCheckOut = () => {
-      console.log("useee---", user)
-        console.log("isLoggedIn---", user)
+    console.log("isLoggedIn--", isLoggedIn);
+
     if (!isLoggedIn) {
       router.push("/login");
       return;
+    } else {
+      router.push("/checkout");
     }
-    router.push("/checkout");
   };
 
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900">{t("shopping-cart")}</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+          {t("shopping-cart")}
+        </h1>
 
         {cartProducts.length === 0 ? (
           <div className="flex min-h-[60vh] items-center justify-center">
@@ -147,17 +165,28 @@ const CartPage = () => {
                 {t("items-in-cart")}
               </h2>
 
-              <ul role="list" className="divide-y divide-gray-200 border-b border-t border-gray-200">
-                {
-                cartProducts
-                  .filter((product) => cart?.map((cartProduct) => cartProduct.id).includes(product.id))
+              <ul
+                role="list"
+                className="divide-y divide-gray-200 border-b border-t border-gray-200"
+              >
+                {cartProducts
+                  .filter((product) =>
+                    cart
+                      ?.map((cartProduct) => cartProduct.id)
+                      .includes(product.id)
+                  )
                   .map((product) => {
                     const cartItem = cart?.find(
-                      (item) => item.id === product.id && item.choosenVariantSlug === product.variant?.slug,
+                      (item) =>
+                        item.id === product.id &&
+                        item.choosenVariantSlug === product.variant?.slug
                     );
 
                     return (
-                      <li key={`${product.id}-${product.variant?.slug}`} className="flex py-6 sm:py-10">
+                      <li
+                        key={`${product.id}-${product.variant?.slug}`}
+                        className="flex py-6 sm:py-10"
+                      >
                         <div className="shrink-0">
                           <div className="size-24 overflow-hidden rounded-md border border-gray-200 sm:size-32">
                             {product.variant?.image?.url ? (
@@ -195,14 +224,18 @@ const CartPage = () => {
                                       {product.variant.color.label}
                                     </p>
                                   )}
-                                  {product.variant?.color && product.variant?.size && (
-                                    <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">
-                                      {product.variant.size.label}
-                                    </p>
-                                  )}
-                                  {!product.variant?.color && product.variant?.size && (
-                                    <p className="text-gray-500">{product.variant.size.label}</p>
-                                  )}
+                                  {product.variant?.color &&
+                                    product.variant?.size && (
+                                      <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">
+                                        {product.variant.size.label}
+                                      </p>
+                                    )}
+                                  {!product.variant?.color &&
+                                    product.variant?.size && (
+                                      <p className="text-gray-500">
+                                        {product.variant.size.label}
+                                      </p>
+                                    )}
                                 </div>
                               )}
                               <div className="mt-1 flex text-sm font-medium text-gray-900">
@@ -216,17 +249,25 @@ const CartPage = () => {
                                 minQuantity={0}
                                 maxQuantity={
                                   product.variant
-                                    ? product.variant.stock ?? 0
+                                    ? (product.variant.stock ?? 0)
                                     : product.enableVariants
                                       ? 0
-                                      : product.stock ?? 0
+                                      : (product.stock ?? 0)
                                 }
                                 quantity={cartItem?.quantity ?? 0}
                                 setQuantity={(quantity) =>
-                                  setCartQuantity(quantity, product.id, product.variant?.slug ?? undefined)
+                                  setCartQuantity(
+                                    quantity,
+                                    product.id,
+                                    product.variant?.slug ?? undefined
+                                  )
                                 }
                                 updateQuantity={(delta) =>
-                                  updateCartQuantity(delta, product.id, product.variant?.slug ?? undefined)
+                                  updateCartQuantity(
+                                    delta,
+                                    product.id,
+                                    product.variant?.slug ?? undefined
+                                  )
                                 }
                                 inputVariant="cart"
                               />
@@ -234,11 +275,19 @@ const CartPage = () => {
                               <div className="absolute right-0 top-0">
                                 <button
                                   type="button"
-                                  onClick={() => removeFromCart(product.id, product.variant?.slug ?? undefined)}
+                                  onClick={() =>
+                                    removeFromCart(
+                                      product.id,
+                                      product.variant?.slug ?? undefined
+                                    )
+                                  }
                                   className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500"
                                 >
                                   <span className="sr-only">{t("remove")}</span>
-                                  <XMarkIcon aria-hidden="true" className="size-5" />
+                                  <XMarkIcon
+                                    aria-hidden="true"
+                                    className="size-5"
+                                  />
                                 </button>
                               </div>
                             </div>
@@ -247,14 +296,23 @@ const CartPage = () => {
                           <p className="mt-4 flex space-x-2 text-sm text-gray-700">
                             {product.variant ? (
                               (product.variant.stock ?? 0) > 0 ? (
-                                <span className="text-green-500">{t("in-stock")}</span>
+                                <span className="text-green-500">
+                                  {t("in-stock")}
+                                </span>
                               ) : (
-                                <span className="text-red-500">{t("out-of-stock")}</span>
+                                <span className="text-red-500">
+                                  {t("out-of-stock")}
+                                </span>
                               )
-                            ) : product.enableVariants ? null : (product.stock ?? 0) > 0 ? (
-                              <span className="text-green-500">{t("in-stock")}</span>
+                            ) : product.enableVariants ? null : (product.stock ??
+                                0) > 0 ? (
+                              <span className="text-green-500">
+                                {t("in-stock")}
+                              </span>
                             ) : (
-                              <span className="text-red-500">{t("out-of-stock")}</span>
+                              <span className="text-red-500">
+                                {t("out-of-stock")}
+                              </span>
                             )}
                           </p>
                         </div>
@@ -266,81 +324,94 @@ const CartPage = () => {
 
             {/* Order summary */}
             <section
-            aria-labelledby="summary-heading"
-            className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
-          >
-            <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
-              {t("order-summary")}
-            </h2>
-
-            <dl className="mt-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <dt className="text-sm text-gray-600">{t("subtotal")}</dt>
-                <dd className="text-sm font-medium text-gray-900">
-                  {total.map((totalItem) => (
-                    <div key={totalItem.currency}>
-                      <PriceClient
-                        pricing={[
-                          {
-                            currency: totalItem.currency,
-                            value: totalItem.value,
-                          },
-                        ]}
-                      />
-                    </div>
-                  ))}
-                </dd>
-              </div>
-              <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <dt className="flex items-center text-sm text-gray-600">
-                  <span>{t("shipping-estimate")}</span>
-                </dt>
-                <dd className="text-sm font-medium text-gray-900">{t("calculated-at-checkout")}</dd>
-              </div>
-              <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <dt className="text-base font-medium text-gray-900">{t("order-total")}</dt>
-                <dd className="text-base font-medium text-gray-900">
-                  {total.map((totalItem) => (
-                    <div key={totalItem.currency}>
-                      <PriceClient
-                        pricing={[
-                          {
-                            currency: totalItem.currency,
-                            value: totalItem.value,
-                          },
-                        ]}
-                      />
-                    </div>
-                  ))}
-                </dd>
-              </div>
-            </dl>
-
-            <div className="mt-6">
-              <button
-                // href="/checkout"
-                // prefetch={true}
-                onClick={handleCheckOut}
-                disabled={!isLoggedIn}
-                className="w-full rounded-md border border-transparent bg-main-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-main-700 focus:outline-hidden focus:ring-2 focus:ring-main-500 focus:ring-offset-2 focus:ring-offset-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-labelledby="summary-heading"
+              className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
+            >
+              <h2
+                id="summary-heading"
+                className="text-lg font-medium text-gray-900"
               >
-                {t("checkout")}
-              </button>
-              {!isLoggedIn && (
-                <p className="mt-2 text-sm text-gray-600">Please log in to proceed to checkout.</p>
-              )}
-            </div>
+                {t("order-summary")}
+              </h2>
 
-            <div className="mt-6 text-center text-sm">
-              <p>
-                {t("or")}{" "}
-                <Link href="/our-products" prefetch={true} className="font-medium text-main-600 hover:text-main-500">
-                  {t("continue-shopping")}
-                  <span aria-hidden="true"> &rarr;</span>
-                </Link>
-              </p>
-            </div>
-          </section>
+              <dl className="mt-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <dt className="text-sm text-gray-600">{t("subtotal")}</dt>
+                  <dd className="text-sm font-medium text-gray-900">
+                    {total.map((totalItem) => (
+                      <div key={totalItem.currency}>
+                        <PriceClient
+                          pricing={[
+                            {
+                              currency: totalItem.currency,
+                              value: totalItem.value,
+                            },
+                          ]}
+                        />
+                      </div>
+                    ))}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+                  <dt className="flex items-center text-sm text-gray-600">
+                    <span>{t("shipping-estimate")}</span>
+                  </dt>
+                  <dd className="text-sm font-medium text-gray-900">
+                    {t("calculated-at-checkout")}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+                  <dt className="text-base font-medium text-gray-900">
+                    {t("order-total")}
+                  </dt>
+                  <dd className="text-base font-medium text-gray-900">
+                    {total.map((totalItem) => (
+                      <div key={totalItem.currency}>
+                        <PriceClient
+                          pricing={[
+                            {
+                              currency: totalItem.currency,
+                              value: totalItem.value,
+                            },
+                          ]}
+                        />
+                      </div>
+                    ))}
+                  </dd>
+                </div>
+              </dl>
+
+              <div className="mt-6">
+                <button
+                  // href="/checkout"
+                  // prefetch={true}
+                  onClick={handleCheckOut}
+                  disabled={!isLoggedIn}
+                  className="w-full rounded-md border border-transparent bg-main-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-main-700 focus:outline-hidden focus:ring-2 focus:ring-main-500 focus:ring-offset-2 focus:ring-offset-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {t("checkout")}
+                </button>
+                {!isLoggedIn && (
+                  <p className="mt-2 text-sm text-gray-600">
+                    Please log in to proceed to checkout.
+                  </p>
+                )}
+              </div>
+
+              <div className="mt-6 text-center text-sm">
+                <p>
+                  {t("or")}{" "}
+                  <Link
+                    href="/our-products"
+                    prefetch={true}
+                    className="font-medium text-main-600 hover:text-main-500"
+                  >
+                    {t("continue-shopping")}
+                    <span aria-hidden="true"> &rarr;</span>
+                  </Link>
+                </p>
+              </div>
+            </section>
           </div>
         )}
       </div>

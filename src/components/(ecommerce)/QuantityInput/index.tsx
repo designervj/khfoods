@@ -46,11 +46,13 @@ export const QuantityInput = ({
    useEffect(()=>{
     if(preSaveItem){
       const item= JSON.parse(preSaveItem)
+       if (Array.isArray(item)) {
       const prd= item.find(item=>item.id===productid) as CartProduct
       console.log("already existy ", prd)
       if (prd?.quantity) {
         updateQuantity(prd.quantity);
       }
+    }
     }
    },[])
   return (
