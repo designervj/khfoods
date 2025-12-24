@@ -9,7 +9,6 @@ import { Link } from "@/i18n/routing";
 // ✅ Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -22,11 +21,16 @@ export default function ProductSection() {
   );
 }
 
-function ProductListing({ type, catType }: { type: "left" | "right"; catType: string }) {
+function ProductListing({
+  type,
+  catType,
+}: {
+  type: "left" | "right";
+  catType: string;
+}) {
   const [allproduct, setAllProduct] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Unique nav selectors per row (prevents Swiper nav collisions)
   const navId = useMemo(() => `${type}-${catType}`, [type, catType]);
   const prevClass = `swiper-prev-${navId}`;
   const nextClass = `swiper-next-${navId}`;
@@ -61,7 +65,11 @@ function ProductListing({ type, catType }: { type: "left" | "right"; catType: st
   };
 
   return (
-    <div className={`w-full px-4 py-6 ${type === "left" ? "bg-white" : "bg-gray-50"}`}>
+    <div
+      className={`w-full px-4 py-6 ${
+        type === "left" ? "bg-white" : "bg-gray-50"
+      }`}
+    >
       <div className="w-[90%] mx-auto">
         <div
           className={`flex flex-col ${
@@ -70,13 +78,17 @@ function ProductListing({ type, catType }: { type: "left" | "right"; catType: st
         >
           {/* Marking Card */}
           <div className="w-full lg:w-96 flex-shrink-0">
-            {type === "left" ? <ProductMarking /> : <ProductInernationalMarking />}
+            {type === "left" ? (
+              <ProductMarking />
+            ) : (
+              <ProductInernationalMarking />
+            )}
           </div>
 
-          {/* Swiper Row */}
-          <div className="flex-1 min-w-0">
-            <div className="relative">
-              {/* Custom Nav Buttons */}
+          {/* ✅ Swiper Column (make it fill height) */}
+          <div className="flex-1 min-w-0 h-full">
+            <div className="relative h-full">
+              {/* Nav Buttons */}
               <button
                 type="button"
                 className={`${prevClass} hidden lg:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white shadow-md border border-gray-200 hover:bg-gray-50`}
@@ -94,6 +106,23 @@ function ProductListing({ type, catType }: { type: "left" | "right"; catType: st
               </button>
 
               {isLoading ? (
+                <Swiper 
+                  modules={[Navigation, A11y]}
+                  navigation={{
+                    prevEl: `.${prevClass}`,
+                    nextEl: `.${nextClass}`,
+                  }}
+                  spaceBetween={16}
+                  slidesPerView={"auto"}
+                  className="h-full !py-0"
+                >
+                  {[...Array(6)].map((_, index) => (
+                    <SwiperSlide key={index} className="!w-64 !h-full">
+                      <SkeletonCard />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ) : allproduct.length > 0 ? (
                 <Swiper
                   modules={[Navigation, A11y]}
                   navigation={{
@@ -102,27 +131,10 @@ function ProductListing({ type, catType }: { type: "left" | "right"; catType: st
                   }}
                   spaceBetween={16}
                   slidesPerView={"auto"}
-                  className="!py-0"
-                >
-                  {[...Array(6)].map((_, index) => (
-                    <SwiperSlide key={index} className="!w-64">
-                      <SkeletonCard />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              ) : allproduct && allproduct.length > 0 ? (
-                <Swiper
-                  modules={[Navigation, A11y]}
-                  navigation={{
-                    prevEl: `.${prevClass}`,
-                    nextEl: `.${nextClass}`,
-                  }}
-                  spaceBetween={16}
-                  slidesPerView={"auto"} // ✅ keeps all cards same width
-                  className="!py-0"
+                  className="h-full !py-0 product-swiper"
                 >
                   {allproduct.slice(0, 8).map((product) => (
-                    <SwiperSlide key={product.id} className="!w-64">
+                    <SwiperSlide key={product.id} className="!w-64 !h-full">
                       <ProductCard product={product} />
                     </SwiperSlide>
                   ))}
@@ -133,9 +145,6 @@ function ProductListing({ type, catType }: { type: "left" | "right"; catType: st
                 </div>
               )}
             </div>
-
-            {/* Optional: mobile hint spacing */}
-            <div className="h-2" />
           </div>
         </div>
       </div>
@@ -147,7 +156,7 @@ function ProductCard({ product }: { product: Product }) {
   const productImage = product.images?.[0] || null;
 
   return (
-    <Link href={`/product/${product.slug}`} prefetch={true} className="block h-full">
+    <Link href={`/product/${product.slug}`} prefetch className="block h-full">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col hover:shadow-xl transition-shadow duration-300 cursor-pointer">
         <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center h-64 overflow-hidden p-0 m-0">
           {productImage ? (
@@ -172,7 +181,6 @@ function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
-        {/* Content */}
         <div className="p-4 flex flex-col flex-grow">
           <h3 className="text-lg font-bold text-gray-900 mb-1 line-clamp-1">
             {product.title}
@@ -234,8 +242,9 @@ function ProductInernationalMarking() {
           Product Ship International
         </h2>
         <p className="text-sm text-gray-800 leading-relaxed">
-          Currently, we offer direct shipping to Taiwan only. If you are interested
-          to ship to other countries, please visit Contact Us page to submit your inquiry.
+          Currently, we offer direct shipping to Taiwan only. If you are
+          interested to ship to other countries, please visit Contact Us page to
+          submit your inquiry.
         </p>
       </div>
       <button className="mt-6 bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg border-2 border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 w-full sm:w-auto">
