@@ -1,142 +1,105 @@
-import Link from "next/link";
-import { getLocale } from "next-intl/server";
-
-import { CMSLink } from "@/components/Link";
-import { LocaleSwitch } from "@/components/LocaleSwitch/LocaleSwitch";
-import { Logo } from "@/components/Logo/Logo";
-import RichText from "@/components/RichText";
-import { type Locale } from "@/i18n/config";
-import { CurrencySelector } from "@/stores/Currency/CurrencySelector";
-import { getCachedGlobal } from "@/utilities/getGlobals";
-
-import type { Footer, ShopSetting } from "@/payload-types";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
-export async function Footer() {
-  const locale = (await getLocale()) as Locale;
-  const footerData: Footer = await getCachedGlobal("footer", locale, 1)();
-  const shopSettings: ShopSetting = await getCachedGlobal("shopSettings", locale, 1)();
-  const navItems = footerData?.navItems ?? [];
+<footer className="bg-gradient-to-b from-[#1c1c1c] to-[#111] text-gray-300">
+  <div className="max-w-7xl mx-auto px-6 py-20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-  
-  return (
-    // <footer className="1 mt-auto border-t border-border bg-black text-white dark:bg-card">
-    //   <div className="container flex flex-col gap-8 py-8 md:flex-row md:justify-between">
-    //     <Link className="flex items-center" href="/">
-    //       <Logo /> 
+      {/* ABOUT */}
+      <div>
+        <img
+          src="/assets/Image/khfoodImage/khfood_logo.png"
+          alt="KH Food"
+          className="w-36 mb-6"
+        />
 
-         
-    //     </Link>
+        <p className="text-sm leading-relaxed text-gray-400">
+          K H Food became a company in Orange County, California in 1991.
+          With a vision to become the highest quality peanut company in California.
+        </p>
 
-    //     <div className="flex flex-col-reverse items-start gap-4 md:flex-row md:items-center">
-    //       <CurrencySelector currencyOptions={shopSettings.availableCurrencies} />
-    //       <LocaleSwitch />
-    //       <nav className="flex flex-col gap-4 md:flex-row">
-    //         {navItems.map(({ link }, i) => {
-    //           return <CMSLink className="text-white" key={i} {...link} />;
-    //         })}
-    //       </nav>
-    //     </div>
-    //   </div>
-    //   {footerData.attribution ? (
-    //     <div className="flex border-t p-4 text-xs">
-    //       <div className="container">
-    //         <RichText data={footerData.attribution} />
-    //       </div>
-    //     </div>
-    //   ) : null}
-    // </footer>
-
-    <footer className=" ">
-      <div className=" mx-auto  bg-darker">
-         <div className="max-w-7xl px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mx-auto py-20">
-        {/* COLUMN 1 — ABOUT */}
-        <div>
-          <img
-            src="/assets/Image/khfoodImage/khfood_logo.png"
-            alt="KH FOOD"
-            className="w-32 mb-6"
-          />
-
-          <p className="text-gray-300 leading-relaxed text-sm">
-            K H Food became a company in Orange County, California in 1991.
-            They had the vision to become the highest quality peanut company in California.
-          </p>
-
-          <div className="flex gap-4 mt-5">
-            <FaFacebookF className="text-white text-xl cursor-pointer hover:text-primary" />
-            <FaTwitter className="text-white text-xl cursor-pointer hover:text-primary" />
-          </div>
+        <div className="flex gap-4 mt-6">
+          <FaFacebookF className="text-lg cursor-pointer hover:text-primary transition" />
+          <FaTwitter className="text-lg cursor-pointer hover:text-primary transition" />
         </div>
+      </div>
 
-        {/* COLUMN 2 — QUICK LINKS */}
-        <div>
-          <h3 className="text-primary text-lg font-semibold mb-5">QUICK LINKS</h3>
-
-          <ul className="space-y-3 text-gray-300 text-sm">
-            <li><a href="#" className="hover:text-primary">Home</a></li>
-            <li><a href="#" className="hover:text-primary">FAQS</a></li>
-            <li><a href="#" className="hover:text-primary">About Us</a></li>
-            <li><a href="#" className="hover:text-primary">Wholesale</a></li>
-            <li><a href="#" className="hover:text-primary">Contact Us</a></li>
-            <li><a href="#" className="hover:text-primary">STORE LOCATOR</a></li>
-          </ul>
-        </div>
-
-        {/* COLUMN 3 — CONTACT */}
-        <div>
-          <h3 className="text-primary text-lg font-semibold mb-5">CONTACT US</h3>
-
-          <p className="text-gray-300 text-sm mb-3">(714)639-1201</p>
-
-          <p className="text-gray-300 text-sm mb-3">contact@khfood.com</p>
-
-          <p className="text-gray-300 text-sm">
-            585 Yorbit Rd.<br />La Puente, CA 91744
-          </p>
-        </div>
-
-        {/* COLUMN 4 — SUBSCRIBE */}
-        <div>
-          <h3 className="text-primary text-lg font-semibold mb-5">SUBSCRIBE</h3>
-
-          <p className="text-gray-300 text-sm mb-4">
-            Enter your email address for our mailing list to keep yourself updated.
-          </p>
-
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="Your email address"
-              className="px-4 py-2 w-full outline-none text-gray-800"
-            />
-            <button className="bg-green-500 px-5 flex items-center justify-center">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+cc
+      {/* QUICK LINKS */}
+      <div>
+        <h3 className="text-primary font-semibold text-lg mb-6">Quick Links</h3>
+        <ul className="space-y-3 text-sm">
+          {[
+            "Home",
+            "FAQs",
+            "About Us",
+            "Wholesale",
+            "Contact Us",
+            "Store Locator",
+          ].map((item) => (
+            <li key={item}>
+              <a
+                href="#"
+                className="hover:text-primary transition hover:pl-1 inline-block"
               >
-                <path d="M2.94 2.94l14.12 7.06-14.12 7.06L3 12l9-2-9-2 0-5.06z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        </div>
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* Bottom strip */}
-      <div className="border-t border-gray-700 py-6 bg-[#171717]">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between text-white font-semibold text-sm">
+      {/* CONTACT */}
+      <div>
+        <h3 className="text-primary font-semibold text-lg mb-6">Contact Us</h3>
 
-          <p>© 1991–2025 K H Food Corp. All rights reserved. KH logo is a trademark of KH Food Corp.</p>
+        <p className="text-sm mb-3">(714) 639-1201</p>
+        <p className="text-sm mb-3">contact@khfood.com</p>
+        <p className="text-sm leading-relaxed">
+          585 Yorbit Rd.<br />
+          La Puente, CA 91744
+        </p>
+      </div>
 
-          <p>
-            Managed by <span className="text-white font-semibold"><a href="#" className="text-primary">CODIFIED</a></span>
-          </p>
+      {/* SUBSCRIBE */}
+      <div>
+        <h3 className="text-primary font-semibold text-lg mb-6">Subscribe</h3>
 
+        <p className="text-sm mb-4 text-gray-400">
+          Enter your email to receive updates and offers.
+        </p>
+
+        <div className="flex overflow-hidden rounded-md shadow-md">
+          <input
+            type="email"
+            placeholder="Your email address"
+            className="flex-1 px-4 py-3 text-sm text-gray-800 outline-none"
+          />
+          <button className="bg-green-500 px-5 flex items-center justify-center hover:bg-green-600 transition">
+            <svg
+              className="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M2.94 2.94l14.12 7.06-14.12 7.06L3 12l9-2-9-2 0-5.06z" />
+            </svg>
+          </button>
         </div>
       </div>
-    </footer>
-    
-  );
-}
+    </div>
+  </div>
+
+  {/* BOTTOM BAR */}
+  <div className="border-t border-gray-700 bg-[#0d0d0d]">
+    <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+      <p>
+        © 1991–2025 K H Food Corp. All rights reserved.
+      </p>
+      <p>
+        Managed by{" "}
+        <a href="#" className="text-primary font-medium hover:underline">
+          CODIFIED
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

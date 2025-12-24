@@ -301,3 +301,7 @@ html[data-theme="light"] {
   color: var(--black) !important;
   border: 1px solid var(--button);
 }
+
+.product-swiper{
+  overflow: visible !important;
+}
