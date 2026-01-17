@@ -155,105 +155,120 @@ export default function RoadPage() {
   return (
     <main className="w-full bg-white text-neutral-900">
       {/* ========================== HERO (GOODYEAR STYLE) ========================== */}
- <section className="relative w-full">
-  <div
-    className="relative min-h-[80vh] md:h-[90vh] w-full overflow-hidden pt-24 md:pt-20"
-    style={{
-      backgroundImage:
-        "/Image/khfoodImage/friendy_organic_store (1).jpg",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-  >
-    {/* overlays */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(255,209,0,0.18),transparent_40%)]" />
+    {/* <section className="relative w-full">
+      <div
+        className="relative min-h-[80vh] md:h-[90vh] w-full overflow-hidden pt-24 md:pt-20"
+        style={{
+          backgroundImage:
+            "/Image/khfoodImage/friendy_organic_store (1).jpg",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(255,209,0,0.18),transparent_40%)]" />
 
-    <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 h-full grid lg:grid-cols-2 gap-12 items-center">
-      {/* LEFT CONTENT */}
-      <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-        <p className="text-white/80 text-sm tracking-[0.2em] uppercase text-start">
-          Product/ DOMESTIC SHIPPING
-        </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 h-full grid lg:grid-cols-2 gap-12 items-center">
+      
+          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+            <p className="text-white/80 text-sm tracking-[0.2em] uppercase text-start">
+              Product/ DOMESTIC SHIPPING
+            </p>
 
-        <h1 className="mt-4 text-white font-medium tracking-tight leading-[1] text-5xl text-start sm:text-5xl md:text-[100px]">
-          Domestic
-          {/* <span className="block text-white/90 font-black text-3xl sm:text-4xl md:text-5xl font-bold mt-2">
-            TIRES.
-          </span> */}
-        </h1>
+            <h1 className="mt-4 text-white font-medium tracking-tight leading-[1] text-5xl text-start sm:text-5xl md:text-[100px]">
+              Domestic
+            </h1>
 
-        <p className="mt-5 text-white/85 leading-relaxed text-sm sm:text-base md:text-lg text-start">
-          A history of movement – The Eagle and Vector names are steeped in
-          sporting pedigree, the Goodyear range of Road tires come with the
-          technology and wealth of experience no other tire can match.
-        </p>
+            <p className="mt-5 text-white/85 leading-relaxed text-sm sm:text-base md:text-lg text-start">
+              A history of movement – The Eagle and Vector names are steeped in
+              sporting pedigree, the Goodyear range of Road tires come with the
+              technology and wealth of experience no other tire can match.
+            </p>
 
-        {/* buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:justify-center lg:justify-start">
-          <a
-            href="#browse"
-            className="inline-flex items-center justify-center rounded-full bg-[#FFD100] px-6 py-3 text-sm font-semibold text-black hover:brightness-95 transition"
-          >
-            Browse Road Tires
-          </a>
+          
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:justify-center lg:justify-start">
+              <a
+                href="#browse"
+                className="inline-flex items-center justify-center rounded-full bg-[#FFD100] px-6 py-3 text-sm font-semibold text-black hover:brightness-95 transition"
+              >
+                Browse Road Tires
+              </a>
 
-          <a
-            href="#modelmap"
-            className="inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition"
-          >
-            Model Map
-          </a>
-        </div>
-
-        {/* stats */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
-          {[
-            ["Rolling", "Fast & Efficient"],
-            ["Grip", "Wet + Dry"],
-            ["Protection", "Race Ready"],
-          ].map(([k, v]) => (
-            <div
-              key={k}
-              className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur"
-            >
-              <p className="text-white/70 text-[10px] tracking-[0.2em] uppercase">
-                {k}
-              </p>
-              <p className="mt-2 text-white font-semibold text-sm">{v}</p>
+              <a
+                href="#modelmap"
+                className="inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition"
+              >
+                Model Map
+              </a>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* RIGHT IMAGE (DESKTOP ONLY) */}
-      <div className="hidden lg:block">
-        <div className="relative h-[520px] w-full rounded-[28px] overflow-hidden border border-white/15 bg-white/5 shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
-          <img
-            src="/Image/khfoodImageImage-4.jpg"
-            alt="K H Food"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+          
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+              {[
+                ["Rolling", "Fast & Efficient"],
+                ["Grip", "Wet + Dry"],
+                ["Protection", "Race Ready"],
+              ].map(([k, v]) => (
+                <div
+                  key={k}
+                  className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur"
+                >
+                  <p className="text-white/70 text-[10px] tracking-[0.2em] uppercase">
+                    {k}
+                  </p>
+                  <p className="mt-2 text-white font-semibold text-sm">{v}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <div className="absolute bottom-6 left-6 right-6">
-            <div className="rounded-2xl bg-black/35 border border-white/15 backdrop-blur px-5 py-4">
-              <p className="text-white text-lg font-semibold">
-                “Confidence at speed — built for riders who push.”
-              </p>
-              <p className="mt-1 text-white/70 text-sm tracking-wide">
-                Road range overview · Goodyear Bicycle Tires
-              </p>
+        
+          <div className="hidden lg:block">
+            <div className="relative h-[520px] w-full rounded-[28px] overflow-hidden border border-white/15 bg-white/5 shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
+              <img
+                src="/Image/khfoodImageImage-4.jpg"
+                alt="K H Food"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="rounded-2xl bg-black/35 border border-white/15 backdrop-blur px-5 py-4">
+                  <p className="text-white text-lg font-semibold">
+                    “Confidence at speed — built for riders who push.”
+                  </p>
+                  <p className="mt-1 text-white/70 text-sm tracking-wide">
+                    Road range overview · Goodyear Bicycle Tires
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white" />
       </div>
-    </div>
+    </section> */}
 
-    {/* bottom fade */}
-    <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white" />
-  </div>
-</section>
+  <section className="relative w-full overflow-hidden pt-[120px]"
+                style={{ backgroundImage: "url('/assets/Image/bg-banner.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                <div className="mx-auto flex min-h-[260px] max-w-7xl items-center justify-center px-5 py-14 sm:px-6 md:min-h-[320px] md:py-20">
+                    <div className="text-center">
+                        <h1 className="text-3xl font-bold uppercase tracking-tight text-black md:text-5xl">
+                            Domestic
+                        </h1>
+                        <div className="mt-3 flex items-center justify-center gap-2 text-sm text-black/70">
+                            <span className="hover:text-black">Home</span>
+                            <span className="text-black/40">›</span>
+                            <span className="hover:text-black">Products</span>
+                            <span className="text-black/40">›</span>
+                            <span className="text-black">Domestic</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="h-[1px] w-full bg-black/10" /> */}
+            </section>
 
 
       {/* ========================== MODEL MAP (DIAGRAM FEEL) ========================== */}
@@ -263,9 +278,9 @@ export default function RoadPage() {
             <p className="text-sm tracking-[0.2em] uppercase text-neutral-600">
               Model Map
             </p>
-            <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
+            {/* <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
               The Goodyear Range of Road Tires
-            </h2>
+            </h2> */}
             <p className="mt-6 text-neutral-600 leading-relaxed">
               A quick map to help riders pick the right tire based on intent:
               race speed, endurance versatility, or daily performance.

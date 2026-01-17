@@ -68,7 +68,7 @@ const page = () => {
   return (
     <div className="bg-[#fff9f3] text-slate-900">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#fff4e5] via-[#ffe8cf] to-[#fff9f3]">
+      {/* <section className="bg-gradient-to-br from-[#fff4e5] via-[#ffe8cf] to-[#fff9f3]">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:flex lg:items-center lg:gap-12">
           <div className="flex-1">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
@@ -90,7 +90,29 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+            <section className="relative w-full overflow-hidden pt-[120px]"
+                style={{ backgroundImage: "url('/assets/Image/bg-banner.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                <div className="mx-auto flex min-h-[260px] max-w-7xl items-center justify-center px-5 py-14 sm:px-6 md:min-h-[320px] md:py-20">
+                    <div className="text-center">
+                        <h1 className="text-3xl font-bold uppercase tracking-tight text-black md:text-5xl">
+                          History
+                        </h1>
+                        <div className="mt-3 flex items-center justify-center gap-2 text-sm text-black/70">
+                            <span className="hover:text-black">Home</span>
+                            <span className="text-black/40">›</span>
+                            <span className="hover:text-black">About</span>
+                            <span className="text-black/40">›</span>
+                            <span className="text-black">History</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="h-[1px] w-full bg-black/10" /> */}
+            </section>
+
 
       {/* Brand story */}
       <section className="py-14">

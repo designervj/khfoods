@@ -35,7 +35,7 @@ export default function NewsLatter() {
       <div className="w-full lg:w-1/2 h-[50vh] lg:h-screen lg:sticky lg:top-0 order-1 lg:order-2">
         <img
           // Make sure this image exists in your public folder
-          src="/assets/Image/khfoodImage/home_slide1.jpg"
+          src="https://khfood.com/wp-content/uploads/2019/12/Image-1.jpg"
           className="w-full h-full object-cover"
           alt="k h food highlights"
         />

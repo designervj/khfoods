@@ -108,11 +108,11 @@ const megaConfigs: Record<Exclude<MegaCategory, null>, MegaConfig> = {
         heading: "PRODUCT CATEGORIES",
         sections: [
           {
-            title: "DOMESTIC",
+            title: "DOMESTIC (US)",
             links: [{ label: "Domestic Products", href: "/products/domestic" }],
           },
           {
-            title: "INTERNATIONAL",
+            title: "INTERNATIONAL (Taiwan)",
             links: [{ label: "International Products", href: "/products/international" }],
           },
         ],
@@ -389,7 +389,7 @@ export default function Header() {
           </DropdownMenu>
         </div>
       </div>
-    </div>
+        </div>
 
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Left Logo */}
@@ -590,7 +590,7 @@ export default function Header() {
 
 function MegaMenu({ config, onClose }: { config: MegaConfig; onClose: () => void }) {
   return (
-    <div className="w-full text-[#222]">
+    <div className="w-full text-[#222] border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-6 lg:px-0 pt-12 pb-8">
         <div className="grid grid-cols-2 lg:gap-x-10">
           {/* LEFT title clickable */}
