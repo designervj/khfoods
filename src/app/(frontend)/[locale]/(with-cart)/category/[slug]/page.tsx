@@ -10,14 +10,14 @@ const CategoryPage = async ({
   params,
   searchParams
 }: {
-  params: { slug: string };
-  searchParams: Record<string, string | undefined>;
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | undefined>>;
 }) => {
   try {
     const payload = await getPayload({ config });
     const locale = (await getLocale()) as Locale;
-    const { slug } = params;
-    const { color, size, sortBy } = searchParams;
+    const { slug } = await params;
+    const { color, size, sortBy } = await searchParams;
     const { docs: categories } = await payload.find({
       collection: "productCategories",
       depth: 1,
