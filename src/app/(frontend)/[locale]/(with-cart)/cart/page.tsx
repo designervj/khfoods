@@ -18,6 +18,7 @@ import { type Cart } from "@/stores/CartStore/types";
 import { type Currency } from "@/stores/Currency/types";
 import useUserStore from "@/stores/UserStore";
 
+
 export type ProductWithFilledVariants = Omit<
   Product,
   "variants" | "pricing"

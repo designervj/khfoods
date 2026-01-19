@@ -6,9 +6,6 @@ import { ProductDetails } from "@/globals/(ecommerce)/Layout/ProductDetails/Comp
 import { type Locale } from "@/i18n/config";
 import config from "@payload-config";
 
-
-
-
 const ProductPage = async ({
   params,
   searchParams

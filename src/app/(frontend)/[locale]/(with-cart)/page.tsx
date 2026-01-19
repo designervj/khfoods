@@ -7,13 +7,12 @@ export const dynamic = "force-dynamic";
 
 // export { generateMetadata };
 
-const Home=()=>{
-return(
-     <>
-  <HomePage/>
-     </>
-)
- 
-}
+const Home = () => {
+  return (
+    <>
+      <HomePage />
+    </>
+  );
+};
 
-export default Home
+export default Home;

@@ -62,7 +62,7 @@ export const WithInlinePrice = ({ products }: { products: Product[] }) => {
                   </p>
                 </div>
                 <p className="flex w-2/5 flex-wrap justify-end text-sm font-medium text-gray-900">
-                  {pricingComponent}
+                  {pricingComponent} ssdas
                 </p>
               </div>
             </div>

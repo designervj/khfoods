@@ -21,7 +21,6 @@ export const dynamic = "force-dynamic";
 
 const HomePage = async () => {
  
-
   return (
     <main>
       {/* <HeroSection/> */}
